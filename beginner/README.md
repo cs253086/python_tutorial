@@ -13,6 +13,7 @@ This track is for kids with no coding experience.
 7. `06_lists` - store map rooms and inventory in lists
 8. `07_functions` - organize game code with reusable functions
 9. `08_build_game_v1` - combine all basics into a playable text game
+10. `09_polish_and_debug` - improve quality and fix bugs with confidence
 
 Each lesson directory contains:
 - `TUTORIAL.md`
