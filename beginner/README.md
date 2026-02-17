@@ -11,6 +11,7 @@ This track is for kids with no coding experience.
 5. `04_if_else` - make game decisions with if / elif / else
 6. `05_loops` - repeat turns with while and for loops
 7. `06_lists` - store map rooms and inventory in lists
+8. `07_functions` - organize game code with reusable functions
 
 Each lesson directory contains:
 - `TUTORIAL.md`
