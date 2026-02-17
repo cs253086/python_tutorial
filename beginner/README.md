@@ -14,6 +14,7 @@ This track is for kids with no coding experience.
 8. `07_functions` - organize game code with reusable functions
 9. `08_build_game_v1` - combine all basics into a playable text game
 10. `09_polish_and_debug` - improve quality and fix bugs with confidence
+11. `10_bonus_random` - add random events for replayable gameplay
 
 Each lesson directory contains:
 - `TUTORIAL.md`
