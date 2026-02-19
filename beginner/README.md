@@ -9,6 +9,7 @@ This track is for kids with no coding experience.
 3. `02_variables` - store player name, score, and lives
 4. `03_input` - ask player name and choices with input()
 5. `04_if_else` - make game decisions with if / elif / else
+6. `05_loops` - repeat turns with while and for loops
 
 Each lesson directory contains:
 - `TUTORIAL.md`
