@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 08: Build Game v1 - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="07_functions.html">Previous lesson</a> <a class="nav-pill" href="09_polish_and_debug.html">Next lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 08: Build Game v1</h1>
+      <p>combine all basics into a playable text game</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to lesson 08.</p>
+<p>This is your first full game build.</p>
+<p>In this lesson, you will combine:</p>
+<ul>
+<li><code>print()</code></li>
+<li>variables</li>
+<li><code>input()</code></li>
+<li><code>if / elif / else</code></li>
+<li>loops</li>
+<li>lists</li>
+<li>functions</li>
+</ul>
+<p>At the end, you will have a playable <strong>Treasure Hunt v1</strong> text game.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/08_build_game_v1
+cd ~/kids_python_tutorial/beginner/08_build_game_v1</code></pre>
+<hr>
+<h2>2) Create the full game file</h2>
+<p>Create <code>treasure_hunt_v1.py</code> and paste:</p>
+<pre><code class="language-python">def show_title():
+    print(&quot;================================&quot;)
+    print(&quot;      TREASURE HUNT v1&quot;)
+    print(&quot;================================&quot;)
+
+
+def handle_room(room, score, lives):
+    if room == &quot;start&quot;:
+        print(&quot;You are at the start.&quot;)
+    elif room == &quot;empty&quot;:
+        print(&quot;Empty room. Nothing happens.&quot;)
+    elif room == &quot;trap&quot;:
+        print(&quot;Trap! You lose 1 life.&quot;)
+        lives = lives - 1
+    elif room == &quot;treasure&quot;:
+        print(&quot;Treasure found! +20 score.&quot;)
+        score = score + 20
+    elif room == &quot;exit&quot;:
+        print(&quot;You found the exit!&quot;)
+    else:
+        print(&quot;Unknown room.&quot;)
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print(&quot;Player:&quot;, name)
+    print(&quot;Room:&quot;, room)
+    print(&quot;Score:&quot;, score)
+    print(&quot;Lives:&quot;, lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input(&quot;Enter your explorer name: &quot;)
+    score = 0
+    lives = 3
+    rooms = [&quot;start&quot;, &quot;empty&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;exit&quot;]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == &quot;exit&quot;:
+            print(&quot;You win!&quot;)
+            break
+
+        if lives &lt;= 0:
+            print(&quot;No lives left. Game over.&quot;)
+            break
+
+        action = input(&quot;Type &#x27;next&#x27; to move, or &#x27;quit&#x27; to stop: &quot;)
+        if action == &quot;next&quot;:
+            position = position + 1
+        elif action == &quot;quit&quot;:
+            print(&quot;You ended the game.&quot;)
+            break
+        else:
+            print(&quot;Invalid action. Staying in current room.&quot;)
+
+    print()
+    print(&quot;Final score:&quot;, score)
+    print(&quot;Thanks for playing!&quot;)
+
+
+main()</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 treasure_hunt_v1.py</code></pre>
+<hr>
+<h2>3) How the game works</h2>
+<ul>
+<li><code>rooms</code> list stores the map path</li>
+<li><code>position</code> tracks where player is</li>
+<li><code>while</code> runs each game turn</li>
+<li><code>if / elif / else</code> handles room events</li>
+<li>functions keep code organized</li>
+</ul>
+<hr>
+<h2>4) Try simple improvements</h2>
+<ol>
+<li>Change room order in <code>rooms</code></li>
+<li>Change trap damage (lose 2 lives)</li>
+<li>Change treasure points</li>
+<li>Add one more room type and event</li>
+</ol>
+<hr>
+<h2>Common mistakes</h2>
+<h3>Mistake A: indentation errors</h3>
+<p>Python blocks must be aligned correctly.</p>
+<h3>Mistake B: typo in room names</h3>
+<p>If <code>rooms</code> has <code>&quot;tresure&quot;</code> instead of <code>&quot;treasure&quot;</code>, event logic may fail.</p>
+<h3>Mistake C: forgetting to update <code>position</code></h3>
+<p>Without <code>position = position + 1</code>, game does not move.</p>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] The game starts and asks for player name</li>
+<li>[] You can move through rooms using <code>next</code></li>
+<li>[] Score and lives update correctly</li>
+<li>[] You can win or lose</li>
+</ul>
+<p>Next lesson: polish and debugging.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Run the base game</h2>
+<ol>
+<li>Copy the tutorial code into <code>treasure_hunt_v1.py</code></li>
+<li>Run:</li>
+</ol>
+<pre><code class="language-bash">python3 treasure_hunt_v1.py</code></pre>
+<ol>
+<li>Play once until win or game over</li>
+</ol>
+<hr>
+<h2>Part B: Customize the game</h2>
+<p>Make all these changes:</p>
+<ol>
+<li>Change game title text</li>
+<li>Change starting lives from 3 to 5</li>
+<li>Change treasure bonus from +20 to +30</li>
+<li>Add one new room in the <code>rooms</code> list</li>
+</ol>
+<hr>
+<h2>Part C: Add one new room event</h2>
+<p>Add room type <code>&quot;healer&quot;</code> that gives +1 life.</p>
+<p>Update both:</p>
+<ul>
+<li><code>rooms</code> list</li>
+<li><code>handle_room(...)</code> logic</li>
+</ul>
+<hr>
+<h2>Part D: Fill in the blanks</h2>
+<pre><code class="language-python">rooms = [&quot;start&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;exit&quot;]
+position = 0
+score = 0
+lives = 3
+
+while lives ____ 0 and position &lt; ______(rooms):
+    room = rooms[position]
+    if room == &quot;trap&quot;:
+        lives = lives - 1
+    elif room == &quot;treasure&quot;:
+        score = score + __
+    elif room == &quot;exit&quot;:
+        print(&quot;You win!&quot;)
+        _____
+
+    position = position + 1</code></pre>
+<hr>
+<h2>Part E: Fix the bugs</h2>
+<p>Fix this code:</p>
+<pre><code class="language-python">rooms = [&quot;start&quot;, &quot;trap&quot;, &quot;exit&quot;]
+position = 0
+
+while position &lt; len(rooms)
+    room = rooms[position]
+    if room = &quot;trap&quot;:
+        print(&quot;Lose life&quot;)
+    position = position + 1</code></pre>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can run a complete text game</li>
+<li>[] I can customize score, lives, and rooms</li>
+<li>[] I can add a new room event</li>
+<li>[] I can debug common game-loop issues</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">def show_title():
+    print(&quot;================================&quot;)
+    print(&quot;      TREASURE HUNT v1&quot;)
+    print(&quot;================================&quot;)
+
+
+def handle_room(room, score, lives):
+    if room == &quot;start&quot;:
+        print(&quot;You are at the start.&quot;)
+    elif room == &quot;empty&quot;:
+        print(&quot;Empty room. Nothing happens.&quot;)
+    elif room == &quot;trap&quot;:
+        print(&quot;Trap! You lose 1 life.&quot;)
+        lives = lives - 1
+    elif room == &quot;treasure&quot;:
+        print(&quot;Treasure found! +20 score.&quot;)
+        score = score + 20
+    elif room == &quot;exit&quot;:
+        print(&quot;You found the exit!&quot;)
+    else:
+        print(&quot;Unknown room.&quot;)
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print(&quot;Player:&quot;, name)
+    print(&quot;Room:&quot;, room)
+    print(&quot;Score:&quot;, score)
+    print(&quot;Lives:&quot;, lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input(&quot;Enter your explorer name: &quot;)
+    score = 0
+    lives = 3
+    rooms = [&quot;start&quot;, &quot;empty&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;exit&quot;]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == &quot;exit&quot;:
+            print(&quot;You win!&quot;)
+            break
+
+        if lives &lt;= 0:
+            print(&quot;No lives left. Game over.&quot;)
+            break
+
+        action = input(&quot;Type &#x27;next&#x27; to move, or &#x27;quit&#x27; to stop: &quot;)
+        if action == &quot;next&quot;:
+            position = position + 1
+        elif action == &quot;quit&quot;:
+            print(&quot;You ended the game.&quot;)
+            break
+        else:
+            print(&quot;Invalid action. Staying in current room.&quot;)
+
+    print()
+    print(&quot;Final score:&quot;, score)
+    print(&quot;Thanks for playing!&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

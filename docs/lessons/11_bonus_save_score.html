@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 11 (Bonus): Save High Score - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="10_bonus_random.html">Previous lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 11 (Bonus): Save High Score</h1>
+      <p>save and load high scores with files</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to bonus lesson 11.</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>write text to a file</li>
+<li>read text from a file</li>
+<li>save and load game high scores</li>
+</ul>
+<p>This makes progress stay after the game closes.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/11_bonus_save_score
+cd ~/kids_python_tutorial/beginner/11_bonus_save_score</code></pre>
+<hr>
+<h2>2) Write data to a file</h2>
+<p>Create <code>save_score.py</code>:</p>
+<pre><code class="language-python">score = 35
+
+with open(&quot;high_score.txt&quot;, &quot;w&quot;) as file:
+    file.write(str(score))
+
+print(&quot;Score saved!&quot;)</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 save_score.py</code></pre>
+<p>This creates <code>high_score.txt</code>.</p>
+<hr>
+<h2>3) Read data from a file</h2>
+<p>Create <code>load_score.py</code>:</p>
+<pre><code class="language-python">with open(&quot;high_score.txt&quot;, &quot;r&quot;) as file:
+    saved_score = file.read()
+
+print(&quot;Saved high score:&quot;, saved_score)</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 load_score.py</code></pre>
+<hr>
+<h2>4) Save only if score is higher</h2>
+<p>Create <code>update_high_score.py</code>:</p>
+<pre><code class="language-python">import os
+
+current_score = int(input(&quot;Current score: &quot;))
+high_score = 0
+
+if os.path.exists(&quot;high_score.txt&quot;):
+    with open(&quot;high_score.txt&quot;, &quot;r&quot;) as file:
+        content = file.read().strip()
+        if content != &quot;&quot;:
+            high_score = int(content)
+
+if current_score &gt; high_score:
+    with open(&quot;high_score.txt&quot;, &quot;w&quot;) as file:
+        file.write(str(current_score))
+    print(&quot;New high score saved:&quot;, current_score)
+else:
+    print(&quot;High score stays:&quot;, high_score)</code></pre>
+<p>Now your best score is kept between game runs.</p>
+<hr>
+<h2>5) Add to your game</h2>
+<p>At game end:</p>
+<ol>
+<li>load old high score</li>
+<li>compare with current score</li>
+<li>save if current score is higher</li>
+</ol>
+<p>This is a great final polish feature.</p>
+<hr>
+<h2>Common mistakes</h2>
+<h3>Mistake A: wrong file mode</h3>
+<ul>
+<li><code>&quot;w&quot;</code> = write (overwrites)</li>
+<li><code>&quot;r&quot;</code> = read</li>
+</ul>
+<h3>Mistake B: forgetting <code>str(...)</code> when writing numbers</h3>
+<p><code>file.write</code> needs text.</p>
+<h3>Mistake C: file not found on first run</h3>
+<p>Use <code>os.path.exists(...)</code> before reading.</p>
+<hr>
+<h2>New words</h2>
+<ul>
+<li><strong>file</strong>: saved data on disk</li>
+<li><strong>write</strong>: save data to file</li>
+<li><strong>read</strong>: load data from file</li>
+<li><strong>high score</strong>: best score achieved</li>
+</ul>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] I can save score to a file</li>
+<li>[] I can load score from a file</li>
+<li>[] I can update high score only when score is better</li>
+</ul>
+<p>Great work. You finished the beginner tutorial track.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Save your score</h2>
+<p>Create <code>save_my_score.py</code>:</p>
+<ol>
+<li>Ask user for score</li>
+<li>Save score to <code>my_score.txt</code></li>
+<li>Print confirmation</li>
+</ol>
+<hr>
+<h2>Part B: Load your score</h2>
+<p>Create <code>load_my_score.py</code>:</p>
+<ol>
+<li>Read <code>my_score.txt</code></li>
+<li>Print loaded score</li>
+</ol>
+<hr>
+<h2>Part C: High score updater</h2>
+<p>Create <code>high_score_game.py</code>:</p>
+<ol>
+<li>Ask for current score</li>
+<li>Read old high score from <code>high_score.txt</code> (if exists)</li>
+<li>Save new score only if it is higher</li>
+<li>Print final high score</li>
+</ol>
+<hr>
+<h2>Part D: Fill in the blanks</h2>
+<pre><code class="language-python">with open(&quot;high_score.txt&quot;, &quot;__&quot;) as file:
+    file._____(str(score))
+
+with open(&quot;high_score.txt&quot;, &quot;__&quot;) as file:
+    old_score = file.____()</code></pre>
+<hr>
+<h2>Part E: Fix the bugs</h2>
+<p>Fix this code:</p>
+<pre><code class="language-python">score = 40
+with open(&quot;high_score.txt&quot;, &quot;w&quot;) as f
+    f.write(score)
+
+with open(&quot;high_score.txt&quot;, r) as f:
+    print(f.read)</code></pre>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can write text data to a file</li>
+<li>[] I can read text data from a file</li>
+<li>[] I can compare and update high score</li>
+<li>[] I can fix common file I/O mistakes</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">import os
+
+
+def load_high_score(path):
+    if not os.path.exists(path):
+        return 0
+
+    with open(path, &quot;r&quot;, encoding=&quot;utf-8&quot;) as file:
+        content = file.read().strip()
+    if content == &quot;&quot;:
+        return 0
+    return int(content)
+
+
+def save_high_score(path, score):
+    with open(path, &quot;w&quot;, encoding=&quot;utf-8&quot;) as file:
+        file.write(str(score))
+
+
+def main():
+    score_file = &quot;high_score.txt&quot;
+    current_score = int(input(&quot;Current score: &quot;))
+    high_score = load_high_score(score_file)
+
+    if current_score &gt; high_score:
+        save_high_score(score_file, current_score)
+        print(&quot;New high score saved:&quot;, current_score)
+    else:
+        print(&quot;High score stays:&quot;, high_score)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 09: Polish and Debug - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="08_build_game_v1.html">Previous lesson</a> <a class="nav-pill" href="10_bonus_random.html">Next lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 09: Polish and Debug</h1>
+      <p>improve quality and fix bugs with confidence</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to lesson 09.</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>read error messages without panic</li>
+<li>debug step by step</li>
+<li>validate player input</li>
+<li>polish game text for better player experience</li>
+</ul>
+<p>At the end, your game will feel cleaner and more reliable.</p>
+<hr>
+<h2>What is debugging?</h2>
+<p>Debugging means finding and fixing mistakes in code.</p>
+<p>Every programmer debugs. Errors are normal, not failure.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/09_polish_and_debug
+cd ~/kids_python_tutorial/beginner/09_polish_and_debug</code></pre>
+<hr>
+<h2>2) Read errors in 3 steps</h2>
+<p>When Python shows an error:</p>
+<ol>
+<li>Read the last line (error type)</li>
+<li>Read the line number</li>
+<li>Open that line and fix the typo/syntax</li>
+</ol>
+<p>Example error:</p>
+<pre><code class="language-text">SyntaxError: expected &#x27;:&#x27;</code></pre>
+<p>This usually means a missing <code>:</code> after <code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>, <code>for</code>, or <code>def</code>.</p>
+<hr>
+<h2>3) Add input validation</h2>
+<p>Create <code>validated_move.py</code>:</p>
+<pre><code class="language-python">def get_move():
+    while True:
+        move = input(&quot;Move (left/right/forward): &quot;).strip().lower()
+        if move in [&quot;left&quot;, &quot;right&quot;, &quot;forward&quot;]:
+            return move
+        print(&quot;Invalid move. Please type left, right, or forward.&quot;)
+
+
+player_move = get_move()
+print(&quot;Accepted move:&quot;, player_move)</code></pre>
+<p>This prevents invalid input from breaking game flow.</p>
+<hr>
+<h2>4) Improve game messages (polish)</h2>
+<p>Small improvements matter:</p>
+<ul>
+<li>clear instructions</li>
+<li>friendly feedback</li>
+<li>consistent style</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">print(&quot;=== TREASURE HUNT ===&quot;)
+print(&quot;Tip: type left, right, or forward.&quot;)</code></pre>
+<hr>
+<h2>5) Game mini-step: polished turn</h2>
+<p>Create <code>polished_turn.py</code>:</p>
+<pre><code class="language-python">def get_valid_action():
+    while True:
+        action = input(&quot;Type next or quit: &quot;).strip().lower()
+        if action in [&quot;next&quot;, &quot;quit&quot;]:
+            return action
+        print(&quot;Please type only: next or quit&quot;)
+
+
+print(&quot;Welcome to Treasure Hunt!&quot;)
+score = 0
+
+for turn in range(1, 4):
+    print()
+    print(&quot;Turn&quot;, turn)
+    action = get_valid_action()
+
+    if action == &quot;quit&quot;:
+        print(&quot;You left the game early.&quot;)
+        break
+
+    score = score + 5
+    print(&quot;Great move! Score:&quot;, score)
+
+print()
+print(&quot;Final score:&quot;, score)</code></pre>
+<p>Now your loop is safer and easier for players.</p>
+<hr>
+<h2>Debug checklist</h2>
+<p>Before asking for help, check:</p>
+<ul>
+<li>Did I miss <code>:</code>?</li>
+<li>Are parentheses and quotes closed?</li>
+<li>Is indentation correct?</li>
+<li>Did I type function names correctly?</li>
+<li>Did I use <code>==</code> in conditions?</li>
+</ul>
+<hr>
+<h2>New words</h2>
+<ul>
+<li><strong>debug</strong>: find and fix code errors</li>
+<li><strong>validation</strong>: checking input before using it</li>
+<li><strong>polish</strong>: small improvements to quality and clarity</li>
+</ul>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] I can read Python errors and fix simple issues</li>
+<li>[] I can validate input in a loop</li>
+<li>[] I can improve game messages and flow</li>
+</ul>
+<p>Next lesson (bonus): random events.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Input validator</h2>
+<p>Create <code>action_validator.py</code>:</p>
+<ol>
+<li>Ask for action: <code>next</code> or <code>quit</code></li>
+<li>Repeat asking until input is valid</li>
+<li>Print accepted action</li>
+</ol>
+<p>Use:</p>
+<ul>
+<li><code>while True</code></li>
+<li><code>if action in [...]</code></li>
+</ul>
+<hr>
+<h2>Part B: Add polished messages</h2>
+<p>In your game file from lesson 08:</p>
+<ol>
+<li>Add a title block at the start</li>
+<li>Add one help line for controls</li>
+<li>Make win/lose messages friendlier</li>
+</ol>
+<hr>
+<h2>Part C: Fill in the blanks</h2>
+<pre><code class="language-python">while ____:
+    move = input(&quot;Move: &quot;).strip().lower()
+    if move in [&quot;left&quot;, &quot;right&quot;]:
+        ______ move
+    print(&quot;Invalid move&quot;)</code></pre>
+<hr>
+<h2>Part D: Fix the bugs</h2>
+<p>Fix this code:</p>
+<pre><code class="language-python">def get_action():
+    while True
+        action = input(&quot;next/quit: &quot;).lower(
+        if action in [&quot;next&quot;, &quot;quit&quot;]
+            return action
+        print(&quot;invalid&quot;)</code></pre>
+<hr>
+<h2>Part E: Error reading practice</h2>
+<p>When you see an error, write down:</p>
+<ol>
+<li>Error type (for example: <code>SyntaxError</code>)</li>
+<li>Line number</li>
+<li>What you changed to fix it</li>
+</ol>
+<p>Do this for at least 2 errors while practicing.</p>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can validate player input</li>
+<li>[] I can read and use error messages</li>
+<li>[] I can improve game wording and flow</li>
+<li>[] I can fix syntax and typo mistakes faster</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">def get_valid_action():
+    while True:
+        action = input(&quot;Type next or quit: &quot;).strip().lower()
+        if action in [&quot;next&quot;, &quot;quit&quot;]:
+            return action
+        print(&quot;Please type only: next or quit&quot;)
+
+
+def main():
+    print(&quot;Welcome to Treasure Hunt!&quot;)
+    score = 0
+
+    for turn in range(1, 4):
+        print()
+        print(&quot;Turn&quot;, turn)
+        action = get_valid_action()
+
+        if action == &quot;quit&quot;:
+            print(&quot;You left the game early.&quot;)
+            break
+
+        score = score + 5
+        print(&quot;Great move! Score:&quot;, score)
+
+    print()
+    print(&quot;Final score:&quot;, score)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

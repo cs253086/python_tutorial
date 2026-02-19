@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 05: Loops - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="04_if_else.html">Previous lesson</a> <a class="nav-pill" href="06_lists.html">Next lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 05: Loops</h1>
+      <p>repeat turns with while and for loops</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to lesson 05.</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>repeat actions with <code>while</code></li>
+<li>repeat a fixed number of times with <code>for</code></li>
+<li>build a simple game turn loop</li>
+</ul>
+<p>At the end, your game can run multiple turns automatically.</p>
+<hr>
+<h2>What is a loop?</h2>
+<p>A loop repeats code.</p>
+<p>Without loops, you would copy the same lines again and again.</p>
+<p>With loops, Python repeats for you.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/05_loops
+cd ~/kids_python_tutorial/beginner/05_loops</code></pre>
+<hr>
+<h2>2) <code>while</code> loop basics</h2>
+<p>Create <code>while_countdown.py</code>:</p>
+<pre><code class="language-python">lives = 3
+
+while lives &gt; 0:
+    print(&quot;Lives left:&quot;, lives)
+    lives = lives - 1
+
+print(&quot;Game over&quot;)</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 while_countdown.py</code></pre>
+<p>The loop keeps running while the condition is true.</p>
+<hr>
+<h2>3) <code>for</code> loop basics</h2>
+<p>Create <code>for_steps.py</code>:</p>
+<pre><code class="language-python">for step in range(1, 6):
+    print(&quot;Step&quot;, step)</code></pre>
+<p>This prints steps 1 to 5.</p>
+<hr>
+<h2>4) Game turn loop with <code>while</code></h2>
+<p>Create <code>game_loop.py</code>:</p>
+<pre><code class="language-python">score = 0
+turn = 1
+
+while turn &lt;= 3:
+    move = input(&quot;Turn &quot; + str(turn) + &quot; - move (left/right): &quot;)
+
+    if move == &quot;left&quot;:
+        score = score + 10
+        print(&quot;Treasure! +10&quot;)
+    elif move == &quot;right&quot;:
+        print(&quot;Nothing here.&quot;)
+    else:
+        print(&quot;Invalid move.&quot;)
+
+    print(&quot;Score:&quot;, score)
+    turn = turn + 1
+
+print(&quot;Final score:&quot;, score)</code></pre>
+<p>Now you have repeating game turns.</p>
+<hr>
+<h2>5) Stop loops carefully</h2>
+<p>Every <code>while</code> loop must update something. If not, it may run forever.</p>
+<p>Bad example:</p>
+<pre><code class="language-python">count = 0
+while count &lt; 5:
+    print(count)</code></pre>
+<p><code>count</code> never changes, so loop never ends.</p>
+<p>Fix:</p>
+<pre><code class="language-python">count = 0
+while count &lt; 5:
+    print(count)
+    count = count + 1</code></pre>
+<hr>
+<h2>Common mistakes</h2>
+<h3>Mistake A: forgetting to change the loop variable</h3>
+<p>Causes infinite loop.</p>
+<h3>Mistake B: wrong indentation</h3>
+<p>Loop body must be indented.</p>
+<h3>Mistake C: using <code>=</code> inside condition</h3>
+<p>Use comparisons like <code>turn &lt;= 3</code>, not assignment.</p>
+<hr>
+<h2>New words</h2>
+<ul>
+<li><strong>loop</strong>: repeated code block</li>
+<li><strong>while loop</strong>: repeats while condition is true</li>
+<li><strong>for loop</strong>: repeats over a sequence/range</li>
+<li><strong>infinite loop</strong>: loop that never stops</li>
+</ul>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] I can write a <code>while</code> loop</li>
+<li>[] I can write a <code>for</code> loop</li>
+<li>[] I can make a turn-based game loop</li>
+</ul>
+<p>Next lesson: lists for maps and data groups.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Countdown with while</h2>
+<p>Create <code>countdown.py</code>:</p>
+<ol>
+<li>Start with <code>time_left = 5</code></li>
+<li>Use <code>while</code> to print countdown until 1</li>
+<li>Print <code>&quot;Go!&quot;</code> after loop ends</li>
+</ol>
+<hr>
+<h2>Part B: Three game turns</h2>
+<p>Create <code>three_turns.py</code>:</p>
+<ol>
+<li>Set <code>turn = 1</code></li>
+<li>Use a <code>while</code> loop for 3 turns</li>
+<li>Ask player for move each turn</li>
+<li>Print the move</li>
+</ol>
+<hr>
+<h2>Part C: For loop stars</h2>
+<p>Create <code>stars.py</code>:</p>
+<p>Use <code>for</code> and <code>range</code> to print:</p>
+<pre><code class="language-text">Star 1
+Star 2
+Star 3
+Star 4
+Star 5</code></pre>
+<hr>
+<h2>Part D: Fill in the blanks</h2>
+<pre><code class="language-python">turn = 1
+while turn ____ 3:
+    print(&quot;Turn&quot;, turn)
+    turn = turn + __
+
+for step in ______(1, 4):
+    print(&quot;Step&quot;, step)</code></pre>
+<hr>
+<h2>Part E: Fix the bugs</h2>
+<p>Fix this code so it runs correctly:</p>
+<pre><code class="language-python">score = 0
+while score &lt; 30
+    print(&quot;Score:&quot;, score)
+    score = score + 10
+
+for i in range(1 4):
+print(i)</code></pre>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can use <code>while</code> to repeat until a condition changes</li>
+<li>[] I can use <code>for</code> with <code>range</code></li>
+<li>[] I can avoid infinite loops</li>
+<li>[] I can fix common loop syntax errors</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">def main():
+    score = 0
+    turn = 1
+
+    while turn &lt;= 3:
+        move = input(&quot;Turn &quot; + str(turn) + &quot; - move (left/right): &quot;)
+
+        if move == &quot;left&quot;:
+            score = score + 10
+            print(&quot;Treasure! +10&quot;)
+        elif move == &quot;right&quot;:
+            print(&quot;Nothing here.&quot;)
+        else:
+            print(&quot;Invalid move.&quot;)
+
+        print(&quot;Score:&quot;, score)
+        turn = turn + 1
+
+    print(&quot;Final score:&quot;, score)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
