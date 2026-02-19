@@ -15,3 +15,4 @@ Each lesson directory should contain:
 
 - `TUTORIAL.md` - guided explanation with step-by-step instructions
 - `exercise.md` - hands-on practice for the lesson
+- `solution.py` - runnable reference solution for the lesson
