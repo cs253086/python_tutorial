@@ -20,5 +20,6 @@ This track is for kids with no coding experience.
 Each lesson directory contains:
 - `TUTORIAL.md`
 - `exercise.md`
+- `solution.py`
 
 More lessons will be added step by step.
