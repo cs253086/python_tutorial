@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 10 (Bonus): Random Events - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="09_polish_and_debug.html">Previous lesson</a> <a class="nav-pill" href="11_bonus_save_score.html">Next lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 10 (Bonus): Random Events</h1>
+      <p>add random events for replayable gameplay</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to bonus lesson 10.</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>use Python&#x27;s <code>random</code> module</li>
+<li>pick random events</li>
+<li>make your game different each time</li>
+</ul>
+<p>Randomness makes replaying the game more fun.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/10_bonus_random
+cd ~/kids_python_tutorial/beginner/10_bonus_random</code></pre>
+<hr>
+<h2>2) Import random</h2>
+<p>Create <code>random_demo.py</code>:</p>
+<pre><code class="language-python">import random
+
+number = random.randint(1, 6)
+print(&quot;Dice roll:&quot;, number)</code></pre>
+<p>Run it multiple times:</p>
+<pre><code class="language-bash">python3 random_demo.py</code></pre>
+<p>The number changes randomly.</p>
+<hr>
+<h2>3) Random choice from a list</h2>
+<p>Create <code>random_event.py</code>:</p>
+<pre><code class="language-python">import random
+
+events = [&quot;nothing&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;potion&quot;]
+event = random.choice(events)
+
+print(&quot;Random event:&quot;, event)</code></pre>
+<p>Now event changes every run.</p>
+<hr>
+<h2>4) Add random to game turn</h2>
+<p>Create <code>random_turn.py</code>:</p>
+<pre><code class="language-python">import random
+
+score = 0
+lives = 3
+
+for turn in range(1, 6):
+    event = random.choice([&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;])
+    print(&quot;Turn&quot;, turn, &quot;- event:&quot;, event)
+
+    if event == &quot;trap&quot;:
+        lives = lives - 1
+        print(&quot;You lost 1 life.&quot;)
+    elif event == &quot;treasure&quot;:
+        score = score + 10
+        print(&quot;You gained 10 score.&quot;)
+    else:
+        print(&quot;Nothing happened.&quot;)
+
+    print(&quot;Score:&quot;, score, &quot;| Lives:&quot;, lives)
+
+    if lives &lt;= 0:
+        print(&quot;Game over.&quot;)
+        break</code></pre>
+<p>This version feels new each play.</p>
+<hr>
+<h2>5) Optional: random room order</h2>
+<p>You can shuffle a list:</p>
+<pre><code class="language-python">import random
+
+rooms = [&quot;trap&quot;, &quot;empty&quot;, &quot;treasure&quot;, &quot;empty&quot;]
+random.shuffle(rooms)
+print(rooms)</code></pre>
+<p><code>shuffle</code> changes list order randomly.</p>
+<hr>
+<h2>Common mistakes</h2>
+<h3>Mistake A: forgetting <code>import random</code></h3>
+<p>Without import, <code>random.choice(...)</code> will fail.</p>
+<h3>Mistake B: using wrong function name</h3>
+<p>Use:</p>
+<ul>
+<li><code>random.randint(a, b)</code></li>
+<li><code>random.choice(list_name)</code></li>
+<li><code>random.shuffle(list_name)</code></li>
+</ul>
+<h3>Mistake C: expecting same output every run</h3>
+<p>Random means output can change each time.</p>
+<hr>
+<h2>New words</h2>
+<ul>
+<li><strong>random</strong>: unpredictable value or choice</li>
+<li><strong>module</strong>: Python file with ready-made tools</li>
+<li><strong>shuffle</strong>: mix order of list items</li>
+</ul>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] I can import and use <code>random</code></li>
+<li>[] I can choose random events</li>
+<li>[] I can make game runs feel different</li>
+</ul>
+<p>Next lesson (bonus): save high scores to a file.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Dice roller</h2>
+<p>Create <code>dice.py</code>:</p>
+<ol>
+<li>Import <code>random</code></li>
+<li>Roll a number from 1 to 6 using <code>randint</code></li>
+<li>Print the result</li>
+</ol>
+<hr>
+<h2>Part B: Random treasure</h2>
+<p>Create <code>treasure_or_trap.py</code>:</p>
+<ol>
+<li>Use <code>random.choice([&quot;treasure&quot;, &quot;trap&quot;])</code></li>
+<li>If treasure, print <code>&quot;+10 score&quot;</code></li>
+<li>If trap, print <code>&quot;-1 life&quot;</code></li>
+</ol>
+<hr>
+<h2>Part C: Random 3-turn game</h2>
+<p>Create <code>random_game.py</code>:</p>
+<ol>
+<li>Start with <code>score = 0</code>, <code>lives = 3</code></li>
+<li>Repeat 3 turns</li>
+<li>Randomly pick event from <code>[&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;]</code></li>
+<li>Update score/lives and print status</li>
+</ol>
+<hr>
+<h2>Part D: Fill in the blanks</h2>
+<pre><code class="language-python">import ______
+
+event = random.______([&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;])
+
+if event == &quot;treasure&quot;:
+    score = score + __
+elif event == &quot;trap&quot;:
+    lives = lives - __</code></pre>
+<hr>
+<h2>Part E: Fix the bugs</h2>
+<p>Fix this code:</p>
+<pre><code class="language-python">improt random
+event = random.choice(&quot;trap&quot;, &quot;treasure&quot;)
+if event = &quot;trap&quot;:
+    print(&quot;lose life&quot;)</code></pre>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can import and use <code>random</code></li>
+<li>[] I can use <code>choice</code> and <code>randint</code></li>
+<li>[] I can update game values from random events</li>
+<li>[] I can fix common random-related mistakes</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">import random
+
+
+def main():
+    score = 0
+    lives = 3
+
+    for turn in range(1, 6):
+        event = random.choice([&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;])
+        print(&quot;Turn&quot;, turn, &quot;- event:&quot;, event)
+
+        if event == &quot;trap&quot;:
+            lives = lives - 1
+            print(&quot;You lost 1 life.&quot;)
+        elif event == &quot;treasure&quot;:
+            score = score + 10
+            print(&quot;You gained 10 score.&quot;)
+        else:
+            print(&quot;Nothing happened.&quot;)
+
+        print(&quot;Score:&quot;, score, &quot;| Lives:&quot;, lives)
+
+        if lives &lt;= 0:
+            print(&quot;Game over.&quot;)
+            break
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

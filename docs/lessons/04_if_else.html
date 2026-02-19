@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 04: If / Else Decisions - Beginner Python</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+<nav class="top-nav">
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="03_input.html">Previous lesson</a> <a class="nav-pill" href="05_loops.html">Next lesson</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Lesson 04: If / Else Decisions</h1>
+      <p>make game decisions with if / elif / else</p>
+    </section>
+
+    <div class="content-layout">
+      <section class="card">
+        <h2>Tutorial</h2>
+        <p>Welcome to lesson 04.</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>make decisions with <code>if</code></li>
+<li>handle other cases with <code>elif</code> and <code>else</code></li>
+<li>use player choices to change game outcomes</li>
+</ul>
+<p>At the end, your game can react to choices like:</p>
+<ul>
+<li>left path -&gt; safe</li>
+<li>right path -&gt; trap</li>
+<li>unknown choice -&gt; ask again</li>
+</ul>
+<hr>
+<h2>What is <code>if</code>?</h2>
+<p><code>if</code> lets your program choose what to do.</p>
+<p>Example:</p>
+<pre><code class="language-python">choice = &quot;left&quot;
+
+if choice == &quot;left&quot;:
+    print(&quot;You found a safe path.&quot;)</code></pre>
+<p>If the condition is true, that block runs.</p>
+<hr>
+<h2>1) Create lesson folder</h2>
+<p>Open terminal and run:</p>
+<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/04_if_else
+cd ~/kids_python_tutorial/beginner/04_if_else</code></pre>
+<hr>
+<h2>2) First decision program</h2>
+<p>Create <code>path_check.py</code>:</p>
+<pre><code class="language-python">choice = input(&quot;Choose a path (left/right): &quot;)
+
+if choice == &quot;left&quot;:
+    print(&quot;Great! You found a torch.&quot;)
+else:
+    print(&quot;Oh no! You stepped on a trap.&quot;)</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 path_check.py</code></pre>
+<p>Try typing <code>left</code>, then run again and type <code>right</code>.</p>
+<hr>
+<h2>3) Add <code>elif</code> for more options</h2>
+<p>Create <code>room_event.py</code>:</p>
+<pre><code class="language-python">room = input(&quot;Enter room color (red/blue/gold): &quot;)
+
+if room == &quot;red&quot;:
+    print(&quot;A tiny spider appears. You lose 1 life.&quot;)
+elif room == &quot;blue&quot;:
+    print(&quot;You found a potion. +1 life.&quot;)
+elif room == &quot;gold&quot;:
+    print(&quot;Treasure chest! +20 score.&quot;)
+else:
+    print(&quot;That room does not exist.&quot;)</code></pre>
+<p>Now your game can handle many choices.</p>
+<hr>
+<h2>4) Conditions use <code>==</code></h2>
+<p>To compare values, use <code>==</code>.</p>
+<pre><code class="language-python">if choice == &quot;left&quot;:
+    print(&quot;Correct path&quot;)</code></pre>
+<p>Do not use <code>=</code> in conditions. <code>=</code> is for setting values.</p>
+<hr>
+<h2>5) Game mini-step: first turn logic</h2>
+<p>Create <code>game_turn.py</code>:</p>
+<pre><code class="language-python">player_name = input(&quot;Name: &quot;)
+move = input(&quot;Move (left/right/forward): &quot;)
+
+if move == &quot;left&quot;:
+    print(player_name, &quot;found treasure! +10 score&quot;)
+elif move == &quot;right&quot;:
+    print(player_name, &quot;met a trap! -1 life&quot;)
+elif move == &quot;forward&quot;:
+    print(player_name, &quot;found nothing. Keep going.&quot;)
+else:
+    print(&quot;Invalid move. Try left, right, or forward.&quot;)</code></pre>
+<p>Run:</p>
+<pre><code class="language-bash">python3 game_turn.py</code></pre>
+<p>You just added decision logic to your game.</p>
+<hr>
+<h2>Common mistakes</h2>
+<h3>Mistake A: using <code>=</code> instead of <code>==</code></h3>
+<p>Wrong:</p>
+<pre><code class="language-python">if move = &quot;left&quot;:</code></pre>
+<p>Fix:</p>
+<pre><code class="language-python">if move == &quot;left&quot;:</code></pre>
+<h3>Mistake B: missing colon <code>:</code></h3>
+<p>Wrong:</p>
+<pre><code class="language-python">if move == &quot;left&quot;
+    print(&quot;Safe&quot;)</code></pre>
+<p>Fix:</p>
+<pre><code class="language-python">if move == &quot;left&quot;:
+    print(&quot;Safe&quot;)</code></pre>
+<h3>Mistake C: wrong indentation</h3>
+<p>The line under <code>if</code> must be indented.</p>
+<hr>
+<h2>New words</h2>
+<ul>
+<li><strong>condition</strong>: true/false check</li>
+<li><strong>branch</strong>: one possible path in code</li>
+<li><strong>elif</strong>: &quot;else if&quot; for another condition</li>
+</ul>
+<hr>
+<h2>Mission complete when...</h2>
+<ul>
+<li>[] I can write <code>if</code>, <code>elif</code>, and <code>else</code></li>
+<li>[] I can compare with <code>==</code></li>
+<li>[] I can make game events based on player input</li>
+</ul>
+<p>Next lesson: loops for repeating turns.</p>
+      </section>
+
+      <section class="card">
+        <h2>Exercise</h2>
+        <p>Complete each part in order.</p>
+<h2>Part A: Door choice</h2>
+<p>Create <code>door_choice.py</code>:</p>
+<ol>
+<li>Ask: <code>&quot;Choose door (1/2): &quot;</code></li>
+<li>If choice is <code>1</code>, print <code>&quot;You found treasure!&quot;</code></li>
+<li>Else print <code>&quot;Trap! Lose 1 life.&quot;</code></li>
+</ol>
+<hr>
+<h2>Part B: Three outcomes</h2>
+<p>Create <code>weather_event.py</code>:</p>
+<ol>
+<li>Ask: <code>&quot;Weather (sun/rain/storm): &quot;</code></li>
+<li>Use <code>if / elif / else</code> to print different game events</li>
+</ol>
+<p>Example idea:</p>
+<ul>
+<li>sun -&gt; <code>&quot;Easy travel. +5 score&quot;</code></li>
+<li>rain -&gt; <code>&quot;Slow movement&quot;</code></li>
+<li>storm -&gt; <code>&quot;Danger! Find shelter&quot;</code></li>
+</ul>
+<hr>
+<h2>Part C: Fill in the blanks</h2>
+<pre><code class="language-python">move = input(&quot;Move (left/right): &quot;)
+
+if move ____ &quot;left&quot;:
+    print(&quot;Safe path&quot;)
+____ move == &quot;right&quot;:
+    print(&quot;Trap path&quot;)
+____:
+    print(&quot;Invalid move&quot;)</code></pre>
+<hr>
+<h2>Part D: Fix the bugs</h2>
+<p>Fix this code so it runs:</p>
+<pre><code class="language-python">choice = input(&quot;Path: &quot;)
+if choice = &quot;left&quot;
+print(&quot;Good&quot;)
+else
+    print(&quot;Bad&quot;)</code></pre>
+<hr>
+<h2>Success checklist</h2>
+<ul>
+<li>[] I can write <code>if / elif / else</code></li>
+<li>[] I can compare values with <code>==</code></li>
+<li>[] I can make different outputs from player choices</li>
+<li>[] I can fix common decision-code errors</li>
+</ul>
+      </section>
+
+      <section class="card">
+        <h2>Solution code</h2>
+        <details open>
+          <summary>View <code>solution.py</code></summary>
+          <pre><code class="language-python">def main():
+    player_name = input(&quot;Name: &quot;)
+    move = input(&quot;Move (left/right/forward): &quot;)
+
+    if move == &quot;left&quot;:
+        print(player_name, &quot;found treasure! +10 score&quot;)
+    elif move == &quot;right&quot;:
+        print(player_name, &quot;met a trap! -1 life&quot;)
+    elif move == &quot;forward&quot;:
+        print(player_name, &quot;found nothing. Keep going.&quot;)
+    else:
+        print(&quot;Invalid move. Try left, right, or forward.&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        </details>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
