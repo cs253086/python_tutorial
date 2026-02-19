@@ -10,6 +10,7 @@ This track is for kids with no coding experience.
 4. `03_input` - ask player name and choices with input()
 5. `04_if_else` - make game decisions with if / elif / else
 6. `05_loops` - repeat turns with while and for loops
+7. `06_lists` - store map rooms and inventory in lists
 
 Each lesson directory contains:
 - `TUTORIAL.md`
