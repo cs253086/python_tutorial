@@ -17,10 +17,11 @@
       <p>improve quality and fix bugs with confidence</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 09.</p>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 09.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>read error messages without panic</li>
@@ -128,11 +129,11 @@ print(&quot;Final score:&quot;, score)</code></pre>
 <li>[] I can improve game messages and flow</li>
 </ul>
 <p>Next lesson (bonus): random events.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete each part in order.</p>
 <h2>Part A: Input validator</h2>
 <p>Create <code>action_validator.py</code>:</p>
 <ol>
@@ -186,13 +187,13 @@ print(&quot;Final score:&quot;, score)</code></pre>
 <li>[] I can improve game wording and flow</li>
 <li>[] I can fix syntax and typo mistakes faster</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def get_valid_action():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def get_valid_action():
     while True:
         action = input(&quot;Type next or quit: &quot;).strip().lower()
         if action in [&quot;next&quot;, &quot;quit&quot;]:
@@ -223,9 +224,87 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def get_valid_action():
+    while True:
+        action = input("Type next or quit: ").strip().lower()
+        if action in ["next", "quit"]:
+            return action
+        print("Please type only: next or quit")
+
+
+def main():
+    print("Welcome to Treasure Hunt!")
+    score = 0
+
+    for turn in range(1, 4):
+        print()
+        print("Turn", turn)
+        action = get_valid_action()
+
+        if action == "quit":
+            print("You left the game early.")
+            break
+
+        score = score + 5
+        print("Great move! Score:", score)
+
+    print()
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def get_valid_action():
+    while True:
+        action = input("Type next or quit: ").strip().lower()
+        if action in ["next", "quit"]:
+            return action
+        print("Please type only: next or quit")
+
+
+def main():
+    print("Welcome to Treasure Hunt!")
+    score = 0
+
+    for turn in range(1, 4):
+        print()
+        print("Turn", turn)
+        action = get_valid_action()
+
+        if action == "quit":
+            print("You left the game early.")
+            break
+
+        score = score + 5
+        print("Great move! Score:", score)
+
+    print()
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

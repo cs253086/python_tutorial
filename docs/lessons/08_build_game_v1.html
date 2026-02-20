@@ -17,10 +17,11 @@
       <p>combine all basics into a playable text game</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 08.</p>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 08.</p>
 <p>This is your first full game build.</p>
 <p>In this lesson, you will combine:</p>
 <ul>
@@ -149,11 +150,11 @@ main()</code></pre>
 <li>[] You can win or lose</li>
 </ul>
 <p>Next lesson: polish and debugging.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete each part in order.</p>
 <h2>Part A: Run the base game</h2>
 <ol>
 <li>Copy the tutorial code into <code>treasure_hunt_v1.py</code></li>
@@ -217,13 +218,13 @@ while position &lt; len(rooms)
 <li>[] I can add a new room event</li>
 <li>[] I can debug common game-loop issues</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def show_title():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def show_title():
     print(&quot;================================&quot;)
     print(&quot;      TREASURE HUNT v1&quot;)
     print(&quot;================================&quot;)
@@ -297,9 +298,173 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def show_title():
+    print("================================")
+    print("      TREASURE HUNT v1")
+    print("================================")
+
+
+def handle_room(room, score, lives):
+    if room == "start":
+        print("You are at the start.")
+    elif room == "empty":
+        print("Empty room. Nothing happens.")
+    elif room == "trap":
+        print("Trap! You lose 1 life.")
+        lives = lives - 1
+    elif room == "treasure":
+        print("Treasure found! +20 score.")
+        score = score + 20
+    elif room == "exit":
+        print("You found the exit!")
+    else:
+        print("Unknown room.")
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print("Player:", name)
+    print("Room:", room)
+    print("Score:", score)
+    print("Lives:", lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input("Enter your explorer name: ")
+    score = 0
+    lives = 3
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == "exit":
+            print("You win!")
+            break
+
+        if lives &lt;= 0:
+            print("No lives left. Game over.")
+            break
+
+        action = input("Type 'next' to move, or 'quit' to stop: ")
+        if action == "next":
+            position = position + 1
+        elif action == "quit":
+            print("You ended the game.")
+            break
+        else:
+            print("Invalid action. Staying in current room.")
+
+    print()
+    print("Final score:", score)
+    print("Thanks for playing!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def show_title():
+    print("================================")
+    print("      TREASURE HUNT v1")
+    print("================================")
+
+
+def handle_room(room, score, lives):
+    if room == "start":
+        print("You are at the start.")
+    elif room == "empty":
+        print("Empty room. Nothing happens.")
+    elif room == "trap":
+        print("Trap! You lose 1 life.")
+        lives = lives - 1
+    elif room == "treasure":
+        print("Treasure found! +20 score.")
+        score = score + 20
+    elif room == "exit":
+        print("You found the exit!")
+    else:
+        print("Unknown room.")
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print("Player:", name)
+    print("Room:", room)
+    print("Score:", score)
+    print("Lives:", lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input("Enter your explorer name: ")
+    score = 0
+    lives = 3
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == "exit":
+            print("You win!")
+            break
+
+        if lives &lt;= 0:
+            print("No lives left. Game over.")
+            break
+
+        action = input("Type 'next' to move, or 'quit' to stop: ")
+        if action == "next":
+            position = position + 1
+        elif action == "quit":
+            print("You ended the game.")
+            break
+        else:
+            print("Invalid action. Staying in current room.")
+
+    print()
+    print("Final score:", score)
+    print("Thanks for playing!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

@@ -17,10 +17,11 @@
       <p>install Python and run first program</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to your first Python mission.</p>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to your first Python mission.</p>
 <p>In this lesson, you will:</p>
 <ul>
 <li>install Python on Ubuntu</li>
@@ -111,11 +112,11 @@ sudo apt install -y python3</code></pre>
 <li>[] You ran <code>python3 hello.py</code></li>
 </ul>
 <p>Great start. Next lesson: printing and strings.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete these tasks in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete these tasks in order.</p>
 <h2>Part A: Command practice</h2>
 <ol>
 <li>Open Terminal (<code>Ctrl + Alt + T</code>)</li>
@@ -161,13 +162,13 @@ cd ~/kids_python_tutorial/beginner/00_install_python_ubuntu</code></pre>
 <li>[] I can run Python interactive mode</li>
 <li>[] I can run a <code>.py</code> file</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     print(&quot;Hello, I am learning Python!&quot;)
     print(&quot;My first mission is complete.&quot;)
 
@@ -175,9 +176,41 @@ cd ~/kids_python_tutorial/beginner/00_install_python_ubuntu</code></pre>
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def main():
+    print("Hello, I am learning Python!")
+    print("My first mission is complete.")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    print("Hello, I am learning Python!")
+    print("My first mission is complete.")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

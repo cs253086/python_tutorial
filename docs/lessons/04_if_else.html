@@ -17,10 +17,11 @@
       <p>make game decisions with if / elif / else</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 04.</p>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 04.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>make decisions with <code>if</code></li>
@@ -127,11 +128,11 @@ else:
 <li>[] I can make game events based on player input</li>
 </ul>
 <p>Next lesson: loops for repeating turns.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete each part in order.</p>
 <h2>Part A: Door choice</h2>
 <p>Create <code>door_choice.py</code>:</p>
 <ol>
@@ -178,13 +179,13 @@ else
 <li>[] I can make different outputs from player choices</li>
 <li>[] I can fix common decision-code errors</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     player_name = input(&quot;Name: &quot;)
     move = input(&quot;Move (left/right/forward): &quot;)
 
@@ -201,9 +202,59 @@ else
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def main():
+    player_name = input("Name: ")
+    move = input("Move (left/right/forward): ")
+
+    if move == "left":
+        print(player_name, "found treasure! +10 score")
+    elif move == "right":
+        print(player_name, "met a trap! -1 life")
+    elif move == "forward":
+        print(player_name, "found nothing. Keep going.")
+    else:
+        print("Invalid move. Try left, right, or forward.")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    player_name = input("Name: ")
+    move = input("Move (left/right/forward): ")
+
+    if move == "left":
+        print(player_name, "found treasure! +10 score")
+    elif move == "right":
+        print(player_name, "met a trap! -1 life")
+    elif move == "forward":
+        print(player_name, "found nothing. Keep going.")
+    else:
+        print("Invalid move. Try left, right, or forward.")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

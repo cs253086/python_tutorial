@@ -17,10 +17,11 @@
       <p>store map rooms and inventory in lists</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 06.</p>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 06.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>store many values in one list</li>
@@ -121,11 +122,11 @@ print(inventory[2])</code></pre>
 <li>[] I can use a list as a simple game map</li>
 </ul>
 <p>Next lesson: functions to organize game code.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete each part in order.</p>
 <h2>Part A: Favorite items list</h2>
 <p>Create <code>favorites.py</code>:</p>
 <ol>
@@ -173,13 +174,13 @@ for i in items
 <li>[] I can loop through a list</li>
 <li>[] I can fix common list syntax issues</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     inventory = [&quot;torch&quot;, &quot;rope&quot;]
     print(&quot;Start inventory:&quot;, inventory)
 
@@ -203,9 +204,73 @@ for i in items
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def main():
+    inventory = ["torch", "rope"]
+    print("Start inventory:", inventory)
+
+    inventory.append("key")
+    inventory[1] = "magic rope"
+
+    print("Updated inventory:")
+    for item in inventory:
+        print("-", item)
+
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    print("Current room:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    inventory = ["torch", "rope"]
+    print("Start inventory:", inventory)
+
+    inventory.append("key")
+    inventory[1] = "magic rope"
+
+    print("Updated inventory:")
+    for item in inventory:
+        print("-", item)
+
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    print("Current room:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

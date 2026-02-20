@@ -31,3 +31,6 @@ Generate webpages from these lesson files:
 ```bash
 python3 scripts/build_beginner_site.py --source beginner --output docs
 ```
+
+Each lesson webpage also includes an in-browser Python console so kids can run
+and edit code directly while reading.
