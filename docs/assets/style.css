@@ -297,3 +297,16 @@ summary {
   min-height: 180px;
   max-height: 320px;
 }
+
+.browser-note {
+  border-left: 6px solid #4cc9f0;
+  background: #eefbff;
+}
+
+.browser-note h2 {
+  margin-bottom: 6px;
+}
+
+.browser-note p {
+  margin: 6px 0;
+}

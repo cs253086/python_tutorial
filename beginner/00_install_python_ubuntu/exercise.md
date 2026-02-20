@@ -1,65 +1,55 @@
-# Exercise: Python Setup Practice
+# Exercise: Browser Python Console Practice
 
 Complete these tasks in order.
 
-## Part A: Command practice
+## Part A: First run
 
-1. Open Terminal (`Ctrl + Alt + T`)
-2. Run:
+In the right-side console editor:
 
-```bash
-python3 --version
-```
-
-3. Run interactive Python:
-
-```bash
-python3
-```
-
-4. In Python, run:
+1. Type:
 
 ```python
 print("I can run Python!")
 ```
 
-5. Exit Python with:
+2. Click **Run code**
+3. Confirm output is shown
+
+---
+
+## Part B: Multiple lines
+
+Replace your code with:
 
 ```python
-exit()
+print("My name is ...")
+print("I am a Python explorer.")
+print("I finished lesson 00.")
 ```
+
+Click **Run code**.
 
 ---
 
-## Part B: First file
+## Part C: Edit and rerun
 
-1. Create a folder:
-
-```bash
-mkdir -p ~/kids_python_tutorial/beginner/00_install_python_ubuntu
-cd ~/kids_python_tutorial/beginner/00_install_python_ubuntu
-```
-
-2. Create `hello.py` with two `print(...)` lines.
-3. Run:
-
-```bash
-python3 hello.py
-```
+1. Change one line of text
+2. Click **Run code** again
+3. Confirm output changed
 
 ---
 
-## Part C: Fill in the blanks
+## Part D: Fill in the blanks
 
-1. The command to check Python version is: `__________`
-2. The command to run a file named `game.py` is: `__________`
-3. To leave Python interactive mode, type: `__________`
+1. The button to execute code is: `__________`
+2. The area that shows results is called: `__________`
+3. To restore starter code, click: `__________`
 
 ---
 
 ## Success checklist
 
-- [ ] I can open Terminal
-- [ ] I can check Python version
-- [ ] I can run Python interactive mode
-- [ ] I can run a `.py` file
+- [ ] I can run Python in the browser console
+- [ ] I can write and run multiple print lines
+- [ ] I can edit code and rerun
+- [ ] I can use Reset code

@@ -312,6 +312,19 @@ summary {
   min-height: 180px;
   max-height: 320px;
 }
+
+.browser-note {
+  border-left: 6px solid #4cc9f0;
+  background: #eefbff;
+}
+
+.browser-note h2 {
+  margin-bottom: 6px;
+}
+
+.browser-note p {
+  margin: 6px 0;
+}
 """.strip()
 
 PYTHON_CONSOLE_JS = r"""
@@ -717,6 +730,13 @@ def build_lesson_page(
     <section class="hero">
       <h1>{html.escape(lesson.title)}</h1>
       <p>{html.escape(lesson.description)}</p>
+    </section>
+
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
+      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
     </section>
 
     <div class="lesson-shell">

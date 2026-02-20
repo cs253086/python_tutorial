@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lesson 00: Install Python on Ubuntu - Beginner Python</title>
+  <title>Lesson 00: Start Python in Your Browser - Beginner Python</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -13,8 +13,15 @@
     </nav>
 
     <section class="hero">
-      <h1>Lesson 00: Install Python on Ubuntu</h1>
-      <p>install Python and run first program</p>
+      <h1>Lesson 00: Start Python in Your Browser</h1>
+      <p>start Python in the browser console</p>
+    </section>
+
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
+      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
     </section>
 
     <div class="lesson-shell">
@@ -24,92 +31,77 @@
           <p>Welcome to your first Python mission.</p>
 <p>In this lesson, you will:</p>
 <ul>
-<li>install Python on Ubuntu</li>
-<li>check that Python works</li>
-<li>run your first Python program</li>
+<li>use the in-browser Python console on the lesson page</li>
+<li>run your first Python code</li>
+<li>edit code and run it again</li>
 </ul>
 <p>This lesson is for complete beginners. Go slowly and celebrate each step.</p>
 <hr>
-<h2>1) Open Terminal</h2>
-<p>Terminal is where we type commands.</p>
-<p>On Ubuntu, press:</p>
+<h2>1) Open the lesson webpage</h2>
+<p>Open the beginner lesson website in your browser.</p>
+<p>On each lesson page, you will see a panel called:</p>
+<p><strong>Try Python in your browser</strong></p>
+<p>That panel is your coding area.</p>
+<hr>
+<h2>2) Find the console panel</h2>
+<p>In the right-side panel:</p>
 <ul>
-<li><code>Ctrl + Alt + T</code></li>
+<li>code editor box</li>
+<li><strong>Run code</strong> button</li>
+<li><strong>Reset code</strong> button</li>
+<li>output area</li>
 </ul>
-<p>You should see a window with text and a blinking cursor.</p>
+<p>You do not need to install Python for this lesson track.</p>
 <hr>
-<h2>2) Update package list</h2>
-<p>Type this command, then press Enter:</p>
-<pre><code class="language-bash">sudo apt update</code></pre>
-<p>What it does:</p>
-<ul>
-<li>asks Ubuntu for the latest list of software versions</li>
-</ul>
-<p>You may be asked for your password. This is normal.</p>
-<hr>
-<h2>3) Install Python</h2>
-<p>Type:</p>
-<pre><code class="language-bash">sudo apt install -y python3 python3-pip</code></pre>
-<p>What it installs:</p>
-<ul>
-<li><code>python3</code>: Python language</li>
-<li><code>python3-pip</code>: tool to install Python libraries later</li>
-</ul>
-<hr>
-<h2>4) Check Python version</h2>
-<p>Type:</p>
-<pre><code class="language-bash">python3 --version</code></pre>
-<p>Expected output looks like:</p>
-<pre><code class="language-text">Python 3.x.x</code></pre>
-<p>If you see a version, great job. Python is installed.</p>
-<hr>
-<h2>5) Run Python in interactive mode (REPL)</h2>
-<p>Type:</p>
-<pre><code class="language-bash">python3</code></pre>
-<p>You should see something like:</p>
-<pre><code class="language-text">&gt;&gt;&gt;</code></pre>
-<p>Now type:</p>
+<h2>3) Run your first code</h2>
+<p>In the code editor, type:</p>
 <pre><code class="language-python">print(&quot;Hello from Python!&quot;)</code></pre>
-<p>Press Enter. You should see the message printed.</p>
-<p>To exit, type:</p>
-<pre><code class="language-python">exit()</code></pre>
+<p>Click <strong>Run code</strong>.</p>
+<p>You should see:</p>
+<pre><code class="language-text">Hello from Python!</code></pre>
 <hr>
-<h2>6) Run your first Python file</h2>
-<p>Create a folder for your tutorial work:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/00_install_python_ubuntu
-cd ~/kids_python_tutorial/beginner/00_install_python_ubuntu</code></pre>
-<p>Create a file named <code>hello.py</code> with this code:</p>
+<h2>4) Change and run again</h2>
+<p>Now change the code to:</p>
 <pre><code class="language-python">print(&quot;Hello, I am learning Python!&quot;)
 print(&quot;My first mission is complete.&quot;)</code></pre>
-<p>Run it:</p>
-<pre><code class="language-bash">python3 hello.py</code></pre>
-<p>If you see two printed lines, your first Python file works.</p>
+<p>Click <strong>Run code</strong> again.</p>
+<p>When output changes, your code is working.</p>
+<hr>
+<h2>5) Use Reset button</h2>
+<p>If you want to go back to the lesson starter code:</p>
+<ol>
+<li>Click <strong>Reset code</strong></li>
+<li>Click <strong>Run code</strong></li>
+</ol>
+<p>This is useful when you test many ideas.</p>
 <hr>
 <h2>Common problems and fixes</h2>
-<h3>Problem: <code>python3: command not found</code></h3>
-<p>Run install again:</p>
-<pre><code class="language-bash">sudo apt update
-sudo apt install -y python3</code></pre>
-<h3>Problem: <code>Permission denied</code></h3>
-<p>Do not run your Python file with <code>sudo</code>. Use:</p>
-<pre><code class="language-bash">python3 hello.py</code></pre>
-<h3>Problem: typo in command</h3>
-<p>Read the error, correct spelling, and run again. Errors are normal for programmers.</p>
+<h3>Problem: runtime is loading for too long</h3>
+<p>Wait a few seconds first. If needed, refresh the page and try again.</p>
+<h3>Problem: no output</h3>
+<p>Make sure your code uses <code>print(...)</code>.</p>
+<h3>Problem: syntax error</h3>
+<p>Check:</p>
+<ul>
+<li>missing quotes</li>
+<li>missing <code>)</code></li>
+<li>typo in command name</li>
+</ul>
+<p>Errors are normal for programmers.</p>
 <hr>
 <h2>New words</h2>
 <ul>
-<li><strong>Terminal</strong>: Text window for commands</li>
-<li><strong>Command</strong>: Instruction typed in terminal</li>
-<li><strong>Python</strong>: Programming language</li>
-<li><strong>REPL</strong>: Interactive Python mode</li>
-<li><strong>Script</strong>: Python file (like <code>hello.py</code>)</li>
+<li><strong>Browser</strong>: app used to open webpages</li>
+<li><strong>Console</strong>: area where you run code</li>
+<li><strong>Output</strong>: result shown after code runs</li>
+<li><strong>Runtime</strong>: engine that executes code</li>
 </ul>
 <hr>
 <h2>Mission complete when...</h2>
 <ul>
-<li>[] <code>python3 --version</code> works</li>
-<li>[] You opened Python REPL and used <code>print(...)</code></li>
-<li>[] You ran <code>python3 hello.py</code></li>
+<li>[] I found the right-side Python console</li>
+<li>[] I ran <code>print(&quot;Hello from Python!&quot;)</code></li>
+<li>[] I changed code and ran it again</li>
 </ul>
 <p>Great start. Next lesson: printing and strings.</p>
         </section>
@@ -117,50 +109,44 @@ sudo apt install -y python3</code></pre>
         <section class="card">
           <h2>Exercise</h2>
           <p>Complete these tasks in order.</p>
-<h2>Part A: Command practice</h2>
+<h2>Part A: First run</h2>
+<p>In the right-side console editor:</p>
 <ol>
-<li>Open Terminal (<code>Ctrl + Alt + T</code>)</li>
-<li>Run:</li>
-</ol>
-<pre><code class="language-bash">python3 --version</code></pre>
-<ol>
-<li>Run interactive Python:</li>
-</ol>
-<pre><code class="language-bash">python3</code></pre>
-<ol>
-<li>In Python, run:</li>
+<li>Type:</li>
 </ol>
 <pre><code class="language-python">print(&quot;I can run Python!&quot;)</code></pre>
 <ol>
-<li>Exit Python with:</li>
+<li>Click <strong>Run code</strong></li>
+<li>Confirm output is shown</li>
 </ol>
-<pre><code class="language-python">exit()</code></pre>
 <hr>
-<h2>Part B: First file</h2>
-<ol>
-<li>Create a folder:</li>
-</ol>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/00_install_python_ubuntu
-cd ~/kids_python_tutorial/beginner/00_install_python_ubuntu</code></pre>
-<ol>
-<li>Create <code>hello.py</code> with two <code>print(...)</code> lines.</li>
-<li>Run:</li>
-</ol>
-<pre><code class="language-bash">python3 hello.py</code></pre>
+<h2>Part B: Multiple lines</h2>
+<p>Replace your code with:</p>
+<pre><code class="language-python">print(&quot;My name is ...&quot;)
+print(&quot;I am a Python explorer.&quot;)
+print(&quot;I finished lesson 00.&quot;)</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <hr>
-<h2>Part C: Fill in the blanks</h2>
+<h2>Part C: Edit and rerun</h2>
 <ol>
-<li>The command to check Python version is: <code>__________</code></li>
-<li>The command to run a file named <code>game.py</code> is: <code>__________</code></li>
-<li>To leave Python interactive mode, type: <code>__________</code></li>
+<li>Change one line of text</li>
+<li>Click <strong>Run code</strong> again</li>
+<li>Confirm output changed</li>
+</ol>
+<hr>
+<h2>Part D: Fill in the blanks</h2>
+<ol>
+<li>The button to execute code is: <code>__________</code></li>
+<li>The area that shows results is called: <code>__________</code></li>
+<li>To restore starter code, click: <code>__________</code></li>
 </ol>
 <hr>
 <h2>Success checklist</h2>
 <ul>
-<li>[] I can open Terminal</li>
-<li>[] I can check Python version</li>
-<li>[] I can run Python interactive mode</li>
-<li>[] I can run a <code>.py</code> file</li>
+<li>[] I can run Python in the browser console</li>
+<li>[] I can write and run multiple print lines</li>
+<li>[] I can edit code and rerun</li>
+<li>[] I can use Reset code</li>
 </ul>
         </section>
 
