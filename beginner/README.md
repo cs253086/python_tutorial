@@ -4,7 +4,7 @@ This track is for kids with no coding experience.
 
 ## Lessons
 
-1. `00_install_python_ubuntu` - install Python and run first program
+1. `00_start_python_browser` - start Python in the browser console
 2. `01_first_program_print` - learn print, strings, and game intro output
 3. `02_variables` - store player name, score, and lives
 4. `03_input` - ask player name and choices with input()
@@ -31,3 +31,6 @@ Generate webpages from these lesson files:
 ```bash
 python3 scripts/build_beginner_site.py --source beginner --output docs
 ```
+
+Each lesson webpage also includes an in-browser Python console so kids can run
+and edit code directly while reading.

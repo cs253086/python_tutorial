@@ -17,10 +17,18 @@
       <p>save and load high scores with files</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to bonus lesson 11.</p>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
+      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+    </section>
+
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to bonus lesson 11.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>write text to a file</li>
@@ -111,11 +119,11 @@ else:
 <li>[] I can update high score only when score is better</li>
 </ul>
 <p>Great work. You finished the beginner tutorial track.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
+        <section class="card">
+          <h2>Exercise</h2>
+          <p>Complete each part in order.</p>
 <h2>Part A: Save your score</h2>
 <p>Create <code>save_my_score.py</code>:</p>
 <ol>
@@ -163,13 +171,13 @@ with open(&quot;high_score.txt&quot;, r) as f:
 <li>[] I can compare and update high score</li>
 <li>[] I can fix common file I/O mistakes</li>
 </ul>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">import os
+        <section class="card">
+          <h2>Solution code</h2>
+          <details open>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">import os
 
 
 def load_high_score(path):
@@ -203,9 +211,27 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Try Python in your browser</h2>
+          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

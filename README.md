@@ -32,3 +32,6 @@ python3 scripts/build_beginner_site.py --source beginner --output docs
 ```
 
 Then open `docs/index.html` in a browser.
+
+Each lesson page includes an in-browser Python console powered by Pyodide.
+Use the **Run code** button to execute Python directly in the browser.
