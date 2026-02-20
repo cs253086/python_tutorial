@@ -236,68 +236,10 @@ if __name__ == &quot;__main__&quot;:
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
           <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false">def show_title():
-    print("=== TREASURE HUNT ===")
-
-
-def get_move():
-    return input("Move (left/right): ")
-
-
-def apply_move(move, score):
-    if move == "left":
-        print("Treasure found! +10")
-        return score + 10
-    if move == "right":
-        print("Empty room.")
-        return score
-    print("Invalid move.")
-    return score
-
-
-def main():
-    show_title()
-    score = 0
-    move = get_move()
-    score = apply_move(move, score)
-    print("Score:", score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
-          <textarea class="console-starter" hidden>def show_title():
-    print("=== TREASURE HUNT ===")
-
-
-def get_move():
-    return input("Move (left/right): ")
-
-
-def apply_move(move, score):
-    if move == "left":
-        print("Treasure found! +10")
-        return score + 10
-    if move == "right":
-        print("Empty room.")
-        return score
-    print("Invalid move.")
-    return score
-
-
-def main():
-    show_title()
-    score = 0
-    move = get_move()
-    score = apply_move(move, score)
-    print("Score:", score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

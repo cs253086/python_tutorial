@@ -720,7 +720,6 @@ def build_lesson_page(
     exercise_html = render_markdown(strip_first_h1(lesson.exercise_md))
     tutorial_html = render_markdown(strip_first_h1(lesson.tutorial_md))
     solution_html = html.escape(lesson.solution_code)
-    solution_textarea_html = html.escape(lesson.solution_code, quote=False)
 
     body = f"""
     <nav class="top-nav">
@@ -763,10 +762,10 @@ def build_lesson_page(
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
           <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false">{solution_textarea_html}</textarea>
-          <textarea class="console-starter" hidden>{solution_textarea_html}</textarea>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

@@ -218,76 +218,10 @@ if __name__ == &quot;__main__&quot;:
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
           <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false">import os
-
-
-def load_high_score(path):
-    if not os.path.exists(path):
-        return 0
-
-    with open(path, "r", encoding="utf-8") as file:
-        content = file.read().strip()
-    if content == "":
-        return 0
-    return int(content)
-
-
-def save_high_score(path, score):
-    with open(path, "w", encoding="utf-8") as file:
-        file.write(str(score))
-
-
-def main():
-    score_file = "high_score.txt"
-    current_score = int(input("Current score: "))
-    high_score = load_high_score(score_file)
-
-    if current_score &gt; high_score:
-        save_high_score(score_file, current_score)
-        print("New high score saved:", current_score)
-    else:
-        print("High score stays:", high_score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
-          <textarea class="console-starter" hidden>import os
-
-
-def load_high_score(path):
-    if not os.path.exists(path):
-        return 0
-
-    with open(path, "r", encoding="utf-8") as file:
-        content = file.read().strip()
-    if content == "":
-        return 0
-    return int(content)
-
-
-def save_high_score(path, score):
-    with open(path, "w", encoding="utf-8") as file:
-        file.write(str(score))
-
-
-def main():
-    score_file = "high_score.txt"
-    current_score = int(input("Current score: "))
-    high_score = load_high_score(score_file)
-
-    if current_score &gt; high_score:
-        save_high_score(score_file, current_score)
-        print("New high score saved:", current_score)
-    else:
-        print("High score stays:", high_score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

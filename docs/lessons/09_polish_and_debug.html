@@ -238,70 +238,10 @@ if __name__ == &quot;__main__&quot;:
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
           <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit lesson code right here. This uses an in-browser Python runtime (Pyodide).</p>
+          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false">def get_valid_action():
-    while True:
-        action = input("Type next or quit: ").strip().lower()
-        if action in ["next", "quit"]:
-            return action
-        print("Please type only: next or quit")
-
-
-def main():
-    print("Welcome to Treasure Hunt!")
-    score = 0
-
-    for turn in range(1, 4):
-        print()
-        print("Turn", turn)
-        action = get_valid_action()
-
-        if action == "quit":
-            print("You left the game early.")
-            break
-
-        score = score + 5
-        print("Great move! Score:", score)
-
-    print()
-    print("Final score:", score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
-          <textarea class="console-starter" hidden>def get_valid_action():
-    while True:
-        action = input("Type next or quit: ").strip().lower()
-        if action in ["next", "quit"]:
-            return action
-        print("Please type only: next or quit")
-
-
-def main():
-    print("Welcome to Treasure Hunt!")
-    score = 0
-
-    for turn in range(1, 4):
-        print()
-        print("Turn", turn)
-        action = get_valid_action()
-
-        if action == "quit":
-            print("You left the game early.")
-            break
-
-        score = score + 5
-        print("Great move! Score:", score)
-
-    print()
-    print("Final score:", score)
-
-
-if __name__ == "__main__":
-    main()
-</textarea>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>
