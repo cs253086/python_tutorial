@@ -48,7 +48,7 @@ a:hover {
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px 18px 40px;
 }
@@ -226,7 +226,7 @@ summary {
 
 @media (min-width: 1080px) {
   .lesson-shell {
-    grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    grid-template-columns: minmax(0, 2fr) minmax(420px, 1fr);
     align-items: start;
   }
 
@@ -258,7 +258,7 @@ summary {
 
 .console-editor {
   width: 100%;
-  min-height: 260px;
+  min-height: 380px;
   border: 1px solid #bdccf7;
   border-radius: 10px;
   padding: 10px;
@@ -309,8 +309,8 @@ summary {
 
 .console-output {
   margin-top: 10px;
-  min-height: 180px;
-  max-height: 320px;
+  min-height: 280px;
+  max-height: 500px;
 }
 
 .browser-note {
