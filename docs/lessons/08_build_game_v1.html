@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -42,13 +41,8 @@
 </ul>
 <p>At the end, you will have a playable <strong>Treasure Hunt v1</strong> text game.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/08_build_game_v1
-cd ~/kids_python_tutorial/beginner/08_build_game_v1</code></pre>
-<hr>
-<h2>2) Create the full game file</h2>
-<p>Create <code>treasure_hunt_v1.py</code> and paste:</p>
+<h2>1) Build the full game in the Playground</h2>
+<p>In the Playground editor, type (or type the code from the tutorial):</p>
 <pre><code class="language-python">def show_title():
     print(&quot;================================&quot;)
     print(&quot;      TREASURE HUNT v1&quot;)
@@ -121,10 +115,9 @@ def main():
 
 
 main()</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 treasure_hunt_v1.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <hr>
-<h2>3) How the game works</h2>
+<h2>2) How the game works</h2>
 <ul>
 <li><code>rooms</code> list stores the map path</li>
 <li><code>position</code> tracks where player is</li>
@@ -133,103 +126,18 @@ main()</code></pre>
 <li>functions keep code organized</li>
 </ul>
 <hr>
-<h2>4) Try simple improvements</h2>
+<h2>3) Try simple improvements</h2>
 <ol>
 <li>Change room order in <code>rooms</code></li>
 <li>Change trap damage (lose 2 lives)</li>
 <li>Change treasure points</li>
 <li>Add one more room type and event</li>
 </ol>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: indentation errors</h3>
-<p>Python blocks must be aligned correctly.</p>
-<h3>Mistake B: typo in room names</h3>
-<p>If <code>rooms</code> has <code>&quot;tresure&quot;</code> instead of <code>&quot;treasure&quot;</code>, event logic may fail.</p>
-<h3>Mistake C: forgetting to update <code>position</code></h3>
-<p>Without <code>position = position + 1</code>, game does not move.</p>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] The game starts and asks for player name</li>
-<li>[] You can move through rooms using <code>next</code></li>
-<li>[] Score and lives update correctly</li>
-<li>[] You can win or lose</li>
-</ul>
-<p>Next lesson: polish and debugging.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Run the base game</h2>
-<ol>
-<li>Copy the tutorial code into <code>treasure_hunt_v1.py</code></li>
-<li>Run:</li>
-</ol>
-<pre><code class="language-bash">python3 treasure_hunt_v1.py</code></pre>
-<ol>
-<li>Play once until win or game over</li>
-</ol>
-<hr>
-<h2>Part B: Customize the game</h2>
-<p>Make all these changes:</p>
-<ol>
-<li>Change game title text</li>
-<li>Change starting lives from 3 to 5</li>
-<li>Change treasure bonus from +20 to +30</li>
-<li>Add one new room in the <code>rooms</code> list</li>
-</ol>
-<hr>
-<h2>Part C: Add one new room event</h2>
-<p>Add room type <code>&quot;healer&quot;</code> that gives +1 life.</p>
-<p>Update both:</p>
-<ul>
-<li><code>rooms</code> list</li>
-<li><code>handle_room(...)</code> logic</li>
-</ul>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<pre><code class="language-python">rooms = [&quot;start&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;exit&quot;]
-position = 0
-score = 0
-lives = 3
-
-while lives ____ 0 and position &lt; ______(rooms):
-    room = rooms[position]
-    if room == &quot;trap&quot;:
-        lives = lives - 1
-    elif room == &quot;treasure&quot;:
-        score = score + __
-    elif room == &quot;exit&quot;:
-        print(&quot;You win!&quot;)
-        _____
-
-    position = position + 1</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">rooms = [&quot;start&quot;, &quot;trap&quot;, &quot;exit&quot;]
-position = 0
-
-while position &lt; len(rooms)
-    room = rooms[position]
-    if room = &quot;trap&quot;:
-        print(&quot;Lose life&quot;)
-    position = position + 1</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can run a complete text game</li>
-<li>[] I can customize score, lives, and rooms</li>
-<li>[] I can add a new room event</li>
-<li>[] I can debug common game-loop issues</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">def show_title():
     print(&quot;================================&quot;)
@@ -311,11 +219,69 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def show_title():
+    print("=== TREASURE HUNT ===")
+
+
+def get_move():
+    return input("Move (left/right): ")
+
+
+def apply_move(move, score):
+    if move == "left":
+        print("Treasure found! +10")
+        return score + 10
+    if move == "right":
+        print("Empty room.")
+        return score
+    print("Invalid move.")
+    return score
+
+
+def main():
+    show_title()
+    score = 0
+    move = get_move()
+    score = apply_move(move, score)
+    print("Score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def show_title():
+    print("=== TREASURE HUNT ===")
+
+
+def get_move():
+    return input("Move (left/right): ")
+
+
+def apply_move(move, score):
+    if move == "left":
+        print("Treasure found! +10")
+        return score + 10
+    if move == "right":
+        print("Empty room.")
+        return score
+    print("Invalid move.")
+    return score
+
+
+def main():
+    show_title()
+    score = 0
+    move = get_move()
+    score = apply_move(move, score)
+    print("Score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

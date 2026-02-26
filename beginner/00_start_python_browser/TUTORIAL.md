@@ -17,7 +17,7 @@ Open the beginner lesson website in your browser.
 
 On each lesson page, you will see a panel called:
 
-**Try Python in your browser**
+**Python Playground**
 
 That panel is your coding area.
 
@@ -71,50 +71,5 @@ When output changes, your code is working.
 
 ## 5) Use Reset button
 
-If you want to go back to the lesson starter code:
+**Reset code** puts the lesson’s default starter code back in the editor. Click it when you want to start over; then click **Run code** to run it.
 
-1. Click **Reset code**
-2. Click **Run code**
-
-This is useful when you test many ideas.
-
----
-
-## Common problems and fixes
-
-### Problem: runtime is loading for too long
-
-Wait a few seconds first.
-If needed, refresh the page and try again.
-
-### Problem: no output
-
-Make sure your code uses `print(...)`.
-
-### Problem: syntax error
-
-Check:
-- missing quotes
-- missing `)`
-- typo in command name
-
-Errors are normal for programmers.
-
----
-
-## New words
-
-- **Browser**: app used to open webpages
-- **Console**: area where you run code
-- **Output**: result shown after code runs
-- **Runtime**: engine that executes code
-
----
-
-## Mission complete when...
-
-- [ ] I found the right-side Python console
-- [ ] I ran `print("Hello from Python!")`
-- [ ] I changed code and ran it again
-
-Great start. Next lesson: printing and strings.

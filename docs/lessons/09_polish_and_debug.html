@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -42,24 +41,19 @@
 <p>Debugging means finding and fixing mistakes in code.</p>
 <p>Every programmer debugs. Errors are normal, not failure.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/09_polish_and_debug
-cd ~/kids_python_tutorial/beginner/09_polish_and_debug</code></pre>
-<hr>
-<h2>2) Read errors in 3 steps</h2>
-<p>When Python shows an error:</p>
+<h2>1) Read errors in 3 steps</h2>
+<p>When Python shows an error in the output area:</p>
 <ol>
 <li>Read the last line (error type)</li>
-<li>Read the line number</li>
-<li>Open that line and fix the typo/syntax</li>
+<li>Note the line number</li>
+<li>Fix the typo or syntax in the editor</li>
 </ol>
 <p>Example error:</p>
 <pre><code class="language-text">SyntaxError: expected &#x27;:&#x27;</code></pre>
 <p>This usually means a missing <code>:</code> after <code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>, <code>for</code>, or <code>def</code>.</p>
 <hr>
-<h2>3) Add input validation</h2>
-<p>Create <code>validated_move.py</code>:</p>
+<h2>2) Add input validation</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">def get_move():
     while True:
         move = input(&quot;Move (left/right/forward): &quot;).strip().lower()
@@ -72,7 +66,7 @@ player_move = get_move()
 print(&quot;Accepted move:&quot;, player_move)</code></pre>
 <p>This prevents invalid input from breaking game flow.</p>
 <hr>
-<h2>4) Improve game messages (polish)</h2>
+<h2>3) Improve game messages (polish)</h2>
 <p>Small improvements matter:</p>
 <ul>
 <li>clear instructions</li>
@@ -83,8 +77,8 @@ print(&quot;Accepted move:&quot;, player_move)</code></pre>
 <pre><code class="language-python">print(&quot;=== TREASURE HUNT ===&quot;)
 print(&quot;Tip: type left, right, or forward.&quot;)</code></pre>
 <hr>
-<h2>5) Game mini-step: polished turn</h2>
-<p>Create <code>polished_turn.py</code>:</p>
+<h2>4) Game mini-step: polished turn</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">def get_valid_action():
     while True:
         action = input(&quot;Type next or quit: &quot;).strip().lower()
@@ -121,84 +115,11 @@ print(&quot;Final score:&quot;, score)</code></pre>
 <li>Did I type function names correctly?</li>
 <li>Did I use <code>==</code> in conditions?</li>
 </ul>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>debug</strong>: find and fix code errors</li>
-<li><strong>validation</strong>: checking input before using it</li>
-<li><strong>polish</strong>: small improvements to quality and clarity</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can read Python errors and fix simple issues</li>
-<li>[] I can validate input in a loop</li>
-<li>[] I can improve game messages and flow</li>
-</ul>
-<p>Next lesson (bonus): random events.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Input validator</h2>
-<p>Create <code>action_validator.py</code>:</p>
-<ol>
-<li>Ask for action: <code>next</code> or <code>quit</code></li>
-<li>Repeat asking until input is valid</li>
-<li>Print accepted action</li>
-</ol>
-<p>Use:</p>
-<ul>
-<li><code>while True</code></li>
-<li><code>if action in [...]</code></li>
-</ul>
-<hr>
-<h2>Part B: Add polished messages</h2>
-<p>In your game file from lesson 08:</p>
-<ol>
-<li>Add a title block at the start</li>
-<li>Add one help line for controls</li>
-<li>Make win/lose messages friendlier</li>
-</ol>
-<hr>
-<h2>Part C: Fill in the blanks</h2>
-<pre><code class="language-python">while ____:
-    move = input(&quot;Move: &quot;).strip().lower()
-    if move in [&quot;left&quot;, &quot;right&quot;]:
-        ______ move
-    print(&quot;Invalid move&quot;)</code></pre>
-<hr>
-<h2>Part D: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">def get_action():
-    while True
-        action = input(&quot;next/quit: &quot;).lower(
-        if action in [&quot;next&quot;, &quot;quit&quot;]
-            return action
-        print(&quot;invalid&quot;)</code></pre>
-<hr>
-<h2>Part E: Error reading practice</h2>
-<p>When you see an error, write down:</p>
-<ol>
-<li>Error type (for example: <code>SyntaxError</code>)</li>
-<li>Line number</li>
-<li>What you changed to fix it</li>
-</ol>
-<p>Do this for at least 2 errors while practicing.</p>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can validate player input</li>
-<li>[] I can read and use error messages</li>
-<li>[] I can improve game wording and flow</li>
-<li>[] I can fix syntax and typo mistakes faster</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">def get_valid_action():
     while True:
@@ -237,11 +158,157 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def show_title():
+    print("=================================")
+    print("      TREASURE HUNT v1")
+    print("=================================")
+
+
+def handle_room(room, score, lives):
+    if room == "start":
+        print("You are at the start.")
+    elif room == "empty":
+        print("Empty room. Nothing happens.")
+    elif room == "trap":
+        print("Trap! You lose 1 life.")
+        lives = lives - 1
+    elif room == "treasure":
+        print("Treasure found! +20 score.")
+        score = score + 20
+    elif room == "exit":
+        print("You found the exit!")
+    else:
+        print("Unknown room.")
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print("Player:", name)
+    print("Room:", room)
+    print("Score:", score)
+    print("Lives:", lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input("Enter your explorer name: ")
+    score = 0
+    lives = 3
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == "exit":
+            print("You win!")
+            break
+
+        if lives &lt;= 0:
+            print("No lives left. Game over.")
+            break
+
+        action = input("Type 'next' to move, or 'quit' to stop: ")
+        if action == "next":
+            position = position + 1
+        elif action == "quit":
+            print("You ended the game.")
+            break
+        else:
+            print("Invalid action. Staying in current room.")
+
+    print()
+    print("Final score:", score)
+    print("Thanks for playing!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def show_title():
+    print("=================================")
+    print("      TREASURE HUNT v1")
+    print("=================================")
+
+
+def handle_room(room, score, lives):
+    if room == "start":
+        print("You are at the start.")
+    elif room == "empty":
+        print("Empty room. Nothing happens.")
+    elif room == "trap":
+        print("Trap! You lose 1 life.")
+        lives = lives - 1
+    elif room == "treasure":
+        print("Treasure found! +20 score.")
+        score = score + 20
+    elif room == "exit":
+        print("You found the exit!")
+    else:
+        print("Unknown room.")
+
+    return score, lives
+
+
+def show_status(name, score, lives, room):
+    print()
+    print("Player:", name)
+    print("Room:", room)
+    print("Score:", score)
+    print("Lives:", lives)
+    print()
+
+
+def main():
+    show_title()
+
+    player_name = input("Enter your explorer name: ")
+    score = 0
+    lives = 3
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    while lives &gt; 0 and position &lt; len(rooms):
+        current_room = rooms[position]
+        show_status(player_name, score, lives, current_room)
+
+        score, lives = handle_room(current_room, score, lives)
+
+        if current_room == "exit":
+            print("You win!")
+            break
+
+        if lives &lt;= 0:
+            print("No lives left. Game over.")
+            break
+
+        action = input("Type 'next' to move, or 'quit' to stop: ")
+        if action == "next":
+            position = position + 1
+        elif action == "quit":
+            print("You ended the game.")
+            break
+        else:
+            print("Invalid action. Staying in current room.")
+
+    print()
+    print("Final score:", score)
+    print("Thanks for playing!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

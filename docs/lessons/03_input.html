@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -48,28 +47,20 @@
 print(&quot;Hello,&quot;, name)</code></pre>
 <p>When the player types a name, Python stores it in <code>name</code>.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/03_input
-cd ~/kids_python_tutorial/beginner/03_input</code></pre>
-<hr>
-<h2>2) First input program</h2>
-<p>Create <code>ask_name.py</code> and add:</p>
+<h2>1) First input in the Playground</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">player_name = input(&quot;Enter your explorer name: &quot;)
 print(&quot;Welcome,&quot;, player_name)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 ask_name.py</code></pre>
-<p>Type a name and press Enter.</p>
+<p>Click <strong>Run code</strong>. When prompted, type a name and press Enter.</p>
 <hr>
-<h2>3) Ask for a game choice</h2>
-<p>Create <code>choose_move.py</code>:</p>
+<h2>2) Ask for a game choice</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">move = input(&quot;Choose a move (left/right): &quot;)
 print(&quot;You chose:&quot;, move)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 choose_move.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>Now your game can listen to the player.</p>
 <hr>
-<h2>4) Input is text by default</h2>
+<h2>3) Input is text by default</h2>
 <p>Important: <code>input()</code> gives a string (text), not a number.</p>
 <p>Example:</p>
 <pre><code class="language-python">lives_text = input(&quot;How many lives? &quot;)
@@ -78,107 +69,21 @@ print(&quot;You typed:&quot;, lives_text)</code></pre>
 <pre><code class="language-python">lives = int(input(&quot;How many lives? &quot;))
 print(&quot;Starting lives:&quot;, lives)</code></pre>
 <hr>
-<h2>5) Game mini-step: start screen with name and move</h2>
-<p>Create <code>game_start.py</code>:</p>
+<h2>4) Game mini-step: start screen with name and move</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">print(&quot;=== TREASURE HUNT ===&quot;)
 player_name = input(&quot;What is your name? &quot;)
 print(&quot;Hello,&quot;, player_name)
 
 move = input(&quot;Choose your first move (left/right): &quot;)
 print(player_name, &quot;moves&quot;, move)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 game_start.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>You now have a game that talks with the player.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: forgetting parentheses</h3>
-<pre><code class="language-python">name = input</code></pre>
-<p>Fix:</p>
-<pre><code class="language-python">name = input(&quot;What is your name? &quot;)</code></pre>
-<h3>Mistake B: forgetting quotes in message</h3>
-<pre><code class="language-python">name = input(What is your name?)</code></pre>
-<p>Fix:</p>
-<pre><code class="language-python">name = input(&quot;What is your name? &quot;)</code></pre>
-<h3>Mistake C: typing text when <code>int()</code> is used</h3>
-<p>If code uses:</p>
-<pre><code class="language-python">age = int(input(&quot;Age: &quot;))</code></pre>
-<p>and player types <code>ten</code>, Python errors. Type numbers like <code>10</code>.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>input()</strong>: asks user for typed text</li>
-<li><strong>prompt</strong>: the message shown before typing</li>
-<li><strong>convert</strong>: change one type to another (like text to number)</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can ask for player name with <code>input()</code></li>
-<li>[] I can store and print player input</li>
-<li>[] I understand <code>input()</code> returns text</li>
-</ul>
-<p>Next lesson: if/else decisions.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Ask and greet</h2>
-<p>Create <code>greet_player.py</code>:</p>
-<ol>
-<li>Ask for player name</li>
-<li>Print a welcome message using that name</li>
-</ol>
-<p>Run:</p>
-<pre><code class="language-bash">python3 greet_player.py</code></pre>
-<hr>
-<h2>Part B: Choose a path</h2>
-<p>Create <code>path_choice.py</code>:</p>
-<ol>
-<li>Ask: <code>&quot;Choose a path (forest/cave): &quot;</code></li>
-<li>Print what the player chose</li>
-</ol>
-<hr>
-<h2>Part C: Number input</h2>
-<p>Create <code>set_lives.py</code>:</p>
-<ol>
-<li>Ask for number of lives</li>
-<li>Convert input to integer using <code>int(...)</code></li>
-<li>Print the starting lives</li>
-</ol>
-<p>Example output:</p>
-<pre><code class="language-text">Starting lives: 3</code></pre>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<p>Complete this code:</p>
-<pre><code class="language-python">player_name = ________(&quot;What is your name? &quot;)
-print(&quot;Hello,&quot;, ____________)
-
-move = input(&quot;Move (left/right): &quot;)
-print(&quot;You chose:&quot;, ________)
-
-lives = ____ (input(&quot;Lives: &quot;))
-print(&quot;Lives:&quot;, lives)</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code so it runs:</p>
-<pre><code class="language-python">name = input What is your name?
-print(&quot;Hi&quot;, name
-move = inpt(&quot;Move: &quot;)
-print(&quot;Move:&quot;, move)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can use <code>input()</code> with a prompt</li>
-<li>[] I can store user answers in variables</li>
-<li>[] I can convert input text to integer with <code>int()</code></li>
-<li>[] I can fix basic input mistakes</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">def main():
     print(&quot;=== TREASURE HUNT ===&quot;)
@@ -201,11 +106,49 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def main():
+    player_name = "Explorer"
+    score = 0
+    lives = 3
+
+    print("Player:", player_name)
+    print("Score:", score)
+    print("Lives:", lives)
+
+    score = score + 10
+    lives = lives - 1
+
+    print("After one turn:")
+    print("Score:", score)
+    print("Lives:", lives)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    player_name = "Explorer"
+    score = 0
+    lives = 3
+
+    print("Player:", player_name)
+    print("Score:", score)
+    print("Lives:", lives)
+
+    score = score + 10
+    lives = lives - 1
+
+    print("After one turn:")
+    print("Score:", score)
+    print("Lives:", lives)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

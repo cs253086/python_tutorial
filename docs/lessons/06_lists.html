@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -44,22 +43,17 @@
 <pre><code class="language-python">items = [&quot;key&quot;, &quot;torch&quot;, &quot;map&quot;]</code></pre>
 <p>This list has 3 items.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/06_lists
-cd ~/kids_python_tutorial/beginner/06_lists</code></pre>
-<hr>
-<h2>2) Read items by index</h2>
-<p>Create <code>inventory_list.py</code>:</p>
+<h2>1) Read items by index</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">inventory = [&quot;torch&quot;, &quot;rope&quot;, &quot;apple&quot;]
 
 print(&quot;First item:&quot;, inventory[0])
 print(&quot;Second item:&quot;, inventory[1])
 print(&quot;Third item:&quot;, inventory[2])</code></pre>
-<p>List indexes start at <code>0</code>, not <code>1</code>.</p>
+<p>Click <strong>Run code</strong>. List indexes start at <code>0</code>, not <code>1</code>.</p>
 <hr>
-<h2>3) Add and update list items</h2>
-<p>Create <code>inventory_update.py</code>:</p>
+<h2>2) Add and update list items</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">inventory = [&quot;torch&quot;, &quot;rope&quot;]
 print(&quot;Start:&quot;, inventory)
 
@@ -68,18 +62,18 @@ print(&quot;After append:&quot;, inventory)
 
 inventory[1] = &quot;magic rope&quot;
 print(&quot;After update:&quot;, inventory)</code></pre>
-<p>Now your list can grow and change.</p>
+<p>Click <strong>Run code</strong>. Now your list can grow and change.</p>
 <hr>
-<h2>4) Loop through a list</h2>
-<p>Create <code>show_items.py</code>:</p>
+<h2>3) Loop through a list</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">inventory = [&quot;torch&quot;, &quot;rope&quot;, &quot;key&quot;]
 
 for item in inventory:
     print(&quot;Item:&quot;, item)</code></pre>
-<p>This is a clean way to print all items.</p>
+<p>Click <strong>Run code</strong>. This is a clean way to print all items.</p>
 <hr>
-<h2>5) Game mini-step: room map list</h2>
-<p>Create <code>room_map.py</code>:</p>
+<h2>4) Game mini-step: room map list</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">rooms = [&quot;start&quot;, &quot;empty&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;exit&quot;]
 position = 0
 
@@ -102,90 +96,11 @@ print(&quot;Moved to:&quot;, rooms[position])</code></pre>
 print(&quot;Top-left:&quot;, grid[0][0])  # S
 print(&quot;Center:&quot;, grid[1][1])    # T</code></pre>
 <p><code>S</code> = start, <code>T</code> = treasure, <code>E</code> = exit.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: wrong index</h3>
-<pre><code class="language-python">inventory = [&quot;torch&quot;, &quot;rope&quot;]
-print(inventory[2])</code></pre>
-<p>This fails because index 2 does not exist.</p>
-<h3>Mistake B: forgetting brackets</h3>
-<p>Use <code>[]</code> for list creation and indexing.</p>
-<h3>Mistake C: thinking first index is 1</h3>
-<p>In Python, first index is always <code>0</code>.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>list</strong>: ordered collection of values</li>
-<li><strong>index</strong>: position number in a list</li>
-<li><strong>append</strong>: add item to list end</li>
-<li><strong>nested list</strong>: list inside another list</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can create a list</li>
-<li>[] I can read and update list items</li>
-<li>[] I can loop through a list</li>
-<li>[] I can use a list as a simple game map</li>
-</ul>
-<p>Next lesson: functions to organize game code.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Favorite items list</h2>
-<p>Create <code>favorites.py</code>:</p>
-<ol>
-<li>Create a list with 4 favorite things</li>
-<li>Print each item using indexes</li>
-</ol>
-<hr>
-<h2>Part B: Inventory actions</h2>
-<p>Create <code>inventory_actions.py</code>:</p>
-<ol>
-<li>Start with: <code>[&quot;torch&quot;, &quot;rope&quot;]</code></li>
-<li>Add <code>&quot;key&quot;</code> using <code>append</code></li>
-<li>Change <code>&quot;rope&quot;</code> to <code>&quot;strong rope&quot;</code></li>
-<li>Print the final list</li>
-</ol>
-<hr>
-<h2>Part C: Loop through list</h2>
-<p>Create <code>inventory_loop.py</code>:</p>
-<ol>
-<li>Make a list of 5 items</li>
-<li>Use <code>for item in ...</code> to print each item</li>
-</ol>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<pre><code class="language-python">rooms = [&quot;start&quot;, &quot;empty&quot;, &quot;trap&quot;, &quot;treasure&quot;]
-print(rooms[__])
-rooms._______(&quot;exit&quot;)
-rooms[1] = &quot;safe&quot;
-
-for room in ______:
-    print(room)</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">items = &quot;torch&quot;, &quot;rope&quot;, &quot;key&quot;
-print(items[0]
-items.append[&quot;map&quot;]
-for i in items
-    print(i)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can create and print lists</li>
-<li>[] I can append and update items</li>
-<li>[] I can loop through a list</li>
-<li>[] I can fix common list syntax issues</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">def main():
     inventory = [&quot;torch&quot;, &quot;rope&quot;]
@@ -217,11 +132,57 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def main():
+    score = 0
+    turn = 1
+
+    while turn &lt;= 3:
+        move = input("Turn " + str(turn) + " - move (left/right): ")
+
+        if move == "left":
+            score = score + 10
+            print("Treasure! +10")
+        elif move == "right":
+            print("Nothing here.")
+        else:
+            print("Invalid move.")
+
+        print("Score:", score)
+        turn = turn + 1
+
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    score = 0
+    turn = 1
+
+    while turn &lt;= 3:
+        move = input("Turn " + str(turn) + " - move (left/right): ")
+
+        if move == "left":
+            score = score + 10
+            print("Treasure! +10")
+        elif move == "right":
+            print("Nothing here.")
+        else:
+            print("Invalid move.")
+
+        print("Score:", score)
+        turn = turn + 1
+
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

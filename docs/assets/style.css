@@ -186,6 +186,16 @@ pre code {
   padding: 0;
 }
 
+/* Tutorial snippets: not selectable so users type the code */
+.content-layout .card pre,
+.content-layout .card pre code {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
 details {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -296,6 +306,42 @@ summary {
   margin-top: 10px;
   min-height: 280px;
   max-height: 500px;
+}
+
+.console-stdin-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.console-stdin-row[hidden] {
+  display: none;
+}
+
+.console-stdin-prompt {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.console-stdin-input {
+  flex: 1;
+  min-width: 120px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #f6f9ff;
+  color: var(--text);
+}
+
+.console-stdin-input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
 }
 
 .browser-note {

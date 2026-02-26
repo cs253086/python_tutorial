@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -37,33 +36,26 @@
 </ul>
 <p>Randomness makes replaying the game more fun.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/10_bonus_random
-cd ~/kids_python_tutorial/beginner/10_bonus_random</code></pre>
-<hr>
-<h2>2) Import random</h2>
-<p>Create <code>random_demo.py</code>:</p>
+<h2>1) Import random</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">import random
 
 number = random.randint(1, 6)
 print(&quot;Dice roll:&quot;, number)</code></pre>
-<p>Run it multiple times:</p>
-<pre><code class="language-bash">python3 random_demo.py</code></pre>
-<p>The number changes randomly.</p>
+<p>Click <strong>Run code</strong>. Run it a few more times—the number changes randomly.</p>
 <hr>
-<h2>3) Random choice from a list</h2>
-<p>Create <code>random_event.py</code>:</p>
+<h2>2) Random choice from a list</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">import random
 
 events = [&quot;nothing&quot;, &quot;trap&quot;, &quot;treasure&quot;, &quot;potion&quot;]
 event = random.choice(events)
 
 print(&quot;Random event:&quot;, event)</code></pre>
-<p>Now event changes every run.</p>
+<p>Click <strong>Run code</strong>. The event changes each run.</p>
 <hr>
-<h2>4) Add random to game turn</h2>
-<p>Create <code>random_turn.py</code>:</p>
+<h2>3) Add random to game turn</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">import random
 
 score = 0
@@ -89,7 +81,7 @@ for turn in range(1, 6):
         break</code></pre>
 <p>This version feels new each play.</p>
 <hr>
-<h2>5) Optional: random room order</h2>
+<h2>4) Optional: random room order</h2>
 <p>You can shuffle a list:</p>
 <pre><code class="language-python">import random
 
@@ -97,93 +89,11 @@ rooms = [&quot;trap&quot;, &quot;empty&quot;, &quot;treasure&quot;, &quot;empty&
 random.shuffle(rooms)
 print(rooms)</code></pre>
 <p><code>shuffle</code> changes list order randomly.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: forgetting <code>import random</code></h3>
-<p>Without import, <code>random.choice(...)</code> will fail.</p>
-<h3>Mistake B: using wrong function name</h3>
-<p>Use:</p>
-<ul>
-<li><code>random.randint(a, b)</code></li>
-<li><code>random.choice(list_name)</code></li>
-<li><code>random.shuffle(list_name)</code></li>
-</ul>
-<h3>Mistake C: expecting same output every run</h3>
-<p>Random means output can change each time.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>random</strong>: unpredictable value or choice</li>
-<li><strong>module</strong>: Python file with ready-made tools</li>
-<li><strong>shuffle</strong>: mix order of list items</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can import and use <code>random</code></li>
-<li>[] I can choose random events</li>
-<li>[] I can make game runs feel different</li>
-</ul>
-<p>Next lesson (bonus): save high scores to a file.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Dice roller</h2>
-<p>Create <code>dice.py</code>:</p>
-<ol>
-<li>Import <code>random</code></li>
-<li>Roll a number from 1 to 6 using <code>randint</code></li>
-<li>Print the result</li>
-</ol>
-<hr>
-<h2>Part B: Random treasure</h2>
-<p>Create <code>treasure_or_trap.py</code>:</p>
-<ol>
-<li>Use <code>random.choice([&quot;treasure&quot;, &quot;trap&quot;])</code></li>
-<li>If treasure, print <code>&quot;+10 score&quot;</code></li>
-<li>If trap, print <code>&quot;-1 life&quot;</code></li>
-</ol>
-<hr>
-<h2>Part C: Random 3-turn game</h2>
-<p>Create <code>random_game.py</code>:</p>
-<ol>
-<li>Start with <code>score = 0</code>, <code>lives = 3</code></li>
-<li>Repeat 3 turns</li>
-<li>Randomly pick event from <code>[&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;]</code></li>
-<li>Update score/lives and print status</li>
-</ol>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<pre><code class="language-python">import ______
-
-event = random.______([&quot;trap&quot;, &quot;treasure&quot;, &quot;empty&quot;])
-
-if event == &quot;treasure&quot;:
-    score = score + __
-elif event == &quot;trap&quot;:
-    lives = lives - __</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">improt random
-event = random.choice(&quot;trap&quot;, &quot;treasure&quot;)
-if event = &quot;trap&quot;:
-    print(&quot;lose life&quot;)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can import and use <code>random</code></li>
-<li>[] I can use <code>choice</code> and <code>randint</code></li>
-<li>[] I can update game values from random events</li>
-<li>[] I can fix common random-related mistakes</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">import random
 
@@ -221,11 +131,71 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def get_valid_action():
+    while True:
+        action = input("Type next or quit: ").strip().lower()
+        if action in ["next", "quit"]:
+            return action
+        print("Please type only: next or quit")
+
+
+def main():
+    print("Welcome to Treasure Hunt!")
+    score = 0
+
+    for turn in range(1, 4):
+        print()
+        print("Turn", turn)
+        action = get_valid_action()
+
+        if action == "quit":
+            print("You left the game early.")
+            break
+
+        score = score + 5
+        print("Great move! Score:", score)
+
+    print()
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def get_valid_action():
+    while True:
+        action = input("Type next or quit: ").strip().lower()
+        if action in ["next", "quit"]:
+            return action
+        print("Please type only: next or quit")
+
+
+def main():
+    print("Welcome to Treasure Hunt!")
+    score = 0
+
+    for turn in range(1, 4):
+        print()
+        print("Turn", turn)
+        action = get_valid_action()
+
+        if action == "quit":
+            print("You left the game early.")
+            break
+
+        score = score + 5
+        print("Great move! Score:", score)
+
+    print()
+    print("Final score:", score)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

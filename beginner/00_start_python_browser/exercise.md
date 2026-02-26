@@ -28,28 +28,3 @@ print("I finished lesson 00.")
 ```
 
 Click **Run code**.
-
----
-
-## Part C: Edit and rerun
-
-1. Change one line of text
-2. Click **Run code** again
-3. Confirm output changed
-
----
-
-## Part D: Fill in the blanks
-
-1. The button to execute code is: `__________`
-2. The area that shows results is called: `__________`
-3. To restore starter code, click: `__________`
-
----
-
-## Success checklist
-
-- [ ] I can run Python in the browser console
-- [ ] I can write and run multiple print lines
-- [ ] I can edit code and rerun
-- [ ] I can use Reset code

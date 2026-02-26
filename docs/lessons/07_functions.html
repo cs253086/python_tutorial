@@ -19,9 +19,8 @@
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -47,22 +46,17 @@
 
 say_hello()</code></pre>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/07_functions
-cd ~/kids_python_tutorial/beginner/07_functions</code></pre>
-<hr>
-<h2>2) Function with parameters</h2>
-<p>Create <code>greet_function.py</code>:</p>
+<h2>1) Function with parameters</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">def greet_player(name):
     print(&quot;Welcome,&quot;, name)
 
 player_name = input(&quot;Name: &quot;)
 greet_player(player_name)</code></pre>
-<p><code>name</code> is a parameter. It receives the value from <code>player_name</code>.</p>
+<p>Click <strong>Run code</strong>. <code>name</code> is a parameter. It receives the value from <code>player_name</code>.</p>
 <hr>
-<h2>3) Function with return value</h2>
-<p>Create <code>score_function.py</code>:</p>
+<h2>2) Function with return value</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">def add_score(current_score, points):
     new_score = current_score + points
     return new_score
@@ -70,10 +64,10 @@ greet_player(player_name)</code></pre>
 score = 0
 score = add_score(score, 10)
 print(&quot;Score:&quot;, score)</code></pre>
-<p><code>return</code> sends a value back.</p>
+<p>Click <strong>Run code</strong>. <code>return</code> sends a value back.</p>
 <hr>
-<h2>4) Break game into small functions</h2>
-<p>Create <code>mini_game_functions.py</code>:</p>
+<h2>3) Break game into small functions</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">def show_title():
     print(&quot;=== TREASURE HUNT ===&quot;)
 
@@ -104,100 +98,11 @@ print(&quot;Score:&quot;, score)</code></pre>
 <li>easier to test one piece at a time</li>
 <li>easier to read and fix</li>
 </ul>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: forgetting parentheses when calling</h3>
-<p>Wrong:</p>
-<pre><code class="language-python">show_title</code></pre>
-<p>Fix:</p>
-<pre><code class="language-python">show_title()</code></pre>
-<h3>Mistake B: wrong number of arguments</h3>
-<p>If function needs 2 values, pass 2 values.</p>
-<h3>Mistake C: forgetting <code>return</code> when needed</h3>
-<p>Without <code>return</code>, result may become <code>None</code>.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>function</strong>: reusable block of code</li>
-<li><strong>parameter</strong>: input name in function definition</li>
-<li><strong>argument</strong>: value sent to function</li>
-<li><strong>return</strong>: value sent back from function</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can define and call a function</li>
-<li>[] I can pass arguments to functions</li>
-<li>[] I can return and use values from functions</li>
-<li>[] I can split game logic into small functions</li>
-</ul>
-<p>Next lesson: build game v1 by combining everything.</p>
-        </section>
-
-        <section class="card">
-          <h2>Exercise</h2>
-          <p>Complete each part in order.</p>
-<h2>Part A: Simple function</h2>
-<p>Create <code>hello_function.py</code>:</p>
-<ol>
-<li>Define <code>say_hi()</code> that prints a greeting</li>
-<li>Call it two times</li>
-</ol>
-<hr>
-<h2>Part B: Function with parameter</h2>
-<p>Create <code>badge.py</code>:</p>
-<ol>
-<li>Define <code>show_badge(name)</code></li>
-<li>Print: <code>&quot;Explorer badge for &lt;name&gt;&quot;</code></li>
-<li>Ask for name with <code>input()</code> and call function</li>
-</ol>
-<hr>
-<h2>Part C: Function with return</h2>
-<p>Create <code>score_updater.py</code>:</p>
-<ol>
-<li>Define <code>add_points(score, points)</code> returning new score</li>
-<li>Start with score 0</li>
-<li>Add 10, then add 5</li>
-<li>Print final score</li>
-</ol>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<pre><code class="language-python">def greet(____):
-    print(&quot;Hello,&quot;, name)
-
-def add(a, b):
-    return a + __
-
-player = input(&quot;Name: &quot;)
-____(player)
-
-score = add(10, 5)
-print(score)</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">def show_title
-    print(&quot;Treasure Hunt&quot;)
-
-def add_score(score, points):
-    new_score = score + points
-
-score = 0
-score = add_score(score, 10)
-print(score)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can define and call functions</li>
-<li>[] I can pass arguments</li>
-<li>[] I can use return values</li>
-<li>[] I can fix common function syntax errors</li>
-</ul>
         </section>
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">def show_title():
     print(&quot;=== TREASURE HUNT ===&quot;)
@@ -235,11 +140,57 @@ if __name__ == &quot;__main__&quot;:
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
-          <textarea class="console-editor" spellcheck="false"></textarea>
-          <textarea class="console-starter" hidden></textarea>
+          <textarea class="console-editor" spellcheck="false">def main():
+    inventory = ["torch", "rope"]
+    print("Start inventory:", inventory)
+
+    inventory.append("key")
+    inventory[1] = "magic rope"
+
+    print("Updated inventory:")
+    for item in inventory:
+        print("-", item)
+
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    print("Current room:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    inventory = ["torch", "rope"]
+    print("Start inventory:", inventory)
+
+    inventory.append("key")
+    inventory[1] = "magic rope"
+
+    print("Updated inventory:")
+    for item in inventory:
+        print("-", item)
+
+    rooms = ["start", "empty", "trap", "treasure", "exit"]
+    position = 0
+
+    print("Current room:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+    position = position + 1
+    print("Moved to:", rooms[position])
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
           <div class="console-buttons">
             <button type="button" class="console-btn primary console-run">Run code</button>
             <button type="button" class="console-btn console-reset">Reset code</button>

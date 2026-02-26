@@ -201,6 +201,16 @@ pre code {
   padding: 0;
 }
 
+/* Tutorial snippets: not selectable so users type the code */
+.content-layout .card pre,
+.content-layout .card pre code {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
 details {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -733,9 +743,8 @@ def build_lesson_page(
 
     <section class="card browser-note">
       <h2>How to use this lesson</h2>
-      <p>Use the right-side <strong>Try Python in your browser</strong> panel to run code.</p>
-      <p>You can paste tutorial snippets into the editor and click <strong>Run code</strong>.</p>
-      <p>If you see terminal commands in older text, treat them as optional local setup notes.</p>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
     </section>
 
     <div class="lesson-shell">
@@ -752,7 +761,7 @@ def build_lesson_page(
 
         <section class="card">
           <h2>Solution code</h2>
-          <details open>
+          <details>
             <summary>View <code>solution.py</code></summary>
             <pre><code class="language-python">{solution_html}</code></pre>
           </details>
@@ -761,8 +770,8 @@ def build_lesson_page(
 
       <aside class="lesson-sidebar">
         <section class="card console-card py-console">
-          <h2>Try Python in your browser</h2>
-          <p class="console-help">Run and edit code right here. The editor starts empty, so try typing a small Python snippet first.</p>
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
           <div class="console-status" role="status">Python runtime: ready</div>
           <textarea class="console-editor" spellcheck="false"></textarea>
           <textarea class="console-starter" hidden></textarea>

@@ -35,20 +35,9 @@ Here:
 
 ---
 
-## 1) Create lesson folder
+## 1) Your first variables in the Playground
 
-Open terminal and run:
-
-```bash
-mkdir -p ~/kids_python_tutorial/beginner/02_variables
-cd ~/kids_python_tutorial/beginner/02_variables
-```
-
----
-
-## 2) Create your first variables file
-
-Create `game_status.py` and add:
+In the Playground editor, type:
 
 ```python
 player_name = "Explorer"
@@ -60,21 +49,17 @@ print("Score:", score)
 print("Lives:", lives)
 ```
 
-Run:
+Click **Run code**.
 
-```bash
-python3 game_status.py
-```
-
-If the values print on screen, mission success.
+If the values appear in the output area, mission success.
 
 ---
 
-## 3) Update variable values
+## 2) Update variable values
 
 Variables can change.
 
-Add these lines at the end of your file:
+In the editor, add these lines below your code:
 
 ```python
 score = score + 10
@@ -89,7 +74,7 @@ Now your game tracks progress after a turn.
 
 ---
 
-## 4) String and number variables
+## 3) String and number variables
 
 Python has different value types.
 
@@ -100,9 +85,9 @@ You can store both in variables and print them together.
 
 ---
 
-## 5) Game mini-step: player card
+## 4) Game mini-step: player card
 
-Create `player_card.py`:
+In the editor, type:
 
 ```python
 player_name = "Ari"
@@ -117,11 +102,7 @@ print("Score:", score)
 print("Lives:", lives)
 ```
 
-Run:
-
-```bash
-python3 player_card.py
-```
+Click **Run code**.
 
 You just made a basic player status screen.
 
