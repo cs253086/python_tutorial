@@ -17,10 +17,17 @@
       <p>store player name, score, and lives</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 02.</p>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+    </section>
+
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 02.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>store information in variables</li>
@@ -48,13 +55,8 @@ lives = 3</code></pre>
 <li><code>lives</code> stores a number</li>
 </ul>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/02_variables
-cd ~/kids_python_tutorial/beginner/02_variables</code></pre>
-<hr>
-<h2>2) Create your first variables file</h2>
-<p>Create <code>game_status.py</code> and add:</p>
+<h2>1) Your first variables in the Playground</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">player_name = &quot;Explorer&quot;
 score = 0
 lives = 3
@@ -62,13 +64,12 @@ lives = 3
 print(&quot;Player:&quot;, player_name)
 print(&quot;Score:&quot;, score)
 print(&quot;Lives:&quot;, lives)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 game_status.py</code></pre>
-<p>If the values print on screen, mission success.</p>
+<p>Click <strong>Run code</strong>.</p>
+<p>If the values appear in the output area, mission success.</p>
 <hr>
-<h2>3) Update variable values</h2>
+<h2>2) Update variable values</h2>
 <p>Variables can change.</p>
-<p>Add these lines at the end of your file:</p>
+<p>In the editor, add these lines below your code:</p>
 <pre><code class="language-python">score = score + 10
 lives = lives - 1
 
@@ -77,7 +78,7 @@ print(&quot;Score:&quot;, score)
 print(&quot;Lives:&quot;, lives)</code></pre>
 <p>Now your game tracks progress after a turn.</p>
 <hr>
-<h2>4) String and number variables</h2>
+<h2>3) String and number variables</h2>
 <p>Python has different value types.</p>
 <ul>
 <li>String (text): <code>&quot;Explorer&quot;</code></li>
@@ -85,8 +86,8 @@ print(&quot;Lives:&quot;, lives)</code></pre>
 </ul>
 <p>You can store both in variables and print them together.</p>
 <hr>
-<h2>5) Game mini-step: player card</h2>
-<p>Create <code>player_card.py</code>:</p>
+<h2>4) Game mini-step: player card</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">player_name = &quot;Ari&quot;
 score = 5
 lives = 2
@@ -97,98 +98,15 @@ print(&quot;Name:&quot;, player_name)
 print(&quot;Level:&quot;, level)
 print(&quot;Score:&quot;, score)
 print(&quot;Lives:&quot;, lives)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 player_card.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>You just made a basic player status screen.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: missing quotes for text</h3>
-<pre><code class="language-python">player_name = Ari</code></pre>
-<p>This is wrong. Fix:</p>
-<pre><code class="language-python">player_name = &quot;Ari&quot;</code></pre>
-<h3>Mistake B: using spaces in variable names</h3>
-<pre><code class="language-python">player name = &quot;Ari&quot;</code></pre>
-<p>Variable names cannot contain spaces. Use:</p>
-<pre><code class="language-python">player_name = &quot;Ari&quot;</code></pre>
-<h3>Mistake C: confusing <code>=</code> and <code>==</code></h3>
-<p>For setting a variable, use <code>=</code>.</p>
-<pre><code class="language-python">score = 10</code></pre>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>variable</strong>: named place to store a value</li>
-<li><strong>value</strong>: information stored in a variable</li>
-<li><strong>update</strong>: change a variable to a new value</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can create string and number variables</li>
-<li>[] I can print variable values</li>
-<li>[] I can update <code>score</code> and <code>lives</code></li>
-</ul>
-<p>Next lesson: input from the player.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete the tasks in order.</p>
-<h2>Part A: Build a player status file</h2>
-<p>Create <code>my_status.py</code> with these variables:</p>
-<ul>
-<li><code>player_name</code></li>
-<li><code>score</code></li>
-<li><code>lives</code></li>
-<li><code>level</code></li>
-</ul>
-<p>Print all values like this style:</p>
-<pre><code class="language-python">print(&quot;Name:&quot;, player_name)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 my_status.py</code></pre>
-<hr>
-<h2>Part B: Update values</h2>
-<p>In the same file, add:</p>
-<ul>
-<li>one line that increases score by 20</li>
-<li>one line that decreases lives by 1</li>
-<li>print the updated values</li>
-</ul>
-<hr>
-<h2>Part C: Fill in the blanks</h2>
-<p>Complete this code:</p>
-<pre><code class="language-python">player_name = &quot;Luna&quot;
-score = __
-lives = __
-
-score = score + __
-lives = lives - __
-
-print(&quot;Player:&quot;, ________)
-print(&quot;Score:&quot;, ________)
-print(&quot;Lives:&quot;, ________)</code></pre>
-<hr>
-<h2>Part D: Fix the bugs</h2>
-<p>Fix this code so it runs:</p>
-<pre><code class="language-python">player name = &quot;Rex&quot;
-score == 0
-lives = 3
-print(&quot;Name:&quot;, player_name)
-print(&quot;Score:&quot;, score)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can create variables</li>
-<li>[] I can update variables</li>
-<li>[] I can print variables</li>
-<li>[] I can spot common variable mistakes</li>
-</ul>
-      </section>
-
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     player_name = &quot;Explorer&quot;
     score = 0
     lives = 3
@@ -208,9 +126,47 @@ print(&quot;Score:&quot;, score)</code></pre>
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def main():
+    print("=================================")
+    print("      TREASURE HUNT GAME")
+    print("=================================")
+    print("Goal: Find treasure before you run out of lives.")
+    print("Good luck, explorer!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    print("=================================")
+    print("      TREASURE HUNT GAME")
+    print("=================================")
+    print("Goal: Find treasure before you run out of lives.")
+    print("Good luck, explorer!")
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

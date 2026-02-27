@@ -48,7 +48,7 @@ a:hover {
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px 18px 40px;
 }
@@ -201,6 +201,16 @@ pre code {
   padding: 0;
 }
 
+/* Tutorial snippets: not selectable so users type the code */
+.content-layout .card pre,
+.content-layout .card pre code {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
 details {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -218,6 +228,228 @@ summary {
   font-size: 13px;
   color: var(--muted);
 }
+
+.lesson-shell {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 1080px) {
+  .lesson-shell {
+    grid-template-columns: minmax(0, 2fr) minmax(420px, 1fr);
+    align-items: start;
+  }
+
+  .lesson-sidebar {
+    position: sticky;
+    top: 14px;
+  }
+}
+
+.console-card h2 {
+  margin-bottom: 8px;
+}
+
+.console-help {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.console-status {
+  font-size: 13px;
+  color: #334674;
+  background: #edf3ff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 9px;
+  margin-bottom: 10px;
+}
+
+.console-editor {
+  width: 100%;
+  min-height: 380px;
+  border: 1px solid #bdccf7;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  resize: vertical;
+  background: #f6f9ff;
+  color: #152039;
+}
+
+.console-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.console-btn {
+  border: 1px solid #b9c9f6;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ecf2ff;
+  color: #1f2a44;
+}
+
+.console-btn:hover {
+  background: #dfe9ff;
+}
+
+.console-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.console-btn.primary {
+  background: #4361ee;
+  border-color: #3751ca;
+  color: #fff;
+}
+
+.console-btn.primary:hover {
+  background: #3855dc;
+}
+
+.console-output {
+  margin-top: 10px;
+  min-height: 280px;
+  max-height: 500px;
+}
+
+.browser-note {
+  border-left: 6px solid #4cc9f0;
+  background: #eefbff;
+}
+
+.browser-note h2 {
+  margin-bottom: 6px;
+}
+
+.browser-note p {
+  margin: 6px 0;
+}
+""".strip()
+
+PYTHON_CONSOLE_JS = r"""
+(() => {
+  "use strict";
+
+  const state = {
+    pyodide: null,
+    loadingPromise: null,
+  };
+
+  function setText(el, value) {
+    el.textContent = value;
+  }
+
+  function appendLine(lines, value) {
+    if (value === null || value === undefined) {
+      return;
+    }
+    const text = String(value);
+    if (!text) {
+      return;
+    }
+    lines.push(text);
+  }
+
+  async function loadRuntime(statusEl) {
+    if (state.pyodide) {
+      return state.pyodide;
+    }
+    if (!window.loadPyodide) {
+      throw new Error("Pyodide runtime failed to load. Check internet connection.");
+    }
+    if (!state.loadingPromise) {
+      setText(statusEl, "Python runtime: loading...");
+      state.loadingPromise = window
+        .loadPyodide()
+        .then((runtime) => {
+          state.pyodide = runtime;
+          return runtime;
+        })
+        .catch((err) => {
+          state.loadingPromise = null;
+          throw err;
+        });
+    }
+    return state.loadingPromise;
+  }
+
+  async function runConsole(consoleEl) {
+    const editor = consoleEl.querySelector(".console-editor");
+    const output = consoleEl.querySelector(".console-output");
+    const status = consoleEl.querySelector(".console-status");
+    const runBtn = consoleEl.querySelector(".console-run");
+    const lines = [];
+
+    runBtn.disabled = true;
+    setText(output, "");
+    setText(status, "Python runtime: preparing...");
+
+    try {
+      const pyodide = await loadRuntime(status);
+
+      pyodide.setStdout({
+        batched: (value) => appendLine(lines, value),
+      });
+      pyodide.setStderr({
+        batched: (value) => appendLine(lines, "ERROR: " + value),
+      });
+
+      setText(status, "Python runtime: running code...");
+      await pyodide.runPythonAsync(editor.value);
+
+      if (lines.length === 0) {
+        lines.push("(No output)");
+      }
+      setText(output, lines.join("\n"));
+      setText(status, "Python runtime: ready");
+    } catch (error) {
+      const message = error && error.message ? error.message : String(error);
+      setText(output, "Runtime error:\n" + message);
+      setText(status, "Python runtime: error");
+    } finally {
+      runBtn.disabled = false;
+    }
+  }
+
+  function resetConsole(consoleEl) {
+    const editor = consoleEl.querySelector(".console-editor");
+    const starter = consoleEl.querySelector(".console-starter");
+    const output = consoleEl.querySelector(".console-output");
+    const status = consoleEl.querySelector(".console-status");
+
+    editor.value = starter.value;
+    setText(output, "");
+    setText(status, "Python runtime: ready");
+  }
+
+  function wireConsole(consoleEl) {
+    const runBtn = consoleEl.querySelector(".console-run");
+    const resetBtn = consoleEl.querySelector(".console-reset");
+
+    runBtn.addEventListener("click", () => {
+      runConsole(consoleEl);
+    });
+    resetBtn.addEventListener("click", () => {
+      resetConsole(consoleEl);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const consoles = document.querySelectorAll(".py-console");
+    consoles.forEach((consoleEl) => wireConsole(consoleEl));
+  });
+})();
 """.strip()
 
 
@@ -417,7 +649,18 @@ def parse_lessons(beginner_root: Path) -> list[Lesson]:
     return lessons
 
 
-def page_html(*, title: str, css_href: str, body: str) -> str:
+def page_html(
+    *,
+    title: str,
+    css_href: str,
+    body: str,
+    script_srcs: list[str] | None = None,
+) -> str:
+    scripts_html = ""
+    if script_srcs:
+        scripts_html = "\n".join(
+            f'  <script src="{html.escape(src)}"></script>' for src in script_srcs
+        )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -430,6 +673,7 @@ def page_html(*, title: str, css_href: str, body: str) -> str:
   <div class="container">
 {body}
   </div>
+{scripts_html}
 </body>
 </html>
 """
@@ -497,24 +741,47 @@ def build_lesson_page(
       <p>{html.escape(lesson.description)}</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        {tutorial_html}
-      </section>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+    </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        {exercise_html}
-      </section>
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          {tutorial_html}
+        </section>
 
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">{solution_html}</code></pre>
-        </details>
-      </section>
+        <section class="card">
+          <h2>Exercise</h2>
+          {exercise_html}
+        </section>
+
+        <section class="card">
+          <h2>Solution code</h2>
+          <details>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">{solution_html}</code></pre>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
     """.strip()
 
@@ -522,6 +789,10 @@ def build_lesson_page(
         title=f"{lesson.title} - Beginner Python",
         css_href="../assets/style.css",
         body=body,
+        script_srcs=[
+            "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js",
+            "../assets/python_console.js",
+        ],
     )
 
 
@@ -536,6 +807,9 @@ def write_site(beginner_root: Path, output_root: Path) -> None:
     lessons_dir.mkdir(parents=True, exist_ok=True)
 
     (assets_dir / "style.css").write_text(STYLE_CSS + "\n", encoding="utf-8")
+    (assets_dir / "python_console.js").write_text(
+        PYTHON_CONSOLE_JS + "\n", encoding="utf-8"
+    )
     (output_root / "index.html").write_text(build_index_page(lessons), encoding="utf-8")
 
     for idx, lesson in enumerate(lessons):

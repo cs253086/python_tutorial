@@ -5,7 +5,7 @@ Welcome to lesson 01.
 In this lesson, you will learn how to:
 - show text on the screen with `print()`
 - write string text correctly
-- run a Python file from the terminal
+- run code in the Python Playground
 
 At the end, you will make the first part of your game: a welcome screen for **Treasure Hunt**.
 
@@ -15,13 +15,13 @@ At the end, you will make the first part of your game: a welcome screen for **Tr
 
 `print()` is a Python command that shows text on the screen.
 
-Example:
+Example: in the Playground editor, type:
 
 ```python
 print("Hello!")
 ```
 
-When you run the program, Python displays:
+Click **Run code**. The output area will show:
 
 ```text
 Hello!
@@ -29,22 +29,9 @@ Hello!
 
 ---
 
-## 1) Create your lesson folder
+## 1) Your first program in the Playground
 
-Open terminal and run:
-
-```bash
-mkdir -p ~/kids_python_tutorial/beginner/01_first_program_print
-cd ~/kids_python_tutorial/beginner/01_first_program_print
-```
-
----
-
-## 2) Create your first program file
-
-Create a file named `first_program.py`.
-
-Add this code:
+In the Playground editor, type:
 
 ```python
 print("Welcome to Treasure Hunt!")
@@ -52,17 +39,13 @@ print("You are a brave explorer.")
 print("Let's find the hidden treasure!")
 ```
 
-Run the file:
-
-```bash
-python3 first_program.py
-```
+Click **Run code**.
 
 If you see 3 lines of output, mission success.
 
 ---
 
-## 3) Strings: text inside quotes
+## 2) Strings: text inside quotes
 
 In Python, text is called a **string**.
 
@@ -83,37 +66,9 @@ Both are valid.
 
 ---
 
-## 4) Common mistakes
+## 3) Game mini-step: intro screen
 
-### Mistake A: missing quote
-
-```python
-print("Hello)
-```
-
-This causes an error. Fix by closing the quote.
-
-### Mistake B: missing parenthesis
-
-```python
-print("Hello"
-```
-
-Fix by adding the closing `)`.
-
-### Mistake C: typo in command
-
-```python
-pritn("Hello")
-```
-
-`pritn` is wrong spelling. Use `print`.
-
----
-
-## 5) Game mini-step: intro screen
-
-Now create `game_intro.py` and add:
+In the editor, type:
 
 ```python
 print("================================")
@@ -123,37 +78,6 @@ print("Goal: Find treasure before you run out of lives.")
 print("Good luck, explorer!")
 ```
 
-Run it:
-
-```bash
-python3 game_intro.py
-```
+Click **Run code**.
 
 You just built the first screen of your game.
-
----
-
-## Try changing the text
-
-Edit one line and run the file again.
-
-When you change code, you change what the game says.
-This is exactly how game development starts.
-
----
-
-## New words
-
-- **print()**: command to show output
-- **string**: text in quotes
-- **output**: what appears on screen after running code
-
----
-
-## Mission complete when...
-
-- [ ] I can write `print("Hello")`
-- [ ] I can run `python3 first_program.py`
-- [ ] I can make a game intro with multiple print lines
-
-Next lesson: variables.

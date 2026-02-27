@@ -17,10 +17,17 @@
       <p>save and load high scores with files</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to bonus lesson 11.</p>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+    </section>
+
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to bonus lesson 11.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>write text to a file</li>
@@ -29,34 +36,26 @@
 </ul>
 <p>This makes progress stay after the game closes.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/11_bonus_save_score
-cd ~/kids_python_tutorial/beginner/11_bonus_save_score</code></pre>
-<hr>
-<h2>2) Write data to a file</h2>
-<p>Create <code>save_score.py</code>:</p>
+<h2>1) Write data to a file</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">score = 35
 
 with open(&quot;high_score.txt&quot;, &quot;w&quot;) as file:
     file.write(str(score))
 
 print(&quot;Score saved!&quot;)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 save_score.py</code></pre>
-<p>This creates <code>high_score.txt</code>.</p>
+<p>Click <strong>Run code</strong>. This writes to a file (in the browser, the file may not persist after refresh—the idea is the same).</p>
 <hr>
-<h2>3) Read data from a file</h2>
-<p>Create <code>load_score.py</code>:</p>
+<h2>2) Read data from a file</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">with open(&quot;high_score.txt&quot;, &quot;r&quot;) as file:
     saved_score = file.read()
 
 print(&quot;Saved high score:&quot;, saved_score)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 load_score.py</code></pre>
+<p>Click <strong>Run code</strong> (run the save code first if the file does not exist yet).</p>
 <hr>
-<h2>4) Save only if score is higher</h2>
-<p>Create <code>update_high_score.py</code>:</p>
+<h2>3) Save only if score is higher</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">import os
 
 current_score = int(input(&quot;Current score: &quot;))
@@ -76,7 +75,7 @@ else:
     print(&quot;High score stays:&quot;, high_score)</code></pre>
 <p>Now your best score is kept between game runs.</p>
 <hr>
-<h2>5) Add to your game</h2>
+<h2>4) Add to your game</h2>
 <p>At game end:</p>
 <ol>
 <li>load old high score</li>
@@ -84,92 +83,13 @@ else:
 <li>save if current score is higher</li>
 </ol>
 <p>This is a great final polish feature.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: wrong file mode</h3>
-<ul>
-<li><code>&quot;w&quot;</code> = write (overwrites)</li>
-<li><code>&quot;r&quot;</code> = read</li>
-</ul>
-<h3>Mistake B: forgetting <code>str(...)</code> when writing numbers</h3>
-<p><code>file.write</code> needs text.</p>
-<h3>Mistake C: file not found on first run</h3>
-<p>Use <code>os.path.exists(...)</code> before reading.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>file</strong>: saved data on disk</li>
-<li><strong>write</strong>: save data to file</li>
-<li><strong>read</strong>: load data from file</li>
-<li><strong>high score</strong>: best score achieved</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can save score to a file</li>
-<li>[] I can load score from a file</li>
-<li>[] I can update high score only when score is better</li>
-</ul>
-<p>Great work. You finished the beginner tutorial track.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
-<h2>Part A: Save your score</h2>
-<p>Create <code>save_my_score.py</code>:</p>
-<ol>
-<li>Ask user for score</li>
-<li>Save score to <code>my_score.txt</code></li>
-<li>Print confirmation</li>
-</ol>
-<hr>
-<h2>Part B: Load your score</h2>
-<p>Create <code>load_my_score.py</code>:</p>
-<ol>
-<li>Read <code>my_score.txt</code></li>
-<li>Print loaded score</li>
-</ol>
-<hr>
-<h2>Part C: High score updater</h2>
-<p>Create <code>high_score_game.py</code>:</p>
-<ol>
-<li>Ask for current score</li>
-<li>Read old high score from <code>high_score.txt</code> (if exists)</li>
-<li>Save new score only if it is higher</li>
-<li>Print final high score</li>
-</ol>
-<hr>
-<h2>Part D: Fill in the blanks</h2>
-<pre><code class="language-python">with open(&quot;high_score.txt&quot;, &quot;__&quot;) as file:
-    file._____(str(score))
-
-with open(&quot;high_score.txt&quot;, &quot;__&quot;) as file:
-    old_score = file.____()</code></pre>
-<hr>
-<h2>Part E: Fix the bugs</h2>
-<p>Fix this code:</p>
-<pre><code class="language-python">score = 40
-with open(&quot;high_score.txt&quot;, &quot;w&quot;) as f
-    f.write(score)
-
-with open(&quot;high_score.txt&quot;, r) as f:
-    print(f.read)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can write text data to a file</li>
-<li>[] I can read text data from a file</li>
-<li>[] I can compare and update high score</li>
-<li>[] I can fix common file I/O mistakes</li>
-</ul>
-      </section>
-
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">import os
+        <section class="card">
+          <h2>Solution code</h2>
+          <details>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">import os
 
 
 def load_high_score(path):
@@ -203,9 +123,85 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">import random
+
+
+def main():
+    score = 0
+    lives = 3
+
+    for turn in range(1, 6):
+        event = random.choice(["trap", "treasure", "empty"])
+        print("Turn", turn, "- event:", event)
+
+        if event == "trap":
+            lives = lives - 1
+            print("You lost 1 life.")
+        elif event == "treasure":
+            score = score + 10
+            print("You gained 10 score.")
+        else:
+            print("Nothing happened.")
+
+        print("Score:", score, "| Lives:", lives)
+
+        if lives &lt;= 0:
+            print("Game over.")
+            break
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>import random
+
+
+def main():
+    score = 0
+    lives = 3
+
+    for turn in range(1, 6):
+        event = random.choice(["trap", "treasure", "empty"])
+        print("Turn", turn, "- event:", event)
+
+        if event == "trap":
+            lives = lives - 1
+            print("You lost 1 life.")
+        elif event == "treasure":
+            score = score + 10
+            print("You gained 10 score.")
+        else:
+            print("Nothing happened.")
+
+        print("Score:", score, "| Lives:", lives)
+
+        if lives &lt;= 0:
+            print("Game over.")
+            break
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

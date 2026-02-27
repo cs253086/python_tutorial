@@ -17,10 +17,17 @@
       <p>make game decisions with if / elif / else</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 04.</p>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+    </section>
+
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 04.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>make decisions with <code>if</code></li>
@@ -43,25 +50,18 @@ if choice == &quot;left&quot;:
     print(&quot;You found a safe path.&quot;)</code></pre>
 <p>If the condition is true, that block runs.</p>
 <hr>
-<h2>1) Create lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/04_if_else
-cd ~/kids_python_tutorial/beginner/04_if_else</code></pre>
-<hr>
-<h2>2) First decision program</h2>
-<p>Create <code>path_check.py</code>:</p>
+<h2>1) First decision in the Playground</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">choice = input(&quot;Choose a path (left/right): &quot;)
 
 if choice == &quot;left&quot;:
     print(&quot;Great! You found a torch.&quot;)
 else:
     print(&quot;Oh no! You stepped on a trap.&quot;)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 path_check.py</code></pre>
-<p>Try typing <code>left</code>, then run again and type <code>right</code>.</p>
+<p>Click <strong>Run code</strong>. Try typing <code>left</code>, then run again and type <code>right</code>.</p>
 <hr>
-<h2>3) Add <code>elif</code> for more options</h2>
-<p>Create <code>room_event.py</code>:</p>
+<h2>2) Add <code>elif</code> for more options</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">room = input(&quot;Enter room color (red/blue/gold): &quot;)
 
 if room == &quot;red&quot;:
@@ -74,14 +74,14 @@ else:
     print(&quot;That room does not exist.&quot;)</code></pre>
 <p>Now your game can handle many choices.</p>
 <hr>
-<h2>4) Conditions use <code>==</code></h2>
+<h2>3) Conditions use <code>==</code></h2>
 <p>To compare values, use <code>==</code>.</p>
 <pre><code class="language-python">if choice == &quot;left&quot;:
     print(&quot;Correct path&quot;)</code></pre>
 <p>Do not use <code>=</code> in conditions. <code>=</code> is for setting values.</p>
 <hr>
-<h2>5) Game mini-step: first turn logic</h2>
-<p>Create <code>game_turn.py</code>:</p>
+<h2>4) Game mini-step: first turn logic</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">player_name = input(&quot;Name: &quot;)
 move = input(&quot;Move (left/right/forward): &quot;)
 
@@ -93,98 +93,15 @@ elif move == &quot;forward&quot;:
     print(player_name, &quot;found nothing. Keep going.&quot;)
 else:
     print(&quot;Invalid move. Try left, right, or forward.&quot;)</code></pre>
-<p>Run:</p>
-<pre><code class="language-bash">python3 game_turn.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>You just added decision logic to your game.</p>
-<hr>
-<h2>Common mistakes</h2>
-<h3>Mistake A: using <code>=</code> instead of <code>==</code></h3>
-<p>Wrong:</p>
-<pre><code class="language-python">if move = &quot;left&quot;:</code></pre>
-<p>Fix:</p>
-<pre><code class="language-python">if move == &quot;left&quot;:</code></pre>
-<h3>Mistake B: missing colon <code>:</code></h3>
-<p>Wrong:</p>
-<pre><code class="language-python">if move == &quot;left&quot;
-    print(&quot;Safe&quot;)</code></pre>
-<p>Fix:</p>
-<pre><code class="language-python">if move == &quot;left&quot;:
-    print(&quot;Safe&quot;)</code></pre>
-<h3>Mistake C: wrong indentation</h3>
-<p>The line under <code>if</code> must be indented.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>condition</strong>: true/false check</li>
-<li><strong>branch</strong>: one possible path in code</li>
-<li><strong>elif</strong>: &quot;else if&quot; for another condition</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can write <code>if</code>, <code>elif</code>, and <code>else</code></li>
-<li>[] I can compare with <code>==</code></li>
-<li>[] I can make game events based on player input</li>
-</ul>
-<p>Next lesson: loops for repeating turns.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
-<h2>Part A: Door choice</h2>
-<p>Create <code>door_choice.py</code>:</p>
-<ol>
-<li>Ask: <code>&quot;Choose door (1/2): &quot;</code></li>
-<li>If choice is <code>1</code>, print <code>&quot;You found treasure!&quot;</code></li>
-<li>Else print <code>&quot;Trap! Lose 1 life.&quot;</code></li>
-</ol>
-<hr>
-<h2>Part B: Three outcomes</h2>
-<p>Create <code>weather_event.py</code>:</p>
-<ol>
-<li>Ask: <code>&quot;Weather (sun/rain/storm): &quot;</code></li>
-<li>Use <code>if / elif / else</code> to print different game events</li>
-</ol>
-<p>Example idea:</p>
-<ul>
-<li>sun -&gt; <code>&quot;Easy travel. +5 score&quot;</code></li>
-<li>rain -&gt; <code>&quot;Slow movement&quot;</code></li>
-<li>storm -&gt; <code>&quot;Danger! Find shelter&quot;</code></li>
-</ul>
-<hr>
-<h2>Part C: Fill in the blanks</h2>
-<pre><code class="language-python">move = input(&quot;Move (left/right): &quot;)
-
-if move ____ &quot;left&quot;:
-    print(&quot;Safe path&quot;)
-____ move == &quot;right&quot;:
-    print(&quot;Trap path&quot;)
-____:
-    print(&quot;Invalid move&quot;)</code></pre>
-<hr>
-<h2>Part D: Fix the bugs</h2>
-<p>Fix this code so it runs:</p>
-<pre><code class="language-python">choice = input(&quot;Path: &quot;)
-if choice = &quot;left&quot;
-print(&quot;Good&quot;)
-else
-    print(&quot;Bad&quot;)</code></pre>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can write <code>if / elif / else</code></li>
-<li>[] I can compare values with <code>==</code></li>
-<li>[] I can make different outputs from player choices</li>
-<li>[] I can fix common decision-code errors</li>
-</ul>
-      </section>
-
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     player_name = input(&quot;Name: &quot;)
     move = input(&quot;Move (left/right/forward): &quot;)
 
@@ -201,9 +118,55 @@ else
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false">def main():
+    print("=== TREASURE HUNT ===")
+    player_name = input("What is your name? ")
+    print("Hello,", player_name)
+
+    move = input("Choose your first move (left/right): ")
+    print(player_name, "moves", move)
+
+    lives = int(input("How many lives do you want? "))
+    print("Starting lives:", lives)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <textarea class="console-starter" hidden>def main():
+    print("=== TREASURE HUNT ===")
+    player_name = input("What is your name? ")
+    print("Hello,", player_name)
+
+    move = input("Choose your first move (left/right): ")
+    print(player_name, "moves", move)
+
+    lives = int(input("How many lives do you want? "))
+    print("Starting lives:", lives)
+
+
+if __name__ == "__main__":
+    main()
+</textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>

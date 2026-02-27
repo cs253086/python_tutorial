@@ -2,9 +2,9 @@
 
 Complete the tasks in order.
 
-## Part A: Build a player status file
+## Part A: Build a player status
 
-Create `my_status.py` with these variables:
+In the editor, create variables:
 
 - `player_name`
 - `score`
@@ -17,17 +17,13 @@ Print all values like this style:
 print("Name:", player_name)
 ```
 
-Run:
-
-```bash
-python3 my_status.py
-```
+Click **Run code**.
 
 ---
 
 ## Part B: Update values
 
-In the same file, add:
+Below your code, add:
 
 - one line that increases score by 20
 - one line that decreases lives by 1

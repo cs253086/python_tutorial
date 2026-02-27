@@ -33,7 +33,7 @@ a:hover {
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px 18px 40px;
 }
@@ -186,6 +186,16 @@ pre code {
   padding: 0;
 }
 
+/* Tutorial snippets: not selectable so users type the code */
+.content-layout .card pre,
+.content-layout .card pre code {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
 details {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -202,4 +212,147 @@ summary {
   margin-top: 20px;
   font-size: 13px;
   color: var(--muted);
+}
+
+.lesson-shell {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 1080px) {
+  .lesson-shell {
+    grid-template-columns: minmax(0, 2fr) minmax(420px, 1fr);
+    align-items: start;
+  }
+
+  .lesson-sidebar {
+    position: sticky;
+    top: 14px;
+  }
+}
+
+.console-card h2 {
+  margin-bottom: 8px;
+}
+
+.console-help {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.console-status {
+  font-size: 13px;
+  color: #334674;
+  background: #edf3ff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 9px;
+  margin-bottom: 10px;
+}
+
+.console-editor {
+  width: 100%;
+  min-height: 380px;
+  border: 1px solid #bdccf7;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  resize: vertical;
+  background: #f6f9ff;
+  color: #152039;
+}
+
+.console-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.console-btn {
+  border: 1px solid #b9c9f6;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ecf2ff;
+  color: #1f2a44;
+}
+
+.console-btn:hover {
+  background: #dfe9ff;
+}
+
+.console-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.console-btn.primary {
+  background: #4361ee;
+  border-color: #3751ca;
+  color: #fff;
+}
+
+.console-btn.primary:hover {
+  background: #3855dc;
+}
+
+.console-output {
+  margin-top: 10px;
+  min-height: 280px;
+  max-height: 500px;
+}
+
+.console-stdin-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.console-stdin-row[hidden] {
+  display: none;
+}
+
+.console-stdin-prompt {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.console-stdin-input {
+  flex: 1;
+  min-width: 120px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #f6f9ff;
+  color: var(--text);
+}
+
+.console-stdin-input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.browser-note {
+  border-left: 6px solid #4cc9f0;
+  background: #eefbff;
+}
+
+.browser-note h2 {
+  margin-bottom: 6px;
+}
+
+.browser-note p {
+  margin: 6px 0;
 }

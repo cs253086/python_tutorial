@@ -9,7 +9,7 @@
 <body>
   <div class="container">
 <nav class="top-nav">
-      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="00_install_python_ubuntu.html">Previous lesson</a> <a class="nav-pill" href="02_variables.html">Next lesson</a>
+      <a class="nav-pill" href="../index.html">All lessons</a> <a class="nav-pill" href="00_start_python_browser.html">Previous lesson</a> <a class="nav-pill" href="02_variables.html">Next lesson</a>
     </nav>
 
     <section class="hero">
@@ -17,38 +17,38 @@
       <p>learn print, strings, and game intro output</p>
     </section>
 
-    <div class="content-layout">
-      <section class="card">
-        <h2>Tutorial</h2>
-        <p>Welcome to lesson 01.</p>
+    <section class="card browser-note">
+      <h2>How to use this lesson</h2>
+      <p>Use the right-side <strong>Python Playground</strong> panel to run code.</p>
+      <p>You can type tutorial snippets into the editor and click <strong>Run code</strong>.</p>
+    </section>
+
+    <div class="lesson-shell">
+      <div class="content-layout">
+        <section class="card">
+          <h2>Tutorial</h2>
+          <p>Welcome to lesson 01.</p>
 <p>In this lesson, you will learn how to:</p>
 <ul>
 <li>show text on the screen with <code>print()</code></li>
 <li>write string text correctly</li>
-<li>run a Python file from the terminal</li>
+<li>run code in the Python Playground</li>
 </ul>
 <p>At the end, you will make the first part of your game: a welcome screen for <strong>Treasure Hunt</strong>.</p>
 <hr>
 <h2>What is <code>print()</code>?</h2>
 <p><code>print()</code> is a Python command that shows text on the screen.</p>
-<p>Example:</p>
+<p>Example: in the Playground editor, type:</p>
 <pre><code class="language-python">print(&quot;Hello!&quot;)</code></pre>
-<p>When you run the program, Python displays:</p>
+<p>Click <strong>Run code</strong>. The output area will show:</p>
 <pre><code class="language-text">Hello!</code></pre>
 <hr>
-<h2>1) Create your lesson folder</h2>
-<p>Open terminal and run:</p>
-<pre><code class="language-bash">mkdir -p ~/kids_python_tutorial/beginner/01_first_program_print
-cd ~/kids_python_tutorial/beginner/01_first_program_print</code></pre>
-<hr>
-<h2>2) Create your first program file</h2>
-<p>Create a file named <code>first_program.py</code>.</p>
-<p>Add this code:</p>
+<h2>1) Your first program in the Playground</h2>
+<p>In the Playground editor, type:</p>
 <pre><code class="language-python">print(&quot;Welcome to Treasure Hunt!&quot;)
 print(&quot;You are a brave explorer.&quot;)
 print(&quot;Let&#x27;s find the hidden treasure!&quot;)</code></pre>
-<p>Run the file:</p>
-<pre><code class="language-bash">python3 first_program.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>If you see 3 lines of output, mission success.</p>
 <hr>
 <h2>3) Strings: text inside quotes</h2>
@@ -60,103 +60,22 @@ print(&quot;Let&#x27;s find the hidden treasure!&quot;)</code></pre>
 print(&#x27;Treasure&#x27;)</code></pre>
 <p>Both are valid.</p>
 <hr>
-<h2>4) Common mistakes</h2>
-<h3>Mistake A: missing quote</h3>
-<pre><code class="language-python">print(&quot;Hello)</code></pre>
-<p>This causes an error. Fix by closing the quote.</p>
-<h3>Mistake B: missing parenthesis</h3>
-<pre><code class="language-python">print(&quot;Hello&quot;</code></pre>
-<p>Fix by adding the closing <code>)</code>.</p>
-<h3>Mistake C: typo in command</h3>
-<pre><code class="language-python">pritn(&quot;Hello&quot;)</code></pre>
-<p><code>pritn</code> is wrong spelling. Use <code>print</code>.</p>
-<hr>
-<h2>5) Game mini-step: intro screen</h2>
-<p>Now create <code>game_intro.py</code> and add:</p>
+<h2>4) Game mini-step: intro screen</h2>
+<p>In the editor, type:</p>
 <pre><code class="language-python">print(&quot;================================&quot;)
 print(&quot;      TREASURE HUNT GAME&quot;)
 print(&quot;================================&quot;)
 print(&quot;Goal: Find treasure before you run out of lives.&quot;)
 print(&quot;Good luck, explorer!&quot;)</code></pre>
-<p>Run it:</p>
-<pre><code class="language-bash">python3 game_intro.py</code></pre>
+<p>Click <strong>Run code</strong>.</p>
 <p>You just built the first screen of your game.</p>
-<hr>
-<h2>Try changing the text</h2>
-<p>Edit one line and run the file again.</p>
-<p>When you change code, you change what the game says. This is exactly how game development starts.</p>
-<hr>
-<h2>New words</h2>
-<ul>
-<li><strong>print()</strong>: command to show output</li>
-<li><strong>string</strong>: text in quotes</li>
-<li><strong>output</strong>: what appears on screen after running code</li>
-</ul>
-<hr>
-<h2>Mission complete when...</h2>
-<ul>
-<li>[] I can write <code>print(&quot;Hello&quot;)</code></li>
-<li>[] I can run <code>python3 first_program.py</code></li>
-<li>[] I can make a game intro with multiple print lines</li>
-</ul>
-<p>Next lesson: variables.</p>
-      </section>
+        </section>
 
-      <section class="card">
-        <h2>Exercise</h2>
-        <p>Complete each part in order.</p>
-<h2>Part A: Warm-up prints</h2>
-<p>Create <code>practice_print.py</code> and write 4 lines:</p>
-<ol>
-<li>Your name</li>
-<li>Your favorite food</li>
-<li>Your favorite game</li>
-<li>&quot;I am learning Python!&quot;</li>
-</ol>
-<p>Run:</p>
-<pre><code class="language-bash">python3 practice_print.py</code></pre>
-<hr>
-<h2>Part B: Treasure Hunt intro</h2>
-<p>Create <code>my_game_intro.py</code> with at least 5 <code>print()</code> lines.</p>
-<p>It must include:</p>
-<ul>
-<li>game title</li>
-<li>player role (explorer, pirate, etc.)</li>
-<li>game goal</li>
-<li>friendly message</li>
-</ul>
-<p>Run:</p>
-<pre><code class="language-bash">python3 my_game_intro.py</code></pre>
-<hr>
-<h2>Part C: Fix the bugs</h2>
-<p>Find and fix errors in this code:</p>
-<pre><code class="language-python">print(&quot;Welcome to Treasure Hunt!)
-print(&quot;Find the treasure&quot;
-pritn(&quot;Good luck!&quot;)</code></pre>
-<hr>
-<h2>Part D: Make it your own</h2>
-<p>Change the intro theme. Example ideas:</p>
-<ul>
-<li>Space mission</li>
-<li>Jungle adventure</li>
-<li>Underwater quest</li>
-</ul>
-<p>Keep the same structure, but use your own words.</p>
-<hr>
-<h2>Success checklist</h2>
-<ul>
-<li>[] I can use <code>print()</code> correctly</li>
-<li>[] I can write strings with quotes</li>
-<li>[] I can run my Python file from terminal</li>
-<li>[] I can fix simple print-related errors</li>
-</ul>
-      </section>
-
-      <section class="card">
-        <h2>Solution code</h2>
-        <details open>
-          <summary>View <code>solution.py</code></summary>
-          <pre><code class="language-python">def main():
+        <section class="card">
+          <h2>Solution code</h2>
+          <details>
+            <summary>View <code>solution.py</code></summary>
+            <pre><code class="language-python">def main():
     print(&quot;================================&quot;)
     print(&quot;      TREASURE HUNT GAME&quot;)
     print(&quot;================================&quot;)
@@ -167,9 +86,27 @@ pritn(&quot;Good luck!&quot;)</code></pre>
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-        </details>
-      </section>
+          </details>
+        </section>
+      </div>
+
+      <aside class="lesson-sidebar">
+        <section class="card console-card py-console">
+          <h2>Python Playground</h2>
+          <p class="console-help">Run and edit code right here.</p>
+          <div class="console-status" role="status">Python runtime: ready</div>
+          <textarea class="console-editor" spellcheck="false"></textarea>
+          <textarea class="console-starter" hidden></textarea>
+          <div class="console-buttons">
+            <button type="button" class="console-btn primary console-run">Run code</button>
+            <button type="button" class="console-btn console-reset">Reset code</button>
+          </div>
+          <pre class="console-output"></pre>
+        </section>
+      </aside>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="../assets/python_console.js"></script>
 </body>
 </html>
