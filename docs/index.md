@@ -21,7 +21,7 @@ You need two things set up once (a grown-up can help):
 1. A free **Replit** account — this is where you type and run Python.
 2. This tutorial website open on your iPad.
 
-👉 **Setup instructions**: [replits/README](../replits/README.md)
+👉 **Setup instructions**: [Replit setup](./replits.html)
 
 Got a Replit open? Great. Let's go.
 

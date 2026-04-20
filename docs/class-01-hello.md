@@ -21,7 +21,7 @@ Time: about 30 minutes. Let's go!
 ## 1. Open your Replit 🖥️
 
 Open your `snake` Replit on your iPad. (If you haven't set it up,
-[do that first](../replits/README.md).)
+[do that first](./replits.html).)
 
 You should see a file called `snake.py` on the left, and a black box
 on the right (the **console**). That's where answers will appear.

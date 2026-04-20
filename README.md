@@ -13,7 +13,7 @@ Google-style Snake game himself.
 ## How it works
 - **Lessons**: open the [tutorial website](./docs/index.md) on Safari.
 - **Coding**: a free Replit account runs Python (with pygame) right in
-  the browser. See [`replits/README.md`](./replits/README.md) for one-time
+  the browser. See [`docs/replits.md`](./docs/replits.md) for one-time
   setup.
 - **The game grows**: every class adds new lines to `game/snake.py`. At
   the end there's one working file to show off.
@@ -38,7 +38,7 @@ Google-style Snake game himself.
    The site goes live at `https://<your-user>.github.io/python_tutorial/`.
 2. **Make a free Replit account** at <https://replit.com>. Then create a
    new Python Repl called `snake` (instructions in
-   [`replits/README.md`](./replits/README.md)).
+   [`docs/replits.md`](./docs/replits.md)).
 3. Open the landing page on the kid's iPad and start at Class 1.
 
 ## Repo layout

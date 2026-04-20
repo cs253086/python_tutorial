@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Replit setup"
+---
+
 # Replit setup (one-time)
 
 This is where we run Python in the browser on the iPad. You only set
@@ -45,4 +50,4 @@ to a file called `replit.nix` and Replit will install pygame for us.
 
 ---
 
-Back to [all classes](../docs/index.md).
+Back to [all classes](./index.html).
