@@ -14,16 +14,27 @@ this up **once** — after that, every class reuses the same Replit.
 3. Confirm the email if asked.
 
 ## Step 2 — Create the Snake Repl
-1. After signing in, tap **Create Repl** (top-left, the "+" button).
-2. Template: **Python**.
-3. Title: `snake`.
-4. Privacy: **Public** is fine.
-5. Tap **Create Repl**.
+
+Replit's new homepage is for AI-made apps, which is **not** what we want —
+we want a plain Python workspace. The fastest way to get one is this
+direct link:
+
+👉 <https://replit.com/new/python>
+
+Open that on the iPad while you're signed in.
+
+1. If it asks for a name, type `snake` and tap **Create Repl**.
+2. Keep privacy as **Public** (fine for a tutorial).
+3. You'll land in the classic editor.
 
 You now have a workspace with:
 - A file called `main.py` on the left.
 - A **Run** button at the top.
 - A console on the right where output appears.
+
+> 🧭 Lost? If you ever end up back on the "what do you want to make?"
+> screen, just go to <https://replit.com/new/python> again. You can also
+> find your saved Repls under **Projects** on the left sidebar.
 
 ## Step 3 — Rename `main.py` to `snake.py` (optional but nicer)
 1. On the left, tap the three dots next to `main.py` → **Rename**.
