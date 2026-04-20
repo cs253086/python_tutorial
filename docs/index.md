@@ -18,12 +18,13 @@ By the end, `snake.py` is yours — you wrote it.
 
 You need two things set up once (a grown-up can help):
 
-1. A free **Replit** account — this is where you type and run Python.
+1. A free **Trinket** account — this is where you type and run
+   Python in the browser.
 2. This tutorial website open on your iPad.
 
-👉 **Setup instructions**: [Replit setup](./replits.html)
+👉 **Setup instructions**: [Trinket setup](./setup.html)
 
-Got a Replit open? Great. Let's go.
+Got your snake trinket open? Great. Let's go.
 
 ---
 

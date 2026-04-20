@@ -18,27 +18,30 @@ Time: about 30 minutes. Let's go!
 
 ---
 
-## 1. Open your Replit 🖥️
+## 1. Open your snake trinket 🖥️
 
-Open your `snake` Replit on your iPad. (If you haven't set it up,
-[do that first](./replits.html).)
+Open your `snake` trinket on your iPad. (If you haven't set it up,
+[do that first](./setup.html).)
 
-You should see a file called `snake.py` on the left, and a black box
-on the right (the **console**). That's where answers will appear.
+You should see a code area on the left and an output area on the
+right. That's where your answers will appear when you press Run.
+
+> If the code area has some turtle stuff already in it, **delete all
+> of it** — we're starting with a blank page.
 
 ---
 
 ## 2. Your first Python line
 
-Click into `snake.py` and type exactly this:
+Tap into the code area and type exactly this:
 
 ```python
 print("Hello!")
 ```
 
-Now press the green **Run** button at the top.
+Now tap the **▶ Run** button.
 
-You should see this in the console:
+You should see this in the output area:
 
 ```
 Hello!
@@ -102,17 +105,20 @@ We use comments to remind ourselves what our code is doing.
 
 Time for the exciting part — **your first real Snake code**.
 
-Delete everything in `snake.py` and type this instead:
+Delete everything in your trinket and type this instead:
 
 ```python
-# snake.py — we add to this file every class!
+# snake — we add to this file every class!
 
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 ```
 
-Press **Run**. You should see:
+Don't forget to tap **Save** (top-right) so your code is remembered
+for next class.
+
+Press **▶ Run**. You should see:
 
 ```
 🐍 Welcome to Snake!
@@ -131,7 +137,7 @@ a message like this. You just built the very first piece.
 
 ## 6. Homework 🏠
 
-Add **one more line** to the bottom of `snake.py` that cheers you on.
+Add **one more line** to the bottom of your code that cheers you on.
 For example:
 
 ```python

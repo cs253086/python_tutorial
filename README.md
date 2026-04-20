@@ -2,8 +2,8 @@
 
 A 12-class Python course for a 9-year-old who already knows Scratch. Each
 class teaches one Python concept; that lesson's code is added directly
-into a single growing `snake.py`. By Class 12, the kid has built a full
-Google-style Snake game himself.
+into a single growing Snake program. By Class 12, the kid has built a
+full Google-style Snake game himself.
 
 ## Who this is for
 - **Kid age**: ~9, comfortable reading, has done Scratch.
@@ -12,11 +12,11 @@ Google-style Snake game himself.
 
 ## How it works
 - **Lessons**: open the [tutorial website](./docs/index.md) on Safari.
-- **Coding**: a free Replit account runs Python (with pygame) right in
-  the browser. See [`docs/replits.md`](./docs/replits.md) for one-time
-  setup.
-- **The game grows**: every class adds new lines to `game/snake.py`. At
-  the end there's one working file to show off.
+- **Coding**: Classes 1–5 use [Trinket](https://trinket.io) (free,
+  kid-friendly, no install). See [`docs/setup.md`](./docs/setup.md).
+  The platform for Classes 6–12 (pygame graphics) is chosen at Class 5.
+- **The game grows**: every class adds new lines to the kid's `snake`
+  trinket. The reference copy lives at `game/snake.py`.
 
 ## Class list
 1. `print` and comments — the welcome banner
@@ -36,14 +36,13 @@ Google-style Snake game himself.
 1. **Enable GitHub Pages** for this repo: Settings → Pages → Source:
    *Deploy from a branch* → Branch: `main` → Folder: `/docs` → Save.
    The site goes live at `https://<your-user>.github.io/python_tutorial/`.
-2. **Make a free Replit account** at <https://replit.com>. Then create a
-   new Python Repl called `snake` (instructions in
-   [`docs/replits.md`](./docs/replits.md)).
+2. **Make a free Trinket account** at <https://trinket.io>. Create
+   one Python trinket named `snake` that the kid keeps adding to every
+   class (instructions in [`docs/setup.md`](./docs/setup.md)).
 3. Open the landing page on the kid's iPad and start at Class 1.
 
 ## Repo layout
 ```
 docs/             lesson website (GitHub Pages)
-game/snake.py     the game, grown class by class
-replits/          one-time Replit setup notes
+game/snake.py     reference copy of the game, grown class by class
 ```
