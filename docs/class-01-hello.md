@@ -1,169 +1,75 @@
 ---
 layout: default
-title: "Class 1 — Hello, Snake!"
+title: "Class 1 — Make the computer talk!"
 ---
 
-# Class 1 — Hello, Snake! 👋
+# Class 1 — Make the computer talk! 🐍
 
-Welcome to your first Python class! Today you'll teach the computer to
-**talk**. When someone opens your Snake game, the first thing they'll
-see is a welcome message that **you** wrote.
-
-**Today you learn:**
-- `print` — how to make the computer say something
-- Quotes — why words need `"..."` around them
-- Comments — leaving notes for humans
-
-Time: about 30 minutes. Let's go!
+Today you'll teach the computer to say something. Just **3 steps**.
+About 15 minutes. Ready? Let's go!
 
 ---
 
-## 1. Open your snake trinket 🖥️
+## ⭐ Step 1 — Say hello
 
-Open your `snake` trinket on your iPad. (If you haven't set it up,
-[do that first](./setup.html).)
+Open your `snake` trinket.
+([Need to set it up? →](./setup.html))
 
-You should see a code area on the left and an output area on the
-right. That's where your answers will appear when you press Run.
-
-> If the code area has some turtle stuff already in it, **delete all
-> of it** — we're starting with a blank page.
-
----
-
-## 2. Your first Python line
-
-Tap into the code area and type exactly this:
+Delete anything that's already in the code box, and type this:
 
 ```python
 print("Hello!")
 ```
 
-Now tap the **▶ Run** button.
+Tap the **▶ Run** button.
 
-You should see this in the output area:
+See `Hello!` in the output? 🎉 **You just wrote Python!**
 
-```
-Hello!
-```
-
-🎉 You just ran Python! The word `print` is a **command**. It tells
-Python: *"Show this on the screen."* The thing in the quotes is what
-gets shown.
-
-### Try it
-
-Change `"Hello!"` to `"I love pizza!"` and hit Run again. What
-happens?
-
-Try another one. Anything you want!
+> 💡 Try changing `"Hello!"` to anything you want (like `"I love
+> pizza!"`), tap Run again, and watch it change.
 
 ---
 
-## 3. Quotes are important 🔍
+## ⭐ Step 2 — Make the Snake welcome screen
 
-Python is picky about quotes. Try this — on purpose! — and press Run:
+Now let's write the **start of your game**.
 
-```python
-print("Hello!)
-```
-
-See the red squiggle and the error message? That's Python saying
-*"Hey, you forgot a quote."* Don't be scared of red messages. They're
-just the computer asking for help.
-
-**Fix it** by putting the missing `"` back:
+Delete what's in the code box, and type these three lines:
 
 ```python
-print("Hello!")
-```
-
-Rule of thumb: **every `"` needs a partner**. Opening quote, closing
-quote. Always two.
-
----
-
-## 4. Comments — notes just for humans 📝
-
-Sometimes you want to leave a little note in your code that Python
-should **ignore**. That's called a **comment**. You start it with `#`.
-
-Type this and run it:
-
-```python
-# This is a note. Python will skip it.
-print("Python still prints this line.")
-```
-
-Only one line shows up in the console. The `#` line was just for you.
-
-We use comments to remind ourselves what our code is doing.
-
----
-
-## 5. Add it to your game! 🐍
-
-Time for the exciting part — **your first real Snake code**.
-
-Delete everything in your trinket and type this instead:
-
-```python
-# snake — we add to this file every class!
-
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 ```
 
-Don't forget to tap **Save** (top-right) so your code is remembered
-for next class.
+Tap **▶ Run**. You should see all three lines.
 
-Press **▶ Run**. You should see:
+Now tap **Save** (top-right) so your code is kept for next class.
 
-```
-🐍 Welcome to Snake!
-Eat the apples. Don't bite yourself!
-Press an arrow key to start.
-```
-
-**That's your game's welcome screen.** Every Snake game starts with
-a message like this. You just built the very first piece.
-
-> 💡 To get the 🐍 emoji on iPad, use the emoji keyboard (the smiley
-> icon near the space bar) or just use the word `Snake` if it's
-> easier. Both work.
+**That's the very first piece of your Snake game.** 🎉
 
 ---
 
-## 6. Homework 🏠
+## ⭐ Step 3 — Add your own line
 
-Add **one more line** to the bottom of your code that cheers you on.
-For example:
+Add **one more line** at the bottom that cheers you on. For
+example:
 
 ```python
 print("Good luck, Leo!")
 ```
 
-(Use your own name, of course.) Run it and make sure your new line
-shows up.
-
-**Bonus challenge:** add a line that tells the player a fun fact about
-snakes. Anything you want!
+Use your own name! Tap **▶ Run** and check your new line is there.
 
 ---
 
-## What you learned today ✅
+## 🏆 You did it!
 
-- `print("...")` shows a message on the screen.
-- Quotes always come in pairs.
-- `#` starts a comment that Python ignores.
-- You wrote the welcome screen for your own Snake game! 🎉
+You learned:
+- `print(...)` — how to make the computer say something.
+- `"quotes"` go around the words you want to say.
 
-## Coming up in Class 2
-
-You'll learn **variables** — a way to give names to things (like your
-score, or the player's name) so your program can remember them.
-
-**See you next class!**
+**Next class → Variables.** You'll teach the computer to *remember*
+things, like your score.
 
 [⬅ Back to all classes](./index.html)
