@@ -1,81 +1,46 @@
 ---
 layout: default
-title: "Setup — Trinket"
+title: "Get ready"
 ---
 
-# Setup (one-time)
+# Get ready 🛠️
 
-This is where we run Python in the browser on the iPad. You only set
-this up **once** — after that, every class reuses the same place.
+We use **Trinket** (<https://trinket.io>) to run Python in your iPad
+browser. It's free.
 
-We use **Trinket** (<https://trinket.io>). It's made for kids, works
-great on iPad, and there's nothing to install. Free.
+Just **2 quick steps**.
 
-## Step 1 — Try it without signing up
+---
 
-On the iPad, open <https://trinket.io/python> in Safari.
+## ⭐ Step 1 — Sign up
 
-You'll see two panels:
+On the iPad, open <https://trinket.io> in Safari.
 
-- **Left**: a code editor with `from turtle import *` already in it.
-- **Right**: the output area.
+Tap **Sign Up** (top-right). Use Google or an email (ask a grown-up).
+Pick the free plan.
 
-Tap the **▶ Run** button at the top-left of the code area. Something
-should happen (a turtle drawing, a message, etc.). That's Python
-running in the browser!
+---
 
-Don't worry about the turtle code — we're going to delete it next.
+## ⭐ Step 2 — Make your snake trinket
 
-## Step 2 — Make a free account (so your code gets saved)
-
-If you don't sign up, Trinket won't remember your code between
-visits. So let's make a free account.
-
-1. Top-right corner: tap **Sign Up**.
-2. Pick "Sign up with Google" or use an email (ask a grown-up).
-3. Choose the free plan.
-4. Done!
-
-## Step 3 — Make your "snake" trinket
-
-1. Tap **+ New Trinket** (top-right, after signing in) → **Python**.
-2. At the top it says "Untitled" — tap that and rename to `snake`.
+1. Tap **+ New Trinket** → **Python**.
+2. At the top it says *Untitled* — tap it and rename to `snake`.
 3. Tap **Save** (top-right).
 
-This is the one trinket you'll keep growing through every class.
+That's it — you're ready! 🎉
 
-## Step 4 — Put it on your iPad home screen (optional but nice)
-
-This makes opening class feel like opening an app:
-
-1. On your `snake` trinket page, tap the Safari **share** button
-   (square with an arrow).
-2. Pick **Add to Home Screen**.
-3. Name it `Snake` and tap **Add**.
-
-Now tapping the 🐍 icon on the home screen goes straight to your
-code.
-
-## Step 5 — iPad keyboard tips
-
-- Python uses **straight quotes** `"..."`, not curly ones `"..."`.
-  iPad sometimes auto-changes them. If your code has curly quotes and
-  won't run, delete them and retype with the keyboard's straight `"`.
-- Long-press a key to see extra punctuation like `:`, `[`, `(`.
-- If autocorrect changes `print` into `Print` or similar, just fix it.
-  Python needs lowercase.
-
-## About graphics (Classes 6–12)
-
-Trinket is perfect for Classes 1 through 5 (text-only Python). When we
-get to Class 6 and start drawing the green Snake board, we'll decide
-then between:
-
-- Keeping Trinket (it supports a lightweight pygame-style module).
-- Switching to a different tool for the pygame parts.
-
-We'll figure it out when we get there — no need to worry now.
+<p style="text-align:center;margin:2.5em 0;">
+  <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">▶ Start Class 1</a>
+</p>
 
 ---
 
-Back to [all classes](./index.html).
+### 💡 iPad tips
+
+- Python needs **straight quotes** `"..."`. If the iPad turns them
+  curly, retype them.
+- **Long-press** a key to get extras like `:`, `[`, `(`.
+- Want to open your trinket faster? Safari **share** → **Add to Home
+  Screen**. Now tapping the 🐍 icon goes straight to your code.
+
+<sub>[⬅ Back to all classes](./index.html)</sub>

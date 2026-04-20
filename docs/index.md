@@ -5,55 +5,55 @@ title: Snake Python Tutorial
 
 # 🐍 Let's build Snake!
 
-Hi! Over 12 short classes you'll write real Python code and turn it
-into a Snake game that looks like the one you play on Google. Every
-class you learn **one new Python thing**, and that new thing goes
-straight into your game.
+Hi! Over 12 short classes you'll build your own **Snake game** — just
+like the one you play on Google.
 
-By the end, `snake.py` is yours — you wrote it.
-
----
-
-## Before you start
-
-You need two things set up once (a grown-up can help):
-
-1. A free **Trinket** account — this is where you type and run
-   Python in the browser.
-2. This tutorial website open on your iPad.
-
-👉 **Setup instructions**: [Trinket setup](./setup.html)
-
-Got your snake trinket open? Great. Let's go.
+Every class you learn **one new Python thing**, and it goes straight
+into your game. By the end, the whole game is yours.
 
 ---
 
-## The classes
+## 🎮 Class 1 is ready!
 
-| # | What you learn | What you add to Snake |
-|---|---|---|
-| [1](./class-01-hello.html) | `print` and comments | The welcome message ✅ |
-| 2 | Variables | Your name and score *(soon)* |
-| 3 | `input()` | Asking your name *(soon)* |
-| 4 | `if / elif / else` | "You win!" vs "Try again" *(soon)* |
-| 5 | `while` loops | The main game loop *(soon)* |
-| 6 | `import pygame` | The green Snake window *(soon)* |
-| 7 | `for` loops | The checkerboard background *(soon)* |
-| 8 | Lists & tuples | The snake's body *(soon)* |
-| 9 | Keyboard events | Arrow keys to steer *(soon)* |
-| 10 | Functions | Cleaner, shorter code *(soon)* |
-| 11 | `random` module | The apple that appears *(soon)* |
-| 12 | Collisions | Game over screen — full game! *(soon)* |
+<p style="text-align:center;margin:2em 0;">
+  <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.3em;font-weight:bold;">▶ Start Class 1</a>
+</p>
+
+<sub>First time? → [Set up your trinket](./setup.html)</sub>
 
 ---
 
-## Tips
+## 🗺️ What's coming
 
-- **Type the code yourself.** Don't copy-paste. Typing helps your brain
-  remember.
-- **Errors are okay.** Red messages aren't scary — they're clues.
-  We'll learn to read them together.
-- **Experiment.** When something works, try changing a number or a
-  word to see what happens. You can't break anything.
+You'll learn how to make the computer **talk**, **remember**, **ask
+questions**, **make choices**, **loop**, **draw**, and **move things
+with arrow keys**. Then you put it all together into a full game.
 
-Ready? → **[Start Class 1](./class-01-hello.html)**
+| | Class |
+|---|---|
+| 🔓 | **1 — Make the computer talk** (print) |
+| 🔒 | 2 — Remember things (variables) |
+| 🔒 | 3 — Ask the player (input) |
+| 🔒 | 4 — Make choices (if / else) |
+| 🔒 | 5 — Do it again and again (loops) |
+| 🔒 | 6 — Open the green window (pygame) |
+| 🔒 | 7 — Draw the board (for loops) |
+| 🔒 | 8 — The snake's body (lists) |
+| 🔒 | 9 — Move with arrow keys |
+| 🔒 | 10 — Tidy up (functions) |
+| 🔒 | 11 — The apple (random) |
+| 🔒 | 12 — Game over! |
+
+---
+
+## 💡 Three big tips
+
+- ✍️ **Type the code yourself** — don't copy-paste. Typing helps your
+  brain remember.
+- 🛑 **Errors are okay.** Red messages aren't scary — they're clues.
+- 🔬 **Try stuff.** Change a number, change a word, see what happens.
+  You can't break anything.
+
+<p style="text-align:center;margin:2.5em 0;">
+  <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.3em;font-weight:bold;">▶ Start Class 1</a>
+</p>
