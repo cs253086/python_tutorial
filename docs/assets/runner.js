@@ -143,8 +143,52 @@
     autosize(editor);
   }
 
+  function findPythonBlocks() {
+    // Support both plain kramdown (<pre><code class="language-python">)
+    // and Rouge/highlight wrappers (<div class="language-python"><pre><code>).
+    const seen = new Set();
+    const out = [];
+    const push = (codeEl) => {
+      if (!codeEl || seen.has(codeEl)) return;
+      const pre = codeEl.closest("pre");
+      if (!pre || pre.classList.contains("py-runner-static")) return;
+      seen.add(codeEl);
+      out.push(codeEl);
+    };
+    document
+      .querySelectorAll('pre > code.language-python')
+      .forEach(push);
+    document
+      .querySelectorAll('div.language-python pre > code, div.highlight pre > code')
+      .forEach(push);
+    return out;
+  }
+
+  function showBanner(msg, color) {
+    const bar = document.createElement("div");
+    bar.className = "py-runner-banner";
+    bar.style.cssText =
+      "background:" + color + ";color:#fff;padding:8px 12px;" +
+      "font:600 13px system-ui,sans-serif;text-align:center;" +
+      "position:sticky;top:0;z-index:20;";
+    bar.textContent = msg;
+    document.body.prepend(bar);
+  }
+
   function mount() {
-    const blocks = document.querySelectorAll("pre > code.language-python");
+    const blocks = findPythonBlocks();
+    console.log("[py-runner] found " + blocks.length + " python code blocks");
+    if (typeof loadPyodide !== "function") {
+      showBanner(
+        "⚠️ Pyodide script failed to load — reload the page or check your connection.",
+        "#b42318"
+      );
+      return;
+    }
+    if (blocks.length === 0) {
+      // Not a lesson page (e.g. landing page). Nothing to do.
+      return;
+    }
     blocks.forEach((el, i) => buildRunner(el, i));
   }
 
