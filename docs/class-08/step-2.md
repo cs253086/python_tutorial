@@ -19,7 +19,7 @@ snake = [(-40, 0), (-20, 0), (0, 0)]
 
 That's 3 body parts in a row, with the **head at the end**.
 
-In your snake trinket, add this line **after** the checkerboard
+Edit the code below: add this line **after** the checkerboard
 loop (before `screen.mainloop()`):
 
 ```python

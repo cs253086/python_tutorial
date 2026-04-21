@@ -7,7 +7,7 @@ title: "Class 2 — Step 1"
 
 # ⭐ Step 1 — Give a name to a number
 
-Open your `snake` trinket.
+Look at the code box below.
 
 Below your welcome lines, add these **two lines**:
 

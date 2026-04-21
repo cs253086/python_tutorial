@@ -9,7 +9,7 @@ title: "Class 7 — Step 1"
 
 A **`for` loop** does something **once for each number** you give it.
 
-Make a **new empty trinket** (or a fresh test area) and try this:
+Try it in the code box below and try this:
 
 ```python
 for i in range(5):

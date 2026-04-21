@@ -42,7 +42,6 @@ green window! 🟩
 > 💡 `goto(0, 0)` is the **center**. Bigger numbers go right/up,
 > smaller numbers go left/down. Like a map!
 
-Tap **Save** 💾.
 
 ## 🎉 You stamped your first tile!
 

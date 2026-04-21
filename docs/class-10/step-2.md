@@ -7,7 +7,7 @@ title: "Class 10 — Step 2"
 
 # ⭐ Step 2 — Tidy up the board
 
-In your snake trinket, find the board-drawing part:
+Edit the code below: find the board-drawing part:
 
 ```python
 for row in range(20):

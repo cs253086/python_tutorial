@@ -18,7 +18,6 @@ Use **your own name**!
 
 Tap **▶ Run** and check your new line shows up.
 
-Tap **Save** again.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

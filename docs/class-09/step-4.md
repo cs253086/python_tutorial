@@ -14,7 +14,6 @@ then press the **arrow keys** on your iPad keyboard.
 
 🎮 **Your snake steers!**
 
-Tap **Save** 💾.
 
 ## 🎉 You built a real game loop!
 

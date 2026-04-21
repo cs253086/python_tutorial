@@ -64,7 +64,6 @@ def move():
 
 Tap **▶ Run**, steer with the arrows, and chase the apple! 🍎🐍
 
-Tap **Save** 💾.
 
 ## 🎉 You made a real Snake game!
 

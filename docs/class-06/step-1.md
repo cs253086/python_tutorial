@@ -7,7 +7,7 @@ title: "Class 6 — Step 1"
 
 # ⭐ Step 1 — Start fresh
 
-Open your `snake` trinket.
+Look at the code box below.
 
 **Select all your code and delete it.** 😱
 

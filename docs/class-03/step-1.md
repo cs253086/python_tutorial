@@ -10,7 +10,7 @@ title: "Class 3 — Step 1"
 `input` is a command that **asks the player a question** and waits
 for them to type an answer.
 
-At the very top of your `snake` trinket, add this test line:
+At the top of the code below, add this test line:
 
 ```python
 answer = input("What's your favorite color? ")

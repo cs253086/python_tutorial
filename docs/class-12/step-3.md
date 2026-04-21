@@ -151,7 +151,6 @@ screen.mainloop()
 
 Tap **▶ Run** — and **play**. 🎮
 
-Tap **Save** 💾.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I made a game! →</a>

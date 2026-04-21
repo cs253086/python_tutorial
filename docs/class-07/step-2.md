@@ -7,7 +7,7 @@ title: "Class 7 — Step 2"
 
 # ⭐ Step 2 — A row of tiles
 
-Back in your **snake trinket**, we'll use `for` to stamp a **whole
+Back in the code below, we'll use `for` to stamp a **whole
 row** of tiles.
 
 Find this part of your code:

@@ -9,7 +9,7 @@ title: "Class 4 — Step 1"
 
 An **`if`** lets Python **only do something when a rule is true**.
 
-At the bottom of your `snake` trinket, add these lines:
+At the bottom of the code below, add these lines:
 
 ```python
 age = 9

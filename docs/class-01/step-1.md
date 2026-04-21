@@ -7,16 +7,14 @@ title: "Class 1 — Step 1"
 
 # ⭐ Step 1 — Say hello
 
-Open your `snake` trinket on the iPad.
-<sub>([Haven't set it up yet? →](../setup.html))</sub>
-
-Delete anything in the code box, and type this:
+Look at the code box below. It already has your very first Python
+line in it:
 
 ```python
 print("Hello!")
 ```
 
-Tap the **▶ Run** button.
+Tap the green **▶ Run** button under the code.
 
 Can you see `Hello!` in the output?
 

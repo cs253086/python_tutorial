@@ -23,7 +23,6 @@ Your score is 0.
 Now try it again with a **friend's name** or a **silly name** like
 `PizzaLord`. See how the game greets them!
 
-Tap **Save** 💾.
 
 ## 🎉 Your game is interactive now!
 

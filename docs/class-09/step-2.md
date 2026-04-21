@@ -7,7 +7,7 @@ title: "Class 9 — Step 2"
 
 # ⭐ Step 2 — Make the snake move
 
-Back in your snake trinket, find the part that draws the snake:
+Back in the code below, find the part that draws the snake:
 
 ```python
 for part in snake:

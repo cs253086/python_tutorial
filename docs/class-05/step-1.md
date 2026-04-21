@@ -10,7 +10,7 @@ title: "Class 5 — Step 1"
 A **`while` loop** keeps doing the same thing **as long as** a rule
 is true.
 
-At the bottom of your `snake` trinket, add this test:
+At the bottom of the code below, add this test:
 
 ```python
 count = 3

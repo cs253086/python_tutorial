@@ -55,7 +55,6 @@ Tap **▶ Run**.
 The game should work **exactly the same** — but the code is much
 cleaner. 🧹
 
-Tap **Save** 💾.
 
 ## 🎉 Clean code!
 

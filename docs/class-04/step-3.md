@@ -34,7 +34,6 @@ Try it twice:
 1. Type your name, then type `hard`. You should see 💪.
 2. Run again. Type your name, then type `easy`. You should see 🌟.
 
-Tap **Save** 💾.
 
 ## 🎉 Your game makes decisions!
 

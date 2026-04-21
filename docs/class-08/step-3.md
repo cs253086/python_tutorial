@@ -74,7 +74,6 @@ Tap **▶ Run**.
 🐍 **There's your snake!** Three blue squares in a row, right in
 the middle of the green checkerboard.
 
-Tap **Save** 💾.
 
 ## What happened
 

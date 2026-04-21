@@ -19,13 +19,14 @@ into your game. By the end, the whole game is yours.
 
 ---
 
-## 🎮 Class 1 is ready!
+## 🎮 Start here
 
 <p style="text-align:center;margin:2em 0;">
   <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.3em;font-weight:bold;">▶ Start Class 1</a>
 </p>
 
-<sub>First time? → [Set up your trinket](./setup.html)</sub>
+Nothing to install. **Python runs right in the page** — tap ▶ Run on
+any code box. Works on iPad Safari.
 
 ---
 

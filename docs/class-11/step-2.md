@@ -7,7 +7,7 @@ title: "Class 11 — Step 2"
 
 # ⭐ Step 2 — Make the apple appear
 
-In your snake trinket, add `import random` right under
+Edit the code below: add `import random` right under
 `import turtle`:
 
 ```python

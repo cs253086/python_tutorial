@@ -40,7 +40,6 @@ Tap **▶ Run** and play through it:
 - Watch `3… 2… 1… GO!` count down
 - See your score
 
-Tap **Save** 💾.
 
 ## 🎉 You made a text mini-game!
 

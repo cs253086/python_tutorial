@@ -71,7 +71,6 @@ dividing?"
 So `(row + col) % 2 == 0` is a trick to check **even or odd**, and
 that gives us the checker pattern!
 
-Tap **Save** 💾.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
