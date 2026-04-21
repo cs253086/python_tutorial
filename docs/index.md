@@ -11,6 +11,12 @@ like the one you play on Google.
 Every class you learn **one new Python thing**, and it goes straight
 into your game. By the end, the whole game is yours.
 
+<p style="text-align:center;margin:2em 0;">
+  <img src="./assets/final-mockup.svg" alt="Mockup of the finished Snake game — green checkerboard, blue snake, red apple" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
+  <br/>
+  <sub>👆 This is what your game will look like at the end.</sub>
+</p>
+
 ---
 
 ## 🎮 Class 1 is ready!
