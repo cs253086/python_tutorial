@@ -29,7 +29,7 @@ into your game. By the end, the whole game is yours.
 
 ---
 
-## 🗺️ What's coming
+## 🗺️ All the classes
 
 You'll learn how to make the computer **talk**, **remember**, **ask
 questions**, **make choices**, **loop**, **draw**, and **move things
@@ -37,18 +37,18 @@ with arrow keys**. Then you put it all together into a full game.
 
 | | Class |
 |---|---|
-| 🔓 | **1 — Make the computer talk** (print) |
-| 🔒 | 2 — Remember things (variables) |
-| 🔒 | 3 — Ask the player (input) |
-| 🔒 | 4 — Make choices (if / else) |
-| 🔒 | 5 — Do it again and again (loops) |
-| 🔒 | 6 — Open the green window (pygame) |
-| 🔒 | 7 — Draw the board (for loops) |
-| 🔒 | 8 — The snake's body (lists) |
-| 🔒 | 9 — Move with arrow keys |
-| 🔒 | 10 — Tidy up (functions) |
-| 🔒 | 11 — The apple (random) |
-| 🔒 | 12 — Game over! |
+| 🔓 | [**1 — Make the computer talk**](./class-01/) (print) |
+| 🔓 | [**2 — Remember things**](./class-02/) (variables) |
+| 🔓 | [**3 — Ask the player**](./class-03/) (input) |
+| 🔓 | [**4 — Make choices**](./class-04/) (if / else) |
+| 🔓 | [**5 — Do it again**](./class-05/) (while loops) |
+| 🔓 | [**6 — Open the green window**](./class-06/) (turtle) |
+| 🔓 | [**7 — Draw the board**](./class-07/) (for loops) |
+| 🔓 | [**8 — The snake's body**](./class-08/) (lists) |
+| 🔓 | [**9 — Move with arrows**](./class-09/) (keys + loop) |
+| 🔓 | [**10 — Tidy up**](./class-10/) (functions) |
+| 🔓 | [**11 — The apple**](./class-11/) (random + growing) |
+| 🔓 | [**12 — Game over!**](./class-12/) (collisions) |
 
 ---
 

@@ -1,9 +1,15 @@
-"""Reference copy of the Snake game the kid builds across Classes 1-12.
+---
+layout: default
+title: "Class 12 — Step 3"
+---
 
-This is the final version (end of Class 12). The kid builds it up
-step by step in their own trinket. The lesson files are the source of
-truth for pacing; this file is just the "finished" snapshot.
-"""
+<sub>Class 12 — Step **3** of 3</sub>
+
+# ⭐ Step 3 — Admire your game! 🏆
+
+Your whole `snake.py` should now look like this:
+
+```python
 import turtle
 import random
 
@@ -18,7 +24,6 @@ pen.penup()
 pen.shape("square")
 pen.shapesize(1)
 
-
 def draw_board():
     for row in range(20):
         for col in range(20):
@@ -30,7 +35,6 @@ def draw_board():
                 pen.color("#A2D149")
             pen.goto(x, y)
             pen.stamp()
-
 
 draw_board()
 
@@ -59,11 +63,9 @@ score_pen.penup()
 score_pen.color("white")
 score_pen.goto(-230, 220)
 
-
 def draw_score():
     score_pen.clear()
     score_pen.write(f"Score: {score[0]}", font=("Arial", 16, "bold"))
-
 
 def draw_snake():
     snake_pen.clearstamps()
@@ -71,12 +73,10 @@ def draw_snake():
         snake_pen.goto(part)
         snake_pen.stamp()
 
-
 def place_apple():
     apple[0] = random.randint(0, 19) * 20 - 200
     apple[1] = random.randint(0, 19) * 20 - 200
     apple_pen.goto(apple[0], apple[1])
-
 
 def game_over():
     game_over_pen = turtle.Turtle()
@@ -84,32 +84,20 @@ def game_over():
     game_over_pen.penup()
     game_over_pen.color("white")
     game_over_pen.goto(0, 20)
-    game_over_pen.write(
-        "GAME OVER",
-        align="center",
-        font=("Arial", 32, "bold"),
-    )
+    game_over_pen.write("GAME OVER",
+        align="center", font=("Arial", 32, "bold"))
     game_over_pen.goto(0, -20)
-    game_over_pen.write(
-        f"Score: {score[0]}",
-        align="center",
-        font=("Arial", 20, "bold"),
-    )
-
+    game_over_pen.write(f"Score: {score[0]}",
+        align="center", font=("Arial", 20, "bold"))
 
 direction = [20, 0]
-
 
 def move():
     head = snake[-1]
     new_head = (head[0] + direction[0], head[1] + direction[1])
 
-    if (
-        new_head[0] < -200
-        or new_head[0] > 180
-        or new_head[1] < -200
-        or new_head[1] > 180
-    ):
+    if new_head[0] < -200 or new_head[0] > 180 \
+       or new_head[1] < -200 or new_head[1] > 180:
         game_over()
         return
 
@@ -131,26 +119,21 @@ def move():
     draw_snake()
     screen.ontimer(move, 150)
 
-
 def go_up():
     direction[0] = 0
     direction[1] = 20
-
 
 def go_down():
     direction[0] = 0
     direction[1] = -20
 
-
 def go_left():
     direction[0] = -20
     direction[1] = 0
 
-
 def go_right():
     direction[0] = 20
     direction[1] = 0
-
 
 screen.listen()
 screen.onkey(go_up, "Up")
@@ -164,3 +147,14 @@ draw_score()
 move()
 
 screen.mainloop()
+```
+
+Tap **▶ Run** — and **play**. 🎮
+
+Tap **Save** 💾.
+
+<p style="text-align:center;margin:2.5em 0;">
+  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I made a game! →</a>
+</p>
+
+<sub>[⬅ Back to Step 2](./step-2.html)</sub>
