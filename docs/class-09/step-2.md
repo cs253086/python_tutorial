@@ -26,7 +26,7 @@ def move():
     snake.append(new_head)
     snake.pop(0)
 
-    snake_pen.clearstamps()
+    snake_pen.clear()
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()
@@ -47,7 +47,7 @@ automatically.
 - `snake[-1]` — the **last** thing in the list (the head).
 - `snake.append(new_head)` — stick a new head on the front.
 - `snake.pop(0)` — drop the old tail off the back.
-- `snake_pen.clearstamps()` — erase the old snake drawing.
+- `snake_pen.clear()` — erase the old snake drawing.
 - `screen.ontimer(move, 150)` — **call `move` again in 150ms**.
   That's how a game loop works!
 

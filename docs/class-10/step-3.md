@@ -11,7 +11,7 @@ Inside your `move()` function, you have these lines that redraw
 the snake:
 
 ```python
-    snake_pen.clearstamps()
+    snake_pen.clear()
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()
@@ -23,7 +23,7 @@ Let's pull those out into their own function called `draw_snake`.
 
 ```python
 def draw_snake():
-    snake_pen.clearstamps()
+    snake_pen.clear()
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()

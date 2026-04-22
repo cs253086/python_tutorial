@@ -59,7 +59,7 @@ def move():
     snake.append(new_head)
     snake.pop(0)
 
-    snake_pen.clearstamps()
+    snake_pen.clear()
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()

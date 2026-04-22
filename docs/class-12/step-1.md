@@ -61,7 +61,7 @@ def draw_score():
     score_pen.write(f"Score: {score[0]}", font=("Arial", 16, "bold"))
 
 def draw_snake():
-    snake_pen.clearstamps()
+    snake_pen.clear()
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()
@@ -94,7 +94,7 @@ def move():
         score[0] = score[0] + 1
         draw_score()
         place_apple()
-        apple_pen.clearstamps()
+        apple_pen.clear()
         apple_pen.stamp()
     else:
         snake.pop(0)

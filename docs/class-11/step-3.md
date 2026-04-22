@@ -44,7 +44,7 @@ def move():
         score[0] = score[0] + 1
         draw_score()
         place_apple()
-        apple_pen.clearstamps()
+        apple_pen.clear()
         apple_pen.stamp()
     else:
         snake.pop(0)
