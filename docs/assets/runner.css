@@ -52,6 +52,24 @@
 }
 .py-main .py-runner-editor.py-main-editor { min-height: 260px; }
 
+/* Turtle / canvas drawing area sits right under the text output. */
+.py-turtle-canvas {
+  background: #4A752C;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  border-top: 1px solid #30363d;
+}
+.py-turtle-canvas:empty { display: none; }
+.py-turtle-canvas canvas,
+.py-turtle-canvas svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 pre.py-example-code {
   margin: 0 !important;
   padding: 12px 14px !important;
