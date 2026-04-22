@@ -28,9 +28,9 @@ for row in range(20):
         pen.goto(x, y)
         pen.stamp()
 
-# 👇 CLASS 8: ADD THE SNAKE (LIST + SECOND PEN + STAMP EACH PART) 👇
+# 👇 snake = [...]  + snake_pen (blue)  + stamp each body part 👇
 
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 screen.update()
 screen.mainloop()

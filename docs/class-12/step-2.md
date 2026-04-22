@@ -70,10 +70,7 @@ def place_apple():
     apple[1] = random.randint(0, 19) * 20 - 200
     apple_pen.goto(apple[0], apple[1])
 
-# 👇 CLASS 12: ADD game_over() AND WALL + SELF COLLISION CHECKS 👇
-# (Put game_over() here. Then modify move() below so it checks for
-#  wall and self collisions at the TOP and calls game_over() +
-#  return if either crash happens.)
+# 👇 def game_over()  — shows "GAME OVER" + score. Add wall + self checks in move() 👇
 
 direction = [20, 0]
 
@@ -96,7 +93,7 @@ def move():
     screen.update()
     screen.ontimer(move, 150)
 
-# 👆 END OF CLASS 12 ADDITIONS 👆
+# 👆 END 👆
 
 def go_up():
     direction[0] = 0

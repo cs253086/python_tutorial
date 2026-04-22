@@ -39,9 +39,7 @@ snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
-# 👇 CLASS 11: ADD import random, apple_pen, score_pen, apple list,
-#   score list, place_apple(), draw_score(), and update move() to
-#   handle eating (grow + move apple + score++). 👇
+# 👇 apple_pen + score_pen + place_apple() + draw_score(); make move() grow on eat 👇
 
 def draw_snake():
     snake_pen.clear()
@@ -60,7 +58,7 @@ def move():
     screen.update()
     screen.ontimer(move, 150)
 
-# 👆 END OF CLASS 11 ADDITIONS 👆
+# 👆 END 👆
 
 def go_up():
     direction[0] = 0

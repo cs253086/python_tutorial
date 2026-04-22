@@ -8,9 +8,9 @@ print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 
-# 👇 YOUR NEW CODE FOR CLASS 2 GOES HERE 👇
+# 👇 name box + score box + two f-string greetings 👇
 
-# 👆 END OF YOUR NEW CODE 👆
+# 👆 END 👆
 </pre>
 
 <pre class="py-solution">

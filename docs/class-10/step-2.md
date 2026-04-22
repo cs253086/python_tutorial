@@ -17,9 +17,7 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇 CLASS 10: REFACTOR THE BOARD LOOP INTO draw_board() AND
-#   THE SNAKE REDRAW INTO draw_snake(). THEN CALL THEM FROM move().
-# (Your Class 9 code below — move stuff into functions.) 👇
+# 👇 def draw_board() + def draw_snake()  — wrap the loops in functions 👇
 
 for row in range(20):
     for col in range(20):
@@ -80,7 +78,7 @@ screen.onkey(go_right, "Right")
 
 move()
 
-# 👆 END OF CLASS 10 REFACTOR 👆
+# 👆 END 👆
 
 screen.mainloop()
 </pre>

@@ -4,9 +4,9 @@ title: "Class 6 — Step 2"
 ---
 
 <pre class="py-starter">
-# 👇 CLASS 6: YOUR FIRST SNAKE WINDOW GOES HERE 👇
+# 👇 Open the Snake window — screen, pen, stamp one tile 👇
 
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 </pre>
 
 <pre class="py-solution">

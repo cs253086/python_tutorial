@@ -19,9 +19,9 @@ if difficulty == "hard":
 else:
     print("You got this! 🌟")
 
-# 👇 CLASS 5: ADD A 3-2-1 COUNTDOWN WITH A while LOOP 👇
+# 👇 while loop that counts down 3 → 2 → 1, then print("GO! 🏁") 👇
 
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 print(f"Your score is {score}.")
 </pre>

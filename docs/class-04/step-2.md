@@ -12,9 +12,9 @@ score = 0
 
 print(f"🐍 Welcome, {name}!")
 
-# 👇 CLASS 4: ASK EASY/HARD AND REACT WITH if / else 👇
+# 👇 difficulty = input(...) + if/else with two messages 👇
 
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 print(f"Your score is {score}.")
 </pre>

@@ -11,10 +11,9 @@ print("Press an arrow key to start.")
 name = "Leo"
 score = 0
 
-# 👇 CLASS 3: REPLACE `name = "Leo"` WITH AN input CALL 👇
-# (Replace the hardcoded name above with this class's code.)
+# 👇 name = input("What's your name? ")   # ask, don't hardcode 👇
 
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 print(f"🐍 Welcome, {name}!")
 print(f"Your score is {score}.")

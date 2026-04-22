@@ -17,11 +17,11 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇 CLASS 7: REPLACE THESE 3 LINES WITH A CHECKERBOARD LOOP 👇
+# 👇 Two nested for loops that stamp all 400 checker tiles 👇
 pen.color("#AAD751")
 pen.goto(0, 0)
 pen.stamp()
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 screen.update()
 screen.mainloop()

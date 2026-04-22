@@ -36,11 +36,11 @@ snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
-# 👇 CLASS 9: REPLACE THE STATIC DRAW WITH move() + ARROW FUNCTIONS 👇
+# 👇 def move()  — slides snake forward every 150ms. + 4 arrow-key functions 👇
 for part in snake:
     snake_pen.goto(part)
     snake_pen.stamp()
-# 👆 END OF NEW CODE 👆
+# 👆 END 👆
 
 screen.update()
 screen.mainloop()
