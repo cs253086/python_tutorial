@@ -3,30 +3,15 @@ layout: default
 title: "Class 7 — Step 2"
 ---
 
-<sub>Class 7 — Step **2** of 3</sub>
+<sub>Class 7 — Step **2** of 2</sub>
 
-# ⭐ Step 2 — A row of tiles
+# ⭐ Step 2 — Stamp the whole checkerboard
 
-Back in the code below, we'll use `for` to stamp a **whole
-row** of tiles.
+In your Snake file, you currently stamp **one** tile. Let's replace
+that with two nested `for` loops + modulo to stamp **400 tiles**
+(20 rows × 20 columns) in two colors.
 
-Find this part of your code:
-
-```python
-pen.goto(0, 0)
-pen.stamp()
-```
-
-**Replace those two lines** with this loop:
-
-```python
-for col in range(10):
-    x = -200 + col * 20
-    pen.goto(x, 0)
-    pen.stamp()
-```
-
-Your whole file should now look like this:
+Whole file:
 
 ```python
 import turtle
@@ -35,33 +20,47 @@ screen = turtle.Screen()
 screen.title("Snake")
 screen.bgcolor("#4A752C")
 screen.setup(500, 500)
+screen.tracer(0)
 
 pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
 pen.shape("square")
-pen.color("#AAD751")
 
-for col in range(10):
-    x = -200 + col * 20
-    pen.goto(x, 0)
-    pen.stamp()
+for row in range(20):
+    for col in range(20):
+        x = -200 + col * 20
+        y = -200 + row * 20
+        if (row + col) % 2 == 0:
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
+        pen.goto(x, y)
+        pen.stamp()
 
+screen.update()
 screen.mainloop()
 ```
 
 Tap **▶ Run**.
 
-You should see a **row of 10 green squares** across the middle! 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+🎉 **A full Google-Snake checkerboard!**
 
-## What happened?
+### 🔍 Notice
 
-The loop ran **10 times**, with `col` being `0`, `1`, `2`, … `9`.
-Each time, it calculated `x = -200 + col * 20` — a spot a little
-further right — and stamped a tile there.
+- Two `for` loops build the **grid** of positions.
+- `x = -200 + col * 20` turns `col` 0…19 into screen x values
+  `-200` to `180` — each tile 20 pixels wide.
+- `(row + col) % 2 == 0` picks the lighter green on "even" tiles,
+  darker on "odd" — that's the checker pattern.
+- `screen.update()` at the end flushes all 400 stamps at once.
+
+## 🎉 Your Snake board is done!
+
+Next class: put a **snake** on it.
 
 <p style="text-align:center;margin:2.5em 0;">
-  <a href="./step-3.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 3</a>
+  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
 </p>
 
 <sub>[⬅ Back to Step 1](./step-1.html)</sub>

@@ -3,41 +3,46 @@ layout: default
 title: "Class 2 — Step 2"
 ---
 
-<sub>Class 2 — Step **2** of 3</sub>
+<sub>Class 2 — Step **2** of 2</sub>
 
-# ⭐ Step 2 — A box for your name
+# ⭐ Step 2 — Put them in your Snake game
 
-Boxes don't only hold numbers. They can hold **words** too!
-
-A word in Python is called a **string** — because it's like a
-string of letters held together. Strings go inside quotes: `"like
-this"`.
-
-Add this line **above** your `score = 0` line (use your own name!):
+Time to use what you just learned. Here's your whole snake file
+so far — add the new lines so the game knows your **name** and
+your **score**, and greets you with an f-string.
 
 ```python
+print("🐍 Welcome to Snake!")
+print("Eat the apples. Don't bite yourself!")
+print("Press an arrow key to start.")
+
 name = "Leo"
+score = 0
+
+print(f"🐍 Welcome, {name}!")
+print(f"Your score is {score}.")
 ```
 
-Then print both:
+(Put your own name where it says `"Leo"`.)
 
-```python
-print(name)
-print(score)
+Tap **▶ Run**. You should see:
+
+```
+🐍 Welcome to Snake!
+Eat the apples. Don't bite yourself!
+Press an arrow key to start.
+🐍 Welcome, Leo!
+Your score is 0.
 ```
 
-Tap **▶ Run**. You should see your name, then `0`.
+## 🎉 Your game knows your name!
 
-## 🔍 Notice
-
-- The quotes around `"Leo"` tell Python: *"this is a word, not the
-  name of another box."* Without quotes, Python would look for a
-  box called `Leo` and get confused.
-- `name` is a new box. `score` is still there too. You can have as
-  many boxes as you want — each with its own name.
+> 🧪 **Try it**: change `score = 0` to `score = 42`, tap Run, and
+> watch the last line update — even though you didn't change the
+> `print` line!
 
 <p style="text-align:center;margin:2.5em 0;">
-  <a href="./step-3.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 3</a>
+  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
 </p>
 
 <sub>[⬅ Back to Step 1](./step-1.html)</sub>

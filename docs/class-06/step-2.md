@@ -3,20 +3,12 @@ layout: default
 title: "Class 6 — Step 2"
 ---
 
-<sub>Class 6 — Step **2** of 3</sub>
+<sub>Class 6 — Step **2** of 2</sub>
 
-# ⭐ Step 2 — Make the Snake window
+# ⭐ Step 2 — Open your Snake window
 
-Add this under `import turtle`:
-
-```python
-screen = turtle.Screen()
-screen.title("Snake")
-screen.bgcolor("#4A752C")
-screen.setup(500, 500)
-```
-
-Your whole file should now be:
+Time for the real thing. From now on this is your **Snake game
+file** — we'll keep growing it every class.
 
 ```python
 import turtle
@@ -25,26 +17,42 @@ screen = turtle.Screen()
 screen.title("Snake")
 screen.bgcolor("#4A752C")
 screen.setup(500, 500)
+screen.tracer(0)
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.penup()
+pen.shape("square")
+pen.color("#AAD751")
+pen.goto(0, 0)
+pen.stamp()
+
+screen.update()
+screen.mainloop()
 ```
 
 Tap **▶ Run**.
 
-A **dark green window** should appear with the title **Snake**!
+You should see a **dark-green 500×500 board** titled **Snake**
+with a single **light-green square** in the middle. 🎉
 
-🎉 **That's your game board!**
+### 🔍 Notice
 
-## What each line does
+- `screen.title("Snake")` — sets the window title.
+- `screen.setup(500, 500)` — makes the window 500 by 500 pixels.
+- `screen.tracer(0)` — tells turtle *"don't animate; I'll say
+  when to refresh."*
+- `screen.update()` — now refresh! This is how we get the whole
+  board to appear in one go instead of one tile at a time. (You'll
+  care about this more next class when you stamp 400 tiles.)
+- `screen.mainloop()` — keeps the window open.
 
-- `screen = turtle.Screen()` — grab the drawing window.
-- `screen.title("Snake")` — put "Snake" in the title bar.
-- `screen.bgcolor("#4A752C")` — paint the background dark green.
-- `screen.setup(500, 500)` — make the window 500 by 500 big.
+## 🎉 Your Snake board exists!
 
-> 💡 The weird code `"#4A752C"` is a **color code**. It's the same
-> dark green as Google Snake's background!
+Next class we fill it with a whole checkerboard using `for` loops.
 
 <p style="text-align:center;margin:2.5em 0;">
-  <a href="./step-3.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 3</a>
+  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
 </p>
 
 <sub>[⬅ Back to Step 1](./step-1.html)</sub>

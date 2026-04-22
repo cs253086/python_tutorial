@@ -3,14 +3,17 @@ layout: default
 title: "Class 10 — Step 1"
 ---
 
-<sub>Class 10 — Step **1** of 3</sub>
+<sub>Class 10 — Step **1** of 2</sub>
 
-# ⭐ Step 1 — Functions that take something in
+# ⭐ Step 1 — Meet parameters (and refactoring)
 
-A function can **take a value** in the brackets. That value is
-called a **parameter**.
+Last class you wrote `def say_hi():` with empty `()`. But real
+recipes often take **ingredients**. "Make a cake with flavor X."
+A function can take ingredients too — they live inside the `()`.
 
-Try this in a fresh area:
+---
+
+## 🧁 A function with one parameter
 
 ```python
 def greet(name):
@@ -21,24 +24,18 @@ greet("Mom")
 greet("Mr. Snake")
 ```
 
-Tap **▶ Run**.
+Tap **▶ Run**. You should see three different hellos.
 
-You should see:
+### 🔍 Notice
 
-```
-Hi, Leo!
-Hi, Mom!
-Hi, Mr. Snake!
-```
+- `name` inside `def greet(name):` is the **parameter** — a box the
+  function gets just for this call.
+- You pass a value in when you **call** it: `greet("Leo")`.
+- Inside the function, use `name` like any variable.
 
-## 🎉 Functions can take inputs!
+---
 
-The same `greet` function did different things based on what you
-passed in.
-
-## Try it
-
-Write your own function that takes **two** parameters:
+## ➕ A function with two parameters
 
 ```python
 def add(a, b):
@@ -47,6 +44,50 @@ def add(a, b):
 add(3, 4)
 add(10, 20)
 ```
+
+Run it. Output: `7`, then `30`.
+
+### 🔍 Notice
+
+- Separate parameters with **commas**: `def add(a, b):`.
+- Pass values in the same order: `add(3, 4)` → `a = 3, b = 4`.
+
+---
+
+## 🧼 What's "refactoring"?
+
+**Refactoring** is moving code around to make it cleaner, without
+changing what it does. A function is the main tool. You find a
+block that does one clear thing, give it a name, and replace it
+with a single call.
+
+Before:
+
+```
+# draw the whole board
+for row in range(20):
+    for col in range(20):
+        ... lots of lines ...
+```
+
+After:
+
+```
+def draw_board():
+    for row in range(20):
+        for col in range(20):
+            ... lots of lines ...
+
+draw_board()   # one line now!
+```
+
+Same behavior. Less mess. Easier to read later.
+
+---
+
+## 🎉 You know parameters and refactoring!
+
+Next step: clean up your Snake game.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>

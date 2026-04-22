@@ -3,178 +3,83 @@ layout: default
 title: "Class 12 — Step 1"
 ---
 
-<pre class="py-starter">
-import turtle
-import random
+<sub>Class 12 — Step **1** of 2</sub>
 
-screen = turtle.Screen()
-screen.title("Snake")
-screen.bgcolor("#4A752C")
-screen.setup(500, 500)
-screen.tracer(0)
+# ⭐ Step 1 — Meet `in` and `return`
 
-pen = turtle.Turtle()
-pen.hideturtle()
-pen.penup()
-pen.shape("square")
+Two small but mighty Python words today.
 
-def draw_board():
-    for row in range(20):
-        for col in range(20):
-            x = -200 + col * 20
-            y = -200 + row * 20
-            if (row + col) % 2 == 0:
-                pen.color("#AAD751")
-            else:
-                pen.color("#A2D149")
-            pen.goto(x, y)
-            pen.stamp()
-    screen.update()
+---
 
-draw_board()
-
-snake = [(-40, 0), (-20, 0), (0, 0)]
-
-snake_pen = turtle.Turtle()
-snake_pen.hideturtle()
-snake_pen.penup()
-snake_pen.shape("square")
-snake_pen.color("#4673E8")
-
-apple_pen = turtle.Turtle()
-apple_pen.hideturtle()
-apple_pen.penup()
-apple_pen.shape("circle")
-apple_pen.color("#E74C3C")
-
-apple = [0, 0]
-score = [0]
-
-score_pen = turtle.Turtle()
-score_pen.hideturtle()
-score_pen.penup()
-score_pen.color("white")
-score_pen.goto(-230, 220)
-
-def draw_score():
-    score_pen.clear()
-    score_pen.write(f"Score: {score[0]}", font=("Arial", 16, "bold"))
-
-def draw_snake():
-    snake_pen.clear()
-    for part in snake:
-        snake_pen.goto(part)
-        snake_pen.stamp()
-    screen.update()
-
-def place_apple():
-    apple[0] = random.randint(0, 19) * 20 - 200
-    apple[1] = random.randint(0, 19) * 20 - 200
-    apple_pen.goto(apple[0], apple[1])
-
-# 👇 STEP 1: Add your game_over() function here 👇
-
-
-# 👆 END OF STEP 1 ADDITIONS 👆
-
-direction = [20, 0]
-
-def move():
-    head = snake[-1]
-    new_head = (head[0] + direction[0], head[1] + direction[1])
-
-    # 👇 STEP 1: Add your wall-collision check here 👇
-
-
-    # 👆 END OF WALL CHECK 👆
-
-    snake.append(new_head)
-
-    if new_head[0] == apple[0] and new_head[1] == apple[1]:
-        score[0] = score[0] + 1
-        draw_score()
-        place_apple()
-        apple_pen.clear()
-        apple_pen.stamp()
-    else:
-        snake.pop(0)
-
-    draw_snake()
-    screen.ontimer(move, 150)
-
-def go_up():
-    direction[0] = 0
-    direction[1] = 20
-
-def go_down():
-    direction[0] = 0
-    direction[1] = -20
-
-def go_left():
-    direction[0] = -20
-    direction[1] = 0
-
-def go_right():
-    direction[0] = 20
-    direction[1] = 0
-
-screen.listen()
-screen.onkey(go_up, "Up")
-screen.onkey(go_down, "Down")
-screen.onkey(go_left, "Left")
-screen.onkey(go_right, "Right")
-
-place_apple()
-apple_pen.stamp()
-draw_score()
-move()
-
-screen.mainloop()
-</pre>
-
-<sub>Class 12 — Step **1** of 3</sub>
-
-# ⭐ Step 1 — Hit the wall
-
-First, let's write the **game over** command. Then we'll call it
-when the snake hits a wall.
-
-Add this function **before** `def move():`:
+## 🔎 `in` — is this thing inside that list?
 
 ```python
-def game_over():
-    game_over_pen = turtle.Turtle()
-    game_over_pen.hideturtle()
-    game_over_pen.penup()
-    game_over_pen.color("white")
-    game_over_pen.goto(0, 20)
-    game_over_pen.write("GAME OVER",
-        align="center", font=("Arial", 32, "bold"))
-    game_over_pen.goto(0, -20)
-    game_over_pen.write(f"Score: {score[0]}",
-        align="center", font=("Arial", 20, "bold"))
+fruits = ["apple", "banana", "cherry"]
+print("apple" in fruits)
+print("pizza" in fruits)
 ```
 
-Now add a **wall check** at the top of `move()`. Right after the
-line `new_head = ...`, add:
+Tap **▶ Run**. Output:
+
+```
+True
+False
+```
+
+### 🔍 Notice
+
+- `x in my_list` scans the list for you and returns `True` or
+  `False`. One line, no loop needed!
+- We'll use this to check *"is the snake's new head inside its own
+  body?"* → if yes, it just bit itself. Game over.
+
+---
+
+## 🚪 `return` — leave a function early
+
+Inside a function, `return` means *"I'm done. Don't run any more
+lines in this function."*
 
 ```python
-    if new_head[0] < -200 or new_head[0] > 180 \
-       or new_head[1] < -200 or new_head[1] > 180:
-        game_over()
+def greet(name):
+    if name == "":
+        print("No name? Bye!")
         return
+    print(f"Hi, {name}!")
+
+greet("")
+greet("Leo")
 ```
 
-> 💡 The `\` at the end of a line means *"this line continues on
-> the next one"*. Handy for long `if` checks.
->
-> 💡 `return` inside a function means *"stop — don't do anything
-> else."* So `move()` won't schedule the next tick, and the game
-> ends.
+Run it. First call hits `return` early and stops. Second call
+skips the `if` and prints the greeting.
 
-Tap **▶ Run**. Drive your snake off the edge of the board.
+### 🔍 Notice
 
-🎉 **GAME OVER!** appears.
+- When `name == ""`, the function prints the "bye" line then
+  `return`s — the final `print("Hi, …")` never runs.
+- We'll use this in `move()`: the moment a collision happens,
+  `game_over()` runs and we `return` so no more ticks get
+  scheduled.
+
+---
+
+## 💥 The two kinds of collision
+
+- **Wall** — the snake's head goes past the edge of the board.
+  We check with a comparison:
+  `new_head[0] < -200 or new_head[0] > 180 or …`
+- **Self** — the head lands on a body part.
+  We check with `in`: `new_head in snake`.
+
+Either one → `game_over()` + `return`.
+
+---
+
+## 🎉 You know `in` and `return`!
+
+Next step: add the collision checks and a big **GAME OVER**
+banner to your snake game.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>

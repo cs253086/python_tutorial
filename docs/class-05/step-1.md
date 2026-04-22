@@ -3,14 +3,21 @@ layout: default
 title: "Class 5 — Step 1"
 ---
 
-<sub>Class 5 — Step **1** of 3</sub>
+<sub>Class 5 — Step **1** of 2</sub>
 
-# ⭐ Step 1 — Your first `while`
+# ⭐ Step 1 — Meet `while`
 
-A **`while` loop** keeps doing the same thing **as long as** a rule
-is true.
+Think of brushing your teeth:
 
-At the bottom of the code below, add this test:
+> **WHILE** your teeth are still dirty → keep brushing.
+> As soon as they're clean, stop.
+
+That's a `while` loop. Python repeats a block as long as a **rule
+is still true**.
+
+---
+
+## 🔢 A countdown loop
 
 ```python
 count = 3
@@ -20,9 +27,7 @@ while count > 0:
 print("Done!")
 ```
 
-Tap **▶ Run**.
-
-You should see:
+Tap **▶ Run**. You should see:
 
 ```
 3
@@ -31,19 +36,35 @@ You should see:
 Done!
 ```
 
-## 🎉 You made a loop!
+### 🔍 Notice
 
-Here's what Python did:
-1. Set `count` to `3`.
-2. Check the rule: is `count > 0`? Yes → print it, subtract 1.
-3. Check again: is `2 > 0`? Yes → print, subtract 1.
-4. Again: `1 > 0`? Yes → print, subtract 1.
-5. Now `count` is `0`. The rule is **false**. Loop ends.
-6. Print `Done!`.
+Python's thinking goes like this:
+1. Is `count > 0`? Yes (3 > 0) → do the block.
+2. Again: 2 > 0? Yes → do it.
+3. Again: 1 > 0? Yes → do it.
+4. Again: 0 > 0? **No** → stop. Print `Done!`.
 
-> ⚠️ **Careful**: if you forget the `count = count - 1` line, the
-> loop never ends. That's called an **infinite loop** — it just
-> keeps going forever!
+- `count = count - 1` is what makes the rule eventually become
+  false. Something **inside** the loop must push toward the exit.
+
+---
+
+## ⚠️ The "never-ending loop" trap
+
+If the rule never becomes false, the loop goes **forever** and
+freezes your page.
+
+> 🧪 **Try it** (carefully!): delete the `count = count - 1` line.
+> `count` stays at 3 → `3 > 0` is always true → infinite loop.
+>
+> If your page freezes, just reload it and put the line back.
+
+---
+
+## 🎉 You can loop!
+
+Next step: turn this into a Snake countdown and wire up your whole
+mini-game.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>
