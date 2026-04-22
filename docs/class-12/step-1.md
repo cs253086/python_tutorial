@@ -11,11 +11,11 @@ screen = turtle.Screen()
 screen.title("Snake")
 screen.bgcolor("#4A752C")
 screen.setup(500, 500)
-screen.tracer(0)
 
 pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
+pen.speed(0)
 pen.shape("square")
 
 def draw_board():
@@ -29,7 +29,6 @@ def draw_board():
                 pen.color("#A2D149")
             pen.goto(x, y)
             pen.stamp()
-    screen.update()
 
 draw_board()
 
@@ -38,12 +37,14 @@ snake = [(-40, 0), (-20, 0), (0, 0)]
 snake_pen = turtle.Turtle()
 snake_pen.hideturtle()
 snake_pen.penup()
+snake_pen.speed(0)
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
 apple_pen = turtle.Turtle()
 apple_pen.hideturtle()
 apple_pen.penup()
+apple_pen.speed(0)
 apple_pen.shape("circle")
 apple_pen.color("#E74C3C")
 
@@ -53,6 +54,7 @@ score = [0]
 score_pen = turtle.Turtle()
 score_pen.hideturtle()
 score_pen.penup()
+score_pen.speed(0)
 score_pen.color("white")
 score_pen.goto(-230, 220)
 
@@ -65,7 +67,6 @@ def draw_snake():
     for part in snake:
         snake_pen.goto(part)
         snake_pen.stamp()
-    screen.update()
 
 def place_apple():
     apple[0] = random.randint(0, 19) * 20 - 200
