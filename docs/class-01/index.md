@@ -11,10 +11,9 @@ Today you'll write your very first Python and make the computer
 ## 🎯 Today you'll
 - Meet `print`, quotes, and comments
 - Write the welcome screen for your Snake game
-- Add your own line that cheers you on
 
-- 🧩 **3 steps**
-- ⏱️ About 15 minutes
+- 🧩 **2 steps**
+- ⏱️ About 10 minutes
 
 Ready?
 

@@ -3,7 +3,7 @@ layout: default
 title: "Class 1 — Step 1"
 ---
 
-<sub>Class 1 — Step **1** of 3</sub>
+<sub>Class 1 — Step **1** of 2</sub>
 
 # ⭐ Step 1 — Meet `print`
 
