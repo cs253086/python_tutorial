@@ -23,7 +23,6 @@ apple_pen = turtle.Turtle()
 apple_pen.hideturtle()
 apple_pen.penup()
 apple_pen.shape("circle")
-apple_pen.shapesize(1)
 apple_pen.color("#E74C3C")
 
 apple = [0, 0]

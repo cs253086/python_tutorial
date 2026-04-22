@@ -39,7 +39,6 @@ pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
 pen.shape("square")
-pen.shapesize(1)
 
 for row in range(20):
     for col in range(20):

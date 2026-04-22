@@ -18,7 +18,6 @@ snake_pen = turtle.Turtle()
 snake_pen.hideturtle()
 snake_pen.penup()
 snake_pen.shape("square")
-snake_pen.shapesize(1)
 snake_pen.color("#4673E8")
 
 for part in snake:
@@ -40,7 +39,6 @@ pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
 pen.shape("square")
-pen.shapesize(1)
 
 for row in range(20):
     for col in range(20):
@@ -59,7 +57,6 @@ snake_pen = turtle.Turtle()
 snake_pen.hideturtle()
 snake_pen.penup()
 snake_pen.shape("square")
-snake_pen.shapesize(1)
 snake_pen.color("#4673E8")
 
 for part in snake:

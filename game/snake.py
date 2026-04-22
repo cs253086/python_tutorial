@@ -16,7 +16,6 @@ pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
 pen.shape("square")
-pen.shapesize(1)
 
 
 def draw_board():
@@ -40,14 +39,12 @@ snake_pen = turtle.Turtle()
 snake_pen.hideturtle()
 snake_pen.penup()
 snake_pen.shape("square")
-snake_pen.shapesize(1)
 snake_pen.color("#4673E8")
 
 apple_pen = turtle.Turtle()
 apple_pen.hideturtle()
 apple_pen.penup()
 apple_pen.shape("circle")
-apple_pen.shapesize(1)
 apple_pen.color("#E74C3C")
 
 apple = [0, 0]

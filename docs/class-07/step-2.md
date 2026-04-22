@@ -40,7 +40,6 @@ pen = turtle.Turtle()
 pen.hideturtle()
 pen.penup()
 pen.shape("square")
-pen.shapesize(1)
 pen.color("#AAD751")
 
 for col in range(10):
