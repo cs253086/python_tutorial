@@ -35,6 +35,22 @@
   border-bottom: 1px solid #d0d7de;
 }
 .py-panel-label-edit { background: #d8f5e1; color: #1f6f3a; }
+.py-panel-label-main { background: #fff3cd; color: #8a5a00; }
+
+/* Hide the raw .py-starter element before runner.js replaces it, so the kid
+   never sees the unformatted cumulative code. */
+.py-starter { display: none; }
+
+/* The big main editor container (cumulative mode) */
+.py-main {
+  margin: 1.5em 0;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.py-main .py-runner-editor.py-main-editor { min-height: 260px; }
 
 pre.py-example-code {
   margin: 0 !important;
