@@ -213,8 +213,8 @@
     const runBtn = buildButton("py-runner-run", "▶ Run");
     const useExampleBtn = buildButton(
       "py-runner-copy",
-      "📋 Use example",
-      "Copy the example into your editor"
+      "💡 Solution",
+      "Fill in the answer for this example"
     );
     const resetBtn = buildButton("py-runner-reset", "↺ Clear", "Empty the editor");
     const status = document.createElement("span");
@@ -255,8 +255,33 @@
 
   // ---------- Cumulative main-editor mode ----------
 
+  // Markers the kid's starter code uses to indicate where new code goes.
+  // The Solution button replaces everything between these markers (inclusive
+  // of the marker lines themselves is a design choice — here we KEEP the
+  // markers and replace only the blank/placeholder region between them).
+  const MARKER_START = /^[ \t]*#\s*(?:===\s*)?👇[^\n]*$/m;
+  const MARKER_END   = /^[ \t]*#\s*(?:===\s*)?👆[^\n]*$/m;
+
+  function replaceBetweenMarkers(editorValue, solution) {
+    const startMatch = editorValue.match(MARKER_START);
+    const endMatch   = editorValue.match(MARKER_END);
+    if (!startMatch || !endMatch) return null;
+    const startIdx = startMatch.index + startMatch[0].length;
+    const endIdx   = endMatch.index;
+    if (endIdx <= startIdx) return null;
+    const before = editorValue.substring(0, startIdx);
+    const after  = editorValue.substring(endIdx);
+    return before + "\n" + solution.trim() + "\n" + after;
+  }
+
   function buildMainEditor(starterEl) {
     const starterCode = starterEl.textContent.replace(/^\n+|\n+$/g, "");
+    const solutionEl = document.querySelector(".py-solution");
+    const solutionCode = solutionEl
+      ? solutionEl.textContent.replace(/^\n+|\n+$/g, "")
+      : null;
+    if (solutionEl) solutionEl.remove();
+
     const key = "pymain:" + location.pathname;
     const saved = (() => {
       try { return localStorage.getItem(key); } catch (_) { return null; }
@@ -267,8 +292,9 @@
 
     const label = document.createElement("div");
     label.className = "py-panel-label py-panel-label-main";
-    label.textContent =
-      "🐍 Your snake.py — add the new lines below where you see the markers, then tap Run";
+    label.textContent = solutionCode
+      ? "🐍 Your snake.py — type your new code between the 👇 markers (or tap 💡 Solution)"
+      : "🐍 Your snake.py — edit below, then tap ▶ Run";
 
     const editor = document.createElement("textarea");
     editor.className = "py-runner-editor py-main-editor";
@@ -283,6 +309,11 @@
 
     const toolbar = buildToolbar();
     const runBtn = buildButton("py-runner-run", "▶ Run");
+    const solutionBtn = buildButton(
+      "py-runner-copy",
+      "💡 Solution",
+      "Fill in the new code between the markers"
+    );
     const resetBtn = buildButton(
       "py-runner-reset",
       "↺ Reset to start",
@@ -291,7 +322,19 @@
     const status = document.createElement("span");
     status.className = "py-runner-status";
 
+    if (!solutionCode) solutionBtn.style.display = "none";
+
     const { output, canvas } = buildOutputAndCanvas();
+
+    solutionBtn.addEventListener("click", () => {
+      if (!solutionCode) return;
+      const filled = replaceBetweenMarkers(editor.value, solutionCode);
+      editor.value = filled != null
+        ? filled
+        : replaceBetweenMarkers(starterCode, solutionCode) || starterCode;
+      try { localStorage.setItem(key, editor.value); } catch (_) {}
+      editor.dispatchEvent(new Event("input"));
+    });
 
     resetBtn.addEventListener("click", () => {
       if (
@@ -310,6 +353,7 @@
     attachRunHandler({ runBtn, editor, output, canvas, status });
 
     toolbar.appendChild(runBtn);
+    toolbar.appendChild(solutionBtn);
     toolbar.appendChild(resetBtn);
     toolbar.appendChild(status);
 

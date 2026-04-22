@@ -37,9 +37,11 @@
 .py-panel-label-edit { background: #d8f5e1; color: #1f6f3a; }
 .py-panel-label-main { background: #fff3cd; color: #8a5a00; }
 
-/* Hide the raw .py-starter element before runner.js replaces it, so the kid
-   never sees the unformatted cumulative code. */
-.py-starter { display: none; }
+/* Hide the raw .py-starter and .py-solution elements before runner.js
+   processes them, so the kid never sees the unformatted cumulative code
+   or the solution leaking through. */
+.py-starter,
+.py-solution { display: none; }
 
 /* The big main editor container (cumulative mode) */
 .py-main {

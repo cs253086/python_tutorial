@@ -3,43 +3,54 @@ layout: default
 title: "Class 2 — Step 2"
 ---
 
-<sub>Class 2 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Put them in your Snake game
-
-Time to use what you just learned. Here's your whole snake file
-so far — add the new lines so the game knows your **name** and
-your **score**, and greets you with an f-string.
-
-```python
+<pre class="py-starter">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 
+# 👇 YOUR NEW CODE FOR CLASS 2 GOES HERE 👇
+
+# 👆 END OF YOUR NEW CODE 👆
+</pre>
+
+<pre class="py-solution">
 name = "Leo"
 score = 0
 
 print(f"🐍 Welcome, {name}!")
 print(f"Your score is {score}.")
-```
+</pre>
 
-(Put your own name where it says `"Leo"`.)
+<sub>Class 2 — Step **2** of 2</sub>
 
-Tap **▶ Run**. You should see:
+# ⭐ Step 2 — Put variables in your Snake game
 
-```
-🐍 Welcome to Snake!
-Eat the apples. Don't bite yourself!
-Press an arrow key to start.
-🐍 Welcome, Leo!
-Your score is 0.
-```
+Your `snake.py` so far is the **3 welcome lines** from Class 1.
+The editor below has those plus two **marker lines** showing where
+your new Class 2 code goes.
 
-## 🎉 Your game knows your name!
+## ✏️ What to add
 
-> 🧪 **Try it**: change `score = 0` to `score = 42`, tap Run, and
-> watch the last line update — even though you didn't change the
-> `print` line!
+Between the `👇` and `👆` markers, add:
+
+1. A variable called `name` with your name in quotes
+2. A variable called `score` set to `0`
+3. Two `print` lines that use **f-strings** to greet `{name}`
+   and show the `{score}`
+
+When you're ready, tap **▶ Run** — you should see the welcome
+lines plus the personalized greeting.
+
+> 💡 Stuck? Tap **Solution** and the answer drops in for you.
+
+---
+
+## 🔍 Notice
+
+- The markers stay in place — they're comments, so Python ignores
+  them. They're just landmarks for **you**.
+- The old welcome lines from Class 1 are **still there**. You're
+  adding to your game, not replacing it.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
