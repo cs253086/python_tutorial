@@ -3,14 +3,7 @@ layout: default
 title: "Class 5 — Step 2"
 ---
 
-<sub>Class 5 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Snake countdown → GO!
-
-Let's plug the countdown into your Snake mini-game. This is your
-**whole file** for Class 5:
-
-```python
+<pre class="py-starter">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 
@@ -26,27 +19,63 @@ if difficulty == "hard":
 else:
     print("You got this! 🌟")
 
+# 👇 CLASS 5: ADD A 3-2-1 COUNTDOWN WITH A while LOOP 👇
+
+# 👆 END OF NEW CODE 👆
+
+print(f"Your score is {score}.")
+</pre>
+
+<pre class="py-solution">
 countdown = 3
 while countdown > 0:
     print(countdown)
     countdown = countdown - 1
 
 print("GO! 🏁")
-print(f"Your score is {score}.")
-```
+</pre>
 
-Tap **▶ Run** and play it through:
+<sub>Class 5 — Step **2** of 2</sub>
+
+# ⭐ Step 2 — Snake countdown → GO!
+
+Your Class 4 game already asks your name + difficulty. Let's add a
+**`3… 2… 1… GO!`** countdown right before the score line.
+
+## ✏️ What to add
+
+Between the 👇 and 👆 markers, add:
+
+1. A variable `countdown` starting at `3`
+2. A `while countdown > 0:` loop that prints `countdown` and then
+   subtracts 1 from it
+3. After the loop, print `GO! 🏁`
+
+Tap **▶ Run** and play the whole mini-game end-to-end:
+
 - Type your name
 - Type `easy` or `hard`
-- Watch `3… 2… 1… GO!` count down
+- Watch `3… 2… 1… GO!`
 - See your score
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- `countdown = countdown - 1` is what lets the loop eventually
+  stop. Without it, `countdown` stays at 3 forever — your page
+  would freeze (infinite loop!).
+- The `print("GO! 🏁")` line is **outside** the loop (not
+  indented), so it only runs once after the loop ends.
 
 ## 🎉 You built a real text mini-game!
 
-Everything you've learned in Classes 1–5 — `print`, variables,
-`input`, `if/else`, `while` — is now working together.
+Everything you've learned — `print`, variables, `input`, `if/else`,
+`while` — is now working together.
 
-**Next class the screen goes from words to graphics.** 🎨
+Next class → **graphics**. 🎨
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

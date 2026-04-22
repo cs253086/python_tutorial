@@ -3,15 +3,8 @@ layout: default
 title: "Class 11 — Step 2"
 ---
 
-<sub>Class 11 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Apple + eating + score
-
-Time for the real Snake game. Whole file:
-
-```python
+<pre class="py-starter">
 import turtle
-import random
 
 screen = turtle.Screen()
 screen.title("Snake")
@@ -45,6 +38,59 @@ snake_pen.hideturtle()
 snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
+
+# 👇 CLASS 11: ADD import random, apple_pen, score_pen, apple list,
+#   score list, place_apple(), draw_score(), and update move() to
+#   handle eating (grow + move apple + score++). 👇
+
+def draw_snake():
+    snake_pen.clear()
+    for part in snake:
+        snake_pen.goto(part)
+        snake_pen.stamp()
+
+direction = [20, 0]
+
+def move():
+    head = snake[-1]
+    new_head = (head[0] + direction[0], head[1] + direction[1])
+    snake.append(new_head)
+    snake.pop(0)
+    draw_snake()
+    screen.update()
+    screen.ontimer(move, 150)
+
+# 👆 END OF CLASS 11 ADDITIONS 👆
+
+def go_up():
+    direction[0] = 0
+    direction[1] = 20
+
+def go_down():
+    direction[0] = 0
+    direction[1] = -20
+
+def go_left():
+    direction[0] = -20
+    direction[1] = 0
+
+def go_right():
+    direction[0] = 20
+    direction[1] = 0
+
+screen.listen()
+screen.onkey(go_up,    "Up")
+screen.onkey(go_down,  "Down")
+screen.onkey(go_left,  "Left")
+screen.onkey(go_right, "Right")
+
+move()
+
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
+import random
 
 apple_pen = turtle.Turtle()
 apple_pen.hideturtle()
@@ -96,56 +142,47 @@ def move():
     screen.update()
     screen.ontimer(move, 150)
 
-def go_up():
-    direction[0] = 0
-    direction[1] = 20
-
-def go_down():
-    direction[0] = 0
-    direction[1] = -20
-
-def go_left():
-    direction[0] = -20
-    direction[1] = 0
-
-def go_right():
-    direction[0] = 20
-    direction[1] = 0
-
-screen.listen()
-screen.onkey(go_up,    "Up")
-screen.onkey(go_down,  "Down")
-screen.onkey(go_left,  "Left")
-screen.onkey(go_right, "Right")
-
 place_apple()
 apple_pen.stamp()
 draw_score()
-move()
+</pre>
 
-screen.mainloop()
-```
+<sub>Class 11 — Step **2** of 2</sub>
 
-Tap **▶ Run**, click the board once, and steer with the arrow
-keys. Chase the apple! 🍎🐍
+# ⭐ Step 2 — Apple + eating + score
 
-### 🔍 Notice
+Add the **apple**, **score counter**, and make the snake **grow**
+when it eats.
 
-- `apple = [0, 0]` and `score = [0]` are **one-item lists**, not
-  plain numbers. That's a Python trick so our functions can
-  **change** them (lists are mutable; simple numbers aren't when
-  shared between functions without `global`).
-- Inside `move()` we check `new_head[0] == apple[0] and new_head[1] == apple[1]`.
-  If the head is on the apple:
-  - score goes up
-  - a new apple is placed somewhere random
-  - we **skip** `snake.pop(0)` → snake grows!
-- `score_pen.write(f"Score: {score[0]}", ...)` — f-strings come
-  back, now drawn on screen.
+## ✏️ What to change
 
-## 🎉 You made a real Snake game!
+Inside the marker region (and also `import random` at the top):
 
-Next (final!) class: losing. Wall + self collisions = Game Over.
+1. A second pen `apple_pen` (shape `"circle"`, red `#E74C3C`)
+2. Two one-item lists: `apple = [0, 0]` and `score = [0]`
+3. A third pen `score_pen` for writing text, positioned top-left
+4. `def draw_score()` — clears score_pen and writes `Score: N`
+5. `def place_apple()` — picks a random grid cell with
+   `random.randint(0, 19) * 20 - 200`
+6. Change `move()`: if `new_head == apple`, score goes up, a new
+   apple is placed, and we **skip** `snake.pop(0)` (the snake
+   grows!)
+7. Right before `move()` at the bottom: initial
+   `place_apple()`, `apple_pen.stamp()`, and `draw_score()`
+
+Tap **▶ Run**, steer with arrows, chase the apple. 🍎🐍
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- `apple` and `score` are **one-item lists** (`[0, 0]`, `[0]`) so
+  our functions can mutate them. Changing a plain number inside a
+  function wouldn't stick without `global`.
+- **Growing** is simply *"skip the tail pop when we eat."* One
+  line of logic!
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

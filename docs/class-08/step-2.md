@@ -3,17 +3,7 @@ layout: default
 title: "Class 8 — Step 2"
 ---
 
-<sub>Class 8 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Put the snake on the board
-
-Let's add the snake to your game. We'll also make a **second pen**
-called `snake_pen` just for the snake — next class we'll erase and
-redraw it as it moves, and we don't want to wipe the board.
-
-Whole file:
-
-```python
+<pre class="py-starter">
 import turtle
 
 screen = turtle.Screen()
@@ -38,6 +28,15 @@ for row in range(20):
         pen.goto(x, y)
         pen.stamp()
 
+# 👇 CLASS 8: ADD THE SNAKE (LIST + SECOND PEN + STAMP EACH PART) 👇
+
+# 👆 END OF NEW CODE 👆
+
+screen.update()
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
 snake = [(-40, 0), (-20, 0), (0, 0)]
 
 snake_pen = turtle.Turtle()
@@ -49,28 +48,37 @@ snake_pen.color("#4673E8")
 for part in snake:
     snake_pen.goto(part)
     snake_pen.stamp()
+</pre>
 
-screen.update()
-screen.mainloop()
-```
+<sub>Class 8 — Step **2** of 2</sub>
 
-Tap **▶ Run**.
+# ⭐ Step 2 — Put the snake on the board
 
-🐍 **Three blue squares in the middle of your board** — your
-snake!
+Your Class 7 code draws the full checkerboard. Let's add **three
+blue squares** in the middle — your snake.
 
-### 🔍 Notice
+## ✏️ What to add
 
-- `snake_pen` is a **new** pen — its stamps are on a separate
-  layer. `pen` owns the board, `snake_pen` owns the snake.
-- `for part in snake:` — a `for` loop that visits **each tuple**
-  in the list. Each time, `part` is a spot like `(0, 0)`.
+Between the 👇 and 👆 markers:
+
+1. A list called `snake` with three tuples (body-part positions)
+2. A new turtle called `snake_pen` (hidden, pen up, square shape,
+   blue color `#4673E8`)
+3. A `for part in snake:` loop that goes to each tuple and stamps
+
+Tap **▶ Run**. You should see 3 blue squares in the middle of the
+checkerboard. 🐍
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- `snake_pen` is a **separate** turtle from `pen` so next class
+  we can clear and redraw the snake without wiping the board.
 - `snake_pen.goto(part)` — when you `goto` a tuple, Python uses
-  the two numbers as x and y.
-
-## 🎉 Your snake exists!
-
-Next class: make it **move**.
+  its two numbers as x and y.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

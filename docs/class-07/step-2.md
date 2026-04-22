@@ -3,17 +3,7 @@ layout: default
 title: "Class 7 — Step 2"
 ---
 
-<sub>Class 7 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Stamp the whole checkerboard
-
-In your Snake file, you currently stamp **one** tile. Let's replace
-that with two nested `for` loops + modulo to stamp **400 tiles**
-(20 rows × 20 columns) in two colors.
-
-Whole file:
-
-```python
+<pre class="py-starter">
 import turtle
 
 screen = turtle.Screen()
@@ -27,6 +17,17 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
+# 👇 CLASS 7: REPLACE THESE 3 LINES WITH A CHECKERBOARD LOOP 👇
+pen.color("#AAD751")
+pen.goto(0, 0)
+pen.stamp()
+# 👆 END OF NEW CODE 👆
+
+screen.update()
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
 for row in range(20):
     for col in range(20):
         x = -200 + col * 20
@@ -37,27 +38,38 @@ for row in range(20):
             pen.color("#A2D149")
         pen.goto(x, y)
         pen.stamp()
+</pre>
 
-screen.update()
-screen.mainloop()
-```
+<sub>Class 7 — Step **2** of 2</sub>
 
-Tap **▶ Run**.
+# ⭐ Step 2 — Stamp the whole checkerboard
 
-🎉 **A full Google-Snake checkerboard!**
+Your Class 6 code stamps **one** light-green tile. Let's replace
+those 3 lines between the markers with a **nested for loop** that
+stamps all 400 tiles in two greens.
 
-### 🔍 Notice
+## ✏️ What to change
 
-- Two `for` loops build the **grid** of positions.
-- `x = -200 + col * 20` turns `col` 0…19 into screen x values
-  `-200` to `180` — each tile 20 pixels wide.
-- `(row + col) % 2 == 0` picks the lighter green on "even" tiles,
-  darker on "odd" — that's the checker pattern.
-- `screen.update()` at the end flushes all 400 stamps at once.
+Delete the `pen.color / pen.goto / pen.stamp` lines between the
+markers and add two nested `for` loops:
 
-## 🎉 Your Snake board is done!
+- Outer loop: `for row in range(20):`
+- Inner loop: `for col in range(20):`
+- Inside: calculate `x` and `y` from `row` and `col`, pick a color
+  with `(row + col) % 2 == 0`, `goto` that spot, and `stamp`
 
-Next class: put a **snake** on it.
+Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- `x = -200 + col * 20` turns `col` 0…19 into screen positions
+  `-200`…`180` — exactly one tile-width apart.
+- `(row + col) % 2 == 0` flips even/odd as you move across the
+  grid → the checker pattern.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

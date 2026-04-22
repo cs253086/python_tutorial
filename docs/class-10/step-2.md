@@ -3,17 +3,7 @@ layout: default
 title: "Class 10 — Step 2"
 ---
 
-<sub>Class 10 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Refactor your Snake file
-
-Wrap the board-drawing code in a `draw_board()` function, and the
-snake-redrawing code in a `draw_snake()` function. Same behavior,
-much tidier.
-
-Whole file:
-
-```python
+<pre class="py-starter">
 import turtle
 
 screen = turtle.Screen()
@@ -27,6 +17,75 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
+# 👇 CLASS 10: REFACTOR THE BOARD LOOP INTO draw_board() AND
+#   THE SNAKE REDRAW INTO draw_snake(). THEN CALL THEM FROM move().
+# (Your Class 9 code below — move stuff into functions.) 👇
+
+for row in range(20):
+    for col in range(20):
+        x = -200 + col * 20
+        y = -200 + row * 20
+        if (row + col) % 2 == 0:
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
+        pen.goto(x, y)
+        pen.stamp()
+
+snake = [(-40, 0), (-20, 0), (0, 0)]
+
+snake_pen = turtle.Turtle()
+snake_pen.hideturtle()
+snake_pen.penup()
+snake_pen.shape("square")
+snake_pen.color("#4673E8")
+
+direction = [20, 0]
+
+def move():
+    head = snake[-1]
+    new_head = (head[0] + direction[0], head[1] + direction[1])
+    snake.append(new_head)
+    snake.pop(0)
+
+    snake_pen.clear()
+    for part in snake:
+        snake_pen.goto(part)
+        snake_pen.stamp()
+
+    screen.update()
+    screen.ontimer(move, 150)
+
+def go_up():
+    direction[0] = 0
+    direction[1] = 20
+
+def go_down():
+    direction[0] = 0
+    direction[1] = -20
+
+def go_left():
+    direction[0] = -20
+    direction[1] = 0
+
+def go_right():
+    direction[0] = 20
+    direction[1] = 0
+
+screen.listen()
+screen.onkey(go_up,    "Up")
+screen.onkey(go_down,  "Down")
+screen.onkey(go_left,  "Left")
+screen.onkey(go_right, "Right")
+
+move()
+
+# 👆 END OF CLASS 10 REFACTOR 👆
+
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
 def draw_board():
     for row in range(20):
         for col in range(20):
@@ -89,22 +148,42 @@ screen.onkey(go_left,  "Left")
 screen.onkey(go_right, "Right")
 
 move()
-screen.mainloop()
-```
+</pre>
 
-Tap **▶ Run**. The game behaves **exactly the same** — but the
-code is much cleaner. 🧼
+<sub>Class 10 — Step **2** of 2</sub>
 
-### 🔍 Notice
+# ⭐ Step 2 — Refactor your Snake file
 
-- `def draw_board():` groups the 10+ lines that tile the board.
-  Now we call it with one line: `draw_board()`.
-- `def draw_snake():` groups the clear-and-redraw. `move()` calls
-  it each tick.
-- `move()` reads top-to-bottom and tells its whole story:
-  *compute head → slide list → draw → schedule next tick.*
+The game works but the code is getting long. Two chunks can be
+wrapped in tidy **functions**:
 
-## 🎉 Clean code!
+1. The **board loop** → `def draw_board(): ...` + call it once
+2. The **snake redraw** inside `move()` → `def draw_snake(): ...`
+   + call it from `move()` instead of the inline loop
+
+## ✏️ What to change
+
+Inside the marker region:
+
+- Wrap the 11-line board loop in `def draw_board():` then replace
+  it with a single `draw_board()` call.
+- Move the `snake_pen.clear()` + for-loop out of `move()` into
+  `def draw_snake():`. Replace those lines in `move()` with
+  `draw_snake()`.
+
+Tap **▶ Run**. The game should behave **exactly the same** — but
+the code reads much cleaner. 🧼
+
+> 💡 Big refactor — tap **Solution** to see the whole refactored
+> version side-by-side with what you had.
+
+---
+
+## 🔍 Notice
+
+- The functions are **named** by what they do: `draw_board` draws
+  the board, `draw_snake` draws the snake. Future-you will thank
+  you when you read this in 6 months.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

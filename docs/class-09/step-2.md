@@ -3,14 +3,7 @@ layout: default
 title: "Class 9 — Step 2"
 ---
 
-<sub>Class 9 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Move + steer the snake
-
-Replace your current snake-drawing code with a `move()` function
-and four direction functions. Whole file:
-
-```python
+<pre class="py-starter">
 import turtle
 
 screen = turtle.Screen()
@@ -43,6 +36,17 @@ snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
+# 👇 CLASS 9: REPLACE THE STATIC DRAW WITH move() + ARROW FUNCTIONS 👇
+for part in snake:
+    snake_pen.goto(part)
+    snake_pen.stamp()
+# 👆 END OF NEW CODE 👆
+
+screen.update()
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
 direction = [20, 0]
 
 def move():
@@ -82,30 +86,48 @@ screen.onkey(go_left,  "Left")
 screen.onkey(go_right, "Right")
 
 move()
-screen.mainloop()
-```
+</pre>
 
-Tap **▶ Run**. Click the snake board once (so keys are heard),
-then press the **arrow keys** on your iPad keyboard.
+<sub>Class 9 — Step **2** of 2</sub>
 
-🎮 **Your snake slides and steers!**
+# ⭐ Step 2 — Move + steer the snake
 
-### 🔍 Notice
+In Class 8 the snake is drawn **once** and stays still. Let's
+replace the static draw with a `move()` function that runs every
+150 ms, plus four arrow-key functions that change the direction.
 
-- `direction = [20, 0]` — how much the head moves each tick.
-  `(20, 0)` means "20 right, 0 up." The **arrow functions**
-  change these numbers.
-- `move()` every tick:
-  1. Compute `new_head` from current head + direction
-  2. `append` it, `pop(0)` the tail — snake slides forward
-  3. Clear and redraw the snake
-  4. `screen.ontimer(move, 150)` — "call me again in 150ms"
-- `screen.listen()` + `screen.onkey(...)` wires up the arrow keys.
+## ✏️ What to change
 
-> ⚠️ Don't panic when the snake flies off the edge — we'll add a
-> game-over in Class 12.
+Between the 👇 and 👆 markers, delete the 3-line static for loop
+and add:
 
-## 🎉 You built a game loop!
+1. `direction = [20, 0]` — the snake's current step (20 right, 0 up)
+2. `def move():` — computes a new head, slides the snake forward
+   (append new head, pop old tail), redraws, calls
+   `screen.update()`, and re-schedules itself with `ontimer`
+3. Four tiny functions: `go_up`, `go_down`, `go_left`, `go_right`
+   that change `direction`
+4. `screen.listen()` + four `screen.onkey(...)` calls binding each
+   arrow key to its function
+5. A final `move()` to start the game loop
+
+Tap **▶ Run**. Click the board once so keys are heard, then press
+the **arrow keys**. 🎮
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- The game **loop** is just `move()` calling
+  `screen.ontimer(move, 150)` from inside itself — every tick,
+  it reschedules itself.
+- `snake_pen.clear()` wipes the previous snake stamps so the new
+  frame isn't drawn on top.
+
+> ⚠️ Don't panic when the snake flies off the edge — that's what
+> Class 12 fixes.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

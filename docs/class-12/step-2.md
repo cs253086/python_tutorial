@@ -3,14 +3,7 @@ layout: default
 title: "Class 12 — Step 2"
 ---
 
-<sub>Class 12 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Game over screen + collisions
-
-Add a `game_over()` function and the two collision checks. Whole
-final file:
-
-```python
+<pre class="py-starter">
 import turtle
 import random
 
@@ -77,6 +70,65 @@ def place_apple():
     apple[1] = random.randint(0, 19) * 20 - 200
     apple_pen.goto(apple[0], apple[1])
 
+# 👇 CLASS 12: ADD game_over() AND WALL + SELF COLLISION CHECKS 👇
+# (Put game_over() here. Then modify move() below so it checks for
+#  wall and self collisions at the TOP and calls game_over() +
+#  return if either crash happens.)
+
+direction = [20, 0]
+
+def move():
+    head = snake[-1]
+    new_head = (head[0] + direction[0], head[1] + direction[1])
+
+    snake.append(new_head)
+
+    if new_head[0] == apple[0] and new_head[1] == apple[1]:
+        score[0] = score[0] + 1
+        draw_score()
+        place_apple()
+        apple_pen.clear()
+        apple_pen.stamp()
+    else:
+        snake.pop(0)
+
+    draw_snake()
+    screen.update()
+    screen.ontimer(move, 150)
+
+# 👆 END OF CLASS 12 ADDITIONS 👆
+
+def go_up():
+    direction[0] = 0
+    direction[1] = 20
+
+def go_down():
+    direction[0] = 0
+    direction[1] = -20
+
+def go_left():
+    direction[0] = -20
+    direction[1] = 0
+
+def go_right():
+    direction[0] = 20
+    direction[1] = 0
+
+screen.listen()
+screen.onkey(go_up,    "Up")
+screen.onkey(go_down,  "Down")
+screen.onkey(go_left,  "Left")
+screen.onkey(go_right, "Right")
+
+place_apple()
+apple_pen.stamp()
+draw_score()
+move()
+
+screen.mainloop()
+</pre>
+
+<pre class="py-solution">
 def game_over():
     over = turtle.Turtle()
     over.hideturtle()
@@ -119,55 +171,46 @@ def move():
     draw_snake()
     screen.update()
     screen.ontimer(move, 150)
+</pre>
 
-def go_up():
-    direction[0] = 0
-    direction[1] = 20
+<sub>Class 12 — Step **2** of 2</sub>
 
-def go_down():
-    direction[0] = 0
-    direction[1] = -20
+# ⭐ Step 2 — Game over screen + collisions
 
-def go_left():
-    direction[0] = -20
-    direction[1] = 0
+Between the markers, add a `game_over()` function and two crash
+checks at the top of `move()`.
 
-def go_right():
-    direction[0] = 20
-    direction[1] = 0
+## ✏️ What to change
 
-screen.listen()
-screen.onkey(go_up,    "Up")
-screen.onkey(go_down,  "Down")
-screen.onkey(go_left,  "Left")
-screen.onkey(go_right, "Right")
-
-place_apple()
-apple_pen.stamp()
-draw_score()
-move()
-
-screen.mainloop()
-```
+1. Write `def game_over():` that creates a new turtle and uses
+   `.write()` to draw `GAME OVER` and the final `Score: N` in the
+   middle of the board.
+2. In `move()`, **before** `snake.append(new_head)`, add two
+   checks:
+   - **Wall**: if `new_head[0] < -200 or new_head[0] > 180 or
+     new_head[1] < -200 or new_head[1] > 180` → call
+     `game_over()` then `return`.
+   - **Self**: if `new_head in snake` → call `game_over()` then
+     `return`.
 
 Tap **▶ Run** — and **play**! 🎮
 
-Drive into a wall → **GAME OVER**. Steer into your own tail →
-**GAME OVER**.
+Hit a wall → **GAME OVER**. Steer into your tail → **GAME OVER**.
 
-### 🔍 Notice
+> 💡 Big change — tap **Solution** to drop it all in place.
 
-- The wall check uses 4 comparisons combined with `or`. If **any**
-  of them is true, we crashed.
-- The self check is just `if new_head in snake:`. Python does the
-  list scan.
-- `return` stops `move()` the instant a crash is detected — so no
-  `screen.ontimer(move, 150)` is scheduled. The game quietly stops.
+---
+
+## 🔍 Notice
+
+- `return` stops `move()` early, so no more `ontimer(move, 150)`
+  is scheduled. The game quietly ends.
+- `new_head in snake` uses Python's `in` operator to scan the whole
+  body list in one line.
 
 ## 🏆 You built a working Snake game!
 
-From `print("Hello!")` all the way here. Show it to someone and be
-proud. 🎉
+From `print("Hello!")` to here. Show it to someone and be proud. 🎉
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I made a game! →</a>

@@ -3,14 +3,13 @@ layout: default
 title: "Class 6 — Step 2"
 ---
 
-<sub>Class 6 — Step **2** of 2</sub>
+<pre class="py-starter">
+# 👇 CLASS 6: YOUR FIRST SNAKE WINDOW GOES HERE 👇
 
-# ⭐ Step 2 — Open your Snake window
+# 👆 END OF NEW CODE 👆
+</pre>
 
-Time for the real thing. From now on this is your **Snake game
-file** — we'll keep growing it every class.
-
-```python
+<pre class="py-solution">
 import turtle
 
 screen = turtle.Screen()
@@ -29,27 +28,40 @@ pen.stamp()
 
 screen.update()
 screen.mainloop()
-```
+</pre>
 
-Tap **▶ Run**.
+<sub>Class 6 — Step **2** of 2</sub>
 
-You should see a **dark-green 500×500 board** titled **Snake**
-with a single **light-green square** in the middle. 🎉
+# ⭐ Step 2 — Open your Snake window
 
-### 🔍 Notice
+Time to start a **fresh** Snake file with graphics. Class 6 throws
+out the text code from Classes 1–5 and begins drawing.
 
-- `screen.title("Snake")` — sets the window title.
-- `screen.setup(500, 500)` — makes the window 500 by 500 pixels.
-- `screen.tracer(0)` — tells turtle *"don't animate; I'll say
-  when to refresh."*
-- `screen.update()` — now refresh! This is how we get the whole
-  board to appear in one go instead of one tile at a time. (You'll
-  care about this more next class when you stamp 400 tiles.)
-- `screen.mainloop()` — keeps the window open.
+## ✏️ What to add
 
-## 🎉 Your Snake board exists!
+Between the 👇 and 👆 markers, write the code that:
 
-Next class we fill it with a whole checkerboard using `for` loops.
+1. `import turtle`
+2. Makes a `screen`, titles it **Snake**, sets the dark-green
+   background, sizes it to 500×500, and calls `screen.tracer(0)`
+   so drawing doesn't animate
+3. Makes a `pen`, hides it, picks up the pen, shapes it a square,
+   colors it light-Snake-green, goes to `(0, 0)`, and stamps
+4. Ends with `screen.update()` and `screen.mainloop()`
+
+Tap **▶ Run**. A dark-green 500×500 window titled **Snake** should
+appear with one light-green tile in the middle. 🎉
+
+> 💡 Stuck? Tap **Solution** for the full code.
+
+---
+
+## 🔍 Notice
+
+- `import turtle` goes at the **top** of the file (always).
+- `screen.tracer(0)` + `screen.update()` is how we batch drawings
+  so the whole board appears at once. Essential next class when
+  you stamp 400 tiles!
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

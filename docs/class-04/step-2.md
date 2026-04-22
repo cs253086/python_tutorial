@@ -3,13 +3,7 @@ layout: default
 title: "Class 4 — Step 2"
 ---
 
-<sub>Class 4 — Step **2** of 2</sub>
-
-# ⭐ Step 2 — Easy or hard? Let the player choose
-
-Add a difficulty question to your Snake game. Whole file:
-
-```python
+<pre class="py-starter">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 
@@ -18,27 +12,53 @@ score = 0
 
 print(f"🐍 Welcome, {name}!")
 
+# 👇 CLASS 4: ASK EASY/HARD AND REACT WITH if / else 👇
+
+# 👆 END OF NEW CODE 👆
+
+print(f"Your score is {score}.")
+</pre>
+
+<pre class="py-solution">
 difficulty = input("Easy or hard? ")
 
 if difficulty == "hard":
     print("Good luck, brave one! 💪")
 else:
     print("You got this! 🌟")
+</pre>
 
-print(f"Your score is {score}.")
-```
+<sub>Class 4 — Step **2** of 2</sub>
 
-Tap **▶ Run**. Type your name, then try typing `hard` — you should
-see 💪. Run it again and type `easy` — you should see 🌟.
+# ⭐ Step 2 — Easy or hard? Let the player pick
 
-### 🔍 Notice
+Your Class 3 game asks for the player's name. Now let it ask for
+**difficulty** and react with an `if / else`.
 
-- The **rule** `difficulty == "hard"` asks *"did the player type
-  exactly `hard`?"*
-- If yes → first block. If no (including `"easy"`, `"fast"`, or
-  anything else) → the `else` block.
+## ✏️ What to add
 
-## 🎉 Your game makes decisions!
+Between the 👇 and 👆 markers, add **five lines**:
+
+1. An `input` that asks `"Easy or hard? "` and stores the answer in
+   `difficulty`.
+2. An `if difficulty == "hard":` block that prints the brave
+   message.
+3. An `else:` block that prints the encouraging message.
+
+Tap **▶ Run**. Type your name → type `hard` → you should see 💪.
+Run again and type `easy` → you should see 🌟.
+
+> 💡 Stuck? Tap **Solution**.
+
+---
+
+## 🔍 Notice
+
+- `difficulty == "hard"` uses **two** `=` — that's the "are these
+  equal?" question. A **single** `=` would try to reassign the
+  variable and confuse Python.
+- The indented lines inside `if` and `else` are the bodies of
+  those branches. Use Tab or two spaces.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
