@@ -18,10 +18,43 @@
 .main-content { padding: 20px 18px 80px; max-width: 820px; margin: 0 auto; }
 
 /* In-page Python runner */
-.py-runner {
-  margin: 1.25em 0;
+.py-example {
+  margin: 1.25em 0 0;
   border: 1px solid #d0d7de;
-  border-radius: 10px;
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  background: #fff;
+}
+.py-panel-label {
+  background: #eaeef2;
+  padding: 7px 12px;
+  font-size: 13px;
+  color: #57606a;
+  font-weight: 700;
+  border-bottom: 1px solid #d0d7de;
+}
+.py-panel-label-edit { background: #d8f5e1; color: #1f6f3a; }
+
+pre.py-example-code {
+  margin: 0;
+  padding: 12px 14px;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: auto;
+  white-space: pre;
+  border-radius: 0;
+  border: 0;
+}
+pre.py-example-code code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
+
+.py-runner {
+  margin: 0 0 1.25em;
+  border: 1px solid #d0d7de;
+  border-radius: 0 0 10px 10px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
@@ -64,6 +97,18 @@
 }
 .py-runner-run:hover:not(:disabled) { background: #268a43; }
 .py-runner-run:disabled { opacity: 0.7; cursor: wait; }
+
+.py-runner-copy {
+  background: #ddf4ff;
+  color: #0969da;
+  border: 1px solid #54aeff;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.py-runner-copy:hover { background: #b6e3ff; }
 
 .py-runner-reset {
   background: transparent;

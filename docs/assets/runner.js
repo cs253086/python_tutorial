@@ -34,18 +34,41 @@
   }
 
   function buildRunner(codeEl, index) {
-    const pre = codeEl.parentElement;
-    if (!pre || pre.tagName !== "PRE") return;
+    const pre = codeEl.closest("pre");
+    if (!pre) return;
     if (pre.classList.contains("py-runner-static")) return;
 
     const originalCode = codeEl.textContent.replace(/\n$/, "");
+    const lineCount = originalCode.split("\n").length;
+    // Long blocks (the full-file snapshots) start pre-filled. Short blocks
+    // start empty so the kid types them out — that's where the learning is.
+    const startEmpty = lineCount <= 18;
+
     const key = storageKey(index);
     const saved = (() => {
       try { return localStorage.getItem(key); } catch (_) { return null; }
     })();
 
+    // Wrap the original code block as a read-only "Example" panel.
+    const example = document.createElement("div");
+    example.className = "py-example";
+    const exampleLabel = document.createElement("div");
+    exampleLabel.className = "py-panel-label";
+    exampleLabel.textContent = startEmpty
+      ? "📖 Example — type this into the box below"
+      : "📖 Your code so far";
+    pre.classList.add("py-example-code");
+    pre.parentNode.insertBefore(example, pre);
+    example.appendChild(exampleLabel);
+    example.appendChild(pre);
+
+    // Build the runner: editor + toolbar + output.
     const container = document.createElement("div");
     container.className = "py-runner";
+
+    const editorLabel = document.createElement("div");
+    editorLabel.className = "py-panel-label py-panel-label-edit";
+    editorLabel.textContent = "✏️ Your code:";
 
     const editor = document.createElement("textarea");
     editor.className = "py-runner-editor";
@@ -53,7 +76,10 @@
     editor.autocapitalize = "off";
     editor.autocomplete = "off";
     editor.setAttribute("autocorrect", "off");
-    editor.value = saved != null ? saved : originalCode;
+    editor.placeholder = startEmpty
+      ? "Type the code from the example above ↑"
+      : "";
+    editor.value = saved != null ? saved : (startEmpty ? "" : originalCode);
 
     editor.addEventListener("input", () => {
       try { localStorage.setItem(key, editor.value); } catch (_) {}
@@ -67,11 +93,17 @@
     runBtn.type = "button";
     runBtn.textContent = "▶ Run";
 
+    const useExampleBtn = document.createElement("button");
+    useExampleBtn.className = "py-runner-copy";
+    useExampleBtn.type = "button";
+    useExampleBtn.title = "Copy the example into your editor";
+    useExampleBtn.textContent = "📋 Use example";
+
     const resetBtn = document.createElement("button");
     resetBtn.className = "py-runner-reset";
     resetBtn.type = "button";
-    resetBtn.title = "Restore the original example";
-    resetBtn.textContent = "↺ Reset";
+    resetBtn.title = "Empty the editor";
+    resetBtn.textContent = "↺ Clear";
 
     const status = document.createElement("span");
     status.className = "py-runner-status";
@@ -79,8 +111,15 @@
     const output = document.createElement("pre");
     output.className = "py-runner-output";
 
-    resetBtn.addEventListener("click", () => {
+    useExampleBtn.addEventListener("click", () => {
       editor.value = originalCode;
+      try { localStorage.setItem(key, editor.value); } catch (_) {}
+      editor.dispatchEvent(new Event("input"));
+      editor.focus();
+    });
+
+    resetBtn.addEventListener("click", () => {
+      editor.value = "";
       try { localStorage.removeItem(key); } catch (_) {}
       editor.dispatchEvent(new Event("input"));
       output.textContent = "";
@@ -132,14 +171,16 @@
     });
 
     toolbar.appendChild(runBtn);
+    toolbar.appendChild(useExampleBtn);
     toolbar.appendChild(resetBtn);
     toolbar.appendChild(status);
 
+    container.appendChild(editorLabel);
     container.appendChild(editor);
     container.appendChild(toolbar);
     container.appendChild(output);
 
-    pre.parentElement.replaceChild(container, pre);
+    example.parentNode.insertBefore(container, example.nextSibling);
     autosize(editor);
   }
 
