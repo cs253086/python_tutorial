@@ -37,19 +37,25 @@
 .py-panel-label-edit { background: #d8f5e1; color: #1f6f3a; }
 
 pre.py-example-code {
-  margin: 0;
-  padding: 12px 14px;
-  background: #0d1117;
-  color: #e6edf3;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  overflow: auto;
-  white-space: pre;
-  border-radius: 0;
-  border: 0;
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  background: #f6f8fa !important;
+  color: #1f2328 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  overflow: auto !important;
+  white-space: pre !important;
+  border-radius: 0 !important;
+  border: 0 !important;
 }
-pre.py-example-code code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
+pre.py-example-code code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: #1f2328 !important;
+  font-size: inherit !important;
+  -webkit-text-fill-color: #1f2328;
+}
 
 .py-runner {
   margin: 0 0 1.25em;
@@ -62,20 +68,23 @@ pre.py-example-code code { background: transparent; padding: 0; color: inherit; 
 .py-runner-editor {
   width: 100%;
   box-sizing: border-box;
-  border: 0;
+  border: 0 !important;
   padding: 12px 14px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 15px;
   line-height: 1.5;
-  background: #0d1117;
-  color: #e6edf3;
+  background: #ffffff !important;
+  color: #1f2328 !important;
+  -webkit-text-fill-color: #1f2328;
+  caret-color: #2ea44f;
   resize: vertical;
-  min-height: 60px;
+  min-height: 80px;
   tab-size: 4;
   -webkit-appearance: none;
   border-radius: 0;
 }
 .py-runner-editor:focus { outline: 2px solid #2ea44f; outline-offset: -2px; }
+.py-runner-editor::placeholder { color: #8b96a5; font-style: italic; }
 
 .py-runner-toolbar {
   display: flex;
