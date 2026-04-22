@@ -5,51 +5,46 @@ title: "Class 2 — Step 3"
 
 <sub>Class 2 — Step **3** of 3</sub>
 
-# ⭐ Step 3 — Use variables inside a sentence
+# ⭐ Step 3 — Slide variables into sentences (f-strings)
 
-Right now you print your name and score on **separate lines**. Let's
-make them part of a full sentence.
+Printing `name` and `score` alone is boring. Let's slide them
+**into** a sentence, like:
 
-Python has a magic trick for this: put an `f` before the quotes, and
-then wrap variables in **curly braces** `{ }`.
+> "Welcome, Leo!"
 
-Replace the last four lines of your code with these:
+Python has a special trick called an **f-string**. Put an `f`
+right before the opening quote, then wrap each variable in
+**`{curly braces}`**.
+
+Change your last two prints to these:
 
 ```python
 print(f"🐍 Welcome, {name}!")
 print(f"Your score is {score}.")
 ```
 
-Your whole file should now look like this:
-
-```python
-print("🐍 Welcome to Snake!")
-print("Eat the apples. Don't bite yourself!")
-print("Press an arrow key to start.")
-
-name = "Leo"
-score = 0
-
-print(f"🐍 Welcome, {name}!")
-print(f"Your score is {score}.")
-```
-
-Tap **▶ Run** and **Save**.
-
-You should see:
+Tap **▶ Run**. You should see:
 
 ```
-🐍 Welcome to Snake!
-Eat the apples. Don't bite yourself!
-Press an arrow key to start.
 🐍 Welcome, Leo!
 Your score is 0.
 ```
 
-## 🎉 Your game knows your name!
+## 🔍 Notice
 
-> 💡 **Try it**: change `score = 0` to `score = 42`, Run, and watch
-> the sentence change.
+- The **`f`** right before the `"` turns the string into a
+  **formatted** string. Without the `f`, Python would print
+  `{name}` and `{score}` literally — which isn't what we want.
+- **`{name}`** says: *"look in the `name` box and drop what's
+  inside here."* Same for `{score}`.
+- You can put **as many variables as you want** into one f-string,
+  and mix them with regular words.
+
+## 🧪 Try it
+
+Change `score = 0` to `score = 42`, tap Run, and watch the
+sentence update. You didn't change the `print` line — only the
+box's value changed!
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
