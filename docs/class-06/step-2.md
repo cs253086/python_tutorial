@@ -4,9 +4,15 @@ title: "Class 6 — Step 2"
 ---
 
 <pre class="py-starter">
-# 👇 Open the Snake window — screen, pen, stamp one tile 👇
-
-# 👆 END 👆
+# 👇
+# Bring in the turtle tool with import turtle
+# Make a screen: title it "Snake", color it dark green ("#4A752C"),
+#   set its size to 500 by 500, and call screen.tracer(0)
+# Make a pen, hide it, lift it up (penup), shape it "square",
+#   color it light green ("#AAD751")
+# Move the pen to (0, 0) and stamp one square
+# Call screen.update() and screen.mainloop()
+# 👆
 </pre>
 
 <pre class="py-solution">

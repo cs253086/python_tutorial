@@ -39,7 +39,21 @@ snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
-# 👇 apple_pen + score_pen + place_apple() + draw_score(); make move() grow on eat 👇
+# 👇
+# Add the apple, the score, and make the snake GROW when it eats:
+# At the top, also: import random
+# Make apple_pen — hide it, lift it (penup), shape "circle",
+#   color red ("#E74C3C")
+# Make two boxes:  apple = [0, 0]   and   score = [0]
+#   (1-item lists so we can change them inside functions)
+# Make score_pen — for writing the score. Color "white". Goto (-230, 220)
+# Make a function draw_score() that clears score_pen and writes
+#   f"Score: {score[0]}"
+# Make a function place_apple() that picks a random x and y on the
+#   grid and moves apple_pen there
+# Update move(): if the new head is on the apple → score goes up,
+#   place a new apple, and DON'T pop the tail (snake grows!)
+# At the bottom (before move()): place_apple(), apple_pen.stamp(), draw_score()
 
 def draw_snake():
     snake_pen.clear()
@@ -58,7 +72,7 @@ def move():
     screen.update()
     screen.ontimer(move, 150)
 
-# 👆 END 👆
+# 👆
 
 def go_up():
     direction[0] = 0

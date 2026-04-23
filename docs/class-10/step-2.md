@@ -17,7 +17,13 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇 def draw_board() + def draw_snake()  — wrap the loops in functions 👇
+# 👇
+# Refactor (tidy up) — same game, cleaner code:
+# Take the board for-loop and put it inside a function:
+#   def draw_board(): ...   then call draw_board() once
+# Take the snake redraw lines inside move() and put them in a function:
+#   def draw_snake(): ...   then call draw_snake() from move()
+# Everything else stays the same!
 
 for row in range(20):
     for col in range(20):
@@ -78,7 +84,7 @@ screen.onkey(go_right, "Right")
 
 move()
 
-# 👆 END 👆
+# 👆
 
 screen.mainloop()
 </pre>

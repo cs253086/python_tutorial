@@ -12,9 +12,12 @@ score = 0
 
 print(f"🐍 Welcome, {name}!")
 
-# 👇 difficulty = input(...) + if/else with two messages 👇
-
-# 👆 END 👆
+# 👇
+# Ask the player "Easy or hard?" with input()
+#   and put the answer into a box called "difficulty"
+# If "difficulty" is the same as "hard": print "Good luck, brave one! 💪"
+# Else: print "You got this! 🌟"
+# 👆
 
 print(f"Your score is {score}.")
 </pre>

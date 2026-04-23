@@ -70,7 +70,15 @@ def place_apple():
     apple[1] = random.randint(0, 19) * 20 - 200
     apple_pen.goto(apple[0], apple[1])
 
-# 👇 def game_over()  — shows "GAME OVER" + score. Add wall + self checks in move() 👇
+# 👇
+# Make the snake able to LOSE the game:
+# Make a function game_over() that writes "GAME OVER" and the
+#   final score in the middle of the board (use a new turtle to write)
+# Inside move(), at the TOP, add two checks:
+#   - WALL check: if new_head goes past the edges (x < -200, x > 180,
+#     y < -200, or y > 180) → call game_over() then return
+#   - SELF check: if new_head is in snake (already a body part)
+#     → call game_over() then return
 
 direction = [20, 0]
 
@@ -93,7 +101,7 @@ def move():
     screen.update()
     screen.ontimer(move, 150)
 
-# 👆 END 👆
+# 👆
 
 def go_up():
     direction[0] = 0

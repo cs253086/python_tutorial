@@ -28,9 +28,13 @@ for row in range(20):
         pen.goto(x, y)
         pen.stamp()
 
-# 👇 snake = [...]  + snake_pen (blue)  + stamp each body part 👇
-
-# 👆 END 👆
+# 👇
+# Make a list called "snake" with 3 body-part tuples,
+#   like (-40, 0), (-20, 0), (0, 0)
+# Make a NEW pen called "snake_pen": hide it, lift it (penup),
+#   shape "square", color blue ("#4673E8")
+# For each part in snake: go to that spot and stamp it
+# 👆
 
 screen.update()
 screen.mainloop()

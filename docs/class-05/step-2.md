@@ -19,9 +19,12 @@ if difficulty == "hard":
 else:
     print("You got this! 🌟")
 
-# 👇 while loop that counts down 3 → 2 → 1, then print("GO! 🏁") 👇
-
-# 👆 END 👆
+# 👇
+# Make a box called "countdown" with 3 inside
+# While countdown > 0:
+#   print countdown, then take 1 away from countdown
+# After the loop, print "GO! 🏁"
+# 👆
 
 print(f"Your score is {score}.")
 </pre>

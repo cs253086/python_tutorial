@@ -17,11 +17,17 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇 Two nested for loops that stamp all 400 checker tiles 👇
+# 👇
+# Replace these 3 single-stamp lines with TWO nested for loops:
+#   for row in range(20):
+#     for col in range(20):
+#       work out x and y from row and col
+#       pick light green if (row+col) is even, else darker green
+#       go to (x, y) and stamp
 pen.color("#AAD751")
 pen.goto(0, 0)
 pen.stamp()
-# 👆 END 👆
+# 👆
 
 screen.update()
 screen.mainloop()

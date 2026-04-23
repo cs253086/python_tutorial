@@ -8,9 +8,12 @@ print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 
-# 👇 name box + score box + two f-string greetings 👇
-
-# 👆 END 👆
+# 👇
+# Make a box called "name" with your name inside (in quotes, like "Leo")
+# Make a box called "score" with 0 inside
+# Print a welcome line that mixes in {name} (use f"...")
+# Print a score line that mixes in {score}
+# 👆
 </pre>
 
 <pre class="py-solution">

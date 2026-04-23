@@ -8,12 +8,13 @@ print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")
 
-name = "Leo"
 score = 0
 
-# 👇 name = input("What's your name? ")   # ask, don't hardcode 👇
-
-# 👆 END 👆
+# 👇
+# Make the "name" box ASK the player instead of being hardcoded:
+# Use input("What's your name? ") and put the answer into "name"
+name = "Leo"
+# 👆
 
 print(f"🐍 Welcome, {name}!")
 print(f"Your score is {score}.")

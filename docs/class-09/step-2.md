@@ -36,11 +36,22 @@ snake_pen.penup()
 snake_pen.shape("square")
 snake_pen.color("#4673E8")
 
-# 👇 def move()  — slides snake forward every 150ms. + 4 arrow-key functions 👇
+# 👇
+# Replace the static draw below with a moving + steerable snake:
+# Make a list called "direction" = [20, 0]  (means: 20 right, 0 up)
+# Make a function move() that:
+#   - works out the new head from current head + direction
+#   - adds the new head, drops the old tail (snake slides forward)
+#   - clears snake_pen and redraws each part
+#   - calls screen.update() and screen.ontimer(move, 150) to keep going
+# Make 4 little functions: go_up, go_down, go_left, go_right
+#   that change the "direction" numbers
+# Call screen.listen() and screen.onkey(go_up, "Up") for each arrow
+# Call move() once at the end to start the game loop
 for part in snake:
     snake_pen.goto(part)
     snake_pen.stamp()
-# 👆 END 👆
+# 👆
 
 screen.update()
 screen.mainloop()
