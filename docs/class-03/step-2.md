@@ -12,8 +12,7 @@ score = 0
 
 # 👇
 # Make the "name" box ASK the player instead of being hardcoded:
-# Use input("What's your name? ") and put the answer into "name"
-name = "Leo"
+# Use input("What's your name? ")
 # 👆
 
 print(f"🐍 Welcome, {name}!")

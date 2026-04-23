@@ -72,10 +72,6 @@
     return prefix + "-" + Date.now().toString(36) + "-" + uidCounter;
   }
 
-  function storageKey(suffix) {
-    return "pyrun:" + location.pathname + ":" + suffix;
-  }
-
   function autosize(ta) {
     const grow = () => {
       ta.style.height = "auto";
@@ -167,12 +163,12 @@
 
     const originalCode = codeEl.textContent.replace(/\n$/, "");
     const lineCount = originalCode.split("\n").length;
+    // Teaching-step blocks are short; start the editor empty so the kid
+    // actually types. Long blocks (the "your whole file so far" snapshots
+    // that sometimes sneak in) get pre-filled. Per-block editors are
+    // ephemeral — no localStorage — so reload always shows the default
+    // state and the kid isn't surprised by yesterday's leftover.
     const startEmpty = lineCount <= 18;
-
-    const key = storageKey(index);
-    const saved = (() => {
-      try { return localStorage.getItem(key); } catch (_) { return null; }
-    })();
 
     // Wrap the original pre as a read-only Example panel.
     const example = document.createElement("div");
@@ -204,10 +200,7 @@
     editor.placeholder = startEmpty
       ? "Type the code from the example above ↑"
       : "";
-    editor.value = saved != null ? saved : (startEmpty ? "" : originalCode);
-    editor.addEventListener("input", () => {
-      try { localStorage.setItem(key, editor.value); } catch (_) {}
-    });
+    editor.value = startEmpty ? "" : originalCode;
 
     const toolbar = buildToolbar();
     const runBtn = buildButton("py-runner-run", "▶ Run");
@@ -224,13 +217,11 @@
 
     useExampleBtn.addEventListener("click", () => {
       editor.value = originalCode;
-      try { localStorage.setItem(key, editor.value); } catch (_) {}
       editor.dispatchEvent(new Event("input"));
       editor.focus();
     });
     resetBtn.addEventListener("click", () => {
       editor.value = "";
-      try { localStorage.removeItem(key); } catch (_) {}
       editor.dispatchEvent(new Event("input"));
       output.textContent = "";
       canvas.innerHTML = "";
