@@ -121,6 +121,35 @@ pre.py-example-code code {
 .py-runner-editor:focus { outline: 2px solid #2ea44f; outline-offset: -2px; }
 .py-runner-editor::placeholder { color: #8b96a5; font-style: italic; }
 
+/* Two-column wrapper: line-number gutter on the left, textarea on the right.
+   Both children share line-height + font-size so numbers stay aligned with
+   the actual lines of code. */
+.py-runner-edit-wrap {
+  display: flex;
+  background: #ffffff;
+  align-items: stretch;
+}
+.py-runner-edit-wrap > .py-runner-editor {
+  flex: 1;
+  min-width: 0;
+}
+.py-runner-gutter {
+  flex: 0 0 auto;
+  padding: 12px 8px 12px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  background: #f6f8fa;
+  color: #8b96a5;
+  text-align: right;
+  white-space: pre;
+  user-select: none;
+  -webkit-user-select: none;
+  border-right: 1px solid #eaeef2;
+  overflow: hidden;
+  min-width: 2.25em;
+}
+
 .py-runner-toolbar {
   display: flex;
   align-items: center;

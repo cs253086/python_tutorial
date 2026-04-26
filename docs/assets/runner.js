@@ -81,6 +81,37 @@
     setTimeout(grow, 0);
   }
 
+  // Wrap a textarea in a flex container with a left-side line-number gutter.
+  // Returns the wrapper so callers can insert it where the textarea would have
+  // gone. The gutter updates on every input/change and scrolls in sync with
+  // the textarea so the numbers always line up.
+  function attachLineNumbers(ta) {
+    const wrap = document.createElement("div");
+    wrap.className = "py-runner-edit-wrap";
+    const gutter = document.createElement("div");
+    gutter.className = "py-runner-gutter";
+    gutter.setAttribute("aria-hidden", "true");
+    wrap.appendChild(gutter);
+    wrap.appendChild(ta);
+
+    const refreshNumbers = () => {
+      const lines = (ta.value || "").split("\n").length;
+      let s = "";
+      for (let i = 1; i <= Math.max(1, lines); i++) {
+        s += i + (i < lines ? "\n" : "");
+      }
+      gutter.textContent = s;
+    };
+    const syncScroll = () => { gutter.scrollTop = ta.scrollTop; };
+
+    ta.addEventListener("input", refreshNumbers);
+    ta.addEventListener("scroll", syncScroll);
+    // Recompute once Skulpt or anything else mutates the value programmatically.
+    setTimeout(refreshNumbers, 0);
+
+    return wrap;
+  }
+
   function showBanner(msg, color) {
     const bar = document.createElement("div");
     bar.style.cssText =
@@ -235,7 +266,7 @@
     toolbar.appendChild(status);
 
     container.appendChild(editorLabel);
-    container.appendChild(editor);
+    container.appendChild(attachLineNumbers(editor));
     container.appendChild(toolbar);
     container.appendChild(output);
     container.appendChild(canvas);
@@ -349,7 +380,7 @@
     toolbar.appendChild(status);
 
     container.appendChild(label);
-    container.appendChild(editor);
+    container.appendChild(attachLineNumbers(editor));
     container.appendChild(toolbar);
     container.appendChild(output);
     container.appendChild(canvas);
