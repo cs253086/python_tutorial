@@ -84,7 +84,8 @@
   // Wrap a textarea in a flex container with a left-side line-number gutter.
   // Returns the wrapper so callers can insert it where the textarea would have
   // gone. The gutter updates on every input/change and scrolls in sync with
-  // the textarea so the numbers always line up.
+  // the textarea so the numbers always line up. We also intercept Tab so it
+  // inserts indentation instead of jumping focus to the next element.
   function attachLineNumbers(ta) {
     const wrap = document.createElement("div");
     wrap.className = "py-runner-edit-wrap";
@@ -106,10 +107,60 @@
 
     ta.addEventListener("input", refreshNumbers);
     ta.addEventListener("scroll", syncScroll);
+    enableTabIndent(ta);
     // Recompute once Skulpt or anything else mutates the value programmatically.
     setTimeout(refreshNumbers, 0);
 
     return wrap;
+  }
+
+  // Make Tab insert 4 spaces (Python's standard indent) at the cursor instead
+  // of jumping focus. Shift+Tab outdents the current line. With a selection
+  // spanning multiple lines, Tab indents each of those lines.
+  function enableTabIndent(ta) {
+    const INDENT = "    ";
+    ta.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      e.preventDefault();
+      const start = ta.selectionStart;
+      const end = ta.selectionEnd;
+      const v = ta.value;
+
+      // Find the start of the line that contains the cursor / selection start.
+      const lineStart = v.lastIndexOf("\n", start - 1) + 1;
+
+      if (e.shiftKey) {
+        // Outdent: remove up to 4 leading spaces (or one tab) from the line.
+        let head = v.substring(lineStart, lineStart + INDENT.length);
+        let removed = 0;
+        if (head === INDENT) removed = INDENT.length;
+        else if (v.charAt(lineStart) === "\t") removed = 1;
+        if (removed > 0) {
+          ta.value = v.substring(0, lineStart) + v.substring(lineStart + removed);
+          ta.selectionStart = Math.max(start - removed, lineStart);
+          ta.selectionEnd = Math.max(end - removed, lineStart);
+          ta.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+        return;
+      }
+
+      if (start !== end && v.substring(start, end).indexOf("\n") !== -1) {
+        // Multi-line selection: indent every line that starts in the range.
+        const block = v.substring(lineStart, end);
+        const indented = block.replace(/^/gm, INDENT);
+        const added = indented.length - block.length;
+        ta.value = v.substring(0, lineStart) + indented + v.substring(end);
+        ta.selectionStart = start + INDENT.length;
+        ta.selectionEnd = end + added;
+        ta.dispatchEvent(new Event("input", { bubbles: true }));
+        return;
+      }
+
+      // Plain insert at cursor.
+      ta.value = v.substring(0, start) + INDENT + v.substring(end);
+      ta.selectionStart = ta.selectionEnd = start + INDENT.length;
+      ta.dispatchEvent(new Event("input", { bubbles: true }));
+    });
   }
 
   function showBanner(msg, color) {
