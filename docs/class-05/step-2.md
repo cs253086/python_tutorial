@@ -3,32 +3,6 @@ layout: default
 title: "Class 5 — Step 2"
 ---
 
-<pre class="py-starter">
-print("🐍 Welcome to Snake!")
-print("Eat the apples. Don't bite yourself!")
-
-name = input("What's your name? ")
-score = 0
-
-print(f"🐍 Welcome, {name}!")
-
-difficulty = input("Easy or hard? ")
-
-if difficulty == "hard":
-    print("Good luck, brave one! 💪")
-else:
-    print("You got this! 🌟")
-
-# 👇
-# Make a box called "countdown" with 3 inside
-# While countdown > 0:
-#   print countdown, then take 1 away from countdown
-# After the loop, print "GO! 🏁"
-# 👆
-
-print(f"Your score is {score}.")
-</pre>
-
 <pre class="py-solution">
 countdown = 3
 while countdown > 0:
@@ -79,6 +53,32 @@ Everything you've learned — `print`, variables, `input`, `if/else`,
 `while` — is now working together.
 
 Next class → **graphics**. 🎨
+
+<pre class="py-starter">
+print("🐍 Welcome to Snake!")
+print("Eat the apples. Don't bite yourself!")
+
+name = input("What's your name? ")
+score = 0
+
+print(f"🐍 Welcome, {name}!")
+
+difficulty = input("Easy or hard? ")
+
+if difficulty == "hard":
+    print("Good luck, brave one! 💪")
+else:
+    print("You got this! 🌟")
+
+# 👇
+# Make a box called "countdown" with 3 inside
+# While countdown > 0:
+#   print countdown, then take 1 away from countdown
+# After the loop, print "GO! 🏁"
+# 👆
+
+print(f"Your score is {score}.")
+</pre>
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

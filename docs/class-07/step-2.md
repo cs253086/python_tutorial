@@ -3,36 +3,6 @@ layout: default
 title: "Class 7 — Step 2"
 ---
 
-<pre class="py-starter">
-import turtle
-
-screen = turtle.Screen()
-screen.title("Snake")
-screen.bgcolor("#4A752C")
-screen.setup(500, 500)
-screen.tracer(0)
-
-pen = turtle.Turtle()
-pen.hideturtle()
-pen.penup()
-pen.shape("square")
-
-# 👇
-# Replace these 3 single-stamp lines with TWO nested for loops:
-#   for row in range(20):
-#     for col in range(20):
-#       work out x and y from row and col
-#       pick light green if (row+col) is even, else darker green
-#       go to (x, y) and stamp
-pen.color("#AAD751")
-pen.goto(0, 0)
-pen.stamp()
-# 👆
-
-screen.update()
-screen.mainloop()
-</pre>
-
 <pre class="py-solution">
 for row in range(20):
     for col in range(20):
@@ -76,6 +46,36 @@ Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
   `-200`…`180` — exactly one tile-width apart.
 - `(row + col) % 2 == 0` flips even/odd as you move across the
   grid → the checker pattern.
+
+<pre class="py-starter">
+import turtle
+
+screen = turtle.Screen()
+screen.title("Snake")
+screen.bgcolor("#4A752C")
+screen.setup(500, 500)
+screen.tracer(0)
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.penup()
+pen.shape("square")
+
+# 👇
+# Replace these 3 single-stamp lines with TWO nested for loops:
+#   for row in range(20):
+#     for col in range(20):
+#       work out x and y from row and col
+#       pick light green if (row+col) is even, else darker green
+#       go to (x, y) and stamp
+pen.color("#AAD751")
+pen.goto(0, 0)
+pen.stamp()
+# 👆
+
+screen.update()
+screen.mainloop()
+</pre>
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

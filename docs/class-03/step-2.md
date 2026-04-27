@@ -3,22 +3,6 @@ layout: default
 title: "Class 3 — Step 2"
 ---
 
-<pre class="py-starter">
-print("🐍 Welcome to Snake!")
-print("Eat the apples. Don't bite yourself!")
-print("Press an arrow key to start.")
-
-score = 0
-
-# 👇
-# Make the "name" box ASK the player instead of being hardcoded:
-# Use input("What's your name? ")
-# 👆
-
-print(f"🐍 Welcome, {name}!")
-print(f"Your score is {score}.")
-</pre>
-
 <pre class="py-solution">
 # Delete the hardcoded `name = "Leo"` line above, and add:
 name = input("What's your name? ")
@@ -57,6 +41,22 @@ you by name. Run it again with a friend's name or a silly one like
 - The `f"Welcome, {name}!"` print below doesn't need to change.
   It reads from the `name` box at run time, so the new value shows
   up automatically.
+
+<pre class="py-starter">
+print("🐍 Welcome to Snake!")
+print("Eat the apples. Don't bite yourself!")
+print("Press an arrow key to start.")
+
+score = 0
+
+# 👇
+# Make the "name" box ASK the player instead of being hardcoded:
+# Use input("What's your name? ")
+# 👆
+
+print(f"🐍 Welcome, {name}!")
+print(f"Your score is {score}.")
+</pre>
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

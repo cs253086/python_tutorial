@@ -3,60 +3,6 @@ layout: default
 title: "Class 9 — Step 2"
 ---
 
-<pre class="py-starter">
-import turtle
-
-screen = turtle.Screen()
-screen.title("Snake")
-screen.bgcolor("#4A752C")
-screen.setup(500, 500)
-screen.tracer(0)
-
-pen = turtle.Turtle()
-pen.hideturtle()
-pen.penup()
-pen.shape("square")
-
-for row in range(20):
-    for col in range(20):
-        x = -200 + col * 20
-        y = -200 + row * 20
-        if (row + col) % 2 == 0:
-            pen.color("#AAD751")
-        else:
-            pen.color("#A2D149")
-        pen.goto(x, y)
-        pen.stamp()
-
-snake = [(-40, 0), (-20, 0), (0, 0)]
-
-snake_pen = turtle.Turtle()
-snake_pen.hideturtle()
-snake_pen.penup()
-snake_pen.shape("square")
-snake_pen.color("#4673E8")
-
-# 👇
-# Replace the static draw below with a moving + steerable snake:
-# Make a list called "direction" = [20, 0]  (means: 20 right, 0 up)
-# Make a function move() that:
-#   - works out the new head from current head + direction
-#   - adds the new head, drops the old tail (snake slides forward)
-#   - clears snake_pen and redraws each part
-#   - calls screen.update() and screen.ontimer(move, 150) to keep going
-# Make 4 little functions: go_up, go_down, go_left, go_right
-#   that change the "direction" numbers
-# Call screen.listen() and screen.onkey(go_up, "Up") for each arrow
-# Call move() once at the end to start the game loop
-for part in snake:
-    snake_pen.goto(part)
-    snake_pen.stamp()
-# 👆
-
-screen.update()
-screen.mainloop()
-</pre>
-
 <pre class="py-solution">
 direction = [20, 0]
 
@@ -139,6 +85,60 @@ the **arrow keys**. 🎮
 
 > ⚠️ Don't panic when the snake flies off the edge — that's what
 > Class 12 fixes.
+
+<pre class="py-starter">
+import turtle
+
+screen = turtle.Screen()
+screen.title("Snake")
+screen.bgcolor("#4A752C")
+screen.setup(500, 500)
+screen.tracer(0)
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.penup()
+pen.shape("square")
+
+for row in range(20):
+    for col in range(20):
+        x = -200 + col * 20
+        y = -200 + row * 20
+        if (row + col) % 2 == 0:
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
+        pen.goto(x, y)
+        pen.stamp()
+
+snake = [(-40, 0), (-20, 0), (0, 0)]
+
+snake_pen = turtle.Turtle()
+snake_pen.hideturtle()
+snake_pen.penup()
+snake_pen.shape("square")
+snake_pen.color("#4673E8")
+
+# 👇
+# Replace the static draw below with a moving + steerable snake:
+# Make a list called "direction" = [20, 0]  (means: 20 right, 0 up)
+# Make a function move() that:
+#   - works out the new head from current head + direction
+#   - adds the new head, drops the old tail (snake slides forward)
+#   - clears snake_pen and redraws each part
+#   - calls screen.update() and screen.ontimer(move, 150) to keep going
+# Make 4 little functions: go_up, go_down, go_left, go_right
+#   that change the "direction" numbers
+# Call screen.listen() and screen.onkey(go_up, "Up") for each arrow
+# Call move() once at the end to start the game loop
+for part in snake:
+    snake_pen.goto(part)
+    snake_pen.stamp()
+# 👆
+
+screen.update()
+screen.mainloop()
+</pre>
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>

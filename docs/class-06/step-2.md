@@ -3,18 +3,6 @@ layout: default
 title: "Class 6 — Step 2"
 ---
 
-<pre class="py-starter">
-# 👇
-# Bring in the turtle tool with import turtle
-# Make a screen: title it "Snake", color it dark green ("#4A752C"),
-#   set its size to 500 by 500, and call screen.tracer(0)
-# Make a pen, hide it, lift it up (penup), shape it "square",
-#   color it light green ("#AAD751")
-# Move the pen to (0, 0) and stamp one square
-# Call screen.update() and screen.mainloop()
-# 👆
-</pre>
-
 <pre class="py-solution">
 import turtle
 
@@ -68,6 +56,18 @@ appear with one light-green tile in the middle. 🎉
 - `screen.tracer(0)` + `screen.update()` is how we batch drawings
   so the whole board appears at once. Essential next class when
   you stamp 400 tiles!
+
+<pre class="py-starter">
+# 👇
+# Bring in the turtle tool with import turtle
+# Make a screen: title it "Snake", color it dark green ("#4A752C"),
+#   set its size to 500 by 500, and call screen.tracer(0)
+# Make a pen, hide it, lift it up (penup), shape it "square",
+#   color it light green ("#AAD751")
+# Move the pen to (0, 0) and stamp one square
+# Call screen.update() and screen.mainloop()
+# 👆
+</pre>
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
