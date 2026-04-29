@@ -63,7 +63,7 @@ with a single call.
 
 Before:
 
-```
+```text
 # draw the whole board
 for row in range(20):
     for col in range(20):
@@ -72,7 +72,7 @@ for row in range(20):
 
 After:
 
-```
+```text
 def draw_board():
     for row in range(20):
         for col in range(20):

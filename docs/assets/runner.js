@@ -471,11 +471,12 @@
       seen.add(codeEl);
       out.push(codeEl);
     };
+    // Strict: only blocks whose code carries the explicit language-python
+    // class. Bare ``` fences (used for expected-output snippets) are NOT
+    // python and must never be turned into runnable editors.
     document.querySelectorAll("pre > code.language-python").forEach(push);
     document
-      .querySelectorAll(
-        "div.language-python pre > code, div.highlight pre > code"
-      )
+      .querySelectorAll("div.language-python pre > code")
       .forEach(push);
     return out;
   }

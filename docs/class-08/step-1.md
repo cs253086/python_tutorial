@@ -26,7 +26,7 @@ print(fruits[2])
 
 Tap **▶ Run**. Output:
 
-```
+```text
 ['apple', 'banana', 'cherry']
 apple
 cherry

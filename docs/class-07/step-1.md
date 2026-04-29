@@ -21,7 +21,7 @@ for i in range(5):
 
 Tap **▶ Run**. You should see:
 
-```
+```text
 0
 1
 2

@@ -29,7 +29,7 @@ print("Done!")
 
 Tap **▶ Run**. You should see:
 
-```
+```text
 3
 2
 1

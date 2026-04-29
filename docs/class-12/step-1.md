@@ -21,7 +21,7 @@ print("pizza" in fruits)
 
 Tap **▶ Run**. Output:
 
-```
+```text
 True
 False
 ```
