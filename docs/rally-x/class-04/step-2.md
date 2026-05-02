@@ -76,7 +76,6 @@ screen.title("Rally-X")
 screen.bgcolor("#08152e")
 screen.setup(600, 600)
 screen.tracer(0)
-screen.register_shape("car", ((-14, -7), (14, -7), (14, 7), (-14, 7)))
 
 class Car:
     def __init__(self, x, y, color):
@@ -87,13 +86,22 @@ class Car:
         self.pen.hideturtle()
         self.pen.penup()
         self.pen.speed(0)
-        self.pen.shape("car")
+        self.pen.shape("square")
         self.pen.color(color)
 
     def draw(self):
         self.pen.clear()
-        self.pen.goto(self.x, self.y)
-        self.pen.stamp()
+        self.pen.color(self.color)
+        self.pen.penup()
+        self.pen.goto(self.x - 14, self.y - 7)
+        self.pen.setheading(0)
+        self.pen.pendown()
+        self.pen.begin_fill()
+        for length in [28, 14, 28, 14]:
+            self.pen.forward(length)
+            self.pen.left(90)
+        self.pen.end_fill()
+        self.pen.penup()
 
 # 👇
 # Make a list called "walls" with (x, y) tuples for each wall block

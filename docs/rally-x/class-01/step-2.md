@@ -11,7 +11,6 @@ screen.title("Rally-X")
 screen.bgcolor("#08152e")
 screen.setup(600, 600)
 screen.tracer(0)
-screen.register_shape("car", ((-14, -7), (14, -7), (14, 7), (-14, 7)))
 
 car = turtle.Turtle()
 car.hideturtle()
