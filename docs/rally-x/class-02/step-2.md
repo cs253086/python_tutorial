@@ -13,7 +13,7 @@ class Car:
         self.pen.hideturtle()
         self.pen.penup()
         self.pen.speed(0)
-        self.pen.shape("square")
+        self.pen.shape("car")
         self.pen.color(color)
 
     def draw(self):
@@ -68,6 +68,7 @@ screen.title("Rally-X")
 screen.bgcolor("#08152e")
 screen.setup(600, 600)
 screen.tracer(0)
+screen.register_shape("car", ((-14, -7), (14, -7), (14, 7), (-14, 7)))
 
 # 👇
 # Make a class Car:

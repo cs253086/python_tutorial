@@ -65,12 +65,14 @@ bumps the count and score; touching an enemy costs a life. ⛽📉
 
 <pre class="py-starter">
 import turtle
+import random
 
 screen = turtle.Screen()
 screen.title("Rally-X")
 screen.bgcolor("#08152e")
 screen.setup(600, 600)
 screen.tracer(0)
+screen.register_shape("car", ((-14, -7), (14, -7), (14, 7), (-14, 7)))
 
 class Car:
     def __init__(self, x, y, color):
@@ -82,7 +84,7 @@ class Car:
         self.pen.hideturtle()
         self.pen.penup()
         self.pen.speed(0)
-        self.pen.shape("square")
+        self.pen.shape("car")
         self.pen.color(color)
 
     def update(self):
@@ -100,9 +102,23 @@ class Car:
         elif self.x > target.x: dx = -20
         if self.y < target.y: dy = 20
         elif self.y > target.y: dy = -20
-        if (self.x + dx, self.y) not in walls:
+        # 25% of the time, take a random side-step so all 3 enemies
+        # don't march in lockstep behind the player.
+        if random.random() < 0.25:
+            jiggle = [(20, 0), (-20, 0), (0, 20), (0, -20)]
+            random.shuffle(jiggle)
+            for jx, jy in jiggle:
+                if (self.x + jx, self.y + jy) not in walls:
+                    self.x += jx
+                    self.y += jy
+                    return
+            return
+        # Otherwise direct chase: try x first, then y. The 'dx != 0'
+        # / 'dy != 0' guards prevent a 0-step from claiming the move
+        # and blocking the other axis.
+        if dx != 0 and (self.x + dx, self.y) not in walls:
             self.x += dx
-        elif (self.x, self.y + dy) not in walls:
+        elif dy != 0 and (self.x, self.y + dy) not in walls:
             self.y += dy
 
     def draw(self):
