@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 600" width="660" height="600" font-family="system-ui, -apple-system, Arial, sans-serif">
+  <defs>
+    <linearGradient id="fuel" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%"  stop-color="#5fff5f"/>
+      <stop offset="60%" stop-color="#ffd23f"/>
+      <stop offset="100%" stop-color="#ff5e5e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ TOP HUD ============ -->
+  <rect width="660" height="46" fill="#0e1f3d"/>
+  <text x="18"  y="30" fill="#FFE14A" font-size="20" font-weight="700">🏆 4200</text>
+  <text x="170" y="30" fill="#fff"    font-size="18" font-weight="700">🚩 6 / 10</text>
+  <text x="320" y="30" fill="#fff"    font-size="18" font-weight="700">💨 × 2</text>
+  <text x="640" y="30" fill="#9fb2cc" font-size="16" text-anchor="end">HI  9999</text>
+
+  <!-- ============ MAIN MAZE (500x500) ============ -->
+  <rect x="0" y="46" width="500" height="500" fill="#08152e"/>
+
+  <!-- maze walls -->
+  <g fill="#3FA9F5" stroke="#1A6FA6" stroke-width="1">
+    <!-- outer ring (4 edges) -->
+    <rect x="10"  y="56"  width="480" height="10" rx="3"/>
+    <rect x="10"  y="526" width="480" height="10" rx="3"/>
+    <rect x="10"  y="56"  width="10"  height="490" rx="3"/>
+    <rect x="480" y="56"  width="10"  height="490" rx="3"/>
+    <!-- internal walls forming corridors -->
+    <rect x="90"  y="120" width="120" height="10" rx="3"/>
+    <rect x="90"  y="120" width="10"  height="120" rx="3"/>
+    <rect x="280" y="120" width="160" height="10" rx="3"/>
+    <rect x="280" y="120" width="10"  height="80"  rx="3"/>
+    <rect x="370" y="190" width="80"  height="10"  rx="3"/>
+    <rect x="170" y="200" width="10"  height="120" rx="3"/>
+    <rect x="170" y="310" width="170" height="10"  rx="3"/>
+    <rect x="330" y="240" width="10"  height="80"  rx="3"/>
+    <rect x="60"  y="380" width="120" height="10"  rx="3"/>
+    <rect x="240" y="380" width="170" height="10"  rx="3"/>
+    <rect x="400" y="320" width="10"  height="120" rx="3"/>
+    <rect x="280" y="430" width="130" height="10"  rx="3"/>
+    <rect x="80"  y="450" width="10"  height="60"  rx="3"/>
+    <rect x="80"  y="500" width="120" height="10"  rx="3"/>
+  </g>
+
+  <!-- yellow flags scattered in the maze -->
+  <g>
+    <g transform="translate(50, 90)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+    <g transform="translate(230, 80)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+    <g transform="translate(450, 100)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+    <g transform="translate(220, 240)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FF8A3A"/><text x="6" y="9" font-size="10" font-weight="700" fill="#5b2700">S</text></g>
+    <g transform="translate(380, 350)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+    <g transform="translate(60, 460)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+    <g transform="translate(440, 470)"><rect width="2" height="22" fill="#a86a30"/><polygon points="2,0 22,5 2,10" fill="#FFE14A"/><text x="6" y="9" font-size="9" font-weight="700" fill="#a86a30">F</text></g>
+  </g>
+
+  <!-- smoke trail behind the player -->
+  <g fill="#dde6f0" opacity="0.8">
+    <circle cx="170" cy="350" r="9"/>
+    <circle cx="200" cy="350" r="11" opacity="0.65"/>
+    <circle cx="232" cy="350" r="13" opacity="0.45"/>
+  </g>
+
+  <!-- enemy car #1 (top-right area) -->
+  <g transform="translate(360, 240) rotate(180)">
+    <rect x="-14" y="-9" width="28" height="18" rx="4" fill="#5fa6ff" stroke="#0c4a96" stroke-width="1.5"/>
+    <rect x="-12" y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <rect x="6"   y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <circle cx="-9" cy="9" r="3" fill="#1a1a1a"/>
+    <circle cx="9"  cy="9" r="3" fill="#1a1a1a"/>
+  </g>
+
+  <!-- enemy car #2 (bottom-right) -->
+  <g transform="translate(330, 470) rotate(-90)">
+    <rect x="-14" y="-9" width="28" height="18" rx="4" fill="#5fa6ff" stroke="#0c4a96" stroke-width="1.5"/>
+    <rect x="-12" y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <rect x="6"   y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <circle cx="-9" cy="9" r="3" fill="#1a1a1a"/>
+    <circle cx="9"  cy="9" r="3" fill="#1a1a1a"/>
+  </g>
+
+  <!-- enemy car #3 (top-left) -->
+  <g transform="translate(110, 200) rotate(90)">
+    <rect x="-14" y="-9" width="28" height="18" rx="4" fill="#5fa6ff" stroke="#0c4a96" stroke-width="1.5"/>
+    <rect x="-12" y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <rect x="6"   y="-7" width="6"  height="6" fill="#cfe6ff"/>
+    <circle cx="-9" cy="9" r="3" fill="#1a1a1a"/>
+    <circle cx="9"  cy="9" r="3" fill="#1a1a1a"/>
+  </g>
+
+  <!-- player car (red) facing right -->
+  <g transform="translate(270, 350)">
+    <rect x="-16" y="-10" width="32" height="20" rx="5" fill="#ff3a3a" stroke="#7a0d0d" stroke-width="1.5"/>
+    <!-- windscreen -->
+    <rect x="-2" y="-8" width="14" height="16" rx="2" fill="#ffeada" opacity="0.85"/>
+    <!-- headlight on front (right side) -->
+    <circle cx="14" cy="-5" r="2" fill="#FFE14A"/>
+    <circle cx="14" cy="5"  r="2" fill="#FFE14A"/>
+    <!-- wheels -->
+    <rect x="-12" y="-13" width="6" height="4" rx="1" fill="#222"/>
+    <rect x="6"   y="-13" width="6" height="4" rx="1" fill="#222"/>
+    <rect x="-12" y="9"   width="6" height="4" rx="1" fill="#222"/>
+    <rect x="6"   y="9"   width="6" height="4" rx="1" fill="#222"/>
+  </g>
+
+  <!-- ============ RADAR PANEL ============ -->
+  <rect x="500" y="46" width="160" height="500" fill="#0a1a36"/>
+  <text x="580" y="76" text-anchor="middle" fill="#9fb2cc" font-size="14" font-weight="700" letter-spacing="2">RADAR</text>
+  <!-- radar mini-display -->
+  <g transform="translate(514, 90)">
+    <rect width="132" height="132" fill="#000" stroke="#3FA9F5" stroke-width="2" rx="4"/>
+    <!-- sketchy mini walls -->
+    <g stroke="#3FA9F5" stroke-width="1.4" fill="none" opacity="0.85">
+      <path d="M 22 32 H 56 M 56 32 V 56 M 76 32 H 116 M 116 32 V 56 M 102 56 H 116
+               M 46 56 V 84 M 46 84 H 90 M 90 64 V 84 M 16 100 H 48 M 64 100 H 108
+               M 108 84 V 116 M 76 116 H 108 M 22 120 V 132 M 22 132 H 54"/>
+    </g>
+    <!-- mini flags (yellow dots) -->
+    <g fill="#FFE14A">
+      <circle cx="14"  cy="22" r="2.5"/>
+      <circle cx="60"  cy="20" r="2.5"/>
+      <circle cx="118" cy="26" r="2.5"/>
+      <circle cx="58"  cy="62" r="2.5" fill="#FF8A3A"/>
+      <circle cx="100" cy="92" r="2.5"/>
+      <circle cx="16"  cy="120" r="2.5"/>
+      <circle cx="116" cy="124" r="2.5"/>
+    </g>
+    <!-- mini enemies (blue) -->
+    <g fill="#5fa6ff">
+      <circle cx="94"  cy="62"  r="2.5"/>
+      <circle cx="86"  cy="124" r="2.5"/>
+      <circle cx="28"  cy="52"  r="2.5"/>
+    </g>
+    <!-- mini player (red, slightly bigger) -->
+    <circle cx="70" cy="92" r="3.5" fill="#ff3a3a" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(514, 240)" font-size="13" fill="#cdd9ec">
+    <circle cx="6"  cy="6"  r="4" fill="#ff3a3a"/><text x="18" y="10">You</text>
+    <circle cx="6"  cy="32" r="4" fill="#5fa6ff"/><text x="18" y="36">Chasers</text>
+    <rect   x="2"  y="54" width="9" height="6" fill="#FFE14A"/><text x="18" y="62">Flag (10pt)</text>
+    <rect   x="2"  y="80" width="9" height="6" fill="#FF8A3A"/><text x="18" y="88">Special (50pt)</text>
+  </g>
+
+  <!-- LIVES indicator -->
+  <text x="514" y="360" fill="#9fb2cc" font-size="14" font-weight="700" letter-spacing="2">LIVES</text>
+  <g transform="translate(514, 372)">
+    <rect x="0"  y="0" width="22" height="14" rx="3" fill="#ff3a3a"/>
+    <rect x="30" y="0" width="22" height="14" rx="3" fill="#ff3a3a"/>
+    <rect x="60" y="0" width="22" height="14" rx="3" fill="#ff3a3a" opacity="0.3"/>
+  </g>
+
+  <!-- ============ BOTTOM FUEL BAR ============ -->
+  <rect x="0" y="546" width="660" height="54" fill="#0e1f3d"/>
+  <text x="20" y="578" fill="#fff" font-size="14" font-weight="700">FUEL</text>
+  <rect x="80" y="562" width="500" height="22" rx="11" fill="#0a1a36" stroke="#3FA9F5" stroke-width="1.5"/>
+  <rect x="83" y="565" width="320" height="16" rx="8" fill="url(#fuel)"/>
+  <text x="640" y="578" text-anchor="end" fill="#FFE14A" font-size="14" font-weight="700">64%</text>
+</svg>
