@@ -226,6 +226,18 @@ pre.py-runner-static {
 }
 
 /* --- Progress tracker --- */
+.tutorial-card {
+  margin: 2em 0;
+  padding: 1.25em 1.25em 1.5em;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+.tutorial-card[data-tutorial="snake"]  { border-top: 4px solid #2ea44f; }
+.tutorial-card[data-tutorial="rallyx"] { border-top: 4px solid #FFD23F; }
+.tutorial-card h2 { margin-top: 0; }
+
 .snake-progress {
   margin: 1em 0 1.25em;
   padding: 12px 14px;

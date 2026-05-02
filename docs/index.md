@@ -1,40 +1,23 @@
 ---
 layout: default
-title: Snake Python Tutorial
+title: Python Tutorial
 ---
 
-# 🐍 Let's build Snake!
+# 🐍 Python Tutorial
 
-Hi! Over 12 short classes you'll build your own **Snake game** — just
-like the one you play on Google.
+Two complete game projects, two skill levels. Pick where you are.
 
-Every class you learn **one new Python thing**, and it goes straight
-into your game. By the end, the whole game is yours.
+<div class="tutorial-card" data-tutorial="snake" markdown="1">
 
-<p style="text-align:center;margin:2em 0;">
-  <img src="./assets/final-mockup.svg" alt="Mockup of the finished Snake game — green checkerboard, blue snake, red apple" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
-  <br/>
-  <sub>👆 This is what your game will look like at the end.</sub>
+## 🟢 Beginner — Snake
+
+Build the classic Snake game from scratch. You'll meet `print`,
+variables, `input`, `if/else`, loops, lists, functions, and the
+`turtle` graphics tool.
+
+<p style="text-align:center;margin:1em 0;">
+  <img src="./assets/final-mockup.svg" alt="Final Snake game mockup" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
 </p>
-
----
-
-## 🎮 Start here
-
-<p style="text-align:center;margin:2em 0;">
-  <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.3em;font-weight:bold;">▶ Start Class 1</a>
-</p>
-
-Nothing to install. **Python runs right in the page** — tap ▶ Run on
-any code box. Works on iPad Safari.
-
----
-
-## 🗺️ All the classes
-
-You'll learn how to make the computer **talk**, **remember**, **ask
-questions**, **make choices**, **loop**, **draw**, and **move things
-with arrow keys**. Then you put it all together into a full game.
 
 | | Class |
 |---|---|
@@ -51,16 +34,46 @@ with arrow keys**. Then you put it all together into a full game.
 | 🔓 | [**11 — The apple**](./class-11/) (random + growing) |
 | 🔓 | [**12 — Game over!**](./class-12/) (collisions) |
 
+</div>
+
+<div class="tutorial-card" data-tutorial="rallyx" markdown="1">
+
+## 🟡 Intermediate — Rally-X
+
+Build a **Brawl-Stars-flavored arcade racer** through a maze:
+collect flags, dodge chasers, drop a smoke screen, watch your fuel.
+You'll meet **classes**, methods, multiple instances, dictionaries,
+file I/O, and a touch of pathfinding.
+
+<p style="text-align:center;margin:1em 0;">
+  <img src="./assets/rally-x-mockup.svg" alt="Rally-X game mockup" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
+</p>
+
+| | Class |
+|---|---|
+| 🔓 | [**1 — Open the Rally-X window**](./rally-x/class-01/) (turtle review) |
+| 🔒 | 2 — Meet `class` (Car blueprint) |
+| 🔒 | 3 — Many cars (instances + lists) |
+| 🔒 | 4 — Draw the maze (2D walls) |
+| 🔒 | 5 — Drive the player (arrow keys + class methods) |
+| 🔒 | 6 — Wall collisions (stay on the road) |
+| 🔒 | 7 — Yellow flags (Flag class + pickup) |
+| 🔒 | 8 — Enemy chasers (simple AI) |
+| 🔒 | 9 — Fuel + lives (dictionaries) |
+| 🔒 | 10 — Smoke screen (cooldowns) |
+| 🔒 | 11 — Score, lives, game over |
+| 🔒 | 12 — Bonus: radar mini-map |
+
+<sub>*Class 1 is ready. Classes 2–12 are coming as I build them.*</sub>
+
+</div>
+
 ---
 
 ## 💡 Three big tips
 
-- ✍️ **Type the code yourself** — don't copy-paste. Typing helps your
+- ✍️ **Type the code yourself.** Don't copy-paste. Typing helps your
   brain remember.
 - 🛑 **Errors are okay.** Red messages aren't scary — they're clues.
 - 🔬 **Try stuff.** Change a number, change a word, see what happens.
   You can't break anything.
-
-<p style="text-align:center;margin:2.5em 0;">
-  <a href="./class-01/" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.3em;font-weight:bold;">▶ Start Class 1</a>
-</p>

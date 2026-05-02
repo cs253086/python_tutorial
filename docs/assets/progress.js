@@ -1,125 +1,169 @@
 /*
- * Snake-tutorial progress tracker — browser localStorage only, no accounts.
+ * Tutorial progress tracker — two tutorials, browser-only, no accounts.
  *
- * - When the kid lands on /class-NN/done.html, mark that class as complete.
- * - On the landing page, swap the class-list emoji for ✅ when done,
- *   add a progress counter, a "Continue where you left off" button
- *   pointing at the next uncompleted class, and a small parent-facing
- *   "Clear progress" link.
+ * Tutorials:
+ *   - snake   (beginner)   : pages live at  /class-NN/
+ *   - rallyx  (intermediate): pages live at  /rally-x/class-NN/
+ *
+ * On a class's /done page, mark <tutorial>-done:class-NN = "1".
+ * On the main landing page, decorate each <div class="tutorial-card"
+ * data-tutorial="snake|rallyx"> with a progress summary, a Continue
+ * button, and ✅ marks in its class-list table.
+ *
+ * Storage keys are separate per tutorial so the two never collide.
  */
 (function () {
   "use strict";
 
-  const PREFIX = "snake-done:";
-  const TOTAL = 12;
+  const TUTORIALS = [
+    {
+      id: "snake",
+      label: "Snake",
+      total: 12,
+      // /class-NN/  (NOT /rally-x/class-NN/)
+      classRe: /^(?:.*\/)?class-(\d{2})(?:\/|\.html|$)/,
+      isMineRe: function (path) {
+        // exclude rally-x subtree
+        if (/\/rally-x\//.test(path)) return false;
+        return this.classRe.test(path);
+      },
+      classListPath: function (n) {
+        return "./class-" + String(n).padStart(2, "0") + "/";
+      },
+    },
+    {
+      id: "rallyx",
+      label: "Rally-X",
+      total: 12,
+      classRe: /\/rally-x\/class-(\d{2})(?:\/|\.html|$)/,
+      isMineRe: function (path) { return this.classRe.test(path); },
+      classListPath: function (n) {
+        return "./rally-x/class-" + String(n).padStart(2, "0") + "/";
+      },
+    },
+  ];
 
-  function classId(n) {
-    return "class-" + String(n).padStart(2, "0");
-  }
+  function classId(n) { return "class-" + String(n).padStart(2, "0"); }
+  function prefix(t) { return t.id + "-done:"; }
 
-  function isDone(id) {
-    try { return localStorage.getItem(PREFIX + id) === "1"; }
+  function isDone(t, n) {
+    try { return localStorage.getItem(prefix(t) + classId(n)) === "1"; }
     catch (_) { return false; }
   }
-
-  function markDone(id) {
-    try { localStorage.setItem(PREFIX + id, "1"); } catch (_) {}
+  function markDone(t, n) {
+    try { localStorage.setItem(prefix(t) + classId(n), "1"); } catch (_) {}
   }
-
-  function clearAll() {
-    for (let i = 1; i <= TOTAL; i++) {
-      try { localStorage.removeItem(PREFIX + classId(i)); } catch (_) {}
+  function clearAllProgress() {
+    for (const t of TUTORIALS) {
+      for (let i = 1; i <= t.total; i++) {
+        try { localStorage.removeItem(prefix(t) + classId(i)); } catch (_) {}
+      }
     }
   }
 
-  function doneCount() {
+  function doneCount(t) {
     let n = 0;
-    for (let i = 1; i <= TOTAL; i++) {
-      if (isDone(classId(i))) n++;
-    }
+    for (let i = 1; i <= t.total; i++) if (isDone(t, i)) n++;
     return n;
   }
-
-  function nextUncompleted() {
-    for (let i = 1; i <= TOTAL; i++) {
-      if (!isDone(classId(i))) return i;
-    }
+  function nextUncompleted(t) {
+    for (let i = 1; i <= t.total; i++) if (!isDone(t, i)) return i;
     return null;
   }
 
-  function parseClassFromPath() {
-    const m = location.pathname.match(/\/class-(\d{2})\//);
-    return m ? classId(parseInt(m[1], 10)) : null;
+  function whichTutorial() {
+    const path = location.pathname;
+    for (const t of TUTORIALS) if (t.isMineRe(path)) return t;
+    return null;
+  }
+
+  function classFromPath(t) {
+    const m = location.pathname.match(t.classRe);
+    return m ? parseInt(m[1], 10) : null;
   }
 
   function onDonePage() {
     return /\/class-\d{2}\/done(\.html?)?\/?$/.test(location.pathname);
   }
 
-  function looksLikeLanding() {
-    // The landing page links to many classes. A class/step page links
-    // to at most a couple.
-    return document.querySelectorAll('a[href*="class-"]').length >= 6;
-  }
-
   // --- Mark progress on done pages ---
   function markIfDone() {
-    if (onDonePage()) {
-      const id = parseClassFromPath();
-      if (id) markDone(id);
-    }
+    if (!onDonePage()) return;
+    const t = whichTutorial();
+    if (!t) return;
+    const n = classFromPath(t);
+    if (n) markDone(t, n);
   }
 
-  // --- Landing page decoration ---
+  // --- Landing-page decoration ---
 
-  function insertAfter(newNode, refNode) {
-    refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
-  }
-
-  function swapEmojiInClassTable() {
-    document.querySelectorAll('a[href*="class-"]').forEach((a) => {
-      const m = a.getAttribute("href").match(/class-(\d{2})/);
-      if (!m) return;
-      const id = classId(parseInt(m[1], 10));
-      if (!isDone(id)) return;
-      const tr = a.closest("tr");
-      if (!tr || !tr.cells.length) return;
-      // First cell is the lock/unlock emoji in our class list
-      tr.cells[0].textContent = "✅";
-    });
-  }
-
-  function buildProgressSummary() {
-    const n = doneCount();
-    const pct = Math.round((n / TOTAL) * 100);
+  function buildSummary(t) {
+    const n = doneCount(t);
+    const pct = Math.round((n / t.total) * 100);
     const wrap = document.createElement("div");
     wrap.className = "snake-progress";
     wrap.innerHTML =
       '<div class="snake-progress-head">' +
-      '<strong>🏆 Your progress:</strong> ' + n + ' of ' + TOTAL +
-      ' classes done' + (n === TOTAL ? ' — you built the whole game!' : '') +
+      '<strong>🏆 Progress:</strong> ' + n + ' of ' + t.total +
+      ' classes done' + (n === t.total ? ' — full game built!' : '') +
       '</div>' +
       '<div class="snake-progress-bar"><div class="snake-progress-fill"' +
       ' style="width:' + pct + '%"></div></div>';
     return wrap;
   }
 
-  function buildContinueButton() {
-    const next = nextUncompleted();
+  function buildContinue(t) {
+    const next = nextUncompleted(t);
     if (next == null) return null;
-    const n = doneCount();
-    const label = n === 0 ? "▶ Start Class 1" : "▶ Continue with Class " + next;
+    const n = doneCount(t);
+    const label = n === 0
+      ? "▶ Start " + t.label + " — Class 1"
+      : "▶ Continue " + t.label + " — Class " + next;
     const a = document.createElement("a");
     a.className = "snake-continue";
-    a.href = "./" + classId(next) + "/";
+    a.href = t.classListPath(next);
     a.textContent = label;
     const wrap = document.createElement("p");
-    wrap.style.cssText = "text-align:center;margin:1.5em 0;";
+    wrap.style.cssText = "text-align:center;margin:1.25em 0;";
     wrap.appendChild(a);
     return wrap;
   }
 
-  function buildClearLink() {
+  function decorateCard(card) {
+    const id = card.getAttribute("data-tutorial");
+    const t = TUTORIALS.find((x) => x.id === id);
+    if (!t) return;
+
+    // Insert progress + continue button right after the heading inside the card.
+    const headEl = card.querySelector("h2, h3, h1") || card.firstElementChild;
+    if (headEl) {
+      const summary = buildSummary(t);
+      headEl.parentNode.insertBefore(summary, headEl.nextSibling);
+      const cont = buildContinue(t);
+      if (cont) headEl.parentNode.insertBefore(cont, summary.nextSibling);
+    } else {
+      card.appendChild(buildSummary(t));
+      const cont = buildContinue(t);
+      if (cont) card.appendChild(cont);
+    }
+
+    // Swap the lock emoji for ✅ in the class-list table.
+    card.querySelectorAll('a[href*="class-"]').forEach((a) => {
+      const m = a.getAttribute("href").match(/class-(\d{2})/);
+      if (!m) return;
+      if (!isDone(t, parseInt(m[1], 10))) return;
+      const tr = a.closest("tr");
+      if (tr && tr.cells.length) tr.cells[0].textContent = "✅";
+    });
+  }
+
+  function decorateLanding() {
+    const cards = document.querySelectorAll('.tutorial-card[data-tutorial]');
+    if (!cards.length) return;
+    cards.forEach(decorateCard);
+
+    // Single 'Clear all progress' link at the bottom of the page.
+    const main = document.querySelector(".main-content") || document.body;
     const p = document.createElement("p");
     p.className = "snake-clear";
     const a = document.createElement("a");
@@ -127,32 +171,12 @@
     a.textContent = "Clear saved progress";
     a.addEventListener("click", (ev) => {
       ev.preventDefault();
-      if (!confirm("Clear all Snake Tutorial progress? This can't be undone.")) return;
-      clearAll();
+      if (!confirm("Clear ALL Snake + Rally-X progress? This can't be undone.")) return;
+      clearAllProgress();
       location.reload();
     });
     p.appendChild(a);
-    return p;
-  }
-
-  function decorateLanding() {
-    if (!looksLikeLanding()) return;
-    const main = document.querySelector(".main-content") || document.body;
-    const h1 = main.querySelector("h1");
-    if (!h1) return;
-
-    // Progress summary right after the H1.
-    insertAfter(buildProgressSummary(), h1);
-
-    // Continue button right after the summary.
-    const cont = buildContinueButton();
-    if (cont) insertAfter(cont, h1.nextSibling);
-
-    // Swap emojis in the class table.
-    swapEmojiInClassTable();
-
-    // Parent-facing clear-progress link at the bottom.
-    main.appendChild(buildClearLink());
+    main.appendChild(p);
   }
 
   function init() {
