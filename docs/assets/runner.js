@@ -355,6 +355,8 @@
       : null;
     if (solutionEl) solutionEl.remove();
 
+    const isRallyX = /\/rally-x\//.test(location.pathname);
+
     const key = "pymain:" + location.pathname;
     const saved = (() => {
       try { return localStorage.getItem(key); } catch (_) { return null; }
@@ -365,9 +367,11 @@
 
     const label = document.createElement("div");
     label.className = "py-panel-label py-panel-label-main";
-    label.textContent = solutionCode
-      ? "🐍 Your snake.py — type your new code between the 👇 markers (or tap 💡 Solution)"
-      : "🐍 Your snake.py — edit below, then tap ▶ Run";
+    label.textContent = isRallyX
+      ? "🏎️ Your rally_x.py — type your new code between 👇 markers, then tap ▶ Play"
+      : (solutionCode
+        ? "🐍 Your snake.py — type your new code between the 👇 markers (or tap 💡 Solution)"
+        : "🐍 Your snake.py — edit below, then tap ▶ Run");
 
     const editor = document.createElement("textarea");
     editor.className = "py-runner-editor py-main-editor";
@@ -381,7 +385,11 @@
     });
 
     const toolbar = buildToolbar();
-    const runBtn = buildButton("py-runner-run", "▶ Run");
+    const runBtn = buildButton(
+      "py-runner-run",
+      isRallyX ? "▶ Play" : "▶ Run",
+      isRallyX ? "Open the game in a new window" : "Run this code"
+    );
     const solutionBtn = buildButton(
       "py-runner-copy",
       "💡 Solution",
@@ -423,7 +431,29 @@
       canvas.innerHTML = "";
       status.textContent = "";
     });
-    attachRunHandler({ runBtn, editor, output, canvas, status });
+
+    if (isRallyX) {
+      // ▶ Play opens a dedicated game window. The editor's code goes
+      // into localStorage; the new window reads it and runs Skulpt.
+      runBtn.addEventListener("click", () => {
+        try {
+          localStorage.setItem("rallyx-play-code", editor.value);
+          localStorage.setItem("rallyx-play-back", location.href);
+        } catch (_) {}
+        // Resolve play.html relative to the deployed site root by walking
+        // up from the current path (e.g. /python_tutorial/rally-x/class-NN/step-2.html
+        // -> /python_tutorial/play.html).
+        const playUrl = new URL(
+          "../../play.html",
+          location.origin + location.pathname
+        ).pathname;
+        const w = window.open(playUrl, "rallyx-play-window");
+        if (w) w.focus();
+        status.textContent = "Game window opened ▶";
+      });
+    } else {
+      attachRunHandler({ runBtn, editor, output, canvas, status });
+    }
 
     toolbar.appendChild(runBtn);
     toolbar.appendChild(solutionBtn);
@@ -433,8 +463,11 @@
     container.appendChild(label);
     container.appendChild(attachLineNumbers(editor));
     container.appendChild(toolbar);
-    container.appendChild(output);
-    container.appendChild(canvas);
+    // Rally-X plays in a new window, so we don't need the inline output/canvas.
+    if (!isRallyX) {
+      container.appendChild(output);
+      container.appendChild(canvas);
+    }
 
     starterEl.parentNode.replaceChild(container, starterEl);
     autosize(editor);
