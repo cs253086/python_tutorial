@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 580" width="540" height="580" font-family="system-ui, -apple-system, Arial, sans-serif">
+  <defs>
+    <pattern id="grass" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="60" height="60" fill="#7CB342"/>
+      <rect x="0" y="0" width="30" height="30" fill="#8BC34A"/>
+      <rect x="30" y="30" width="30" height="30" fill="#8BC34A"/>
+      <circle cx="14" cy="14" r="2" fill="#558B2F" opacity="0.4"/>
+      <circle cx="46" cy="46" r="2" fill="#558B2F" opacity="0.4"/>
+    </pattern>
+    <radialGradient id="brawler-blue" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0%"  stop-color="#7AA8FF"/>
+      <stop offset="60%" stop-color="#4673E8"/>
+      <stop offset="100%" stop-color="#2A4FB0"/>
+    </radialGradient>
+    <radialGradient id="brawler-red" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0%"  stop-color="#FF8A7A"/>
+      <stop offset="60%" stop-color="#E74C3C"/>
+      <stop offset="100%" stop-color="#A6271A"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Top HUD bar -->
+  <rect width="540" height="46" fill="#243447"/>
+  <!-- Score with trophy -->
+  <g transform="translate(16, 14)">
+    <text x="0" y="18" font-size="20">🏆</text>
+    <text x="30" y="20" fill="#FFE14A" font-size="20" font-weight="700">120</text>
+  </g>
+  <!-- Wave indicator centered -->
+  <text x="270" y="30" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">WAVE 3</text>
+  <!-- Hearts (lives) right -->
+  <g transform="translate(440, 14)">
+    <text x="0"  y="20" font-size="20">❤️</text>
+    <text x="32" y="20" font-size="20">❤️</text>
+    <text x="64" y="20" font-size="20" opacity="0.35">❤️</text>
+  </g>
+
+  <!-- Arena -->
+  <rect x="0" y="46" width="540" height="500" fill="url(#grass)"/>
+
+  <!-- Walls / obstacles -->
+  <g fill="#6D4C41" stroke="#3E2723" stroke-width="2">
+    <rect x="80"  y="120" width="60" height="60" rx="8"/>
+    <rect x="380" y="180" width="60" height="60" rx="8"/>
+    <rect x="220" y="380" width="80" height="40" rx="8"/>
+  </g>
+
+  <!-- Bushes (Brawl Stars feel) -->
+  <g>
+    <ellipse cx="50"  cy="500" rx="40" ry="22" fill="#2E7D32" opacity="0.85"/>
+    <ellipse cx="490" cy="450" rx="38" ry="20" fill="#2E7D32" opacity="0.85"/>
+  </g>
+
+  <!-- Bullets in flight (yellow) -->
+  <g fill="#FFE14A" stroke="#E2B500" stroke-width="1.5">
+    <circle cx="200" cy="320" r="6"/>
+    <circle cx="240" cy="290" r="6"/>
+    <circle cx="290" cy="270" r="6"/>
+    <circle cx="345" cy="245" r="6"/>
+  </g>
+
+  <!-- Enemy 1 (top-left) -->
+  <g transform="translate(140, 260)">
+    <circle cx="0" cy="0" r="22" fill="url(#brawler-red)"/>
+    <!-- eyes -->
+    <circle cx="-6" cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="-5" cy="-2" r="1.6" fill="#222"/>
+    <circle cx="6"  cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="7"  cy="-2" r="1.6" fill="#222"/>
+    <!-- angry mouth -->
+    <path d="M -6 8 Q 0 4 6 8" stroke="#3E2723" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- mini health bar above -->
+    <rect x="-18" y="-35" width="36" height="5" fill="#222" rx="2"/>
+    <rect x="-17" y="-34" width="22" height="3" fill="#3AFF5A" rx="1"/>
+  </g>
+
+  <!-- Enemy 2 (right) -->
+  <g transform="translate(420, 360)">
+    <circle cx="0" cy="0" r="22" fill="url(#brawler-red)"/>
+    <circle cx="-6" cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="-5" cy="-2" r="1.6" fill="#222"/>
+    <circle cx="6"  cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="7"  cy="-2" r="1.6" fill="#222"/>
+    <path d="M -6 8 Q 0 4 6 8" stroke="#3E2723" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="-18" y="-35" width="36" height="5" fill="#222" rx="2"/>
+    <rect x="-17" y="-34" width="32" height="3" fill="#3AFF5A" rx="1"/>
+  </g>
+
+  <!-- Enemy 3 (bottom-left, low health) -->
+  <g transform="translate(160, 470)">
+    <circle cx="0" cy="0" r="22" fill="url(#brawler-red)"/>
+    <circle cx="-6" cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="-5" cy="-2" r="1.6" fill="#222"/>
+    <circle cx="6"  cy="-3" r="3.5" fill="#fff"/>
+    <circle cx="7"  cy="-2" r="1.6" fill="#222"/>
+    <path d="M -6 8 Q 0 4 6 8" stroke="#3E2723" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="-18" y="-35" width="36" height="5" fill="#222" rx="2"/>
+    <rect x="-17" y="-34" width="8" height="3" fill="#FF5252" rx="1"/>
+  </g>
+
+  <!-- Player (blue brawler) — center-ish, facing top-right -->
+  <g transform="translate(300, 320)">
+    <!-- shadow -->
+    <ellipse cx="0" cy="22" rx="22" ry="6" fill="#000" opacity="0.25"/>
+    <!-- body -->
+    <circle cx="0" cy="0" r="26" fill="url(#brawler-blue)"/>
+    <!-- aim direction (small triangle) -->
+    <polygon points="18,-12 32,-22 26,-2" fill="#FFE14A" stroke="#E2B500" stroke-width="1.5"/>
+    <!-- eyes -->
+    <circle cx="-7" cy="-4" r="4.5" fill="#fff"/>
+    <circle cx="-6" cy="-3" r="2"   fill="#111"/>
+    <circle cx="8"  cy="-4" r="4.5" fill="#fff"/>
+    <circle cx="9"  cy="-3" r="2"   fill="#111"/>
+    <!-- happy mouth -->
+    <path d="M -7 7 Q 0 13 7 7" stroke="#1a2330" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- player health bar -->
+    <rect x="-22" y="-42" width="44" height="6" fill="#222" rx="2"/>
+    <rect x="-21" y="-41" width="38" height="4" fill="#3AFF5A" rx="1"/>
+  </g>
+
+  <!-- Bottom super-attack meter -->
+  <g>
+    <rect x="0" y="546" width="540" height="34" fill="#243447"/>
+    <text x="14" y="569" fill="#fff" font-size="13" font-weight="600">SUPER</text>
+    <rect x="80" y="554" width="380" height="18" rx="9" fill="#0e1722"/>
+    <rect x="80" y="554" width="285" height="18" rx="9" fill="#FFD23F"/>
+    <text x="270" y="568" text-anchor="middle" fill="#0e1722" font-size="12" font-weight="700">75%</text>
+    <text x="510" y="569" text-anchor="end" fill="#fff" font-size="13">⚡</text>
+  </g>
+</svg>
