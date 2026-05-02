@@ -75,7 +75,12 @@
   function autosize(ta) {
     const grow = () => {
       ta.style.height = "auto";
-      ta.style.height = Math.min(ta.scrollHeight + 4, 700) + "px";
+      // No cap — for the Rally-X cumulative editor (~150 lines) capping
+      // forces an internal scrollbar inside the textarea, while the line
+      // gutter (sized to the wrap, not the textarea) overflows below it.
+      // Letting the editor grow to its full content height keeps the
+      // gutter and code in lock-step and lets the page scroll naturally.
+      ta.style.height = (ta.scrollHeight + 4) + "px";
     };
     ta.addEventListener("input", grow);
     setTimeout(grow, 0);
