@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 8 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
     def chase(self, target):
         dx = 0
         dy = 0
@@ -47,7 +47,7 @@ Tap **▶ Play**. The blue cars now **converge** on you. 🚓
   enemies are like that.
 - We try x-step first to keep behavior predictable.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

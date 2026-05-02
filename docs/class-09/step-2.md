@@ -3,7 +3,7 @@ layout: default
 title: "Class 9 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 direction = [20, 0]
 
 def move():
@@ -86,7 +86,7 @@ the **arrow keys**. 🎮
 > ⚠️ Don't panic when the snake flies off the edge — that's what
 > Class 12 fixes.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

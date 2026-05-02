@@ -3,7 +3,7 @@ layout: default
 title: "Class 6 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 import turtle
 
 screen = turtle.Screen()
@@ -57,7 +57,7 @@ appear with one light-green tile in the middle. 🎉
   so the whole board appears at once. Essential next class when
   you stamp 400 tiles!
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 # 👇
 # Bring in the turtle tool with import turtle
 # Make a screen: title it "Snake", color it dark green ("#4A752C"),

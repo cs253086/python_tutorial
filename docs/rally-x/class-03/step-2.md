@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 3 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 enemies = [
     Car(-200, 150, "#5fa6ff"),
     Car(200, -150, "#5fa6ff"),
@@ -42,7 +42,7 @@ the middle and **3 blue enemy cars** scattered around it.
   copy-paste!
 - Adding more enemies later is just one more line in the list.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

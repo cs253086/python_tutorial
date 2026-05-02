@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 5 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 class Car:
     def __init__(self, x, y, color):
         self.x = x
@@ -89,7 +89,7 @@ press the **arrow keys**. The red car should drive! 🎮
 > ⚠️ Don't worry that the player can drive **through** walls right
 > now — Class 6 fixes that.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

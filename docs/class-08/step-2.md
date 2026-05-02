@@ -3,7 +3,7 @@ layout: default
 title: "Class 8 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 snake = [(-40, 0), (-20, 0), (0, 0)]
 
 snake_pen = turtle.Turtle()
@@ -47,7 +47,7 @@ checkerboard. 🐍
 - `snake_pen.goto(part)` — when you `goto` a tuple, Python uses
   its two numbers as x and y.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

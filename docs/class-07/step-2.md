@@ -3,7 +3,7 @@ layout: default
 title: "Class 7 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 for row in range(20):
     for col in range(20):
         x = -200 + col * 20
@@ -47,7 +47,7 @@ Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
 - `(row + col) % 2 == 0` flips even/odd as you move across the
   grid → the checker pattern.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

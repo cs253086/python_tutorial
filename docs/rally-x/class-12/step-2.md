@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 12 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 RADAR_OX = 220
 RADAR_OY = 200
 SCALE = 6
@@ -103,7 +103,7 @@ From `class Car:` to a full arcade racer with chasers, smoke,
 fuel, lives, score, restart, and now a radar. **Show somebody
 this game and be proud.** 🏎️🎉
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 import random
 

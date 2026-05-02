@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 10 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 def use_smoke():
     if state["smoke"] > 0 and state["smoke_timer"] == 0:
         state["smoke"] -= 1
@@ -63,7 +63,7 @@ out. 💨
 - Same pattern works for any cooldown weapon — shield, dash,
   super attack.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 import random
 

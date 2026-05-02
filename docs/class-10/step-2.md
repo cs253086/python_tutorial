@@ -3,7 +3,7 @@ layout: default
 title: "Class 10 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 def draw_board():
     for row in range(20):
         for col in range(20):
@@ -103,7 +103,7 @@ the code reads much cleaner. 🧼
   the board, `draw_snake` draws the snake. Future-you will thank
   you when you read this in 6 months.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

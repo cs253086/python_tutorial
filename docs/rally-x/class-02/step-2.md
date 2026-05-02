@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 2 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 class Car:
     def __init__(self, x, y, color):
         self.x = x
@@ -69,7 +69,7 @@ new `Car` class).
 - `self.pen.clear()` is what makes redraw clean — when the
   car moves we'll erase the old stamp first.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

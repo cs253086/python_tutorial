@@ -3,7 +3,7 @@ layout: default
 title: "Class 12 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 def game_over():
     over = turtle.Turtle()
     over.hideturtle()
@@ -87,7 +87,7 @@ Hit a wall → **GAME OVER**. Steer into your tail → **GAME OVER**.
 
 From `print("Hello!")` to here. Show it to someone and be proud. 🎉
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 import random
 

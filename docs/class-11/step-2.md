@@ -3,7 +3,7 @@ layout: default
 title: "Class 11 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 import random
 
 apple_pen = turtle.Turtle()
@@ -98,7 +98,7 @@ Tap **▶ Run**, steer with arrows, chase the apple. 🍎🐍
 - **Growing** is simply *"skip the tail pop when we eat."* One
   line of logic!
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

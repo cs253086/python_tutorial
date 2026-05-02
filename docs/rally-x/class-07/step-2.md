@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 7 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 class Flag:
     def __init__(self, x, y):
         self.x = x
@@ -77,7 +77,7 @@ disappears! 🚩✅
   on the object. Easier and avoids bugs from changing a list
   while looping it.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

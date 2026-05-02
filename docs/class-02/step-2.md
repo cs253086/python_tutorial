@@ -3,7 +3,7 @@ layout: default
 title: "Class 2 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 name = "Leo"
 score = 0
 
@@ -42,7 +42,7 @@ lines plus the personalized greeting.
 - The old welcome lines from Class 1 are **still there**. You're
   adding to your game, not replacing it.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")

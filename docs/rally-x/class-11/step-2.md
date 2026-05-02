@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 11 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 state["running"] = True
 
 over_pen = turtle.Turtle()
@@ -101,7 +101,7 @@ appears with your final score. Press **R** and start fresh. 💀🔄
 - `tick()` is called again from `reset_game()` to restart the
   loop.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 import random
 

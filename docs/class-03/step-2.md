@@ -3,7 +3,7 @@ layout: default
 title: "Class 3 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 # Delete the hardcoded `name = "Leo"` line above, and add:
 name = input("What's your name? ")
 </pre>
@@ -42,7 +42,7 @@ you by name. Run it again with a friend's name or a silly one like
   It reads from the `name` box at run time, so the new value shows
   up automatically.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 print("Press an arrow key to start.")

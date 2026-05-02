@@ -3,7 +3,7 @@ layout: default
 title: "Class 4 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 difficulty = input("Easy or hard? ")
 
 if difficulty == "hard":
@@ -44,7 +44,7 @@ Run again and type `easy` → you should see 🌟.
 - The indented lines inside `if` and `else` are the bodies of
   those branches. Use Tab or two spaces.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 

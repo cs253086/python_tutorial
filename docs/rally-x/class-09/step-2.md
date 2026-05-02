@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 9 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 state = {"fuel": 200, "lives": 3, "score": 0, "flags": 0}
 
 hud = turtle.Turtle()
@@ -63,7 +63,7 @@ bumps the count and score; touching an enemy costs a life. ⛽📉
   reality.
 - We don't game-over yet — that's Class 11.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 import random
 

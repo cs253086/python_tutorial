@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 6 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
     def update(self):
         new_x = self.x + self.direction[0]
         new_y = self.y + self.direction[1]
@@ -50,7 +50,7 @@ its edge instead of passing through. 🛑
 - Same rule will protect enemies from walking through walls when
   we add chase logic in Class 8.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 4 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 walls = []
 # top horizontal wall
 for x in range(-200, 80, 20):
@@ -68,7 +68,7 @@ player and three blue enemies on top of it. 🚗🧱
   `range(-200, 80, 20)` gives `-200, -180, …, 60`.
 - `walls.append((x, y))` adds a new tuple to the list.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 import turtle
 
 screen = turtle.Screen()

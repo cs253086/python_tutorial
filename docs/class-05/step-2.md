@@ -3,7 +3,7 @@ layout: default
 title: "Class 5 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 countdown = 3
 while countdown > 0:
     print(countdown)
@@ -54,7 +54,7 @@ Everything you've learned — `print`, variables, `input`, `if/else`,
 
 Next class → **graphics**. 🎨
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 print("🐍 Welcome to Snake!")
 print("Eat the apples. Don't bite yourself!")
 

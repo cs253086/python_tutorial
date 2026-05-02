@@ -3,7 +3,7 @@ layout: default
 title: "Rally-X — Class 1 — Step 2"
 ---
 
-<pre class="py-solution">
+<pre class="py-solution" markdown="0">
 import turtle
 
 screen = turtle.Screen()
@@ -60,7 +60,7 @@ should open with one red square in the middle. 🏎️
 - The red car is just a **square** for now. In Class 2 we'll
   upgrade it to a real **car shape** with wheels using a `class`.
 
-<pre class="py-starter">
+<pre class="py-starter" markdown="0">
 # 👇
 # Bring in the turtle tool with import turtle
 # Make a screen: title "Rally-X", bgcolor "#08152e",
