@@ -86,7 +86,7 @@ class Car:
     # 👆
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         self.pen.goto(self.x, self.y)
         self.pen.stamp()
 
@@ -103,7 +103,7 @@ class Flag:
         self.pen.color("#FFE14A")
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         if not self.collected:
             self.pen.goto(self.x, self.y)
             self.pen.stamp()

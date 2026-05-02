@@ -17,7 +17,7 @@ class Car:
         self.pen.color(color)
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         self.pen.goto(self.x, self.y)
         self.pen.stamp()
 
@@ -57,7 +57,7 @@ new `Car` class).
 
 - The pen lives **inside** the car (`self.pen`). Every car you
   make in later classes gets its own pen automatically.
-- `self.pen.clearstamps()` is what makes redraw clean — when the
+- `self.pen.clear()` is what makes redraw clean — when the
   car moves we'll erase the old stamp first.
 
 <pre class="py-starter">

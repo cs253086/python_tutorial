@@ -22,7 +22,7 @@ class Car:
         self.y += self.direction[1]
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         self.pen.goto(self.x, self.y)
         self.pen.stamp()
 
@@ -117,7 +117,7 @@ class Car:
         self.pen.color(color)
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         self.pen.goto(self.x, self.y)
         self.pen.stamp()
 

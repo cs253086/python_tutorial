@@ -17,7 +17,7 @@ def to_radar(x, y):
     return (RADAR_OX + x // SCALE, RADAR_OY + y // SCALE)
 
 def draw_radar():
-    radar_pen.clearstamps()
+    radar_pen.clear()
     radar_pen.clear()
 
     # frame
@@ -146,7 +146,7 @@ class Car:
             self.y += dy
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         self.pen.goto(self.x, self.y)
         self.pen.stamp()
 
@@ -163,7 +163,7 @@ class Flag:
         self.pen.color("#FFE14A")
 
     def draw(self):
-        self.pen.clearstamps()
+        self.pen.clear()
         if not self.collected:
             self.pen.goto(self.x, self.y)
             self.pen.stamp()
