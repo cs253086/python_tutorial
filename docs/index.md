@@ -52,19 +52,17 @@ file I/O, and a touch of pathfinding.
 | | Class |
 |---|---|
 | 🔓 | [**1 — Open the Rally-X window**](./rally-x/class-01/) (turtle review) |
-| 🔒 | 2 — Meet `class` (Car blueprint) |
-| 🔒 | 3 — Many cars (instances + lists) |
-| 🔒 | 4 — Draw the maze (2D walls) |
-| 🔒 | 5 — Drive the player (arrow keys + class methods) |
-| 🔒 | 6 — Wall collisions (stay on the road) |
-| 🔒 | 7 — Yellow flags (Flag class + pickup) |
-| 🔒 | 8 — Enemy chasers (simple AI) |
-| 🔒 | 9 — Fuel + lives (dictionaries) |
-| 🔒 | 10 — Smoke screen (cooldowns) |
-| 🔒 | 11 — Score, lives, game over |
-| 🔒 | 12 — Bonus: radar mini-map |
-
-<sub>*Class 1 is ready. Classes 2–12 are coming as I build them.*</sub>
+| 🔓 | [**2 — The Car blueprint**](./rally-x/class-02/) (`class`, `__init__`, `self`) |
+| 🔓 | [**3 — Many cars**](./rally-x/class-03/) (instances + lists) |
+| 🔓 | [**4 — Build the maze**](./rally-x/class-04/) (list of tuples) |
+| 🔓 | [**5 — Drive!**](./rally-x/class-05/) (arrow keys + game loop) |
+| 🔓 | [**6 — Wall collisions**](./rally-x/class-06/) (`in` operator) |
+| 🔓 | [**7 — Yellow flags**](./rally-x/class-07/) (Flag class + pickup) |
+| 🔓 | [**8 — Enemy chasers**](./rally-x/class-08/) (simple AI) |
+| 🔓 | [**9 — Fuel & lives**](./rally-x/class-09/) (dictionaries + HUD) |
+| 🔓 | [**10 — Smoke screen**](./rally-x/class-10/) (cooldowns) |
+| 🔓 | [**11 — Game over**](./rally-x/class-11/) (running flag + restart) |
+| 🔓 | [**12 — Radar mini-map**](./rally-x/class-12/) (coordinate scaling) |
 
 </div>
 
