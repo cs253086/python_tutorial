@@ -37,6 +37,29 @@
 .py-panel-label-edit { background: #d8f5e1; color: #1f6f3a; }
 .py-panel-label-main { background: #fff3cd; color: #8a5a00; }
 
+.py-source-updated {
+  background: #fff3cd;
+  color: #8a5a00;
+  border-bottom: 1px solid #f1d977;
+  padding: 8px 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.py-source-updated-btn {
+  background: #2ea44f;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.py-source-updated-btn:hover { background: #2c974b; }
+
 /* Hide the raw .py-starter and .py-solution elements before runner.js
    processes them, so the kid never sees the unformatted cumulative code
    or the solution leaking through. */

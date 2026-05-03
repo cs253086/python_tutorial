@@ -72,6 +72,16 @@
     return prefix + "-" + Date.now().toString(36) + "-" + uidCounter;
   }
 
+  // Tiny djb2-ish hash, just enough to detect "starter code has changed
+  // since this user last saved" without pulling in a real hash library.
+  function fingerprint(s) {
+    let h = 5381;
+    for (let i = 0; i < s.length; i += 1) {
+      h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    }
+    return h.toString(36);
+  }
+
   function autosize(ta) {
     const grow = () => {
       ta.style.height = "auto";
@@ -363,9 +373,19 @@
     const isRallyX = /\/rally-x\//.test(location.pathname);
 
     const key = "pymain:" + location.pathname;
+    const fpKey = "pymain-fp:" + location.pathname;
+    const starterFp = fingerprint(starterCode);
     const saved = (() => {
       try { return localStorage.getItem(key); } catch (_) { return null; }
     })();
+    const savedFp = (() => {
+      try { return localStorage.getItem(fpKey); } catch (_) { return null; }
+    })();
+    // True when the user has saved edits AND the underlying starter has
+    // changed (or pre-dates the fingerprint and may be stale). Saves that
+    // are byte-identical to the current starter never trigger the notice.
+    const sourceUpdated =
+      saved != null && saved !== starterCode && savedFp !== starterFp;
 
     const container = document.createElement("div");
     container.className = "py-main";
@@ -386,7 +406,10 @@
     editor.setAttribute("autocorrect", "off");
     editor.value = saved != null ? saved : starterCode;
     editor.addEventListener("input", () => {
-      try { localStorage.setItem(key, editor.value); } catch (_) {}
+      try {
+        localStorage.setItem(key, editor.value);
+        localStorage.setItem(fpKey, starterFp);
+      } catch (_) {}
     });
 
     const toolbar = buildToolbar();
@@ -418,7 +441,10 @@
       editor.value = filled != null
         ? filled
         : replaceBetweenMarkers(starterCode, solutionCode) || starterCode;
-      try { localStorage.setItem(key, editor.value); } catch (_) {}
+      try {
+        localStorage.setItem(key, editor.value);
+        localStorage.setItem(fpKey, starterFp);
+      } catch (_) {}
       editor.dispatchEvent(new Event("input"));
     });
 
@@ -430,7 +456,10 @@
       )
         return;
       editor.value = starterCode;
-      try { localStorage.setItem(key, editor.value); } catch (_) {}
+      try {
+        localStorage.setItem(key, editor.value);
+        localStorage.setItem(fpKey, starterFp);
+      } catch (_) {}
       editor.dispatchEvent(new Event("input"));
       output.textContent = "";
       canvas.innerHTML = "";
@@ -466,6 +495,29 @@
     toolbar.appendChild(status);
 
     container.appendChild(label);
+    if (sourceUpdated) {
+      const banner = document.createElement("div");
+      banner.className = "py-source-updated";
+      const text = document.createElement("span");
+      text.textContent =
+        "✨ The class code was updated since you last edited. ";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "py-source-updated-btn";
+      btn.textContent = "↺ Load latest";
+      btn.addEventListener("click", () => {
+        editor.value = starterCode;
+        try {
+          localStorage.setItem(key, editor.value);
+          localStorage.setItem(fpKey, starterFp);
+        } catch (_) {}
+        editor.dispatchEvent(new Event("input"));
+        banner.remove();
+      });
+      banner.appendChild(text);
+      banner.appendChild(btn);
+      container.appendChild(banner);
+    }
     container.appendChild(attachLineNumbers(editor));
     container.appendChild(toolbar);
     // Rally-X plays in a new window, so we don't need the inline output/canvas.
