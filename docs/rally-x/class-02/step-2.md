@@ -18,19 +18,28 @@ class Car:
 
     def draw(self):
         self.pen.clear()
-        self.pen.color(self.color)
         self.pen.penup()
-        self.pen.goto(self.x - 14, self.y - 7)
+        self.pen.color(self.color)
+        self.pen.goto(self.x - 12, self.y - 7)
         self.pen.setheading(0)
         self.pen.pendown()
         self.pen.begin_fill()
-        for length in [28, 14, 28, 14]:
+        for length in [24, 14, 24, 14]:
+            self.pen.forward(length)
+            self.pen.left(90)
+        self.pen.end_fill()
+        self.pen.penup()
+        self.pen.color("#111111")
+        self.pen.goto(self.x - 5, self.y - 3)
+        self.pen.pendown()
+        self.pen.begin_fill()
+        for length in [10, 6, 10, 6]:
             self.pen.forward(length)
             self.pen.left(90)
         self.pen.end_fill()
         self.pen.penup()
 
-player = Car(0, 0, "#ff3a3a")
+player = Car(0, 0, "#4673E8")
 player.draw()
 </pre>
 
@@ -48,7 +57,7 @@ Inside the marker region:
    stores `x`, `y`, `color` and creates its own pen (`turtle.Turtle()`)
 2. Give the car a `draw(self)` method that **clears its previous
    stamp** and stamps a new square at `(self.x, self.y)`
-3. Make a player car: `player = Car(0, 0, "#ff3a3a")`
+3. Make a player car: `player = Car(0, 0, "#4673E8")`
 4. Call `player.draw()`
 
 You can delete the old `car = turtle.Turtle()` block — the class
@@ -74,7 +83,7 @@ import turtle
 
 screen = turtle.Screen()
 screen.title("Rally-X")
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 screen.setup(600, 600)
 screen.tracer(0)
 
@@ -85,7 +94,7 @@ screen.tracer(0)
 #     speed 0, shape "square", color = color
 #   - draw(self) clears its previous stamp, goes to (self.x, self.y),
 #     and stamps once
-# Make a player: player = Car(0, 0, "#ff3a3a")
+# Make a player: player = Car(0, 0, "#4673E8")
 # Call player.draw()
 # 👆
 

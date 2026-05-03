@@ -19,7 +19,7 @@ import turtle
 
 screen = turtle.Screen()
 screen.title("Rally-X test")
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 screen.setup(400, 400)
 
 screen.mainloop()
@@ -30,7 +30,7 @@ Tap **▶ Run**. A small dark-navy window with the title
 
 ### 🔍 Notice
 
-- `screen.bgcolor("#08152e")` — the dark navy of the Rally-X maze.
+- `screen.bgcolor("#E69434")` — the orange road of the Rally-X maze.
   Hex codes pick exact colors.
 - `screen.setup(width, height)` — sizes the window in pixels.
 - `screen.mainloop()` — keeps the window open at the end.
@@ -43,14 +43,14 @@ Tap **▶ Run**. A small dark-navy window with the title
 import turtle
 
 screen = turtle.Screen()
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 screen.setup(400, 400)
 
 car = turtle.Turtle()
 car.hideturtle()
 car.penup()
 car.shape("square")
-car.color("#ff3a3a")
+car.color("#4673E8")
 car.goto(0, 0)
 car.stamp()
 

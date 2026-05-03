@@ -10,13 +10,13 @@ Brawl-Stars-flavored arcade racer: drive a red car through a maze,
 collect yellow flags, dodge blue chasers, drop a smoke screen,
 watch your fuel.
 
-Class 1 is a warm-up — you'll set up the **dark navy game window**
+Class 1 is a warm-up — you'll set up the **orange road game window**
 that the maze and cars will live in. No new Python yet — this
 re-uses turtle from Beginner Snake.
 
 ## 🎯 Today you'll
 - Open a new turtle window titled **Rally-X**
-- Set the dark navy background and 600×600 size
+- Set the orange road background and 600×600 size
 - Stamp the player's red car in the middle so we know it works
 
 - 🧩 **2 steps**

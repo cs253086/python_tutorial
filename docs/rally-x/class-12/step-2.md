@@ -21,7 +21,7 @@ def draw_radar():
     radar_pen.clear()
 
     # frame
-    radar_pen.color("#3FA9F5")
+    radar_pen.color("#3CA84A")
     radar_pen.goto(RADAR_OX - 55, RADAR_OY - 55)
     radar_pen.pendown()
     for _ in range(4):
@@ -31,7 +31,7 @@ def draw_radar():
 
     # walls
     radar_pen.shape("square")
-    radar_pen.color("#3FA9F5")
+    radar_pen.color("#3CA84A")
     for w in walls:
         rx, ry = to_radar(w[0], w[1])
         radar_pen.goto(rx, ry)
@@ -46,14 +46,14 @@ def draw_radar():
             radar_pen.stamp()
 
     # enemies
-    radar_pen.color("#5fa6ff")
+    radar_pen.color("#E74C3C")
     for e in enemies:
         rx, ry = to_radar(e.x, e.y)
         radar_pen.goto(rx, ry)
         radar_pen.stamp()
 
     # player
-    radar_pen.color("#ff3a3a")
+    radar_pen.color("#4673E8")
     rx, ry = to_radar(player.x, player.y)
     radar_pen.goto(rx, ry)
     radar_pen.stamp()
@@ -109,7 +109,7 @@ import random
 
 screen = turtle.Screen()
 screen.title("Rally-X")
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 screen.setup(600, 600)
 screen.tracer(0)
 
@@ -162,13 +162,22 @@ class Car:
 
     def draw(self):
         self.pen.clear()
-        self.pen.color(self.color)
         self.pen.penup()
-        self.pen.goto(self.x - 14, self.y - 7)
+        self.pen.color(self.color)
+        self.pen.goto(self.x - 12, self.y - 7)
         self.pen.setheading(0)
         self.pen.pendown()
         self.pen.begin_fill()
-        for length in [28, 14, 28, 14]:
+        for length in [24, 14, 24, 14]:
+            self.pen.forward(length)
+            self.pen.left(90)
+        self.pen.end_fill()
+        self.pen.penup()
+        self.pen.color("#111111")
+        self.pen.goto(self.x - 5, self.y - 3)
+        self.pen.pendown()
+        self.pen.begin_fill()
+        for length in [10, 6, 10, 6]:
             self.pen.forward(length)
             self.pen.left(90)
         self.pen.end_fill()
@@ -204,7 +213,7 @@ wall_pen.hideturtle()
 wall_pen.penup()
 wall_pen.speed(0)
 wall_pen.shape("square")
-wall_pen.color("#3FA9F5")
+wall_pen.color("#3CA84A")
 
 def draw_maze():
     for w in walls:
@@ -267,11 +276,11 @@ def show_game_over():
         align="center", font=("Arial", 16, "bold"))
     screen.update()
 
-player = Car(0, 0, "#ff3a3a")
+player = Car(0, 0, "#4673E8")
 enemies = [
-    Car(-200, 150, "#5fa6ff"),
-    Car(200, -150, "#5fa6ff"),
-    Car(-150, -200, "#5fa6ff"),
+    Car(-200, 150, "#E74C3C"),
+    Car(200, -150, "#E74C3C"),
+    Car(-150, -200, "#E74C3C"),
 ]
 
 def go_up():    player.direction = (0, 20)

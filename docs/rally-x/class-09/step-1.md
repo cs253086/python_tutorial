@@ -72,7 +72,7 @@ import turtle
 
 screen = turtle.Screen()
 screen.setup(300, 200)
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 
 hud = turtle.Turtle()
 hud.hideturtle()

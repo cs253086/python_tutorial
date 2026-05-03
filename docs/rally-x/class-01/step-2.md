@@ -8,7 +8,7 @@ import turtle
 
 screen = turtle.Screen()
 screen.title("Rally-X")
-screen.bgcolor("#08152e")
+screen.bgcolor("#E69434")
 screen.setup(600, 600)
 screen.tracer(0)
 
@@ -17,7 +17,7 @@ car.hideturtle()
 car.penup()
 car.speed(0)
 car.shape("square")
-car.color("#ff3a3a")
+car.color("#4673E8")
 car.goto(0, 0)
 car.stamp()
 
@@ -39,10 +39,10 @@ In the marker region below, write the code that:
 
 1. `import turtle`
 2. Makes a `screen` titled **Rally-X**, with background color
-   `"#08152e"` (Rally-X dark navy), 600×600 size, and
+   `"#E69434"` (Rally-X dark navy), 600×600 size, and
    `screen.tracer(0)` so drawings batch
 3. Makes a turtle called `car`, hides it, lifts the pen, sets
-   `speed(0)` and shape `"square"`, colors it red `"#ff3a3a"`
+   `speed(0)` and shape `"square"`, colors it red `"#4673E8"`
 4. Sends the car to `(0, 0)` and stamps once
 5. Calls `screen.update()` and `screen.mainloop()`
 
@@ -63,10 +63,10 @@ should open with one red square in the middle. 🏎️
 <pre class="py-starter" markdown="0">
 # 👇
 # Bring in the turtle tool with import turtle
-# Make a screen: title "Rally-X", bgcolor "#08152e",
+# Make a screen: title "Rally-X", bgcolor "#E69434",
 #   size 600 by 600, and call screen.tracer(0)
 # Make a turtle called "car": hide it, penup, speed(0),
-#   shape "square", color "#ff3a3a"
+#   shape "square", color "#4673E8"
 # Move the car to (0, 0) and stamp once
 # Call screen.update() and screen.mainloop()
 # 👆

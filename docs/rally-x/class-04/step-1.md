@@ -55,7 +55,7 @@ wall_pen.hideturtle()
 wall_pen.penup()
 wall_pen.speed(0)
 wall_pen.shape("square")
-wall_pen.color("#3FA9F5")
+wall_pen.color("#3CA84A")
 
 walls = [(-50, 0), (-30, 0), (-10, 0), (10, 0), (30, 0)]
 
