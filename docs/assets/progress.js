@@ -2,12 +2,12 @@
  * Tutorial progress tracker — two tutorials, browser-only, no accounts.
  *
  * Tutorials:
- *   - snake   (beginner)   : pages live at  /class-NN/
- *   - rallyx  (intermediate): pages live at  /rally-x/class-NN/
+ *   - snake   (beginner)    : pages live at  /class-NN/
+ *   - flappy  (intermediate): pages live at  /flappy/class-NN/
  *
  * On a class's /done page, mark <tutorial>-done:class-NN = "1".
  * On the main landing page, decorate each <div class="tutorial-card"
- * data-tutorial="snake|rallyx"> with a progress summary, a Continue
+ * data-tutorial="snake|flappy"> with a progress summary, a Continue
  * button, and ✅ marks in its class-list table.
  *
  * Storage keys are separate per tutorial so the two never collide.
@@ -20,11 +20,11 @@
       id: "snake",
       label: "Snake",
       total: 12,
-      // /class-NN/  (NOT /rally-x/class-NN/)
+      // /class-NN/  (NOT /flappy/class-NN/)
       classRe: /^(?:.*\/)?class-(\d{2})(?:\/|\.html|$)/,
       isMineRe: function (path) {
-        // exclude rally-x subtree
-        if (/\/rally-x\//.test(path)) return false;
+        // exclude flappy subtree
+        if (/\/flappy\//.test(path)) return false;
         return this.classRe.test(path);
       },
       classListPath: function (n) {
@@ -32,13 +32,13 @@
       },
     },
     {
-      id: "rallyx",
-      label: "Rally-X",
+      id: "flappy",
+      label: "Flappy Bird",
       total: 12,
-      classRe: /\/rally-x\/class-(\d{2})(?:\/|\.html|$)/,
+      classRe: /\/flappy\/class-(\d{2})(?:\/|\.html|$)/,
       isMineRe: function (path) { return this.classRe.test(path); },
       classListPath: function (n) {
-        return "./rally-x/class-" + String(n).padStart(2, "0") + "/";
+        return "./flappy/class-" + String(n).padStart(2, "0") + "/";
       },
     },
   ];
@@ -171,7 +171,7 @@
     a.textContent = "Clear saved progress";
     a.addEventListener("click", (ev) => {
       ev.preventDefault();
-      if (!confirm("Clear ALL Snake + Rally-X progress? This can't be undone.")) return;
+      if (!confirm("Clear ALL Snake + Flappy Bird progress? This can't be undone.")) return;
       clearAllProgress();
       location.reload();
     });

@@ -85,7 +85,7 @@
   function autosize(ta) {
     const grow = () => {
       ta.style.height = "auto";
-      // No cap — for the Rally-X cumulative editor (~150 lines) capping
+      // No cap — for the Flappy cumulative editor (~150 lines) capping
       // forces an internal scrollbar inside the textarea, while the line
       // gutter (sized to the wrap, not the textarea) overflows below it.
       // Letting the editor grow to its full content height keeps the
@@ -370,7 +370,7 @@
       : null;
     if (solutionEl) solutionEl.remove();
 
-    const isRallyX = /\/rally-x\//.test(location.pathname);
+    const isFlappy = /\/flappy\//.test(location.pathname);
 
     const key = "pymain:" + location.pathname;
     const fpKey = "pymain-fp:" + location.pathname;
@@ -392,8 +392,8 @@
 
     const label = document.createElement("div");
     label.className = "py-panel-label py-panel-label-main";
-    label.textContent = isRallyX
-      ? "🏎️ Your rally_x.py — type your new code between 👇 markers, then tap ▶ Play"
+    label.textContent = isFlappy
+      ? "🐤 Your flappy.py — type your new code between 👇 markers, then tap ▶ Play"
       : (solutionCode
         ? "🐍 Your snake.py — type your new code between the 👇 markers (or tap 💡 Solution)"
         : "🐍 Your snake.py — edit below, then tap ▶ Run");
@@ -415,8 +415,8 @@
     const toolbar = buildToolbar();
     const runBtn = buildButton(
       "py-runner-run",
-      isRallyX ? "▶ Play" : "▶ Run",
-      isRallyX ? "Open the game in a new window" : "Run this code"
+      isFlappy ? "▶ Play" : "▶ Run",
+      isFlappy ? "Open the game in a new window" : "Run this code"
     );
     const solutionBtn = buildButton(
       "py-runner-copy",
@@ -466,22 +466,22 @@
       status.textContent = "";
     });
 
-    if (isRallyX) {
+    if (isFlappy) {
       // ▶ Play opens a dedicated game window. The editor's code goes
       // into localStorage; the new window reads it and runs Skulpt.
       runBtn.addEventListener("click", () => {
         try {
-          localStorage.setItem("rallyx-play-code", editor.value);
-          localStorage.setItem("rallyx-play-back", location.href);
+          localStorage.setItem("flappy-play-code", editor.value);
+          localStorage.setItem("flappy-play-back", location.href);
         } catch (_) {}
         // Resolve play.html relative to the deployed site root by walking
-        // up from the current path (e.g. /python_tutorial/rally-x/class-NN/step-2.html
+        // up from the current path (e.g. /python_tutorial/flappy/class-NN/step-2.html
         // -> /python_tutorial/play.html).
         const playUrl = new URL(
           "../../play.html",
           location.origin + location.pathname
         ).pathname;
-        const w = window.open(playUrl, "rallyx-play-window");
+        const w = window.open(playUrl, "flappy-play-window");
         if (w) w.focus();
         status.textContent = "Game window opened ▶";
       });
@@ -521,7 +521,7 @@
     container.appendChild(attachLineNumbers(editor));
     container.appendChild(toolbar);
     // Rally-X plays in a new window, so we don't need the inline output/canvas.
-    if (!isRallyX) {
+    if (!isFlappy) {
       container.appendChild(output);
       container.appendChild(canvas);
     }

@@ -36,33 +36,29 @@ variables, `input`, `if/else`, loops, lists, functions, and the
 
 </div>
 
-<div class="tutorial-card" data-tutorial="rallyx" markdown="1">
+<div class="tutorial-card" data-tutorial="flappy" markdown="1">
 
-## 🟡 Intermediate — Rally-X
+## 🟡 Intermediate — Flappy Bird
 
-Build a **Brawl-Stars-flavored arcade racer** through a maze:
-collect flags, dodge chasers, drop a smoke screen, watch your fuel.
-You'll meet **classes**, methods, multiple instances, dictionaries,
-file I/O, and a touch of pathfinding.
-
-<p style="text-align:center;margin:1em 0;">
-  <img src="./assets/rally-x-mockup.svg" alt="Rally-X game mockup" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
-</p>
+Build the famous tap-to-flap arcade hit: a yellow bird, green pipes,
+gravity, and a score that climbs the longer you survive. You'll
+meet **classes**, methods, multiple instances, lists of objects,
+collisions, game state, and dictionaries.
 
 | | Class |
 |---|---|
-| 🔓 | [**1 — Open the Rally-X window**](./rally-x/class-01/) (turtle review) |
-| 🔓 | [**2 — The Car blueprint**](./rally-x/class-02/) (`class`, `__init__`, `self`) |
-| 🔓 | [**3 — Many cars**](./rally-x/class-03/) (instances + lists) |
-| 🔓 | [**4 — Build the maze**](./rally-x/class-04/) (list of tuples) |
-| 🔓 | [**5 — Drive!**](./rally-x/class-05/) (arrow keys + game loop) |
-| 🔓 | [**6 — Wall collisions**](./rally-x/class-06/) (`in` operator) |
-| 🔓 | [**7 — Yellow flags**](./rally-x/class-07/) (Flag class + pickup) |
-| 🔓 | [**8 — Enemy chasers**](./rally-x/class-08/) (simple AI) |
-| 🔓 | [**9 — Fuel & lives**](./rally-x/class-09/) (dictionaries + HUD) |
-| 🔓 | [**10 — Smoke screen**](./rally-x/class-10/) (cooldowns) |
-| 🔓 | [**11 — Game over**](./rally-x/class-11/) (running flag + restart) |
-| 🔓 | [**12 — Radar mini-map**](./rally-x/class-12/) (coordinate scaling) |
+| 🔓 | [**1 — Open the sky**](./flappy/class-01/) (turtle review) |
+| 🔓 | [**2 — The Bird blueprint**](./flappy/class-02/) (`class`, `__init__`, `self`) |
+| 🔓 | [**3 — Gravity!**](./flappy/class-03/) (state mutation + game loop) |
+| 🔓 | [**4 — Flap!**](./flappy/class-04/) (key bindings + bound methods) |
+| 🔓 | [**5 — The first pipe**](./flappy/class-05/) (drawing rectangles) |
+| 🔓 | [**6 — A real Pipe class**](./flappy/class-06/) (second class + scrolling) |
+| 🔓 | [**7 — Many pipes**](./flappy/class-07/) (lists + `random`) |
+| 🔓 | [**8 — Score!**](./flappy/class-08/) (attributes + HUD text) |
+| 🔓 | [**9 — Don't crash!**](./flappy/class-09/) (collision detection) |
+| 🔓 | [**10 — Game over**](./flappy/class-10/) (game state + restart) |
+| 🔓 | [**11 — Best score**](./flappy/class-11/) (dictionaries) |
+| 🔓 | [**12 — Polish**](./flappy/class-12/) (bird tilt + parallax ground) |
 
 </div>
 

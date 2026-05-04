@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>🏎️ Rally-X — Play</title>
+  <title>🐤 Flappy Bird — Play</title>
   <style>
     html, body {
       margin: 0;
@@ -53,11 +53,11 @@
       padding: 18px 12px 24px;
     }
     #turtle-canvas {
-      width: 660px;
+      width: 400px;
       height: 600px;
       max-width: 100%;
-      background: #E69434;
-      border: 1px solid #b8762a;
+      background: #70C5CE;
+      border: 1px solid #4a8b94;
       border-radius: 12px;
       position: relative;
       overflow: hidden;
@@ -65,7 +65,7 @@
     }
     #out {
       margin: 1em 0 0;
-      width: 660px;
+      width: 400px;
       max-width: 100%;
       max-height: 220px;
       overflow: auto;
@@ -94,7 +94,7 @@
 </head>
 <body>
   <header>
-    <h1>🏎️ RALLY-X</h1>
+    <h1>🐤 FLAPPY BIRD</h1>
     <div class="actions">
       <span id="status"></span>
       <button id="replay">↻ Replay</button>
@@ -118,13 +118,12 @@
       const backLink = document.getElementById("back");
       const canvas = document.getElementById("turtle-canvas");
 
-      // The lesson page sets these in localStorage right before opening us.
       function loadCode() {
-        try { return localStorage.getItem("rallyx-play-code") || ""; }
+        try { return localStorage.getItem("flappy-play-code") || ""; }
         catch (_) { return ""; }
       }
       function loadBackUrl() {
-        try { return localStorage.getItem("rallyx-play-back") || ""; }
+        try { return localStorage.getItem("flappy-play-back") || ""; }
         catch (_) { return ""; }
       }
 
@@ -176,7 +175,7 @@
         });
         Sk.TurtleGraphics = {
           target: "turtle-canvas",
-          width: 660,
+          width: 400,
           height: 600,
           assets: {},
         };
