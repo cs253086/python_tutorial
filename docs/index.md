@@ -45,6 +45,10 @@ gravity, and a score that climbs the longer you survive. You'll
 meet **classes**, methods, multiple instances, lists of objects,
 collisions, game state, and dictionaries.
 
+<p style="text-align:center;margin:1em 0;">
+  <img src="./assets/flappy-mockup.svg" alt="Final Flappy Bird game mockup" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.15);"/>
+</p>
+
 | | Class |
 |---|---|
 | 🔓 | [**1 — Open the sky**](./flappy/class-01/) (turtle review) |
