@@ -4,49 +4,61 @@ title: "Class 7 — Step 4"
 ---
 
 <pre class="py-solution" markdown="0">
-pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
+        if (row + col) % 2 == 0:
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
         pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
 </pre>
 
-<sub>Class 7 — Step **4** of 5</sub>
+<sub>Class 7 — Step **4** of 4</sub>
 
-# ⭐ Step 4 — Spread the grid
+# ⭐ Step 4 — Make it a checkerboard
 
-Now let's actually **use** `row` to move each tile up by a row.
+One color is plain. The classic Snake board is a **checker**:
+two greens alternating like a chess board.
 
-Up to now `pen.goto(-200 + col * 20, 0)` only used `col`. We
-hard-coded `y = 0` so every row drew on top of itself.
+The trick is **`(row + col) % 2`**:
 
-Today's two tiny changes:
+- When `(row + col)` is **even**, the leftover after `÷ 2` is **0**
+  → use light green.
+- When it's **odd**, the leftover is **1** → use darker green.
+
+Each step across (or down) flips even/odd, so neighbors get
+different colors — that's the checker.
 
 ## ✏️ What to change
 
 Between the markers:
 
-1. **Delete** the `print(row, col)` line — the peek was just for
-   step 3.
-2. Change the `pen.goto` line so **both** numbers come from the
-   loops:
+1. **Move** `pen.color("#AAD751")` from above the loops to
+   **inside** the loops — and wrap it in `if`/`else`:
    ```python
-   pen.goto(-200 + col * 20, -200 + row * 20)
+   if (row + col) % 2 == 0:
+       pen.color("#AAD751")
+   else:
+       pen.color("#A2D149")
    ```
+2. Put this **before** the `pen.goto` and `pen.stamp` so the new
+   color is picked first.
 
-The result inside the loops:
+The final shape:
 
 ```python
-pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
+        if (row + col) % 2 == 0:
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
         pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
 ```
 
-Tap **▶ Run**. You should see the **full 20×20 grid** in
-light green. 🟩🟩🟩 (all the same color for now — we'll add the
-checker pattern next.)
+Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
 
 > 💡 Stuck? Tap **💡 Solution**.
 
@@ -54,12 +66,11 @@ checker pattern next.)
 
 ## 🔍 Notice
 
-- `-200 + row * 20` turns `row` (0…19) into screen y-positions
-  `-200, -180, … 180` — exactly one tile-height apart.
-- Both numbers (`x` and `y`) now use the loop counters — so each
-  of the 400 turns picks a **different** spot.
-- The math is the same recipe for both: **start at the corner
-  (-200) and step by 20 each time**.
+- Try changing one of the greens to `"#FF0000"` (red) — half the
+  board turns red. That's how you can **see** which tiles are the
+  "even" ones.
+- `(row + col) % 2` is the **same trick** chess uses to color
+  its squares. You just used a classic computer-science move!
 
 <pre class="py-starter" markdown="0">
 import turtle
@@ -76,15 +87,18 @@ pen.penup()
 pen.shape("square")
 
 # 👇
-# Two changes:
-# 1. DELETE the print(row, col) line.
-# 2. Change pen.goto to use BOTH row and col:
-#       pen.goto(-200 + col * 20, -200 + row * 20)
+# Add the checker color INSIDE the loops:
+#   if (row + col) % 2 == 0:
+#       pen.color("#AAD751")
+#   else:
+#       pen.color("#A2D149")
+# Put it BEFORE pen.goto / pen.stamp.
+# Then DELETE the pen.color("#AAD751") line above the loops -
+# we no longer want one color for everything.
 pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
-        print(row, col)
-        pen.goto(-200 + col * 20, 0)
+        pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
 # 👆
 
@@ -93,7 +107,7 @@ screen.mainloop()
 </pre>
 
 <p style="text-align:center;margin:2.5em 0;">
-  <a href="./step-5.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 5</a>
+  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
 </p>
 
 <sub>[⬅ Back to Step 3](./step-3.html)</sub>

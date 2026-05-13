@@ -7,50 +7,45 @@ title: "Class 7 — Step 3"
 pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
-        print(row, col)
-        pen.goto(-200 + col * 20, 0)
+        pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
 </pre>
 
-<sub>Class 7 — Step **3** of 5</sub>
+<sub>Class 7 — Step **3** of 4</sub>
 
-# ⭐ Step 3 — Nest the loops
+# ⭐ Step 3 — A whole grid
 
-A row is nice. A whole **grid** needs `rows × columns` — and that
-means a **loop inside a loop**.
+A single row is nice. A whole **grid** needs `rows × columns`
+tiles — and that's a **loop inside a loop**.
 
-Today's step is sneaky: we'll add the outer loop, but we won't
-move the tile up or down yet. Why? So you can **see** that the
-nested loop really runs 20 × 20 = **400** times. We'll add a
-`print(row, col)` so the proof shows up in the output.
+We'll also use `row` to push each row of tiles upward, so the
+grid actually spreads.
 
 ## ✏️ What to change
 
-Between the markers:
+Between the markers, two things:
 
 1. **Wrap** your `for col` loop in another loop:
    `for row in range(20):`
-2. Inside the loops, also add `print(row, col)` so we can see
-   each turn.
+2. Change the `pen.goto` line so **both** numbers come from the
+   loops:
+   ```python
+   pen.goto(-200 + col * 20, -200 + row * 20)
+   ```
 
-The new shape:
+The result:
 
 ```python
 pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
-        print(row, col)
-        pen.goto(-200 + col * 20, 0)
+        pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
 ```
 
-Tap **▶ Run**. You'll see:
-
-- The same single row of tiles (because we still use `y = 0`).
-- The output area filling with **400 lines**:
-  `0 0`, `0 1`, … `0 19`, `1 0`, … `19 19`. 🎯
-
-That's the proof: nesting really did do 20 × 20 jobs.
+Tap **▶ Run**. You should see the **full 20×20 grid** in
+light green. 🟩🟩🟩 (all the same color for now — checker pattern
+is next.)
 
 > 💡 Stuck? Tap **💡 Solution**.
 
@@ -58,12 +53,12 @@ That's the proof: nesting really did do 20 × 20 jobs.
 
 ## 🔍 Notice
 
-- The **inner** loop runs fully (20 times) for every **one** turn
-  of the **outer** loop.
-- `print(row, col)` is just a peek behind the curtain. We'll
-  delete it in the next step.
-- All the tiles still stamp on top of each other in one row because
-  we haven't told them to move up yet.
+- The **inner** loop runs fully (20 times) for **every one** turn
+  of the **outer** loop. So the body runs 20 × 20 = **400** times.
+- `-200 + row * 20` turns `row` (0…19) into screen y-positions
+  `-200, -180, … 180` — exactly one tile-height apart.
+- Both numbers (`x` and `y`) now use the loop counters — so each
+  of the 400 turns picks a **different** spot.
 
 <pre class="py-starter" markdown="0">
 import turtle
@@ -80,14 +75,12 @@ pen.penup()
 pen.shape("square")
 
 # 👇
-# WRAP your for-col loop in another for-row loop:
-#   for row in range(20):
-#       for col in range(20):
-#           print(row, col)
-#           pen.goto(-200 + col * 20, 0)
-#           pen.stamp()
-# Don't move the tile yet — it still draws at y = 0.
-# The print() is just so you can SEE that 20 x 20 = 400 turns.
+# Two changes:
+# 1. WRAP your for-col loop in another for-row loop:
+#      for row in range(20):
+#          for col in range(20):
+# 2. Change pen.goto so it uses BOTH row and col:
+#      pen.goto(-200 + col * 20, -200 + row * 20)
 pen.color("#AAD751")
 for col in range(20):
     pen.goto(-200 + col * 20, 0)

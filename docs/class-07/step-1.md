@@ -3,7 +3,7 @@ layout: default
 title: "Class 7 — Step 1"
 ---
 
-<sub>Class 7 — Step **1** of 5</sub>
+<sub>Class 7 — Step **1** of 4</sub>
 
 # ⭐ Step 1 — Meet `for`, nested loops, and `%`
 

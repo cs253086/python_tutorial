@@ -15,7 +15,7 @@ few lines.
 - Wrap it in a second loop to make a **full grid**
 - Add the green checker color pattern
 
-- 🧩 **5 steps** (we're going slow on this one — nested loops
+- 🧩 **4 steps** (we're going slow on this one — nested loops
   are tricky!)
 - ⏱️ About 25 minutes
 

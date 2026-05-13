@@ -10,7 +10,7 @@ for col in range(20):
     pen.stamp()
 </pre>
 
-<sub>Class 7 — Step **2** of 5</sub>
+<sub>Class 7 — Step **2** of 4</sub>
 
 # ⭐ Step 2 — One row of tiles
 
