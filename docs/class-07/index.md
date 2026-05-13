@@ -11,10 +11,13 @@ few lines.
 
 ## 🎯 Today you'll
 - Meet `for`, nested `for`, and `%` (modulo)
-- Stamp the full 20×20 Snake checkerboard
+- Stamp ONE horizontal row of tiles
+- Wrap it in a second loop to make a **full grid**
+- Add the green checker color pattern
 
-- 🧩 **2 steps**
-- ⏱️ About 20 minutes
+- 🧩 **5 steps** (we're going slow on this one — nested loops
+  are tricky!)
+- ⏱️ About 25 minutes
 
 Ready?
 
