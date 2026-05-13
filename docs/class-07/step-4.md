@@ -30,22 +30,9 @@ The trick is **`(row + col) % 2`**:
 Each step across (or down) flips even/odd, so neighbors get
 different colors — that's the checker.
 
-## ✏️ What to change
+## ✏️ What to type
 
-Between the markers:
-
-1. **Move** `pen.color("#AAD751")` from above the loops to
-   **inside** the loops — and wrap it in `if`/`else`:
-   ```python
-   if (row + col) % 2 == 0:
-       pen.color("#AAD751")
-   else:
-       pen.color("#A2D149")
-   ```
-2. Put this **before** the `pen.goto` and `pen.stamp` so the new
-   color is picked first.
-
-The final shape:
+Use these 7 lines:
 
 ```python
 for row in range(20):
@@ -58,7 +45,17 @@ for row in range(20):
         pen.stamp()
 ```
 
-Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
+In the starter below, **replace the 5 lines between the arrows**
+(👇 … 👆) with the 7 lines above.
+
+What changed compared to Step 3:
+
+1. The `pen.color("#AAD751")` line moved **inside** the loops.
+2. It's now wrapped in an `if`/`else` that picks one of **two**
+   colors based on `(row + col) % 2`.
+
+Tap **▶ Run**. You should see the full Google-Snake
+checkerboard. 🟩🟨
 
 > 💡 Stuck? Tap **💡 Solution**.
 
@@ -86,21 +83,13 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇
-# Add the checker color INSIDE the loops:
-#   if (row + col) % 2 == 0:
-#       pen.color("#AAD751")
-#   else:
-#       pen.color("#A2D149")
-# Put it BEFORE pen.goto / pen.stamp.
-# Then DELETE the pen.color("#AAD751") line above the loops -
-# we no longer want one color for everything.
+# 👇 Replace the 5 lines below with the 7 lines from the lesson above.
 pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
         pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
-# 👆
+# 👆 (Stuck? Tap 💡 Solution.)
 
 screen.update()
 screen.mainloop()

@@ -21,19 +21,9 @@ tiles — and that's a **loop inside a loop**.
 We'll also use `row` to push each row of tiles upward, so the
 grid actually spreads.
 
-## ✏️ What to change
+## ✏️ What to type
 
-Between the markers, two things:
-
-1. **Wrap** your `for col` loop in another loop:
-   `for row in range(20):`
-2. Change the `pen.goto` line so **both** numbers come from the
-   loops:
-   ```python
-   pen.goto(-200 + col * 20, -200 + row * 20)
-   ```
-
-The result:
+Use these 5 lines:
 
 ```python
 pen.color("#AAD751")
@@ -43,9 +33,19 @@ for row in range(20):
         pen.stamp()
 ```
 
-Tap **▶ Run**. You should see the **full 20×20 grid** in
-light green. 🟩🟩🟩 (all the same color for now — checker pattern
-is next.)
+In the starter below, **replace the 4 lines between the arrows**
+(👇 … 👆) with the 5 lines above.
+
+Two things changed compared to Step 2:
+
+1. A **new outer loop** `for row in range(20):` wraps the
+   `for col` loop.
+2. The `pen.goto` line now uses **both** `row` (for y) and `col`
+   (for x).
+
+Tap **▶ Run**. You should see the **full 20×20 grid** in light
+green. 🟩🟩🟩 (all the same color for now — checker pattern is
+next.)
 
 > 💡 Stuck? Tap **💡 Solution**.
 
@@ -74,18 +74,12 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇
-# Two changes:
-# 1. WRAP your for-col loop in another for-row loop:
-#      for row in range(20):
-#          for col in range(20):
-# 2. Change pen.goto so it uses BOTH row and col:
-#      pen.goto(-200 + col * 20, -200 + row * 20)
+# 👇 Replace the 4 lines below with the 5 lines from the lesson above.
 pen.color("#AAD751")
 for col in range(20):
     pen.goto(-200 + col * 20, 0)
     pen.stamp()
-# 👆
+# 👆 (Stuck? Tap 💡 Solution.)
 
 screen.update()
 screen.mainloop()

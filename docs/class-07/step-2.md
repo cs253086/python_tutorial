@@ -20,9 +20,9 @@ whole board is a **single row** of 20 tiles across the middle.
 A `for` loop is perfect for "do this 20 times, each time a little
 to the right."
 
-## ✏️ What to change
+## ✏️ What to type
 
-Between the markers, **replace** the 3 single-stamp lines with:
+Use these 4 lines:
 
 ```python
 pen.color("#AAD751")
@@ -31,7 +31,8 @@ for col in range(20):
     pen.stamp()
 ```
 
-That's it. Three lines instead of three lines — but now a loop!
+In the starter below, **replace the 3 lines between the arrows**
+(👇 … 👆) with the 4 lines above.
 
 Tap **▶ Run**. You should see **20 light-green tiles** in a
 horizontal row across the middle of the window. 🟩🟩🟩🟩…
@@ -62,17 +63,11 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇
-# Replace these 3 single-stamp lines with a for loop:
-#   pen.color("#AAD751")
-#   for col in range(20):
-#       pen.goto(-200 + col * 20, 0)
-#       pen.stamp()
-# All tiles sit at y = 0 (one horizontal row) for now.
+# 👇 Replace the 3 lines below with the 4 lines from the lesson above.
 pen.color("#AAD751")
 pen.goto(0, 0)
 pen.stamp()
-# 👆
+# 👆 (Stuck? Tap 💡 Solution.)
 
 screen.update()
 screen.mainloop()
