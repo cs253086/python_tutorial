@@ -20,23 +20,30 @@ for row in range(20):
 
 # ⭐ Step 2 — Stamp the whole checkerboard
 
-Your Class 6 code stamps **one** light-green tile. Let's replace
-those 3 lines between the markers with a **nested for loop** that
-stamps all 400 tiles in two greens.
+Your Class 6 code stamps **one** light-green tile. Between the
+markers we've sketched out a **nested for loop** that stamps
+all 400 tiles — but it has **four `???` spots** that you need
+to fill in with a number.
 
-## ✏️ What to change
+## ✏️ Fill in the four `???`
 
-Delete the `pen.color / pen.goto / pen.stamp` lines between the
-markers and add two nested `for` loops:
+> `???` means "type a number here." Python won't run if there's
+> still a `???` in your code — that's how you know there's more
+> to fix.
 
-- Outer loop: `for row in range(20):`
-- Inner loop: `for col in range(20):`
-- Inside: calculate `x` and `y` from `row` and `col`, pick a color
-  with `(row + col) % 2 == 0`, `goto` that spot, and `stamp`
+| Spot | The hint |
+|---|---|
+| **`???1`** in `range(???)` | The inner loop walks across the board. How many tiles wide is the board? Same as the outer loop. |
+| **`???2`** in `col * ???` | One tile is square. The whole board is 400 px wide and has 20 tiles across, so each tile is **400 ÷ 20 = ?** pixels. |
+| **`???3`** in `row * ???` | Tiles are squares — height is the same as width. |
+| **`???4`** in `== ???` | We want the **lighter** green when `(row + col)` is **even**. What's the remainder when you divide an even number by 2? (Try `4 % 2` and `5 % 2` in your head.) |
 
-Tap **▶ Run**. You should see the full Google-Snake checkerboard. 🟩🟨
+Tap **▶ Run**. If you see a `SyntaxError` mentioning `???`, you
+still have a blank to fill. Fix them all and you'll see the full
+Google-Snake checkerboard. 🟩🟨
 
-> 💡 Stuck? Tap **Solution**.
+> 💡 Stuck on a `???`? Tap **💡 Solution** — it drops the right
+> numbers in for you.
 
 ---
 
@@ -62,15 +69,19 @@ pen.penup()
 pen.shape("square")
 
 # 👇
-# Replace these 3 single-stamp lines with TWO nested for loops:
-#   for row in range(20):
-#     for col in range(20):
-#       work out x and y from row and col
-#       pick light green if (row+col) is even, else darker green
-#       go to (x, y) and stamp
-pen.color("#AAD751")
-pen.goto(0, 0)
-pen.stamp()
+# Fill in the four ??? spots below. Each one is a number.
+# (See the four hints on the lesson page above.)
+
+for row in range(20):
+    for col in range(???):              # ???1 — tiles across
+        x = -200 + col * ???            # ???2 — tile width
+        y = -200 + row * ???            # ???3 — tile height
+        if (row + col) % 2 == ???:      # ???4 — even-cell remainder
+            pen.color("#AAD751")
+        else:
+            pen.color("#A2D149")
+        pen.goto(x, y)
+        pen.stamp()
 # 👆
 
 screen.update()
