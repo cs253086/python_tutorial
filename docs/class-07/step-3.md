@@ -4,48 +4,111 @@ title: "Class 7 — Step 3"
 ---
 
 <pre class="py-solution" markdown="0">
+import turtle
+
+screen = turtle.Screen()
+screen.title("Snake")
+screen.bgcolor("#4A752C")
+screen.setup(500, 500)
+screen.tracer(0)
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.penup()
+pen.shape("square")
+
 pen.color("#AAD751")
 for row in range(20):
     for col in range(20):
         pen.goto(-200 + col * 20, -200 + row * 20)
         pen.stamp()
+
+screen.update()
+screen.mainloop()
 </pre>
 
 <sub>Class 7 — Step **3** of 4</sub>
 
-# ⭐ Step 3 — A whole grid
+# ⭐ Step 3 — A loop inside a loop
 
-A single row is nice. A whole **grid** needs `rows × columns`
-tiles — and that's a **loop inside a loop**.
+One row — great! But the Snake board has **20 rows**. We need to
+draw a row, then another row higher up, then another… **20 times**.
 
-We'll also use `row` to push each row of tiles upward, so the
-grid actually spreads.
+Doing the same thing many times → we know what that means.
+**Another `for` loop!**
 
-## ✏️ What to type
+This time the new loop goes **around** the row loop. A loop
+**inside** a loop is called a **nested loop**.
 
-Use these 5 lines:
+---
+
+## 🤸 Nested loops — a tiny example first
 
 ```python
-pen.color("#AAD751")
-for row in range(20):
-    for col in range(20):
-        pen.goto(-200 + col * 20, -200 + row * 20)
-        pen.stamp()
+for row in range(4):
+    for jack in range(3):
+        print(f"row {row}, jack {jack}")
 ```
 
-In the starter below, **replace the 4 lines between the arrows**
-(👇 … 👆) with the 5 lines above.
+This prints **4 × 3 = 12** lines:
 
-Two things changed compared to Step 2:
+```text
+row 0, jack 0
+row 0, jack 1
+row 0, jack 2
+row 1, jack 0
+row 1, jack 1
+...
+row 3, jack 2
+```
 
-1. A **new outer loop** `for row in range(20):` wraps the
-   `for col` loop.
-2. The `pen.goto` line now uses **both** `row` (for y) and `col`
-   (for x).
+### 🔍 What just happened
 
-Tap **▶ Run**. You should see the **full 20×20 grid** in light
-green. 🟩🟩🟩 (all the same color for now — checker pattern is
-next.)
+- The **outer** loop starts with `row = 0`.
+- The **inner** loop runs **all the way through** (jack = 0, 1, 2).
+- Then `row` becomes **1**, and the inner loop runs from the
+  start again.
+- So the inner loop runs **fully for every one turn** of the
+  outer loop. 4 × 3 = **12** total.
+
+> Python knows the inner loop is "inside" because it's **indented
+> more**. Indentation is how Python sees the shape of your code.
+
+---
+
+## 🧮 Where should each tile go?
+
+We already know x: `-200 + col * 20`.
+
+For y, it's the **same trick** with `row`:
+
+| `row` | `row * 20` | `-200 + row * 20` |
+|-----:|------:|------:|
+| 0 | 0 | **-200** ← bottom |
+| 1 | 20 | -180 |
+| … | … | … |
+| 19 | 380 | **180** ← top |
+
+So `pen.goto(-200 + col * 20, -200 + row * 20)` lands on a
+**different** spot for each (row, col) pair — **20 × 20 = 400**
+different spots.
+
+---
+
+## ✏️ Your turn
+
+In the starter below, you have your **row loop** from Step 2
+(20 tiles across, at y = 0).
+
+**Goal:** make it fill the **whole board** — 20 rows × 20
+columns of light-green tiles.
+
+Two things to do:
+
+1. **Wrap** the existing `for col` loop in an **outer** loop:
+   `for row in range(20):`
+2. Change `pen.goto` so the **y** uses `row` (just like x uses
+   `col`).
 
 > 💡 Stuck? Tap **💡 Solution**.
 
@@ -53,12 +116,11 @@ next.)
 
 ## 🔍 Notice
 
-- The **inner** loop runs fully (20 times) for **every one** turn
-  of the **outer** loop. So the body runs 20 × 20 = **400** times.
-- `-200 + row * 20` turns `row` (0…19) into screen y-positions
-  `-200, -180, … 180` — exactly one tile-height apart.
-- Both numbers (`x` and `y`) now use the loop counters — so each
-  of the 400 turns picks a **different** spot.
+- The pen `pen.goto(...)` line is now indented **twice** — because
+  it lives **inside** two loops.
+- The body runs **400 times**. Python does it instantly. ⚡
+- The whole board is one color for now — next step we'll add the
+  green checker pattern.
 
 <pre class="py-starter" markdown="0">
 import turtle
@@ -74,12 +136,16 @@ pen.hideturtle()
 pen.penup()
 pen.shape("square")
 
-# 👇 Replace the 4 lines below with the 5 lines from the lesson above.
+# 👇 YOUR TURN
+# Right now this draws ONE row (20 tiles at y = 0).
+# Goal: fill the WHOLE board (20 rows × 20 columns).
+# Step A: wrap the for-col loop in `for row in range(20):`
+# Step B: change the y in pen.goto to `-200 + row * 20`
 pen.color("#AAD751")
 for col in range(20):
     pen.goto(-200 + col * 20, 0)
     pen.stamp()
-# 👆 (Stuck? Tap 💡 Solution.)
+# 👆
 
 screen.update()
 screen.mainloop()

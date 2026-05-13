@@ -5,10 +5,11 @@ title: "Class 7 — Step 1"
 
 <sub>Class 7 — Step **1** of 4</sub>
 
-# ⭐ Step 1 — Meet `for`, nested loops, and `%`
+# ⭐ Step 1 — Meet the `for` loop
 
-Imagine your gym teacher: *"do 10 jumping jacks."* You do the same
-thing, ten times. That's a **`for` loop**.
+Imagine your gym teacher: *"do 10 jumping jacks."* You do the
+**same thing**, ten times. That's a **`for` loop** — a way to
+tell Python *"do this, N times."*
 
 ---
 
@@ -19,7 +20,7 @@ for i in range(5):
     print(i)
 ```
 
-Tap **▶ Run**. You should see:
+If you run this, you'll see:
 
 ```text
 0
@@ -29,65 +30,33 @@ Tap **▶ Run**. You should see:
 4
 ```
 
-### 🔍 Notice
+### 🔍 What just happened
 
 - `range(5)` gives Python the numbers **0, 1, 2, 3, 4** — five of
-  them (Python starts at 0!).
-- Each time around, `i` holds the current number.
-- The indented line runs **once for each number**.
+  them. (Python likes to start counting at 0!)
+- Each time around the loop, **`i`** holds the **current** number.
+- The **indented** line under `for ...:` is the **body** — Python
+  runs it **once for every number**.
 
-> 🧪 **Try it**: change `range(5)` to `range(3)` or `range(10)`.
-
----
-
-## 🏗️ A loop inside a loop (nested)
-
-Now imagine *"do 3 jumping jacks, in 4 rows."* Two loops — one for
-the rows, one for the jacks:
-
-```python
-for row in range(4):
-    for jack in range(3):
-        print(f"row {row}, jack {jack}")
-```
-
-Run it. You should see 4 × 3 = **12** lines.
-
-### 🔍 Notice
-
-- The **inner** loop runs fully for every one turn of the **outer**
-  loop.
-- We'll use this next step to do `rows × columns` of tiles — that
-  makes a grid.
+> If we wrote `range(10)`, the body would run **10** times.
+> `range(3)` → **3** times. You control how many.
 
 ---
 
-## 🪄 `%` (modulo) — the leftover trick
+## 🎯 Why this matters for Snake
 
-`%` asks *"what's the **leftover** after dividing?"*
+The Snake board has 400 tiles. Stamping them one at a time would
+be 400 lines of code. With a `for` loop, it's about **4**.
 
-```python
-print(4 % 2)
-print(5 % 2)
-print(6 % 2)
-print(7 % 2)
-```
-
-You should see `0`, `1`, `0`, `1`.
-
-### 🔍 Notice
-
-- An **even** number has `% 2 == 0`.
-- An **odd** number has `% 2 == 1`.
-- So `(row + col) % 2 == 0` flips between **even** and **odd** as
-  you move across a grid — perfect for a **checker pattern**.
+That's the magic: **a loop turns "do this many times" into just
+a few lines.**
 
 ---
 
-## 🎉 You can loop and pattern!
+## 🎉 You met `for`!
 
-Next step: put these three tools together to stamp the whole
-Snake checkerboard.
+Next step: use a `for` loop together with the **pen** to draw a
+row of 20 Snake tiles.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>
