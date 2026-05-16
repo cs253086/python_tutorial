@@ -41,8 +41,8 @@ Run again and type `easy` → you should see 🌟.
 - `difficulty == "hard"` uses **two** `=` — that's the "are these
   equal?" question. A **single** `=` would try to reassign the
   variable and confuse Python.
-- The indented lines inside `if` and `else` are the bodies of
-  those branches. Use Tab or two spaces.
+- The pushed-in lines under `if` and `else` are what runs in
+  each case. Use Tab or two spaces.
 
 <pre class="py-starter" markdown="0">
 print("🐍 Welcome to Snake!")

@@ -35,10 +35,10 @@ If you run this, you'll see:
 - `range(5)` gives Python the numbers **0, 1, 2, 3, 4** — five of
   them. (Python likes to start counting at 0!)
 - Each time around the loop, **`i`** holds the **current** number.
-- The **indented** line under `for ...:` is the **body** — Python
-  runs it **once for every number**.
+- The **pushed-in** line under `for ...:` is what Python runs
+  **once for every number**.
 
-> If we wrote `range(10)`, the body would run **10** times.
+> If we wrote `range(10)`, that line would run **10** times.
 > `range(3)` → **3** times. You control how many.
 
 ---

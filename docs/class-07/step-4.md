@@ -41,7 +41,7 @@ like a chess board:
 🟨🟩🟨🟩🟨🟩
 
 How does the computer know **which color** each tile should be?
-With a new math trick: **modulo**, written **`%`**.
+With a new math trick: the **`%`** sign.
 
 ---
 

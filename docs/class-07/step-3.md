@@ -37,12 +37,12 @@ draw a row, then another row higher up, then another… **20 times**.
 Doing the same thing many times → we know what that means.
 **Another `for` loop!**
 
-This time the new loop goes **around** the row loop. A loop
-**inside** a loop is called a **nested loop**.
+This time the new loop goes **around** the row loop — a loop
+**inside** another loop.
 
 ---
 
-## 🤸 Nested loops — a tiny example first
+## 🤸 A loop inside a loop — a tiny example first
 
 ```python
 for row in range(4):
@@ -64,15 +64,16 @@ row 3, jack 2
 
 ### 🔍 What just happened
 
-- The **outer** loop starts with `row = 0`.
-- The **inner** loop runs **all the way through** (jack = 0, 1, 2).
-- Then `row` becomes **1**, and the inner loop runs from the
+- The **outside** loop starts with `row = 0`.
+- The **inside** loop runs **all the way through**
+  (jack = 0, 1, 2).
+- Then `row` becomes **1**, and the inside loop runs from the
   start again.
-- So the inner loop runs **fully for every one turn** of the
-  outer loop. 4 × 3 = **12** total.
+- So the inside loop runs **fully for every one turn** of the
+  outside loop. 4 × 3 = **12** total.
 
-> Python knows the inner loop is "inside" because it's **indented
-> more**. Indentation is how Python sees the shape of your code.
+> Python knows which loop is inside which by how far each line
+> is **pushed in**. More push-in = deeper inside.
 
 ---
 
@@ -105,7 +106,7 @@ columns of light-green tiles.
 
 Two things to do:
 
-1. **Wrap** the existing `for col` loop in an **outer** loop:
+1. **Wrap** the existing `for col` loop in an **outside** loop:
    `for row in range(20):`
 2. Change `pen.goto` so the **y** uses `row` (just like x uses
    `col`).
@@ -116,9 +117,9 @@ Two things to do:
 
 ## 🔍 Notice
 
-- The pen `pen.goto(...)` line is now indented **twice** — because
-  it lives **inside** two loops.
-- The body runs **400 times**. Python does it instantly. ⚡
+- The pen `pen.goto(...)` line is now pushed in **twice** —
+  because it lives **inside** two loops.
+- That line runs **400 times**. Python does it instantly. ⚡
 - The whole board is one color for now — next step we'll add the
   green checker pattern.
 

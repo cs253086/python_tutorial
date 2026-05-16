@@ -52,9 +52,10 @@ Welcome, Leo!
 
 ### 🔍 What just happened
 
-- The **`f`** in front turns the string into a *"formatted"*
-  string. Without it, `{name}` would print **literally** —
-  curly braces and all.
+- The little **`f`** before the `"` is what tells Python:
+  *"swap in the variable when you see `{curly braces}`."*
+  Without the `f`, Python prints `{name}` exactly as you typed
+  it — curly braces and all.
 - **`{name}`** means *"look in the `name` box and drop what's
   inside here."*
 - The rest of the sentence (`Welcome, `, `!`) prints exactly as

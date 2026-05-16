@@ -46,8 +46,7 @@ If you run this, you'd see:
 
 ## 💬 A box for a word
 
-Boxes can hold **words** too. A word in Python is called a
-**string**, and you put it inside quotes:
+Boxes can hold **words** too. Just put the word inside **quotes**:
 
 ```python
 name = "Leo"

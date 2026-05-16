@@ -10,13 +10,13 @@ you'll use **`for` loops** to stamp hundreds of tiles in just a
 few lines.
 
 ## 🎯 Today you'll
-- Meet `for`, nested `for`, and `%` (modulo)
+- Meet `for`, a loop inside a loop, and the `%` sign
 - Stamp ONE horizontal row of tiles
 - Wrap it in a second loop to make a **full grid**
 - Add the green checker color pattern
 
-- 🧩 **4 steps** (we're going slow on this one — nested loops
-  are tricky!)
+- 🧩 **4 steps** (we're going slow on this one — a loop inside
+  a loop is tricky!)
 - ⏱️ About 25 minutes
 
 Ready?

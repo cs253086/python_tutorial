@@ -8,9 +8,9 @@ title: "Class 7 — Done!"
 You finished Class 7. Here's what you learned:
 
 - **`for i in range(N):`** — do something N times.
-- **Nested for loops** — a loop inside a loop, for grids.
-- **`%`** (modulo) — the leftover after division. A secret weapon
-  for checker patterns!
+- **A loop inside a loop** — for grids.
+- **`%`** — the leftover after dividing. A secret weapon for
+  checker patterns!
 
 Your Snake board now looks just like the real one. 🟩🟨
 

@@ -8,7 +8,7 @@ title: "Class 2 — Done!"
 You finished Class 2. Here's what you learned:
 
 - **Variables** — boxes with names that hold a value.
-- **Strings** — words in quotes, like `"Leo"`.
+- **Quotes around words** — like `"Leo"`.
 - **f-strings** — sentences that mix in variables: `f"Hi {name}"`.
 
 Your Snake game now has a **score** and knows your **name**. 🐍
