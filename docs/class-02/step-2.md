@@ -7,56 +7,119 @@ title: "Class 2 — Step 2"
 name = "Leo"
 score = 0
 
-print(f"🐍 Welcome, {name}!")
+print(f"Welcome, {name}!")
 print(f"Your score is {score}.")
 </pre>
 
-<sub>Class 2 — Step **2** of 2</sub>
+<sub>Class 2 — Step **2** of 3</sub>
 
-# ⭐ Step 2 — Put variables in your Snake game
+# ⭐ Step 2 — f-strings: drop a variable into a sentence
 
-Your `snake.py` so far is the **3 welcome lines** from Class 1.
-The editor below has those plus two **marker lines** showing where
-your new Class 2 code goes.
+Printing a number on its own line is plain:
 
-## ✏️ What to add
+```text
+0
+```
 
-Between the `👇` and `👆` markers, add:
+Boring! What we **really** want is a sentence:
 
-1. A variable called `name` with your name in quotes
-2. A variable called `score` set to `0`
-3. Two `print` lines that use **f-strings** to greet `{name}`
-   and show the `{score}`
+```text
+Your score is 0.
+```
 
-When you're ready, tap **▶ Run** — you should see the welcome
-lines plus the personalized greeting.
+For that we use an **f-string**.
 
-> 💡 Stuck? Tap **Solution** and the answer drops in for you.
+---
+
+## ✨ What an f-string looks like
+
+Three little ingredients:
+
+1. A small **`f`** right before the opening `"`.
+2. A normal sentence inside the quotes.
+3. **`{box-name}`** anywhere you want to slide a variable in.
+
+```python
+name = "Leo"
+print(f"Welcome, {name}!")
+```
+
+If you ran that, you'd see:
+
+```text
+Welcome, Leo!
+```
+
+### 🔍 What just happened
+
+- The **`f`** in front turns the string into a *"formatted"*
+  string. Without it, `{name}` would print **literally** —
+  curly braces and all.
+- **`{name}`** means *"look in the `name` box and drop what's
+  inside here."*
+- The rest of the sentence (`Welcome, `, `!`) prints exactly as
+  typed.
+
+---
+
+## 💬 Many boxes in one sentence
+
+You can use as many variables as you like:
+
+```python
+name = "Leo"
+age = 7
+print(f"{name} is {age} years old.")
+```
+
+Would print:
+
+```text
+Leo is 7 years old.
+```
+
+---
+
+## ✏️ Your turn
+
+In the editor below, two boxes are already made for you: `name`
+and `score`.
+
+**Goal:** use **two f-strings** to print:
+
+```text
+Welcome, Leo!
+Your score is 0.
+```
+
+(Use your real name in the `name` box if you like.)
+
+> 💡 Stuck? Tap **💡 Solution**.
 
 ---
 
 ## 🔍 Notice
 
-- The markers stay in place — they're comments, so Python ignores
-  them. They're just landmarks for **you**.
-- The old welcome lines from Class 1 are **still there**. You're
-  adding to your game, not replacing it.
+- Forget the `f` and `{name}` will print **literally** — try it
+  and see! That's a common mistake. The `f` is what makes Python
+  swap in the variable.
+- Inside the quotes, you can mix as many `{boxes}` and regular
+  words as you want.
 
 <pre class="py-starter" markdown="0">
-print("🐍 Welcome to Snake!")
-print("Eat the apples. Don't bite yourself!")
-print("Press an arrow key to start.")
+name = "Leo"
+score = 0
 
-# 👇
-# Make a box called "name" with your name inside (in quotes, like "Leo")
-# Make a box called "score" with 0 inside
-# Print a welcome line that mixes in {name} (use f"...")
-# Print a score line that mixes in {score}
-# 👆
+# 👇 YOUR TURN
+# Use TWO f-strings to print:
+#   Welcome, Leo!
+#   Your score is 0.
+# Remember the `f` before the quotes!
+# 👆 (Stuck? Tap 💡 Solution.)
 </pre>
 
 <p style="text-align:center;margin:2.5em 0;">
-  <a href="./done.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">I did it! →</a>
+  <a href="./step-3.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 3</a>
 </p>
 
 <sub>[⬅ Back to Step 1](./step-1.html)</sub>

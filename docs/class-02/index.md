@@ -9,11 +9,10 @@ Today you'll teach the computer to **remember** stuff — names,
 scores, anything. In Python this is called a **variable**.
 
 ## 🎯 Today you'll
-- Meet **variables** and **f-strings**
-- Add a `score` and a `name` to your Snake game
-- Make the game greet you by name
+- Meet **variables** (Step 1) and **f-strings** (Step 2)
+- Use them to make your Snake game greet you by name (Step 3)
 
-- 🧩 **2 steps**
+- 🧩 **3 steps**
 - ⏱️ About 15 minutes
 
 Ready?
