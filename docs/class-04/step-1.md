@@ -35,10 +35,70 @@ Python skips that line.
 
 ### 🔍 Notice
 
-- The line after `if` is **indented** (pushed to the right). That's
-  how Python knows it belongs to the `if`. Use **Tab** or two
-  spaces.
-- The `:` at the end of the `if` line is required.
+- The `:` at the end of the `if` line is **required**. Forget it
+  and Python gets confused.
+- The line that prints is **pushed in** (indented). That's how
+  Python knows it belongs to the `if`. Read on 👇
+
+---
+
+## 📏 Indentation — Python's way of grouping
+
+You saw it just above: the line after `if age >= 10:` was **pushed
+in** a bit. That's called **indentation** — and it's how Python
+knows which lines **belong to** the `if`.
+
+Other coding languages use `{` `}` braces. Python just uses
+**spaces** — neat, right?
+
+**The rule:** every line inside an `if` block starts with the
+**same amount** of space. The usual amount is **4 spaces** — or
+just press **Tab** in the editor and it types them for you.
+
+### ✅ Right
+
+```python
+age = 9
+if age >= 10:
+    print("Old enough!")
+    print("Let's play!")
+print("Game starting...")
+```
+
+- The two **indented** lines are **inside** the `if` — they only
+  run when `age >= 10`.
+- The last line isn't indented — it's **outside** the `if`, so
+  it **always** runs.
+
+### ❌ Forgot to indent
+
+```python
+age = 9
+if age >= 10:
+print("Old enough!")
+```
+
+Python won't run this. It complains:
+
+```
+IndentationError: expected an indented block
+```
+
+That's Python saying: *"you wrote `if ...:` but then didn't push
+the next line in — I don't know what's supposed to be inside the
+`if`."*
+
+The fix: push that line in with **Tab** (or 4 spaces).
+
+### 💡 Tip
+
+In the editor, press **Tab** at the start of a line — the editor
+types 4 spaces for you. Same amount every time, never wrong.
+
+Indentation will keep showing up in every class from here on —
+inside `else` (next!), `while` (Class 5), `for` (Class 7), and
+functions (Class 9). Same idea each time: **push lines in to show
+they belong together**.
 
 ---
 
