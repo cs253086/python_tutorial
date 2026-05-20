@@ -67,26 +67,20 @@ is now *ready* to do something every frame.
 In the starter below, your Snake currently draws the board and
 the snake **once** at the bottom of the file.
 
-**Goal:** wrap those drawing calls inside a `tick()` function
-that **schedules itself** every 200 ms.
+Three things to do (between the 👇 and 👆 markers):
 
-What to type:
+1. **Define** a new function called `tick`. Inside it, call
+   `draw_board()`, then `draw_snake(snake)`, then
+   `screen.update()`, then `screen.ontimer(tick, 200)`.
+2. **Call `tick()` once** to start the chain rolling.
+3. **Delete** the three standalone calls (`draw_board()`,
+   `draw_snake(snake)`, `screen.update()`) — they live **inside**
+   `tick()` now.
 
-```python
-def tick():
-    draw_board()
-    draw_snake(snake)
-    screen.update()
-    screen.ontimer(tick, 200)
+Tap **▶ Run**. You should see the board redrawn 5 times a second.
+(The snake stays put — direction comes next class.)
 
-tick()
-```
-
-Then **delete** the old standalone calls to `draw_board()`,
-`draw_snake(snake)`, and `screen.update()` — they live **inside**
-`tick()` now.
-
-> 💡 Stuck? Tap **💡 Solution**.
+> 💡 Stuck? Tap **💡 Solution** to see the full file.
 
 ---
 

@@ -61,26 +61,19 @@ snake is heading.
 
 ## ✏️ Your turn
 
-In the starter below:
+Two small additions in the starter below (look for the 👇 markers):
 
-1. **Below** the line `snake = [(-20, 0), (0, 0), (20, 0)]`, add:
-
-   ```python
-   direction = "RIGHT"
-   ```
-
-2. **Inside** `tick()`, at the top, add:
-
-   ```python
-   print(f"going {direction}")
-   ```
+1. **Below** the line `snake = [(-20, 0), (0, 0), (20, 0)]`, add
+   a new variable: `direction = "RIGHT"`.
+2. **Inside** `tick()`, at the very top, add a line that prints
+   `going {direction}` using an f-string.
 
 Tap **▶ Run**. You should see:
 
 - The green checker board with a 3-tile snake (same as Class 46).
 - The output area prints `going RIGHT` **5 times a second**.
 
-> 💡 Stuck? Tap **💡 Solution**.
+> 💡 Stuck? Tap **💡 Solution** to see the full file.
 
 ---
 
