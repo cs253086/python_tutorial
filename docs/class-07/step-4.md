@@ -94,17 +94,14 @@ so neighbors get **different colors**. That's the checker!
 
 ## 💡 Picking the color in code
 
-Use `if`/`else` **inside** the loops:
+The plan: **`if (row + col) % 2 == 0`** → use the lighter green
+(`"#AAD751"`); **`else`** → use the slightly darker green
+(`"#A2D149"`). We do this **inside** the loops, **before**
+`pen.goto` and `pen.stamp` so the right color is ready when
+the stamp drops.
 
-```python
-if (row + col) % 2 == 0:
-    pen.color("#AAD751")    # light green
-else:
-    pen.color("#A2D149")    # slightly darker green
-```
-
-We put this **before** `pen.goto` / `pen.stamp` so the new color
-is ready before the stamp drops.
+(Tap **💡 Solution** in the editor below if you want to see the
+exact `if`/`else` lines.)
 
 ---
 

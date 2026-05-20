@@ -30,13 +30,9 @@ screen.mainloop()
 
 # ⭐ Step 2 — Draw a row with the pen
 
-In Class 6 you met the **pen**. Three lines did the work:
-
-```python
-pen.color("#AAD751")     # pick a color
-pen.goto(0, 0)           # move the pen to a spot
-pen.stamp()              # drop a square stamp
-```
+In Class 6 you met the **pen**: `pen.color("...")` picks a color,
+`pen.goto(x, y)` moves the pen to a spot, and `pen.stamp()` drops
+a square stamp there.
 
 Today we want **20 tiles in a row**, like this:
 
@@ -69,15 +65,13 @@ pen lands on **20 evenly-spaced spots**. Just what we need.
 
 ## 💡 Putting it together
 
-```python
-pen.color("#AAD751")
-for col in range(20):
-    pen.goto(-200 + col * 20, 0)   # x changes, y stays at 0
-    pen.stamp()
-```
+Read the structure like a sentence:
 
-Read it like a sentence: *"set the color once. Then 20 times:
-move the pen, drop a stamp."*
+> *"Set the color once. Then 20 times: move the pen one step
+> right, and drop a stamp."*
+
+That's the shape of the `for` loop you need. Go try it in the
+editor below — tap **💡 Solution** if stuck.
 
 ---
 

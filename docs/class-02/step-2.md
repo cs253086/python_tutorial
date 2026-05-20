@@ -5,9 +5,11 @@ title: "Class 2 — Step 2"
 
 <pre class="py-solution" markdown="0">
 name = "Leo"
+age = 7
 score = 0
 
 print(f"Welcome, {name}!")
+print(f"You are {age} years old.")
 print(f"Your score is {score}.")
 </pre>
 
@@ -15,109 +17,64 @@ print(f"Your score is {score}.")
 
 # ⭐ Step 2 — f-strings: drop a variable into a sentence
 
-Printing a number on its own line is plain:
+Printing a number on its own line is plain. What we **really**
+want is a sentence like `Your score is 0.`
 
-```text
-0
-```
-
-Boring! What we **really** want is a sentence:
-
-```text
-Your score is 0.
-```
-
-For that we use an **f-string**.
-
----
-
-## ✨ What an f-string looks like
-
-Three little ingredients:
+For that we use an **f-string**. Three little ingredients:
 
 1. A small **`f`** right before the opening `"`.
 2. A normal sentence inside the quotes.
 3. **`{box-name}`** anywhere you want to slide a variable in.
 
-```python
-name = "Leo"
-print(f"Welcome, {name}!")
-```
+For example: `print(f"Welcome, {name}!")` → `Welcome, Leo!`
 
-If you ran that, you'd see:
+---
+
+## 🤖 Try it!
+
+Tap **▶ Run** to see f-strings with **one** variable AND with
+**several** at once:
+
+<pre class="py-starter" markdown="0">
+name = "Leo"
+age = 7
+score = 0
+
+# One variable:
+print(f"Welcome, {name}!")
+
+# Many variables in one sentence:
+print(f"{name} is {age} years old.")
+print(f"Your score is {score}.")
+</pre>
+
+You should see:
 
 ```text
 Welcome, Leo!
+Leo is 7 years old.
+Your score is 0.
 ```
 
 ### 🔍 What just happened
 
 - The little **`f`** before the `"` is what tells Python:
   *"swap in the variable when you see `{curly braces}`."*
-  Without the `f`, Python prints `{name}` exactly as you typed
-  it — curly braces and all.
-- **`{name}`** means *"look in the `name` box and drop what's
-  inside here."*
-- The rest of the sentence (`Welcome, `, `!`) prints exactly as
-  typed.
+- Without the `f`, Python prints `{name}` exactly as you typed
+  it — curly braces and all. **The `f` is the magic.**
+- Inside the quotes, you can mix **as many** `{boxes}` and
+  regular words as you want.
+
+> 🧪 **Try this in the editor above:**
+> - **Remove** the `f` from one of the lines. Run it — `{name}`
+>   prints literally. (A common mistake!)
+> - Add your own f-string: `print(f"I have {age} pets.")`
 
 ---
 
-## 💬 Many boxes in one sentence
+## 🎉 You know f-strings!
 
-You can use as many variables as you like:
-
-```python
-name = "Leo"
-age = 7
-print(f"{name} is {age} years old.")
-```
-
-Would print:
-
-```text
-Leo is 7 years old.
-```
-
----
-
-## ✏️ Your turn
-
-In the editor below, two boxes are already made for you: `name`
-and `score`.
-
-**Goal:** use **two f-strings** to print:
-
-```text
-Welcome, Leo!
-Your score is 0.
-```
-
-(Use your real name in the `name` box if you like.)
-
-> 💡 Stuck? Tap **💡 Solution**.
-
----
-
-## 🔍 Notice
-
-- Forget the `f` and `{name}` will print **literally** — try it
-  and see! That's a common mistake. The `f` is what makes Python
-  swap in the variable.
-- Inside the quotes, you can mix as many `{boxes}` and regular
-  words as you want.
-
-<pre class="py-starter" markdown="0">
-name = "Leo"
-score = 0
-
-# 👇 YOUR TURN
-# Use TWO f-strings to print:
-#   Welcome, Leo!
-#   Your score is 0.
-# Remember the `f` before the quotes!
-# 👆 (Stuck? Tap 💡 Solution.)
-</pre>
+Next step: put variables AND f-strings into your **Snake** game.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-3.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 3</a>
