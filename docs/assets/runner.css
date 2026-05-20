@@ -301,3 +301,9 @@ pre.py-runner-static {
 }
 .snake-clear a { color: #8b96a5; text-decoration: underline; }
 .snake-clear a:hover { color: #57606a; }
+
+/* Inline `code` inside headings should match the heading's font size,
+   not shrink to body-text size. */
+h1 code, h2 code, h3 code, h4 code {
+  font-size: inherit;
+}

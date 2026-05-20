@@ -41,52 +41,14 @@ direction = "RIGHT"
 
 That's it. A box called `direction` holds the word `"RIGHT"`.
 
-Inside the game loop, we can **read** the box every tick:
-
-```python
-import turtle
-
-screen = turtle.Screen()
-screen.setup(400, 200)
-
-direction = "RIGHT"
-
-def tick():
-    print(f"going {direction}")
-    screen.ontimer(tick, 500)
-
-tick()
-screen.mainloop()
-```
-
-You'd see:
-
-```text
-going RIGHT
-going RIGHT
-going RIGHT
-...
-```
-
-### 🔍 What just happened
-
-- `direction = "RIGHT"` is at the **top** of the program —
-  outside `tick`.
-- Inside `tick`, we **read** `direction` (we don't change it).
-- The same word comes out every tick, because no one has changed
-  the box.
-
-> 🧪 **Try this in the editor below:**
-> - Change `"RIGHT"` to `"UP"`. The message changes.
-> - Try `"LEFT"` and `"DOWN"`.
-> - Add another print line: `print("The snake heads", direction)`
+Inside the game loop, we can **read** the box every tick.
 
 ---
 
-## 🎉 You met direction!
+## 🤖 Try it — read direction from inside tick()
 
-Next step: drop `direction` into your **Snake** code and watch
-the tick announce it.
+Tap **▶ Run**. You should see `going RIGHT` print over and over
+— twice a second.
 
 <pre class="py-starter" markdown="0">
 import turtle
@@ -103,6 +65,26 @@ def tick():
 tick()
 screen.mainloop()
 </pre>
+
+### 🔍 What just happened
+
+- `direction = "RIGHT"` is at the **top** of the program —
+  outside `tick`.
+- Inside `tick`, we **read** `direction` (we don't change it).
+- The same word comes out every tick, because no one has changed
+  the box.
+
+> 🧪 **Try this in the editor above:**
+> - Change `"RIGHT"` to `"UP"`. The message changes.
+> - Try `"LEFT"` and `"DOWN"`.
+> - Add another print line: `print("The snake heads", direction)`
+
+---
+
+## 🎉 You met direction!
+
+Next step: drop `direction` into your **Snake** code and watch
+the tick announce it.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>
