@@ -303,7 +303,13 @@ pre.py-runner-static {
 .snake-clear a:hover { color: #57606a; }
 
 /* Inline `code` inside headings should match the heading's font size,
-   not shrink to body-text size. */
-h1 code, h2 code, h3 code, h4 code {
-  font-size: inherit;
+   not shrink to body-text size. Theme CSS has high specificity AND
+   uses `!important` on some rules, so force with !important and
+   include both bare and `.main-content`-scoped selectors. */
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code,
+.main-content h1 code, .main-content h2 code, .main-content h3 code,
+.main-content h4 code, .main-content h5 code, .main-content h6 code {
+  font-size: inherit !important;
+  padding: 0.05em 0.25em !important;
+  line-height: inherit !important;
 }
