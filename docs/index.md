@@ -20,7 +20,7 @@ with their inline-editor concept preserved here in your browser.
 | 🔓 | [**1 — Hello World**](./project-01-hello-world/) | Explore | Interactive program: greet by name, roll a dice, mix emojis |
 | 🔓 | [**2 — Target Practice**](./project-02-target-practice/) | Explore | An archery game (with `if` / `elif` / `else`) |
 | 🔓 | [**3 — Rocket Launch**](./project-03-rocket-launch/) | Explore | An animated rocket (with `for` loops) |
-| 🔒 | 4 — Draw a Face | Design | Your own art using what you've learned |
+| 🔓 | [**4 — Make a Face**](./project-04-make-a-face/) | Design | Your own face, monster, or alien |
 | 🔒 | 5 — Snake! | Design | The classic Snake game |
 | 🔒 | 6 — Invent Your Own | Invent | Something all yours |
 
