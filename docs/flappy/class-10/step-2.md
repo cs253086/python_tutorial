@@ -128,8 +128,9 @@ Between the markers:
    collisions and out-of-bounds) with `game_over(); return`.
    Also add `if not running[0]: return` at the very top of
    `tick`.
-6. Replace `screen.onkey(bird.flap, "space")` with
-   `screen.onkey(on_space, "space")`.
+6. Replace the line that connects SPACE to `bird.flap`
+   (`screen.onkey(bird.flap, "space")`) with one that connects
+   SPACE to `on_space` instead: `screen.onkey(on_space, "space")`.
 
 Tap **▶ Play**. Crash. **GAME OVER** shows up. Press **SPACE**.
 You're playing again. 🎮

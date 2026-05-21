@@ -6,7 +6,7 @@ title: "Flappy Bird — Class 5 — The first pipe"
 # Flappy Bird — Class 5 — The first pipe 🟩
 
 A bird flapping in empty sky isn't much of a game. Today you'll
-draw the iconic **green pipes** — a top one hanging from the
+draw the famous **green pipes** — a top one hanging from the
 ceiling and a bottom one rising from the floor, with a gap to
 fly through.
 

@@ -35,12 +35,12 @@ next classes you'll fill it with gravity, pipes, and a score.
 
 ## ✏️ What to add
 
-In the marker region below, write the code that:
+Between the 👇 and 👆 markers below, write the code that:
 
 1. `import turtle`
 2. Makes a `screen` titled **Flappy Bird**, with background color
    `"#70C5CE"` (sky blue), 400×600 size, and `screen.tracer(0)`
-   so drawings batch
+   so drawings happen all at once
 3. Makes a turtle called `bird`, hides it, lifts the pen, sets
    `speed(0)`, shape `"circle"`, color `"#FFD23F"`
 4. Sends the bird to `(-100, 0)` and stamps once

@@ -31,7 +31,7 @@ Tap **▶ Run**. A small sky-blue window with the title
 ### 🔍 Notice
 
 - `screen.bgcolor("#70C5CE")` — the sky blue of Flappy Bird.
-  Hex codes pick exact colors.
+  Color codes like `"#70C5CE"` let you pick any exact color.
 - `screen.setup(width, height)` — sizes the window in pixels.
   Flappy is tall: 400 wide, 600 tall.
 - `screen.mainloop()` — keeps the window open at the end.

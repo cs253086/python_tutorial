@@ -61,7 +61,7 @@ a body, an eye, and a beak.
 
 ## ✏️ What to add
 
-Inside the marker region:
+Between the 👇 and 👆 markers:
 
 1. Define a `class Bird:` with `__init__(self, x, y)` that
    stores `x`, `y`, and creates `self.pen = turtle.Turtle()`

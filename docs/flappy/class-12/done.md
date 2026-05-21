@@ -22,8 +22,8 @@ In 12 classes you went from `print("Hello!")` all the way to:
 - 🌥️ Clouds, a sandy ground, and a flashing wing
 
 That's a real intermediate Python project. Classes, methods,
-multiple instances, lists of objects, dictionaries, callbacks,
-collision math.
+many copies of one class, lists of objects, dictionaries,
+functions handed to other code, and collision math.
 
 ---
 

@@ -60,7 +60,8 @@ def tick():
 
 # ⭐ Step 2 — Stop on crash
 
-Add the collision check and stop the game when it fires.
+Add the collision check and stop the game the moment it
+triggers.
 
 ## ✏️ What to change
 

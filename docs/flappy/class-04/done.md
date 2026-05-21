@@ -17,7 +17,7 @@ The bird flaps! ✅
 ## Next class → 🟩 The first pipe
 
 A bird flapping in empty sky isn't much of a game. Time to add
-the iconic **green pipes** with a gap to fly through.
+the famous **green pipes** with a gap to fly through.
 
 In Class 5 you'll draw a single static pipe pair (top + bottom)
 using the same `begin_fill` / `forward` / `left` rectangle recipe

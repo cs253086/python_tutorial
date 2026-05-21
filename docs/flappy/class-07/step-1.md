@@ -5,10 +5,11 @@ title: "Flappy Bird — Class 7 — Step 1"
 
 <sub>Flappy Bird — Class 7 — Step **1** of 2</sub>
 
-# ⭐ Step 1 — Lists, instances, and random
+# ⭐ Step 1 — Lists, copies of a class, and random
 
-Python lists can hold **anything** — including the objects you
-made from your own classes.
+Python lists can hold **anything** — including the things you
+made from your own classes (the "copies" / "instances" you met
+in Class 2).
 
 ---
 
@@ -31,8 +32,9 @@ Blue
 Red
 ```
 
-`for b in birds:` walks each instance. Inside the loop, `b` is
-one bird — you can read its data and call its methods.
+`for b in birds:` walks through each bird in the list. Inside
+the loop, `b` is one bird — you can read its data and call its
+methods.
 
 ---
 

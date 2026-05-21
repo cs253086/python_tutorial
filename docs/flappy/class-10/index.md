@@ -22,11 +22,14 @@ running, restart when over.
 - Add `running = [True]`
 - Write `game_over()` — flip running to False, draw the message
 - Write `restart()` — reset bird/pipes/score, clear over screen
-- Replace `bird.flap` binding with an `on_space()` dispatcher
+- Replace the `bird.flap` connection with an `on_space()`
+  function that does the right thing based on whether the game
+  is running
 
 - 🧩 **2 steps**
 - ⏱️ About 20 minutes
-- 🆕 New Python: game state via mutable flag, multi-purpose key
+- 🆕 New Python: game state via a 1-item list flag,
+  multi-purpose SPACE key
 
 Ready?
 

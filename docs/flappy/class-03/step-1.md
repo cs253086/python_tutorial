@@ -33,7 +33,7 @@ print(c.value)
 3
 ```
 
-Each `bump()` call **mutates** `c.value`. The change sticks
+Each `bump()` call **changes** `c.value`. The change sticks
 because we stored it on `self`.
 
 ---

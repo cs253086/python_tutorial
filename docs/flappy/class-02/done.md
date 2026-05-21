@@ -19,10 +19,10 @@ You wrote your first class. ✅
 The bird is hanging in the air doing nothing. In real Flappy Bird
 the bird **falls** every frame unless you flap.
 
-In Class 3 you'll add a `vy` (vertical velocity) attribute, an
-`update()` method that applies gravity, and a **game loop** that
-runs `update()` and `draw()` 30 times a second using
-`screen.ontimer`.
+In Class 3 you'll add `self.vy` (the bird's up/down speed), an
+`update()` method that pulls the bird down a little each frame
+(gravity!), and a **game loop** that runs `update()` and `draw()`
+30 times a second using `screen.ontimer`.
 
 The bird will start dropping like a stone.
 

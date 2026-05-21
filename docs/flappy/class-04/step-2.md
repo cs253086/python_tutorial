@@ -95,11 +95,12 @@ mash **SPACE**. The bird should flutter up every press. 🐤
 ## 🔍 Notice
 
 - `bird.flap` (no parens!) is a **bound method** — it remembers
-  it belongs to `bird`. We hand it to `screen.onkey` to call later.
+  it belongs to `bird`. We hand it to `screen.onkey` so the screen
+  can call it for us later when SPACE is pressed.
 - `self.vy = 12` **replaces** `vy` (it doesn't add to it). One
   press cancels any falling and shoots the bird up.
 - `screen.listen()` is the magic line that turns on key listening.
-  Forget it and key bindings do nothing.
+  Forget it and the key presses do nothing.
 
 <pre class="py-starter" markdown="0">
 import turtle

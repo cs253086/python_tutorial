@@ -8,7 +8,8 @@ title: "Flappy Bird — Class 2 — Step 1"
 # ⭐ Step 1 — Meet `class`
 
 A **class** in Python is a **blueprint**. From one blueprint you
-can stamp out many **instances** — each with its own data.
+can stamp out many **copies** — each with its own data. (Grown-up
+programmers call these copies **instances**.)
 
 ---
 

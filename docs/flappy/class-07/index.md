@@ -24,7 +24,8 @@ You'll meet two important Python ideas:
 
 - 🧩 **2 steps**
 - ⏱️ About 15 minutes
-- 🆕 New Python: lists of class instances + `random.randint`
+- 🆕 New Python: lists that hold things made from a class +
+  `random.randint`
 
 Ready?
 

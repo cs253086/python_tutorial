@@ -38,8 +38,9 @@ itself as a value.
 
 ## 🐤 Bound methods
 
-When you grab a method off an instance, Python remembers
-**which instance** it came from. That's called a **bound method**.
+When you grab a method off a copy of a class (like `bird.flap`),
+Python remembers **which copy** it came from. That's called a
+**bound method** — the method is "bound" to that one bird.
 
 ```python
 class Bird:
@@ -100,9 +101,10 @@ press SPACE a few times. The output area shows "hi!" each press.
 
 ---
 
-## 🎉 You learned how callbacks work!
+## 🎉 You know how to give the screen a function!
 
-Next step: bind `bird.flap` to SPACE so the bird can fight gravity.
+Next step: connect `bird.flap` to SPACE so the bird can fight
+gravity.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#FFD23F;color:#1a1a1a;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>

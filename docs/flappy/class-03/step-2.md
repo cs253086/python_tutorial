@@ -72,7 +72,7 @@ Three small changes turn the still bird into a falling one:
 Between the markers:
 
 1. Inside `Bird.__init__`, add `self.vy = 0` (the bird's
-   vertical velocity, in pixels-per-frame)
+   up/down speed, in pixels per frame)
 2. Add a new method on `Bird`:
    ```text
    def update(self):
@@ -80,9 +80,10 @@ Between the markers:
        self.y = self.y + self.vy
    ```
 3. Replace `bird.draw()` at the bottom with a `tick()` function
-   that calls `bird.update()`, `bird.draw()`, `screen.update()`
-   and re-schedules itself with `screen.ontimer(tick, 30)` —
-   then call `tick()` once to start the loop.
+   that calls `bird.update()`, `bird.draw()`, `screen.update()`,
+   and then uses `screen.ontimer(tick, 30)` to ask Python to run
+   `tick` again in 30 ms — then call `tick()` once to start the
+   loop.
 
 Tap **▶ Play**. The bird should **fall** off the bottom of the
 screen — faster and faster. That's gravity. 🪂

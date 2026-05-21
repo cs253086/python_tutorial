@@ -16,13 +16,13 @@ That means two new ideas:
    using `screen.ontimer`
 
 ## 🎯 Today you'll
-- Add `self.vy = 0` to the bird (vertical velocity)
-- Write `update(self)` — gravity changes vy, vy changes y
+- Add `self.vy = 0` to the bird (up/down speed)
+- Write `update(self)` — gravity changes `vy`, `vy` changes `y`
 - Write `tick()` — the game loop, runs forever via `ontimer`
 
 - 🧩 **2 steps**
 - ⏱️ About 15 minutes
-- 🆕 New Python: state-mutating methods, `screen.ontimer`
+- 🆕 New Python: methods that change `self`, `screen.ontimer`
 
 Ready?
 
