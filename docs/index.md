@@ -13,7 +13,7 @@ The course is **adapted from the
 (used under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)),
 with their inline-editor concept preserved here in your browser.
 
-## 6-project course
+## 6-project course — all 6 projects built! 🎉
 
 | | Project | Type | What you build |
 |---|---|---|---|
@@ -22,9 +22,7 @@ with their inline-editor concept preserved here in your browser.
 | 🔓 | [**3 — Rocket Launch**](./project-03-rocket-launch/) | Explore | An animated rocket (with `for` loops) |
 | 🔓 | [**4 — Make a Face**](./project-04-make-a-face/) | Design | Your own face, monster, or alien |
 | 🔓 | [**5 — Snake!**](./project-05-snake-game/) | Design | The classic Snake game |
-| 🔒 | 6 — Invent Your Own | Invent | Something all yours |
-
-🔓 = built, 🔒 = coming soon.
+| 🔓 | [**6 — Invent Your Own**](./project-06-invent/) | Invent | Something all yours |
 
 Each project ends with a working program you can run, change, and
 show off.
