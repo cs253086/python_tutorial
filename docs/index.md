@@ -68,19 +68,117 @@ collisions, game state, and dictionaries.
 
 ---
 
-## 🚧 New, smaller-classes version (in progress)
+## 🚧 New 65-class version of Snake (in progress)
 
 We're rebuilding the Snake course into **65 smaller classes** —
-one Python idea per class, about 10 minutes each. These are the
-classes built so far:
+one Python idea per class, about 10 minutes each. The 12-class
+course above still works end-to-end while we build this out.
+🔓 = built, 🔒 = coming soon.
 
+### Part I — Make the computer talk (4)
 | | Class |
 |---|---|
+| 🔒 | 1 — Your first `print` |
+| 🔒 | 2 — Multiple `print` in order |
+| 🔒 | 3 — `print` with words and numbers |
+| 🔒 | 4 — Leaving notes with `#` |
+
+### Part II — Boxes that remember (6)
+| | Class |
+|---|---|
+| 🔒 | 5 — Variables for numbers |
+| 🔒 | 6 — Variables for words |
+| 🔒 | 7 — Variable naming rules |
+| 🔒 | 8 — Updating a variable |
+| 🔒 | 9 — f-strings with one variable |
+| 🔒 | 10 — f-strings with many variables |
+
+### Part III — Asking and choosing (7)
+| | Class |
+|---|---|
+| 🔒 | 11 — `input()` asks something |
+| 🔒 | 12 — Storing the answer in a variable |
+| 🔒 | 13 — `if` (one branch) |
+| 🔒 | 14 — `==` (the equality question) |
+| 🔒 | 15 — `else` |
+| 🔒 | 16 — Indentation |
+| 🔒 | 17 — `=` vs `==` |
+
+### Part IV — Drawing the green world (9)
+| | Class |
+|---|---|
+| 🔒 | 18 — `import` |
+| 🔒 | 19 — `turtle.Screen()` + `bgcolor` |
+| 🔒 | 20 — `screen.setup` + `screen.title` |
+| 🔒 | 21 — `screen.tracer(0)` |
+| 🔒 | 22 — Make a pen |
+| 🔒 | 23 — `pen.color` and `pen.shape` |
+| 🔒 | 24 — Coordinates (x, y, origin) |
+| 🔒 | 25 — `pen.goto` |
+| 🔒 | 26 — `pen.stamp` |
+
+### Part V — Doing things again (8)
+| | Class |
+|---|---|
+| 🔒 | 27 — `while` (countdown) |
+| 🔒 | 28 — `for` + `range` |
+| 🔒 | 29 — Tile spacing math |
+| 🔒 | 30 — Draw a row |
+| 🔒 | 31 — Nested `for` |
+| 🔒 | 32 — Full 20×20 grid |
+| 🔒 | 33 — `%` (modulo) |
+| 🔒 | 34 — Checker pattern |
+
+### Part VI — Lists (5)
+| | Class |
+|---|---|
+| 🔒 | 35 — Make a list |
+| 🔒 | 36 — List with items |
+| 🔒 | 37 — Indexing (`list[0]`) |
+| 🔒 | 38 — `for` over a list |
+| 🔒 | 39 — Draw the snake |
+
+### Part VII — Functions (5)
+| | Class |
+|---|---|
+| 🔒 | 40 — `def` (no params) |
+| 🔒 | 41 — Calling a function |
+| 🔒 | 42 — Parameters |
+| 🔒 | 43 — `draw_board()` |
+| 🔒 | 44 — `draw_snake(snake)` |
+
+### Part VIII — Make it move (10)
+| | Class |
+|---|---|
+| 🔒 | 45 — `screen.tracer(0)` + `screen.update()` |
 | 🔓 | [**46 — Make it tick**](./class-46/) (`screen.ontimer`) |
 | 🔓 | [**47 — Which way?**](./class-47/) (the `direction` box) |
+| 🔒 | 48 — The math: adding to head x/y |
+| 🔒 | 49 — Add new head |
+| 🔒 | 50 — Drop tail |
+| 🔒 | 51 — The `move()` function |
+| 🔒 | 52 — `screen.listen` + first `onkey` |
+| 🔒 | 53 — Four `go_*` functions |
+| 🔒 | 54 — All four arrows steer |
 
-The 12-class course above still works — keep using it until the
-new course catches up.
+### Part IX — Apple and growing (8)
+| | Class |
+|---|---|
+| 🔒 | 55 — `random.randint` |
+| 🔒 | 56 — `place_apple()` |
+| 🔒 | 57 — Apple appears |
+| 🔒 | 58 — Detect eat |
+| 🔒 | 59 — Grow on eat |
+| 🔒 | 60 — Apple respawns |
+| 🔒 | 61 — Score variable |
+| 🔒 | 62 — `pen.write` for HUD |
+
+### Part X — Game over (3)
+| | Class |
+|---|---|
+| 🔒 | 63 — Wall collision |
+| 🔒 | 64 — Self collision |
+| 🔒 | 65 — Game Over screen + restart |
 
 ---
 
