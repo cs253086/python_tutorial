@@ -70,7 +70,7 @@ move()
 
 <sub>Class 10 — Step **2** of 2</sub>
 
-# ⭐ Step 2 — Refactor your Snake file
+# ⭐ Step 2 — Tidy up your Snake file
 
 The game works but the code is getting long. Two chunks can be
 wrapped in tidy **functions**:
@@ -81,7 +81,7 @@ wrapped in tidy **functions**:
 
 ## ✏️ What to change
 
-Inside the marker region:
+Between the 👇 and 👆 markers:
 
 - Wrap the 11-line board loop in `def draw_board():` then replace
   it with a single `draw_board()` call.
@@ -89,11 +89,11 @@ Inside the marker region:
   `def draw_snake():`. Replace those lines in `move()` with
   `draw_snake()`.
 
-Tap **▶ Run**. The game should behave **exactly the same** — but
+Tap **▶ Run**. The game should do **exactly the same thing** — but
 the code reads much cleaner. 🧼
 
-> 💡 Big refactor — tap **Solution** to see the whole refactored
-> version side-by-side with what you had.
+> 💡 Big change — tap **Solution** to see the tidied-up version
+> next to what you had.
 
 ---
 

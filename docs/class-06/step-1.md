@@ -22,7 +22,7 @@ import turtle
 print("turtle ready!")
 ```
 
-Nothing fancy happens visually — you should just see
+Nothing happens on screen yet — you should just see
 `turtle ready!` in the output.
 
 ### 🔍 Notice

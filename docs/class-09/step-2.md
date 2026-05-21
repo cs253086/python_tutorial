@@ -55,17 +55,18 @@ replace the static draw with a `move()` function that runs every
 
 ## ✏️ What to change
 
-Between the 👇 and 👆 markers, delete the 3-line static for loop
-and add:
+Between the 👇 and 👆 markers, delete the 3-line for-loop that
+draws the snake once, and add:
 
 1. `direction = [20, 0]` — the snake's current step (20 right, 0 up)
-2. `def move():` — computes a new head, slides the snake forward
-   (append new head, pop old tail), redraws, calls
-   `screen.update()`, and re-schedules itself with `ontimer`
+2. `def move():` — works out a new head from the old head + the
+   direction, adds the new head to the snake, drops the old tail,
+   redraws everything, calls `screen.update()`, and uses
+   `ontimer` to run again in 150 ms
 3. Four tiny functions: `go_up`, `go_down`, `go_left`, `go_right`
    that change `direction`
-4. `screen.listen()` + four `screen.onkey(...)` calls binding each
-   arrow key to its function
+4. `screen.listen()` + four `screen.onkey(...)` calls connecting
+   each arrow key to its function
 5. A final `move()` to start the game loop
 
 Tap **▶ Run**. Click the board once so keys are heard, then press
@@ -77,11 +78,11 @@ the **arrow keys**. 🎮
 
 ## 🔍 Notice
 
-- The game **loop** is just `move()` calling
-  `screen.ontimer(move, 150)` from inside itself — every tick,
-  it reschedules itself.
-- `snake_pen.clear()` wipes the previous snake stamps so the new
-  frame isn't drawn on top.
+- The game **loop** is just `move()` asking for another turn at
+  the end (`screen.ontimer(move, 150)`). Every tick, it sets
+  itself up to run again.
+- `snake_pen.clear()` wipes the previous snake stamps. Without
+  this, every move would leave a trail of stamps behind.
 
 > ⚠️ Don't panic when the snake flies off the edge — that's what
 > Class 12 fixes.

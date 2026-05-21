@@ -9,8 +9,9 @@ You finished Class 5. Here's what you learned:
 
 - **`while`** — do something again and again until a rule is false.
 - **`countdown = countdown - 1`** — make a number go down each loop.
-- **Infinite loops** are a thing! Always make your rule eventually
-  become false.
+- **Forever loops** can happen by accident! Always make sure
+  something inside the loop changes, so the rule turns false at
+  some point.
 
 ---
 

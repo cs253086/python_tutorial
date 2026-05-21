@@ -45,7 +45,8 @@ Python's thinking goes like this:
 4. Again: 0 > 0? **No** → stop. Print `Done!`.
 
 - `count = count - 1` is what makes the rule eventually become
-  false. Something **inside** the loop must push toward the exit.
+  false. Something **inside** the loop has to change, so the rule
+  doesn't stay true forever.
 
 ---
 

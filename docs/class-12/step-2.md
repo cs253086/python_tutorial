@@ -78,10 +78,10 @@ Hit a wall → **GAME OVER**. Steer into your tail → **GAME OVER**.
 
 ## 🔍 Notice
 
-- `return` stops `move()` early, so no more `ontimer(move, 150)`
-  is scheduled. The game quietly ends.
-- `new_head in snake` uses Python's `in` operator to scan the whole
-  body list in one line.
+- `return` stops `move()` early, so it never reaches the
+  `ontimer(move, 150)` line at the bottom. The game quietly ends.
+- `new_head in snake` uses Python's `in` to check the whole body
+  list in one line.
 
 ## 🏆 You built a working Snake game!
 

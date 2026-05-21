@@ -37,7 +37,7 @@ the number. That's fine for us today — we only need names.
 ## 🎉 You know how to ask!
 
 Next step: use `input` in your Snake game so it greets the real
-player, not a hardcoded `"Leo"`.
+player instead of always saying `"Leo"`.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>

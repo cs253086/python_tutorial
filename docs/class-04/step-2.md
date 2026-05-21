@@ -39,8 +39,8 @@ Run again and type `easy` → you should see 🌟.
 ## 🔍 Notice
 
 - `difficulty == "hard"` uses **two** `=` — that's the "are these
-  equal?" question. A **single** `=` would try to reassign the
-  variable and confuse Python.
+  equal?" question. A **single** `=` would try to put a value INTO
+  the `difficulty` box, which isn't what we want here.
 - The pushed-in lines under `if` and `else` are what runs in
   each case. Use Tab or two spaces.
 

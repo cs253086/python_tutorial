@@ -28,7 +28,7 @@ False
 
 ### 🔍 Notice
 
-- `x in my_list` scans the list for you and returns `True` or
+- `x in my_list` checks the list for you and gives back `True` or
   `False`. One line, no loop needed!
 - We'll use this to check *"is the snake's new head inside its own
   body?"* → if yes, it just bit itself. Game over.
@@ -58,9 +58,9 @@ skips the `if` and prints the greeting.
 
 - When `name == ""`, the function prints the "bye" line then
   `return`s — the final `print("Hi, …")` never runs.
-- We'll use this in `move()`: the moment a collision happens,
-  `game_over()` runs and we `return` so no more ticks get
-  scheduled.
+- We'll use this in `move()`: the moment the snake crashes,
+  `game_over()` runs and we `return` so the game stops calling
+  `move()` again.
 
 ---
 

@@ -53,9 +53,9 @@ appear with one light-green tile in the middle. 🎉
 ## 🔍 Notice
 
 - `import turtle` goes at the **top** of the file (always).
-- `screen.tracer(0)` + `screen.update()` is how we batch drawings
-  so the whole board appears at once. Essential next class when
-  you stamp 400 tiles!
+- `screen.tracer(0)` + `screen.update()` lets us draw everything
+  at once, instead of one shape at a time. We'll really need this
+  next class when you stamp 400 tiles!
 
 <pre class="py-starter" markdown="0">
 # 👇

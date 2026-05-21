@@ -70,7 +70,8 @@ when it eats.
 
 ## ✏️ What to change
 
-Inside the marker region (and also `import random` at the top):
+Between the 👇 and 👆 markers (and also add `import random` at
+the top of the file):
 
 1. A second pen `apple_pen` (shape `"circle"`, red `#E74C3C`)
 2. Two one-item lists: `apple = [0, 0]` and `score = [0]`
@@ -93,10 +94,11 @@ Tap **▶ Run**, steer with arrows, chase the apple. 🍎🐍
 ## 🔍 Notice
 
 - `apple` and `score` are **one-item lists** (`[0, 0]`, `[0]`) so
-  our functions can mutate them. Changing a plain number inside a
-  function wouldn't stick without `global`.
-- **Growing** is simply *"skip the tail pop when we eat."* One
-  line of logic!
+  we can change what's inside them from any function. With a
+  plain number, changes inside a function don't reach the box
+  outside.
+- **Growing** is just *"skip dropping the tail when we eat."*
+  One line of logic!
 
 <pre class="py-starter" markdown="0">
 import turtle

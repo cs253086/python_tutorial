@@ -5,7 +5,7 @@ title: "Class 10 — Step 1"
 
 <sub>Class 10 — Step **1** of 2</sub>
 
-# ⭐ Step 1 — Meet parameters (and refactoring)
+# ⭐ Step 1 — Meet parameters (and tidying up)
 
 Last class you wrote `def say_hi():` with empty `()`. But real
 recipes often take **ingredients**. "Make a cake with flavor X."
@@ -54,12 +54,15 @@ Run it. Output: `7`, then `30`.
 
 ---
 
-## 🧼 What's "refactoring"?
+## 🧼 What's "tidying up"?
 
-**Refactoring** is moving code around to make it cleaner, without
-changing what it does. A function is the main tool. You find a
-block that does one clear thing, give it a name, and replace it
-with a single call.
+**Tidying up** code means moving lines around to make it cleaner,
+without changing what the program does. A function is the main
+tool. You find a chunk that does one clear thing, give it a name,
+and replace it with a single call to that name.
+
+(Grown-up programmers call this "refactoring" — but "tidying up"
+is the same thing.)
 
 Before:
 
@@ -81,11 +84,12 @@ def draw_board():
 draw_board()   # one line now!
 ```
 
-Same behavior. Less mess. Easier to read later.
+The program does the same thing. The code is shorter. Easier to
+read later.
 
 ---
 
-## 🎉 You know parameters and refactoring!
+## 🎉 You know parameters and tidying up!
 
 Next step: clean up your Snake game.
 

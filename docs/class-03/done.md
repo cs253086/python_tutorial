@@ -10,8 +10,8 @@ You finished Class 3. Here's what you learned:
 - **`input(...)`** — asks the player a question.
 - The player's answer goes into a variable you choose.
 
-Your Snake game is now **interactive** — anyone who plays gets a
-personal welcome. 🎉
+Your Snake game now **talks to whoever plays it** — anyone who
+plays gets their own welcome message. 🎉
 
 ---
 
