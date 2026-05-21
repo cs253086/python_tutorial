@@ -362,6 +362,48 @@
     return before + "\n" + solution.trim() + "\n" + after;
   }
 
+  // ---------- Solution-button parent gate ----------
+  // The Solution button reveals the answer. We don't want a kid to tap it
+  // before trying the problem. A parent enters a PIN once per browser tab
+  // to unlock Solution for the rest of the session.
+  //
+  // Default PIN: "1234". A parent can change it by visiting any page once
+  // with ?set-pin=NNNN in the URL — the new PIN is saved per-browser in
+  // localStorage.
+  function getSolutionPin() {
+    try { return localStorage.getItem("solutionPin") || "1234"; }
+    catch (_) { return "1234"; }
+  }
+
+  (function applyPinFromUrl() {
+    try {
+      const params = new URLSearchParams(location.search);
+      const newPin = params.get("set-pin");
+      if (newPin && /^[0-9]{4,8}$/.test(newPin)) {
+        localStorage.setItem("solutionPin", newPin);
+      }
+    } catch (_) {}
+  })();
+
+  function isSolutionUnlocked() {
+    try { return sessionStorage.getItem("solutionUnlocked") === "1"; }
+    catch (_) { return false; }
+  }
+
+  function tryUnlockSolution() {
+    const entered = prompt(
+      "👨‍👩‍👧 Parent only: enter the PIN to show the answer.\n\n" +
+      "Kids: ask your parent to type it. Try the problem yourself first!"
+    );
+    if (entered === null) return false;             // cancelled
+    if (entered === getSolutionPin()) {
+      try { sessionStorage.setItem("solutionUnlocked", "1"); } catch (_) {}
+      return true;
+    }
+    alert("That PIN didn't match. Ask your parent.");
+    return false;
+  }
+
   function buildMainEditor(starterEl) {
     const starterCode = starterEl.textContent.replace(/^\n+|\n+$/g, "");
     const solutionEl = document.querySelector(".py-solution");
@@ -437,10 +479,19 @@
 
     solutionBtn.addEventListener("click", () => {
       if (!solutionCode) return;
-      const filled = replaceBetweenMarkers(editor.value, solutionCode);
-      editor.value = filled != null
-        ? filled
-        : replaceBetweenMarkers(starterCode, solutionCode) || starterCode;
+      // Parent PIN gate — must unlock once per tab session.
+      if (!isSolutionUnlocked() && !tryUnlockSolution()) return;
+      // 1. If the kid's editor has 👇/👆 markers, splice the solution
+      //    between them.
+      // 2. Else if the starter had markers (even if the kid removed them),
+      //    splice into the starter and use that.
+      // 3. Otherwise (newer projects without markers), drop in the full
+      //    solution code.
+      const fromEditor = replaceBetweenMarkers(editor.value, solutionCode);
+      const fromStarter = replaceBetweenMarkers(starterCode, solutionCode);
+      editor.value = fromEditor != null
+        ? fromEditor
+        : (fromStarter != null ? fromStarter : solutionCode);
       try {
         localStorage.setItem(key, editor.value);
         localStorage.setItem(fpKey, starterFp);

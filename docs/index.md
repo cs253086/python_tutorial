@@ -39,6 +39,25 @@ show off.
 
 ---
 
+## 👨‍👩‍👧 For parents — the Solution button is PIN-locked
+
+Every step has a **💡 Solution** button that fills in the answer.
+To stop kids from tapping it the moment they get stuck, it asks
+for a **parent PIN** the first time it's used per browser tab.
+
+- **Default PIN:** `1234`
+- **Change the PIN:** visit any page once with `?set-pin=NNNN`
+  in the URL (e.g. `?set-pin=9876`). The new PIN is saved in
+  *this browser only*. 4–8 digits.
+- **Once unlocked**, Solution works freely for the rest of that
+  browser tab. Closing the tab re-locks it.
+
+(It's a friction barrier, not real security — anyone determined
+could read the PIN in the page source. But it does the job of
+"ask your parent first.")
+
+---
+
 ## Legacy 12-class courses (still here while we move to the new course)
 
 <div class="tutorial-card" data-tutorial="snake" markdown="1">
