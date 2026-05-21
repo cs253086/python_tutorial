@@ -68,6 +68,22 @@ collisions, game state, and dictionaries.
 
 ---
 
+## 🚧 New, smaller-classes version (in progress)
+
+We're rebuilding the Snake course into **65 smaller classes** —
+one Python idea per class, about 10 minutes each. These are the
+classes built so far:
+
+| | Class |
+|---|---|
+| 🔓 | [**46 — Make it tick**](./class-46/) (`screen.ontimer`) |
+| 🔓 | [**47 — Which way?**](./class-47/) (the `direction` box) |
+
+The 12-class course above still works — keep using it until the
+new course catches up.
+
+---
+
 ## 💡 Three big tips
 
 - ✍️ **Type the code yourself.** Don't copy-paste. Typing helps your

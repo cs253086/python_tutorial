@@ -83,8 +83,8 @@ screen.mainloop()
 
 ## 🎉 You met direction!
 
-Next step: drop `direction` into your **Snake** code and watch
-the tick announce it.
+Next step: add `direction` to your **Snake** code and have `tick()`
+print it every frame.
 
 <p style="text-align:center;margin:2.5em 0;">
   <a href="./step-2.html" style="display:inline-block;background:#2ea44f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:1.25em;font-weight:bold;">Next → Step 2</a>

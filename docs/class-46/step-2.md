@@ -86,13 +86,12 @@ Tap **▶ Run**. You should see the board redrawn 5 times a second.
 
 ## 🔍 Notice
 
-- The lines that **used to be** at the bottom (`draw_board()`,
-  `draw_snake(snake)`, `screen.update()`) are now **inside**
-  `tick()`. They still run — just on a schedule.
-- The **first** `tick()` call at the bottom kicks off the chain.
-  After that, each tick schedules the next from inside.
-- `screen.ontimer(tick, 200)` = **5 ticks per second**. Try `100`
-  (10/sec) or `500` (2/sec).
+- The three drawing lines now live **inside** `tick()`. They only
+  run when `tick()` runs.
+- We call `tick()` once at the bottom — that's what **starts**
+  everything. After that, `tick()` runs itself again every 200 ms.
+- `200` means **5 times a second**. Try `100` to make it faster.
+  Try `500` to make it slower.
 
 The snake STILL doesn't move (it's redrawn at the same spot
 every tick). But the **game loop is running**. Next class (47),

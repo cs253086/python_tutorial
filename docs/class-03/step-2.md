@@ -19,18 +19,18 @@ The game always greets "Leo" — boring. Let's fix that.
 
 ## ✏️ What to change
 
-- **Delete** the line `name = "Leo"`
-- Between the 👇 and 👆 markers, add:
+Two small things in the editor below:
 
-  ```python
-  name = input("What's your name? ")
-  ```
+- **Delete** the line `name = "Leo"`.
+- Between the 👇 and 👆 markers, add a new line:
+  `name = input("What's your name? ")` — this asks the player
+  and saves what they type in the `name` box.
 
 Tap **▶ Run**, type your name when asked, and see the game greet
 you by name. Run it again with a friend's name or a silly one like
 `PizzaLord`.
 
-> 💡 Stuck? Tap **Solution** for the answer.
+> 💡 Stuck? Tap **💡 Solution** to see the answer.
 
 ---
 

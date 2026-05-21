@@ -79,12 +79,12 @@ Tap **▶ Run**. You should see:
 
 ## 🔍 Notice
 
-- `direction` is set **once**, outside the function. Nothing
+- We set `direction` **once**, outside the function. Nothing
   inside `tick` changes it.
-- `tick` **reads** the box every frame and prints the heading.
-- The snake STILL doesn't move — reading isn't moving. Next
-  class (48) we use `direction` to figure out where the new
-  **head** should go.
+- `tick` **reads** the box every frame and prints what's inside.
+- The snake STILL doesn't move — knowing the direction isn't the
+  same as moving. Next class (48) we use `direction` to figure
+  out where the snake's new **head** should go.
 
 <pre class="py-starter" markdown="0">
 import turtle

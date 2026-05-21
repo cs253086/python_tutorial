@@ -43,9 +43,9 @@ This is like saying:
 
 (500 milliseconds = half a second.)
 
-The clever trick: if `my_function` **calls `ontimer` again from
-inside itself**, Python will run it again, and again, and
-again. **That's the game loop.**
+The cool part: if `my_function` uses `ontimer` to **ask for
+another turn from inside itself**, Python runs it again, and
+again, and again. **That's the game loop.**
 
 ---
 
@@ -74,14 +74,14 @@ screen.mainloop()
 
 ### 🔍 What just happened
 
-- `screen.ontimer(tick, 200)` says: *"run `tick` again in 200
-  milliseconds."*
-- That line is **inside** `tick` itself — so every time `tick`
-  runs, it schedules the **next** run before finishing.
-- We had to call `tick()` **once** at the bottom to start the
-  chain rolling.
-- `screen.mainloop()` keeps the program alive so the timer can
-  actually fire.
+- `screen.ontimer(tick, 200)` tells Python: *"please run `tick`
+  again in 200 milliseconds."*
+- That line lives **inside** `tick` itself. So every time `tick`
+  runs, it asks Python to run it **again** soon.
+- We have to call `tick()` **once** at the bottom to start it for
+  the very first time.
+- `screen.mainloop()` keeps the program running so Python has
+  time to come back and run `tick` again.
 
 > 🧪 **Try this in the editor above:**
 > - Change `200` to `1000`. Now it ticks once per second.
